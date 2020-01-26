@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8"/>
     <meta lang="de"/>
-    <?php include("../basis_header.php");?>
     <script src="ets2-mobile-route-advisor/maps/ets2/js/ol.js"></script>
     <script src="ets2-mobile-route-advisor/maps/ets2/js/cities.js"></script>
     <script src="ets2-mobile-route-advisor/maps/ets2/js/map.js"></script>
@@ -90,7 +89,6 @@
     </script>
 </head>
 <body lang="de" style="background-color: gray; margin: 0; overflow-y: hidden">
-    <?php include("../navbar.php");?>
 <div id="map">
 
 </div>
