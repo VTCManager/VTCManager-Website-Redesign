@@ -122,7 +122,7 @@ position:absolute;
         <a href="events" class="list-group-item list-group-item-action waves-effect">
           <i class="fas fa-user"></i> Events</a>
         <a href="einstellungen" class="list-group-item list-group-item-action waves-effect">
-          <i class="fas fa-map"></i> Einstellungen</a>
+          <i class="fas fa-cog"></i> Einstellungen</a>
       </div>
 
     </div>
@@ -163,9 +163,9 @@ position:absolute;
 
             <!--Card content-->
             <div class="card-body">
-
-              <canvas id="myChart"></canvas>
-
+              <h3>EpommCookie</h3>
+              <div style="height: 50px;"></div>
+              <p>Bla</p>
             </div>
 
           </div>
@@ -184,25 +184,15 @@ position:absolute;
             <div class="card-body">
 
               <div class="card-header text-center">
-                Verkehr (Trucky)
+                Die Letzten 5 touren
               </div>
               <!-- List group links -->
               <div class="list-group list-group-flush">
-                <a class="list-group-item list-group-item-action waves-effect">Calais - Duisburg
-                  <span class="badge badge-primary badge-pill pull-right">0</span>
-                </a>
-                <a class="list-group-item list-group-item-action waves-effect">Calais (City)
-                  <span class="badge badge-primary badge-pill pull-right">0</span>
-                </a>
-                <a class="list-group-item list-group-item-action waves-effect">Osnabrück (City)
-                  <span class="badge badge-primary badge-pill pull-right">0</span>
-                </a>
-                <a class="list-group-item list-group-item-action waves-effect">Southampton (City)
-                  <span class="badge badge-primary badge-pill pull-right">0</span>
-                </a>
-                <a class="list-group-item list-group-item-action waves-effect">Duisburg
-                  <span class="badge badge-primary badge-pill pull-right">0</span>
-                </a>
+                <a class="list-group-item list-group-item-action waves-effect">Bla</a>
+                <a class="list-group-item list-group-item-action waves-effect">Bla</a>
+                <a class="list-group-item list-group-item-action waves-effect">Bla</a>
+                <a class="list-group-item list-group-item-action waves-effect">Bla</a>
+                <a class="list-group-item list-group-item-action waves-effect">Bla</a>
               </div>
               <!-- List group links -->
 
@@ -216,194 +206,6 @@ position:absolute;
 
       </div>
       <!--Grid row-->
-
-      <!--Grid row-->
-      <div class="row wow fadeIn">
-
-        <!--Grid column-->
-        <div class="col-md-6 mb-4">
-
-          <!--Card-->
-          <div class="card">
-
-            <!--Card content-->
-            <div class="card-body">
-
-              <!-- Table  -->
-              <table class="table table-hover">
-                <!-- Table head -->
-                <thead class="blue-grey lighten-4">
-                  <tr>
-                    <th>#</th>
-                    <th>Lorem</th>
-                    <th>Ipsum</th>
-                    <th>Dolor</th>
-                  </tr>
-                </thead>
-                <!-- Table head -->
-
-                <!-- Table body -->
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Cell 1</td>
-                    <td>Cell 2</td>
-                    <td>Cell 3</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Cell 4</td>
-                    <td>Cell 5</td>
-                    <td>Cell 6</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Cell 7</td>
-                    <td>Cell 8</td>
-                    <td>Cell 9</td>
-                  </tr>
-                </tbody>
-                <!-- Table body -->
-              </table>
-              <!-- Table  -->
-
-            </div>
-
-          </div>
-          <!--/.Card-->
-
-        </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
-        <div class="col-md-6 mb-4">
-
-          <!--Card-->
-          <div class="card">
-
-            <!--Card content-->
-            <div class="card-body">
-
-              <!-- Table  -->
-              <table class="table table-hover">
-                <!-- Table head -->
-                <thead class="blue lighten-4">
-                  <tr>
-                    <th>#</th>
-                    <th>Lorem</th>
-                    <th>Ipsum</th>
-                    <th>Dolor</th>
-                  </tr>
-                </thead>
-                <!-- Table head -->
-
-                <!-- Table body -->
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Cell 1</td>
-                    <td>Cell 2</td>
-                    <td>Cell 3</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Cell 4</td>
-                    <td>Cell 5</td>
-                    <td>Cell 6</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Cell 7</td>
-                    <td>Cell 8</td>
-                    <td>Cell 9</td>
-                  </tr>
-                </tbody>
-                <!-- Table body -->
-              </table>
-              <!-- Table  -->
-
-            </div>
-
-          </div>
-          <!--/.Card-->
-
-        </div>
-        <!--Grid column-->
-
-      </div>
-      <!--Grid row-->
-
-      <!--Grid row-->
-      <div class="row wow fadeIn">
-
-        <!--Grid column-->
-        <div class="col-lg-6 col-md-6 mb-4">
-
-          <!--Card-->
-          <div class="card">
-
-            <!-- Card header -->
-            <div class="card-header">Touren Diagramm</div>
-
-            <!--Card content-->
-            <div class="card-body">
-
-              <canvas id="lineChart"></canvas>
-
-            </div>
-
-          </div>
-          <!--/.Card-->
-
-        </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
-        <div class="col-lg-6 col-md-6 mb-4">
-
-          <!--Card-->
-          <div class="card">
-
-            <!-- Card header -->
-            <div class="card-header">Doughnut Chart</div>
-
-            <!--Card content-->
-            <div class="card-body">
-
-              <canvas id="doughnutChart"></canvas>
-
-            </div>
-
-          </div>
-          <!--/.Card-->
-
-        </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
-        <div class="col-lg-6 col-md-6 mb-4">
-
-          <!--Card-->
-          <div class="card">
-
-            <!-- Card header -->
-            <div class="card-header">Horizontal Bar Chart</div>
-
-            <!--Card content-->
-            <div class="card-body">
-
-              <canvas id="horizontalBar"></canvas>
-
-            </div>
-
-          </div>
-          <!--/.Card-->
-
-        </div>
-        <!--Grid column-->
-      </div>
-      <!--Grid row-->
-
     </div>
   </main>
   <!--Main layout-->

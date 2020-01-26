@@ -122,7 +122,7 @@ position:absolute;
         <a href="events" class="list-group-item list-group-item-action waves-effect">
           <i class="fas fa-user"></i> Events</a>
         <a href="einstellungen" class="list-group-item active waves-effect">
-          <i class="fas fa-map mr-3"></i>Einstellungen</a>
+          <i class="fas fa-cog mr-3"></i>Einstellungen</a>
       </div>
 
     </div>
