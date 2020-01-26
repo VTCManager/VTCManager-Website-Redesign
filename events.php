@@ -144,7 +144,7 @@ position:absolute;
           <h4 class="mb-2 mb-sm-0 pt-1">
             <a href="dashboard">Homepage</a>
             <span>/</span>
-            <span>Fahrtenbuch</span>
+            <span>Events</span>
           </h4>
 
         </div>
