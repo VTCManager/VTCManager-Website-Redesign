@@ -182,25 +182,11 @@ position:absolute;
             <div class="card-body">
 
               <div class="card-header text-center">
-                Verkehr (Trucky)
+                Verkehr Sim 1 (Trucky)
               </div>
               <!-- List group links -->
               <div class="list-group list-group-flush">
-                <a class="list-group-item list-group-item-action waves-effect">Calais - Duisburg
-                  <span class="badge badge-primary badge-pill pull-right">0</span>
-                </a>
-                <a class="list-group-item list-group-item-action waves-effect">Calais (City)
-                  <span class="badge badge-primary badge-pill pull-right">0</span>
-                </a>
-                <a class="list-group-item list-group-item-action waves-effect">Osnabrück (City)
-                  <span class="badge badge-primary badge-pill pull-right">0</span>
-                </a>
-                <a class="list-group-item list-group-item-action waves-effect">Southampton (City)
-                  <span class="badge badge-primary badge-pill pull-right">0</span>
-                </a>
-                <a class="list-group-item list-group-item-action waves-effect">Duisburg
-                  <span class="badge badge-primary badge-pill pull-right">0</span>
-                </a>
+                <?php include 'truckyapi.php';?>
               </div>
               <!-- List group links -->
 
