@@ -541,13 +541,35 @@ position:absolute;
 
 
     //doughnut
+    var categories = new Array(10);
+    var counts = new Array(10);
+    var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function(){
+				if(this.readyState == 4 && this.status == 200){
+					var response = this.responseText;
+          var myObj = JSON.parse(response);
+
+            if(myObj != "") {
+				
+                user_count = myObj.length;
+                for (var a in myObj) {
+                  categories.push(myObj[a]["cargo"]);
+                  counts.push(myObj[a]["num"]);
+                };
+            } else {
+            };
+				}
+			};
+			xhttp.open("GET", "get_freight_data.php", true);
+			xhttp.send();
+      console.log(categories);
     var ctxD = document.getElementById("freightchart").getContext('2d');
     var myLineChart = new Chart(ctxD, {
       type: 'doughnut',
       data: {
-        labels: ["Red", "Green", "Yellow", "Grey", "Dark Grey"],
+        labels: categories,
         datasets: [{
-          data: [300, 50, 100, 40, 120],
+          data: counts,
           backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C", "#949FB1", "#4D5360"],
           hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
         }]
