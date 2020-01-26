@@ -554,7 +554,7 @@ position:absolute;
 				
                 user_count = myObj.length;
                 for (var a in myObj) {
-                  categories.push(myObj[a]["cargo"]);
+                  categories.push(myObj[a]["cargo"]+"("+myObj[a]["num"]+")");
                   counts.push(myObj[a]["num"]);
                 };
                 var ctxD = document.getElementById("freightchart").getContext('2d');
