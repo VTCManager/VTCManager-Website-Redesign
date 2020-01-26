@@ -111,16 +111,16 @@ position:absolute;
       </a>
 
       <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item active waves-effect">
-          <i class="fas fa-chart-pie mr-3"></i>Dashboard</a>
+        <a href="dashboard" class="list-group-item list-group-item-action waves-effect">
+          <i class="fas fa-chart-pie"></i> Dashboard</a>
         <a href="fahrtenbuch" class="list-group-item list-group-item-action waves-effect">
           <i class="fas fa-user"></i> Fahrtenbuch</a>
         <a href="karte" class="list-group-item list-group-item-action waves-effect">
           <i class="fas fa-building"></i> Karte</a>
         <a href="stellenanzeigen" class="list-group-item list-group-item-action waves-effect">
           <i class="fas fa-money-bill-alt"></i> Stellenanzeigen</a>
-        <a href="einstellungen" class="list-group-item list-group-item-action waves-effect">
-          <i class="fas fa-map"></i> Einstellungen</a>
+        <a href="stellenanzeigen" class="list-group-item active waves-effect">
+          <i class="fas fa-map mr-3"></i>Einstellungen</a>
       </div>
 
     </div>

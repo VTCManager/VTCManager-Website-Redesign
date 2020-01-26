@@ -1,2 +1,3 @@
-Dashboard.html
+Dashboard.php
 Wochen Tour, wv Touren pro woche gefahren sind.
+Strg + f    label: "Gefahrene Touren"
