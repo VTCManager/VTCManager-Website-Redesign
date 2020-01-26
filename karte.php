@@ -98,7 +98,7 @@ position:absolute;
             <!--Card content-->
             <div class="card-body">
 				<div id="map-container" class="z-depth-1-half map-container" style="height: 500px">
-  <iframe src="https://vtc.northwestvideo.de/map/" frameborder="0"
+  <iframe src="/map/" frameborder="0"
     style="border:0" allowfullscreen></iframe>
 </div>
 
