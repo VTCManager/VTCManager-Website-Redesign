@@ -186,6 +186,8 @@ position:absolute;
               <div class="card-header text-center">
                 Die Letzten 5 touren
               </div>
+              <!-- Add Last 5 Tours -->
+              <!-- Screen: https://cdn.discordapp.com/attachments/669997960829993032/671049813894234112/unknown.png -->
               <!-- List group links -->
               <div class="list-group list-group-flush">
                 <a class="list-group-item list-group-item-action waves-effect">Bla</a>
