@@ -349,7 +349,7 @@ position:absolute;
           <div class="card">
 
             <!-- Card header -->
-            <div class="card-header">Doughnut Chart</div>
+            <div class="card-header">Fracht Diagramm</div>
 
             <!--Card content-->
             <div class="card-body">
