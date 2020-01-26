@@ -113,14 +113,14 @@ position:absolute;
       <div class="list-group list-group-flush">
         <a href="dashboard" class="list-group-item list-group-item-action waves-effect">
           <i class="fas fa-chart-pie"></i> Dashboard</a>
-        <a href="events" class="list-group-item list-group-item-action waves-effect">
-          <i class="fas fa-user"></i> Events</a>
-        <a href="karte" class="list-group-item list-group-item-action waves-effect">
-          <i class="fas fa-building"></i> Karte</a>
         <a href="profile" class="list-group-item list-group-item-action waves-effect">
           <i class="fas fa-money-bill-alt"></i> Mein Profil</a>
-        <a href="fahrtenbuch" class="list-group-item list-group-item-action waves-effect">
-          <i class="fas fa-money-bill-alt"></i> Fahrtenbuch</a>
+        <a href="spedition" class="list-group-item list-group-item-action waves-effect">
+          <i class="fas fa-building"></i> Spedition</a>
+        <a href="karte" class="list-group-item list-group-item-action waves-effect">
+          <i class="fas fa-map-marked-alt"></i> Karte</a>
+        <a href="events" class="list-group-item list-group-item-action waves-effect">
+          <i class="fas fa-user"></i> Events</a>
         <a href="einstellungen" class="list-group-item active waves-effect">
           <i class="fas fa-map mr-3"></i>Einstellungen</a>
       </div>

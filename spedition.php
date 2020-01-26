@@ -113,12 +113,14 @@ position:absolute;
       <div class="list-group list-group-flush">
         <a href="dashboard" class="list-group-item list-group-item-action waves-effect">
           <i class="fas fa-chart-pie"></i> Dashboard</a>
-        <a href="fahrtenbuch" class="list-group-item list-group-item-action waves-effect">
-          <i class="fas fa-user"></i> Fahrtenbuch</a>
+        <a href="profile" class="list-group-item list-group-item-action waves-effect">
+          <i class="fas fa-money-bill-alt"></i> Mein Profil</a>
+        <a href="spedition" class="list-group-item active waves-effect">
+          <i class="fas fa-building mr-3"></i>Spedition</a>
         <a href="karte" class="list-group-item list-group-item-action waves-effect">
-          <i class="fas fa-building"></i> Karte</a>
-        <a href="stellenanzeigen" class="list-group-item active waves-effect">
-          <i class="fas fa-money-bill-alt mr-3"></i>Stellenanzeigen</a>
+          <i class="fas fa-map-marked-alt"></i> Karte</a>
+        <a href="events" class="list-group-item list-group-item-action waves-effect">
+          <i class="fas fa-user"></i> Events</a>
         <a href="einstellungen" class="list-group-item list-group-item-action waves-effect">
           <i class="fas fa-map"></i> Einstellungen</a>
       </div>
@@ -142,7 +144,7 @@ position:absolute;
           <h4 class="mb-2 mb-sm-0 pt-1">
             <a href="dashboard">Homepage</a>
             <span>/</span>
-            <span>Stellenanzeigen</span>
+            <span>Fahrtenbuch</span>
           </h4>
 
         </div>
