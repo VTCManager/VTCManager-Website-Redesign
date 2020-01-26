@@ -354,7 +354,7 @@ position:absolute;
             <!--Card content-->
             <div class="card-body">
 
-              <canvas id="doughnutChart"></canvas>
+              <canvas id="freightchart"></canvas>
 
             </div>
 
@@ -541,7 +541,7 @@ position:absolute;
 
 
     //doughnut
-    var ctxD = document.getElementById("doughnutChart").getContext('2d');
+    var ctxD = document.getElementById("freightchart").getContext('2d');
     var myLineChart = new Chart(ctxD, {
       type: 'doughnut',
       data: {
