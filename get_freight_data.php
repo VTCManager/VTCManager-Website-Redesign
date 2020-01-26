@@ -1,3 +1,4 @@
+
 <?php
 //es fehlt GET mit companyID
 function utf8ize($d) {
@@ -24,7 +25,7 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         $rows[] = $row;
     }
-    echo json_encode(utf8ize($rows));
+    echo json_encode($rows);
 } else {
     echo "0 results";
 }
