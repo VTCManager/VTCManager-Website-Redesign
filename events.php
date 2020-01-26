@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8"/>
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>VTCMInterface</title>
@@ -58,19 +58,22 @@ position:absolute;
           <!-- Left -->
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link waves-effect" href="#">Übersicht
+              <a class="nav-link waves-effect" href="#">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link waves-effect" href="https://mdbootstrap.com/docs/jquery/" target="_blank">Fahrtenbuch</a>
+              <a class="nav-link waves-effect" href="https://mdbootstrap.com/docs/jquery/" target="_blank">About
+                MDB</a>
             </li>
             <li class="nav-item">
               <a class="nav-link waves-effect" href="https://mdbootstrap.com/docs/jquery/getting-started/download/"
-                target="_blank">Mitarbeiter</a>
+                target="_blank">Free
+                download</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link waves-effect" href="https://mdbootstrap.com/education/bootstrap/" target="_blank">Einstellungen</a>
+              <a class="nav-link waves-effect" href="https://mdbootstrap.com/education/bootstrap/" target="_blank">Free
+                tutorials</a>
             </li>
           </ul>
 
@@ -108,10 +111,10 @@ position:absolute;
       </a>
 
       <div class="list-group list-group-flush">
-        <a href="dashboard" class="list-group-item active waves-effect">
-          <i class="fas fa-chart-pie mr-3"></i>Dashboard</a>
-        <a href="events" class="list-group-item list-group-item-action waves-effect">
-          <i class="fas fa-user"></i> Events</a>
+        <a href="dashboard" class="list-group-item list-group-item-action waves-effect">
+          <i class="fas fa-chart-pie"></i> Dashboard</a>
+        <a href="events" class="list-group-item active waves-effect">
+          <i class="fas fa-user mr-3"></i>Events</a>
         <a href="karte" class="list-group-item list-group-item-action waves-effect">
           <i class="fas fa-building"></i> Karte</a>
         <a href="profile" class="list-group-item list-group-item-action waves-effect">
@@ -141,7 +144,7 @@ position:absolute;
           <h4 class="mb-2 mb-sm-0 pt-1">
             <a href="dashboard">Homepage</a>
             <span>/</span>
-            <span>Dashboard</span>
+            <span>Fahrtenbuch</span>
           </h4>
 
         </div>
@@ -181,11 +184,25 @@ position:absolute;
             <div class="card-body">
 
               <div class="card-header text-center">
-                Verkehr Sim 1 (Trucky)
+                Verkehr (Trucky)
               </div>
               <!-- List group links -->
               <div class="list-group list-group-flush">
-                <?php include 'truckyapi.php';?>
+                <a class="list-group-item list-group-item-action waves-effect">Calais - Duisburg
+                  <span class="badge badge-primary badge-pill pull-right">0</span>
+                </a>
+                <a class="list-group-item list-group-item-action waves-effect">Calais (City)
+                  <span class="badge badge-primary badge-pill pull-right">0</span>
+                </a>
+                <a class="list-group-item list-group-item-action waves-effect">Osnabrück (City)
+                  <span class="badge badge-primary badge-pill pull-right">0</span>
+                </a>
+                <a class="list-group-item list-group-item-action waves-effect">Southampton (City)
+                  <span class="badge badge-primary badge-pill pull-right">0</span>
+                </a>
+                <a class="list-group-item list-group-item-action waves-effect">Duisburg
+                  <span class="badge badge-primary badge-pill pull-right">0</span>
+                </a>
               </div>
               <!-- List group links -->
 
@@ -348,12 +365,12 @@ position:absolute;
           <div class="card">
 
             <!-- Card header -->
-            <div class="card-header">Fracht Diagramm</div>
+            <div class="card-header">Doughnut Chart</div>
 
             <!--Card content-->
             <div class="card-body">
 
-              <canvas id="freightchart"></canvas>
+              <canvas id="doughnutChart"></canvas>
 
             </div>
 
@@ -474,7 +491,6 @@ position:absolute;
 
   <!-- Charts -->
   <script>
-
     // Line
     var ctx = document.getElementById("myChart").getContext('2d');
     var myChart = new Chart(ctx, {
@@ -541,28 +557,13 @@ position:absolute;
 
 
     //doughnut
-    var categories = new Array(0);
-    var counts = new Array(0);
-    var xhttp = new XMLHttpRequest();
-			xhttp.onreadystatechange = function(){
-				if(this.readyState == 4 && this.status == 200){
-					var response = this.responseText;
-          var myObj = JSON.parse(response);
-
-            if(myObj != "") {
-
-                user_count = myObj.length;
-                for (var a in myObj) {
-                  categories.push(myObj[a]["cargo"]+"("+myObj[a]["num"]+")");
-                  counts.push(myObj[a]["num"]);
-                };
-                var ctxD = document.getElementById("freightchart").getContext('2d');
+    var ctxD = document.getElementById("doughnutChart").getContext('2d');
     var myLineChart = new Chart(ctxD, {
       type: 'doughnut',
       data: {
-        labels: [categories[0], categories[1], categories[2], categories[3], categories[4]],
+        labels: ["Red", "Green", "Yellow", "Grey", "Dark Grey"],
         datasets: [{
-          data: [counts[0], counts[1], counts[2], counts[3], counts[4]],
+          data: [300, 50, 100, 40, 120],
           backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C", "#949FB1", "#4D5360"],
           hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
         }]
@@ -571,12 +572,6 @@ position:absolute;
         responsive: true
       }
     });
-            } else {
-            };
-				}
-			};
-			xhttp.open("GET", "get_freight_data.php", true);
-			xhttp.send();
 
   </script>
 
