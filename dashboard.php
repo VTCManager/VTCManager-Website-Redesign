@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>VTCMInterface</title>
@@ -475,6 +475,7 @@ position:absolute;
 
   <!-- Charts -->
   <script>
+    
     // Line
     var ctx = document.getElementById("myChart").getContext('2d');
     var myChart = new Chart(ctx, {
@@ -541,8 +542,8 @@ position:absolute;
 
 
     //doughnut
-    var categories = new Array(10);
-    var counts = new Array(10);
+    var categories = new Array(0);
+    var counts = new Array(0);
     var xhttp = new XMLHttpRequest();
 			xhttp.onreadystatechange = function(){
 				if(this.readyState == 4 && this.status == 200){
@@ -556,20 +557,13 @@ position:absolute;
                   categories.push(myObj[a]["cargo"]);
                   counts.push(myObj[a]["num"]);
                 };
-            } else {
-            };
-				}
-			};
-			xhttp.open("GET", "get_freight_data.php", true);
-			xhttp.send();
-      console.log(categories);
-    var ctxD = document.getElementById("freightchart").getContext('2d');
+                var ctxD = document.getElementById("freightchart").getContext('2d');
     var myLineChart = new Chart(ctxD, {
       type: 'doughnut',
       data: {
-        labels: categories,
+        labels: [categories[0], categories[1], categories[2], categories[3], categories[4]],
         datasets: [{
-          data: counts,
+          data: [counts[0], counts[1], counts[2], counts[3], counts[4]],
           backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C", "#949FB1", "#4D5360"],
           hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
         }]
@@ -578,6 +572,12 @@ position:absolute;
         responsive: true
       }
     });
+            } else {
+            };
+				}
+			};
+			xhttp.open("GET", "get_freight_data.php", true);
+			xhttp.send();
 
   </script>
 
