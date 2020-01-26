@@ -144,7 +144,7 @@ position:absolute;
           <h4 class="mb-2 mb-sm-0 pt-1">
             <a href="dashboard">Homepage</a>
             <span>/</span>
-            <span>Profile</span>
+            <span>Mein Profil</span>
           </h4>
 
         </div>
