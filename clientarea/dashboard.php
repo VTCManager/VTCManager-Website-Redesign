@@ -9,11 +9,11 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
   <!-- Bootstrap core CSS -->
-  <link href="http://vtc-test-server2.northwestvideo.de/clientarea/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/clientarea/css/bootstrap.min.css" rel="stylesheet">
   <!-- Material Design Bootstrap -->
-  <link href="http://vtc-test-server2.northwestvideo.de/clientarea/css/mdb.min.css" rel="stylesheet">
+  <link href="/clientarea/css/mdb.min.css" rel="stylesheet">
   <!-- Your custom styles (optional) -->
-  <link href="http://vtc-test-server2.northwestvideo.de/clientarea/css/style.min.css" rel="stylesheet">
+  <link href="/clientarea/css/style.min.css" rel="stylesheet">
   <style>
 
     .map-container{
@@ -458,13 +458,13 @@ position:absolute;
 
   <!-- SCRIPTS -->
   <!-- JQuery -->
-  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="/clientarea/js/jquery-3.4.1.min.js"></script>
   <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="js/popper.min.js"></script>
+  <script type="text/javascript" src="/clientarea/js/popper.min.js"></script>
   <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/clientarea/js/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <script type="text/javascript" src="/clientarea/js/mdb.min.js"></script>
   <!-- Initializations -->
   <script type="text/javascript">
     // Animations initialization
