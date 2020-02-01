@@ -477,14 +477,29 @@ position:absolute;
   <script>
 
     // Line
+    var categories = new Array(0);
+    var counts = new Array(0);
+    var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function(){
+				if(this.readyState == 4 && this.status == 200){
+					var response = this.responseText;
+          var myObj = JSON.parse(response);
+
+            if(myObj != "") {
+
+                user_count = myObj.length;
+                for (var a in myObj) {
+                  categories.push(myObj[a]["week"]);
+                  counts.push(myObj[a]["amount"]);
+                };
     var ctx = document.getElementById("myChart").getContext('2d');
     var myChart = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        labels: [categories[0], categories[1], categories[2], categories[3], categories[4]],
         datasets: [{
           label: '# of Votes',
-          data: [12, 19, 3, 5, 2, 3],
+          data: [counts[0], counts[1], counts[2], counts[3], counts[4]],
           backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
             'rgba(54, 162, 235, 0.2)',
@@ -514,6 +529,12 @@ position:absolute;
         }
       }
     });
+            } else {
+            };
+				}
+			};
+			xhttp.open("GET", "get_earned_money.php", true);
+			xhttp.send();
 
 
     //line
