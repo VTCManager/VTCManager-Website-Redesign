@@ -181,12 +181,12 @@ position:absolute;
             <div class="card-body">
 
               <div class="card-header text-center">
-                <?php include 'tmp-api.php';?>
+                <?php include 'php/tmp-api.php';?>
                 Verkehr Sim 1 [<?php echo $sim1_players;?>]
               </div>
               <!-- List group links -->
               <div class="list-group list-group-flush">
-                <?php include 'truckyapi.php';?>
+                <?php include 'php/truckyapi.php';?>
               </div>
               <!-- List group links -->
 
@@ -597,7 +597,7 @@ position:absolute;
             };
 				}
 			};
-			xhttp.open("GET", "get_freight_data.php", true);
+			xhttp.open("GET", "php/get_freight_data.php", true);
 			xhttp.send();
 
   </script>
