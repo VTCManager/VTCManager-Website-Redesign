@@ -539,11 +539,27 @@ position:absolute;
 
 
     //line
+    var categories3 = new Array(0);
+    var counts3 = new Array(0);
+    var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function(){
+				if(this.readyState == 4 && this.status == 200){
+					var response = this.responseText;
+          var myObj = JSON.parse(response);
+
+            if(myObj != "") {
+
+                user_count = myObj.length;
+                for (var a in myObj) {
+                  categories3.push("KW"+myObj[a]["week"]);
+                  counts3.push(myObj[a]["count"]);
+                };
+                console.log(categories[0]);
     var ctxL = document.getElementById("lineChart").getContext('2d');
     var myLineChart = new Chart(ctxL, {
       type: 'line',
       data: {
-        labels: ["Januar", "Februar", "März", "April", "Mai", "Juni"],
+        labels: [categories3[0], categories3[1], categories3[2], categories3[3], categories3[4]],
         datasets: [{
             label: "Gefahrene Touren",
             backgroundColor: [
@@ -553,7 +569,7 @@ position:absolute;
               'rgba(200, 99, 132, .7)',
             ],
             borderWidth: 2,
-            data: [0, 0, 0, 0, 0, 0]
+            data: [counts3[0], counts3[1], counts3[2], counts3[3], counts3[4]]
           }
         ]
       },
@@ -561,6 +577,12 @@ position:absolute;
         responsive: true
       }
     });
+            } else {
+            };
+				}
+			};
+			xhttp.open("GET", "php/get_tours.php", true);
+			xhttp.send();
 
 
     //doughnut
