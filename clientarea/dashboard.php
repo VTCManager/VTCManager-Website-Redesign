@@ -161,7 +161,7 @@ position:absolute;
             <!--Card content-->
             <div class="card-body">
 
-              <canvas id="myChart"></canvas>
+              <canvas id="incomechart"></canvas>
 
             </div>
 
@@ -477,8 +477,8 @@ position:absolute;
   <script>
 
     // Line
-    var categories = new Array(0);
-    var counts = new Array(0);
+    var categories2 = new Array(0);
+    var counts2 = new Array(0);
     var xhttp = new XMLHttpRequest();
 			xhttp.onreadystatechange = function(){
 				if(this.readyState == 4 && this.status == 200){
@@ -489,17 +489,18 @@ position:absolute;
 
                 user_count = myObj.length;
                 for (var a in myObj) {
-                  categories.push(myObj[a]["week"]);
-                  counts.push(myObj[a]["amount"]);
+                  categories2.push("KW"+myObj[a]["week"]);
+                  counts2.push(myObj[a]["amount"]);
                 };
-    var ctx = document.getElementById("myChart").getContext('2d');
+                console.log(categories[0]);
+    var ctx = document.getElementById("incomechart").getContext('2d');
     var myChart = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: [categories[0], categories[1], categories[2], categories[3], categories[4]],
+        labels: [categories2[0], categories2[1], categories2[2], categories2[3], categories2[4]],
         datasets: [{
-          label: '# of Votes',
-          data: [counts[0], counts[1], counts[2], counts[3], counts[4]],
+          label: 'Umsatz in €',
+          data: [counts2[0], counts2[1], counts2[2], counts2[3], counts2[4]],
           backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
             'rgba(54, 162, 235, 0.2)',
@@ -533,7 +534,7 @@ position:absolute;
             };
 				}
 			};
-			xhttp.open("GET", "get_earned_money.php", true);
+			xhttp.open("GET", "php/get_earned_money.php", true);
 			xhttp.send();
 
 
