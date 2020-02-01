@@ -58,22 +58,19 @@ position:absolute;
           <!-- Left -->
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link waves-effect" href="#">Home
+              <a class="nav-link waves-effect" href="#">Übersicht
                 <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link waves-effect" href="https://mdbootstrap.com/docs/jquery/" target="_blank">About
-                MDB</a>
+              <a class="nav-link waves-effect" href="https://mdbootstrap.com/docs/jquery/" target="_blank">Fahrtenbuch</a>
             </li>
             <li class="nav-item">
               <a class="nav-link waves-effect" href="https://mdbootstrap.com/docs/jquery/getting-started/download/"
-                target="_blank">Free
-                download</a>
+                target="_blank">Mitarbeiter</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link waves-effect" href="https://mdbootstrap.com/education/bootstrap/" target="_blank">Free
-                tutorials</a>
+              <a class="nav-link waves-effect" href="https://mdbootstrap.com/education/bootstrap/" target="_blank">Einstellungen</a>
             </li>
           </ul>
 
@@ -144,7 +141,7 @@ position:absolute;
           <h4 class="mb-2 mb-sm-0 pt-1">
             <a href="dashboard">Homepage</a>
             <span>/</span>
-            <span>Fahrtenbuch</span>
+            <span>Spedition</span>
           </h4>
 
         </div>

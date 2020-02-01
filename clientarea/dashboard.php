@@ -181,7 +181,8 @@ position:absolute;
             <div class="card-body">
 
               <div class="card-header text-center">
-                Verkehr Sim 1 (Trucky)
+                <?php include 'tmp-api.php';?>
+                Verkehr Sim 1 [<?php echo $sim1_players;?>]
               </div>
               <!-- List group links -->
               <div class="list-group list-group-flush">
