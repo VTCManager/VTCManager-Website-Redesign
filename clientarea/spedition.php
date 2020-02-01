@@ -104,7 +104,7 @@ position:absolute;
     <div class="sidebar-fixed position-fixed">
 
       <a class="logo-wrapper waves-effect">
-        <img src="https://mdbootstrap.com/img/logo/mdb-email.png" class="img-fluid" alt="">
+        <img src="/clientarea/img/logo.png" class="img-fluid" alt="" height=100 >
       </a>
 
       <div class="list-group list-group-flush">
