@@ -12,11 +12,11 @@ $page_now = "management/settings";
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
   <!-- Bootstrap core CSS -->
-  <link href="http://vtc-test-server2.northwestvideo.de/clientarea/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/clientarea/management/css/bootstrap.min.css" rel="stylesheet">
   <!-- Material Design Bootstrap -->
-  <link href="http://vtc-test-server2.northwestvideo.de/clientarea/css/mdb.min.css" rel="stylesheet">
+  <link href="/clientarea/management/css/mdb.min.css" rel="stylesheet">
   <!-- Your custom styles (optional) -->
-  <link href="http://vtc-test-server2.northwestvideo.de/clientarea/css/style.min.css" rel="stylesheet">
+  <link href="/clientarea/management/css/style.min.css" rel="stylesheet">
   <style>
 
     .map-container{
