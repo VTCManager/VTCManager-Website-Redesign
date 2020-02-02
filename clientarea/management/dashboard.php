@@ -431,13 +431,13 @@ position:absolute;
 
   <!-- SCRIPTS -->
   <!-- JQuery -->
-  <script type="text/javascript" src="/clientarea/js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="/clientarea/management/js/jquery-3.4.1.min.js"></script>
   <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="/clientarea/js/popper.min.js"></script>
+  <script type="text/javascript" src="/clientarea/management/js/popper.min.js"></script>
   <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="/clientarea/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/clientarea/management/js/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="/clientarea/js/mdb.min.js"></script>
+  <script type="text/javascript" src="/clientarea/management/js/mdb.min.js"></script>
   <!-- Initializations -->
   <script type="text/javascript">
     // Animations initialization

@@ -26,7 +26,7 @@ if($page_now == "management/dashboard"){?>
 		<div class="sidebar-fixed position-fixed">
 
       <a class="logo-wrapper waves-effect">
-        <img src="/clientarea/img/logo.png" class="img-fluid" alt="" height=100 >
+        <img src="/clientarea/management/img/logo.png" class="img-fluid" alt="" height=100 >
       </a>
 
       <div class="list-group list-group-flush">
@@ -49,7 +49,7 @@ if($page_now == "management/dashboard"){?>
 		     <div class="sidebar-fixed position-fixed">
 
       <a class="logo-wrapper waves-effect">
-        <img src="/clientarea/img/logo.png" class="img-fluid" alt="" height=100 >
+        <img src="/clientarea/management/img/logo.png" class="img-fluid" alt="" height=100 >
       </a>
 
       <div class="list-group list-group-flush">
@@ -72,7 +72,7 @@ if($page_now == "management/dashboard"){?>
 		    <div class="sidebar-fixed position-fixed">
 
       <a class="logo-wrapper waves-effect">
-        <img src="/clientarea/img/logo.png" class="img-fluid" alt="" height=100 >
+        <img src="/clientarea/management/img/logo.png" class="img-fluid" alt="" height=100 >
       </a>
 
       <div class="list-group list-group-flush">
@@ -95,7 +95,7 @@ if($page_now == "management/dashboard"){?>
 		    <div class="sidebar-fixed position-fixed">
 
       <a class="logo-wrapper waves-effect">
-        <img src="/clientarea/img/logo.png" class="img-fluid" alt="" height=100 >
+        <img src="/clientarea/management/img/logo.png" class="img-fluid" alt="" height=100 >
       </a>
 
       <div class="list-group list-group-flush">
@@ -118,7 +118,7 @@ if($page_now == "management/dashboard"){?>
 		<div class="sidebar-fixed position-fixed">
 
       <a class="logo-wrapper waves-effect">
-        <img src="/clientarea/img/logo.png" class="img-fluid" alt="" height=100 >
+        <img src="/clientarea/management/img/logo.png" class="img-fluid" alt="" height=100 >
       </a>
 
       <div class="list-group list-group-flush">
