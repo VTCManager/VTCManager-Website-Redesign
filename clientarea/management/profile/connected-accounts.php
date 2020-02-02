@@ -60,17 +60,17 @@ $page_now = "management/profile";
 
           <!-- Left -->
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link waves-effect" href="#">Übersicht
-                <span class="sr-only">(current)</span>
+            <li class="nav-item">
+              <a class="nav-link waves-effect" href="/clientarea/management/profile">Übersicht
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link waves-effect" href="https://mdbootstrap.com/docs/jquery/" target="_blank">Fahrtenbuch</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
               <a class="nav-link waves-effect" href="connected-accounts"
                 target="_blank">Verknüpfungen</a>
+                <span class="sr-only">(current)</span>
             </li>
             <li class="nav-item">
               <a class="nav-link waves-effect" href="https://mdbootstrap.com/education/bootstrap/" target="_blank">Einstellungen</a>
@@ -211,74 +211,64 @@ $page_now = "management/profile";
         </div>
 
       </div>
+      <div class="modal fade" id="connecttoIFMP" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Mit IFMP verknüpfen...</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <i class="fas fa-truck prefix grey-text"></i>
+          <input type="email" id="defaultForm-email" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="defaultForm-email">SteamID64 oder IFMP ID</label>
+        </div>
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button class="btn btn-default">Verknüpfen</button>
+      </div>
+    </div>
+  </div>
+</div>
       <!-- Heading -->
-
-      <!--Grid row-->
-      <div class="row wow fadeIn">
+<div class="row wow fadeIn">
 
         <!--Grid column-->
         <div class="col-md-9 mb-4">
+          <!-- Card Wider -->
+<div class="card card-cascade wider" style="width:30%; background-color: #2e2e2e!important;">
 
-          <!--Card-->
-          <div class="card">
+  <!-- Card image -->
+  <div class="view view-cascade overlay">
+    <img class="card-img-top" src="../img/logo-ifmp.png" alt="Card image cap" style="height: 150px;width: auto;">
+    <a href="#!">
+      <div class=".rgba-blue-slight"></div>
+    </a>
+  </div>
 
-            <!--Card content-->
-            <div class="card-body">
-              <?php
-              $sql = "SELECT * FROM user_data WHERE username='$username_cookie'";
-              $result = $conn->query($sql);
-          		if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-              ?>
-              <h3><?php echo $row['username'];?></h3>
-              <div style="height: 50px;"></div>
-              <p>Bla</p>
-              <?php
-            }
-          }
-              ?>
-            </div>
+  <!-- Card content -->
+  <div class="card-body elegant-color white-text rounded-bottom">
 
-          </div>
-          <!--/.Card-->
+    <!-- Title -->
+    <h4 class="card-title"><strong>ETS2 Multiplayer Netzwerk</strong></h4>
+    <!-- Subtitle -->
+    <h5 class="blue-text pb-2"><a href="https://infinitetruckers.com/"><strong>Zu IFMP</strong></a></h5>
 
-        </div>
-        <!--Grid column-->
+    <!-- Card footer -->
+    <div class="card-footer text-muted text-center mt-4">
+      <a class="btn btn-primary" data-toggle="modal" data-target="#connecttoIFMP">Verknüpfen</a>
+    </div>
 
-        <!--Grid column-->
-        <div class="col-md-3 mb-4">
+  </div>
+  </div>
+  </div>
 
-          <!--Card-->
-          <div class="card mb-4">
-
-            <!--Card content-->
-            <div class="card-body">
-
-              <div class="card-header text-center">
-                Die Letzten 5 touren
-              </div>
-              <!-- Add Last 5 Tours -->
-              <!-- Screen: https://cdn.discordapp.com/attachments/669997960829993032/671049813894234112/unknown.png -->
-              <!-- List group links -->
-              <div class="list-group list-group-flush">
-                <a class="list-group-item list-group-item-action waves-effect">Bla</a>
-                <a class="list-group-item list-group-item-action waves-effect">Bla</a>
-                <a class="list-group-item list-group-item-action waves-effect">Bla</a>
-                <a class="list-group-item list-group-item-action waves-effect">Bla</a>
-                <a class="list-group-item list-group-item-action waves-effect">Bla</a>
-              </div>
-              <!-- List group links -->
-
-            </div>
-
-          </div>
-          <!--/.Card-->
-
-        </div>
-        <!--Grid column-->
-
-      </div>
-      <!--Grid row-->
+</div>
+<!-- Card Wider -->
     </div>
   </main>
 <?php
