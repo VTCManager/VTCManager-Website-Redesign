@@ -230,7 +230,7 @@ $page_now = "management/profile";
           		if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
               ?>
-              <h3><?php echo $row['nickname'];?></h3>
+              <h3><?php echo $row['username'];?></h3>
               <div style="height: 50px;"></div>
               <p>Bla</p>
               <?php
