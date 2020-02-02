@@ -49,7 +49,7 @@ position:absolute;
 	width: 100%;
 	height: 100%;
 	z-index: 9999;
-	background: url(img/loader.gif) center no-repeat black;
+	background: url(../img/loader.gif) center no-repeat black;
 }
 </style>
 </head>
@@ -125,7 +125,7 @@ position:absolute;
 
     <!-- Sidebar -->
     <?php
-    include 'php/sidebar.php';?>
+    include '../php/sidebar.php';?>
     <!-- Sidebar -->
 
   </header>
@@ -184,12 +184,12 @@ position:absolute;
             <div class="card-body">
 
               <div class="card-header text-center">
-                <?php include 'php/tmp-api.php';?>
+                <?php include '../php/tmp-api.php';?>
                 Verkehr Sim 1 [<?php echo $sim1_players;?>]
               </div>
               <!-- List group links -->
               <div class="list-group list-group-flush">
-                <?php include 'php/truckyapi.php';?>
+                <?php include '../php/truckyapi.php';?>
                 <a class="text-right" href="https://truckyapp.com/">powered by Trucky<a/>
               </div>
               <!-- List group links -->
@@ -234,7 +234,7 @@ position:absolute;
 
                 <!-- Table body -->
                 <tbody>
-                  <?php include 'php/get_latest_tours.php';?>
+                  <?php include '../php/get_latest_tours.php';?>
 
                 </tbody>
                 <!-- Table body -->
@@ -482,7 +482,6 @@ position:absolute;
                   categories2.push("KW"+myObj[a]["week"]);
                   counts2.push(myObj[a]["amount"]);
                 };
-                console.log(categories[0]);
     var ctx = document.getElementById("incomechart").getContext('2d');
     var myChart = new Chart(ctx, {
       type: 'bar',
@@ -524,7 +523,7 @@ position:absolute;
             };
 				}
 			};
-			xhttp.open("GET", "php/get_earned_money.php", true);
+			xhttp.open("GET", "../php/get_earned_money.php", true);
 			xhttp.send();
 
 
@@ -544,7 +543,6 @@ position:absolute;
                   categories3.push("KW"+myObj[a]["week"]);
                   counts3.push(myObj[a]["count"]);
                 };
-                console.log(categories[0]);
     var ctxL = document.getElementById("lineChart").getContext('2d');
     var myLineChart = new Chart(ctxL, {
       type: 'line',
@@ -571,7 +569,7 @@ position:absolute;
             };
 				}
 			};
-			xhttp.open("GET", "php/get_tours.php", true);
+			xhttp.open("GET", "../php/get_tours.php", true);
 			xhttp.send();
 
 
@@ -610,7 +608,7 @@ position:absolute;
             };
 				}
 			};
-			xhttp.open("GET", "php/get_freight_data.php", true);
+			xhttp.open("GET", "../php/get_freight_data.php", true);
 			xhttp.send();
 
   </script>
