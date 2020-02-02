@@ -210,43 +210,29 @@ position:absolute;
 
           <!--Card-->
           <div class="card">
-
+            
+            <div class="card-header">Die letzten 3 Touren</div>
             <!--Card content-->
             <div class="card-body">
+              
 
               <!-- Table  -->
               <table class="table table-hover">
                 <!-- Table head -->
                 <thead class="blue-grey lighten-4">
                   <tr>
-                    <th>#</th>
-                    <th>Lorem</th>
-                    <th>Ipsum</th>
-                    <th>Dolor</th>
+                    <th>Startort</th>
+                    <th>Zielort</th>
+                    <th>Fracht</th>
+                    <th>Fahrer</th>
                   </tr>
                 </thead>
                 <!-- Table head -->
 
                 <!-- Table body -->
                 <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Cell 1</td>
-                    <td>Cell 2</td>
-                    <td>Cell 3</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Cell 4</td>
-                    <td>Cell 5</td>
-                    <td>Cell 6</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Cell 7</td>
-                    <td>Cell 8</td>
-                    <td>Cell 9</td>
-                  </tr>
+                  <?php include 'php/get_latest_tours.php';?>
+                
                 </tbody>
                 <!-- Table body -->
               </table>
