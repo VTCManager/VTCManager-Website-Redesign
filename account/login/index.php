@@ -9,8 +9,8 @@ die();
 <!DOCTYPE html>
 <html lang="de" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         
-        <?php include '../basis_header.php'; ?> 
-	<link rel="stylesheet" type="text/css" href="https://vtc.northwestvideo.de/basis_files/interface_main.css">
+        <?php include '../../basis_header.php'; ?> 
+	<link rel="stylesheet" type="text/css" href="/basis_files/interface_main.css">
 
         <title>Anmelden - VTCManager</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
