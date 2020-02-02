@@ -7,7 +7,7 @@ if(! $conn )
 {  
   die("2");  
 }  
-$sql = "SELECT cargo,COUNT(*) AS num FROM tour_table GROUP BY cargo ORDER BY COUNT(*) DESC LIMIT 5";
+$sql = "SELECT cargo,COUNT(*) AS num FROM tour_table WHERE companyID=1 GROUP BY cargo ORDER BY COUNT(*) DESC LIMIT 5";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
