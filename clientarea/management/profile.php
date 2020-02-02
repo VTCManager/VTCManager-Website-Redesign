@@ -192,7 +192,6 @@ $page_now = "management/profile";
       echo "Error updating record: " . $conn->error;
   	die();
   }
-} else {
   ?>
   <main class="pt-5 mx-lg-5">
     <div class="container-fluid mt-5">
@@ -226,15 +225,17 @@ $page_now = "management/profile";
             <!--Card content-->
             <div class="card-body">
               <?php
-              $sql = "SELECT * FROM user_data WHERE userid='$navbar_userid'";
-            	$result = $conn->query($sql);
+              $sql = "SELECT * FROM user_data WHERE username='$username_cookie'";
+              $result = $conn->query($sql);
+          		if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
               ?>
               <h3><?php echo $row['nickname'];?></h3>
               <div style="height: 50px;"></div>
               <p>Bla</p>
               <?php
-                }
+            }
+          }
               ?>
             </div>
 
@@ -281,7 +282,7 @@ $page_now = "management/profile";
     </div>
   </main>
 <?php
-}
+} else {}
 ?>
   <!--Main layout-->
 
