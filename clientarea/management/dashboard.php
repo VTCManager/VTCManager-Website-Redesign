@@ -187,6 +187,7 @@ position:absolute;
               <!-- List group links -->
               <div class="list-group list-group-flush">
                 <?php include 'php/truckyapi.php';?>
+                <a class="text-right" href="https://truckyapp.com/">powered by Trucky<a/>
               </div>
               <!-- List group links -->
 
