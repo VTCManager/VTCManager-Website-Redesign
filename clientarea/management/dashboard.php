@@ -49,7 +49,7 @@ position:absolute;
 	width: 100%;
 	height: 100%;
 	z-index: 9999;
-	background: url(img/loader.gif) center no-repeat #fff;
+	background: url(img/loader.gif) center no-repeat black;
 }
 </style>
 </head>
@@ -124,7 +124,7 @@ position:absolute;
     <!-- Navbar -->
 
     <!-- Sidebar -->
-    <?php 
+    <?php
     include 'php/sidebar.php';?>
     <!-- Sidebar -->
 
@@ -213,11 +213,11 @@ position:absolute;
 
           <!--Card-->
           <div class="card">
-            
+
             <div class="card-header">Die letzten 3 Touren</div>
             <!--Card content-->
             <div class="card-body">
-              
+
 
               <!-- Table  -->
               <table class="table table-hover">
@@ -235,7 +235,7 @@ position:absolute;
                 <!-- Table body -->
                 <tbody>
                   <?php include 'php/get_latest_tours.php';?>
-                
+
                 </tbody>
                 <!-- Table body -->
               </table>
