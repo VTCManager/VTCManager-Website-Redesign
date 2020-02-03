@@ -66,14 +66,13 @@ $page_now = "management/profile";
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link waves-effect" href="https://mdbootstrap.com/docs/jquery/" target="_blank">Fahrtenbuch</a>
+              <a class="nav-link waves-effect" href="https://mdbootstrap.com/docs/jquery/">Fahrtenbuch</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link waves-effect" href="connected-accounts"
-                target="_blank">Verknüpfungen</a>
+              <a class="nav-link waves-effect" href="connected-accounts">Verknüpfungen</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link waves-effect" href="https://mdbootstrap.com/education/bootstrap/" target="_blank">Einstellungen</a>
+              <a class="nav-link waves-effect" href="https://mdbootstrap.com/education/bootstrap/">Einstellungen</a>
             </li>
           </ul>
 

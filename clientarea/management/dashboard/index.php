@@ -86,14 +86,13 @@ position:absolute;
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link waves-effect" href="logbook" target="_blank">Fahrtenbuch</a>
+              <a class="nav-link waves-effect" href="logbook">Fahrtenbuch</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link waves-effect" href="https://mdbootstrap.com/docs/jquery/getting-started/download/"
-                target="_blank">Mitarbeiter</a>
+              <a class="nav-link waves-effect" href="https://mdbootstrap.com/docs/jquery/getting-started/download/">Mitarbeiter</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link waves-effect" href="https://mdbootstrap.com/education/bootstrap/" target="_blank">Einstellungen</a>
+              <a class="nav-link waves-effect" href="https://mdbootstrap.com/education/bootstrap/">Einstellungen</a>
             </li>
           </ul>
 
