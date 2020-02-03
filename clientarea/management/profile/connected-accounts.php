@@ -235,9 +235,9 @@ function checkIFMPuser() {
       </div>
       <div class="modal-footer d-flex justify-content-center">
         <button class="btn btn-default" onclick="checkIFMPuser()" id="IFMPConnectBT">Verknüpfen</button>
-        <button class="btn btn-primary" id="IFMPConnectBTLoading" style="display:none;" type="button" disabled>
+        <button class="btn btn-default" id="IFMPConnectBTLoading" style="display:none;" type="button" disabled>
 			<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-			Loading...
+			Verbinde...
 			</button>
       </div>
     </div>
