@@ -107,6 +107,12 @@ $page_now = "management/profile";
     <?php
     include '../php/sidebar.php';?>
     <!-- Sidebar -->
+    <script>
+function checkIFMPuser() {
+  document.getElementById("IFMPConnectBT").style.display="none";
+  document.getElementById("IFMPConnectBTLoading").style.display="block";
+}
+</script>
 
   </header>
   <!--Main Navigation-->
@@ -229,7 +235,11 @@ $page_now = "management/profile";
         </div>
       </div>
       <div class="modal-footer d-flex justify-content-center">
-        <button class="btn btn-default">Verknüpfen</button>
+        <button class="btn btn-default" onclick="checkIFMPuser()" id="IFMPConnectBT">Verknüpfen</button>
+        <button class="btn btn-primary" id="IFMPConnectBTLoading" style="display:none;" type="button" disabled>
+			<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+			Loading...
+			</button>
       </div>
     </div>
   </div>

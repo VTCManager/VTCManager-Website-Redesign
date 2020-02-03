@@ -1,17 +1,18 @@
 
 <?php
-//es fehlt GET mit companyID
-$host = 'localhost:3306';    
-$conn = mysqli_connect($host, "system_user_vtc", "8rh98w23nrfubsediofnm<pbi9ufuoipbgiwtFFF","vtcmanager"); 
-if(! $conn )  
-{  
-  die("2");  
-}  
+include 'get_user_data.php';
+$sql = "SELECT * FROM company_information_table WHERE id=$company";
+		$result = $conn->query($sql);
+		if ($result->num_rows > 0) {
+			while($row = $result->fetch_assoc()) {
+				$company_name = $row["name"];
+			}
+		}
 $day = date('w');
 $week_start = date('Y-m-d', strtotime('-'.$day.' days + 1 day'));
 $date = new DateTime();
 $week = $date->format("W");
-$sql = "SELECT amount FROM money_transfer WHERE receiver='VTCManager Beta Company' AND DATE( date_sent ) >= '$week_start'";
+$sql = "SELECT amount FROM money_transfer WHERE receiver='$company_name' AND DATE( date_sent ) >= '$week_start'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -33,7 +34,7 @@ if ($result->num_rows > 0) {
     $day = date('w');
 $week_start2 = date('Y-m-d',strtotime("$week_start -7 days",));
 $week = date('W', strtotime('-7 days'));
-$sql = "SELECT amount FROM money_transfer WHERE receiver='VTCManager Beta Company' AND DATE( date_sent ) >= '$week_start2'AND DATE( date_sent ) <= '$week_start'";
+$sql = "SELECT amount FROM money_transfer WHERE receiver='$company_name' AND DATE( date_sent ) >= '$week_start2'AND DATE( date_sent ) <= '$week_start'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -55,7 +56,7 @@ if ($result->num_rows > 0) {
         $day = date('w');
 $week_start3 = date('Y-m-d',strtotime("$week_start2 -7 days",));
 $week = date('W', strtotime('-14 days'));
-$sql = "SELECT amount FROM money_transfer WHERE receiver='VTCManager Beta Company' AND DATE( date_sent ) >= '$week_start3'AND DATE( date_sent ) <= '$week_start2'";
+$sql = "SELECT amount FROM money_transfer WHERE receiver='$company_name' AND DATE( date_sent ) >= '$week_start3'AND DATE( date_sent ) <= '$week_start2'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -77,7 +78,7 @@ if ($result->num_rows > 0) {
         $day = date('w');
 $week_start4 = date('Y-m-d',strtotime("$week_start3 -7 days",));
 $week = date('W', strtotime('-21 days'));
-$sql = "SELECT amount FROM money_transfer WHERE receiver='VTCManager Beta Company' AND DATE( date_sent ) >= '$week_start4'AND DATE( date_sent ) <= '$week_start3'";
+$sql = "SELECT amount FROM money_transfer WHERE receiver='$company_name' AND DATE( date_sent ) >= '$week_start4'AND DATE( date_sent ) <= '$week_start3'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -99,7 +100,7 @@ if ($result->num_rows > 0) {
         $day = date('w');
 $week_start3 = date('Y-m-d',strtotime("$week_start4 -7 days",));
 $week = date('W', strtotime('-28 days'));
-$sql = "SELECT amount FROM money_transfer WHERE receiver='VTCManager Beta Company' AND DATE( date_sent ) >= '$week_start5'AND DATE( date_sent ) <= '$week_start4'";
+$sql = "SELECT amount FROM money_transfer WHERE receiver='$company_name' AND DATE( date_sent ) >= '$week_start5'AND DATE( date_sent ) <= '$week_start4'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

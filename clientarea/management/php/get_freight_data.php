@@ -1,13 +1,7 @@
 
 <?php
-//es fehlt GET mit companyID
-$host = 'localhost:3306';    
-$conn = mysqli_connect($host, "system_user_vtc", "8rh98w23nrfubsediofnm<pbi9ufuoipbgiwtFFF","vtcmanager"); 
-if(! $conn )  
-{  
-  die("2");  
-}  
-$sql = "SELECT cargo,COUNT(*) AS num FROM tour_table WHERE companyID=1 GROUP BY cargo ORDER BY COUNT(*) DESC LIMIT 5";
+include 'get_user_data.php';  
+$sql = "SELECT cargo,COUNT(*) AS num FROM tour_table WHERE companyID=$company GROUP BY cargo ORDER BY COUNT(*) DESC LIMIT 5";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
