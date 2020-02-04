@@ -24,7 +24,7 @@ if ($result->num_rows > 0) {
 				if ($EditLogbook=="1"){
 				$tour_approved_line = 
 					<<<EOT
-					<button type="button" onclick="window.location='job_report?username=$found_tour_username&jobid=$found_tour';" class="btn btn-info">Prüfung</button>
+					<button type="button" onclick="window.location='../job_report?username=$found_tour_username&jobid=$found_tour';" class="btn btn-info">Prüfung</button>
 					EOT;
 				}
 			}
@@ -55,7 +55,7 @@ if ($result->num_rows > 0) {
 			echo '<td>'.$found_tour_username.'</td>';
 		}
 		echo <<<EOT
-		<td><a href="job_report?username=$found_tour_username&jobid=$found_tour">$found_tour_cargo</a></td>
+		<td><a href="../job_report?username=$found_tour_username&jobid=$found_tour">$found_tour_cargo</a></td>
 		<td>$found_tour_depature</td>
 		<td>$found_tour_destination</td>
 		<td>$money_earned €</td>

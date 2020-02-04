@@ -1,65 +1,9 @@
 <?php
+include 'php/get_user_data.php';
 //GET parameters
 $requested_user_name= $_GET['username'];
 $requested_job_id= $_GET['jobid'];
 $requested_accept = $_GET['accpt'];
-
-//get tasty cookies
-$username_cookie = $_COOKIE["username"];
-$authCode_cookie = $_COOKIE["authWebToken"];
-
-//connect to DB
-$host = 'localhost:3306';
-$conn = mysqli_connect($host, "system_user_vtc", "8rh98w23nrfubsediofnm<pbi9ufuoipbgiwtFFF","vtcmanager");
-if(! $conn )
-{
-  die("2");
-}
-
-//authCode aus Datenbank holen
-$sql = "SELECT * FROM authCode_table WHERE Token='$authCode_cookie'";
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-	while($row = $result->fetch_assoc()) {
-		$found_authCode_owner = $row["User"];
-	}
-} else { //authCode nicht gefunden
-	setcookie("username", "", time() - 13600,'/');
-	setcookie("authWebToken", "", time() - 13600,'/');
-	header("Refresh:0; url=https://vtc.northwestvideo.de/");
-	die("authCode not found");
-}
-if ($found_authCode_owner != $username_cookie) { //Besitzer des AuthCode stimmt nicht mit Username-Cookie überein
-	setcookie("username", "", time() - 13600,'/');
-	setcookie("authWebToken", "", time() - 13600,'/');
-	header("Refresh:0; url=https://vtc.northwestvideo.de/");
-	die("wrong owner detected");
-}
-
-//hole Benutzerdaten
-$sql = "SELECT * FROM user_data WHERE username=$username_cookie";
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-	while($row = $result->fetch_assoc()) {
-		$userid = $row["userID"];
-		$rank_user = $row["rank"];
-		$profile_pic = $row["profile_pic_url"];
-		$company = $row["userCompanyID"];
-		//hole Berechtigungen des Benutzers
-		$sql2 = "SELECT * FROM rank WHERE name='$rank_user' AND forCompanyID=$company";
-		$result2 = $conn->query($sql2);
-		if ($result2->num_rows > 0) {
-			while($row = $result2->fetch_assoc()) {
-				$EditLogbook = $row["EditLogbook"];
-			}
-		}
-	}
-} else {//Nutzer nicht gefunden
-	setcookie("username", "", time() - 13600,'/');
-	setcookie("authWebToken", "", time() - 13600,'/');
-	header("Refresh:0; url=https://vtc.northwestvideo.de/");
-	die("user not found");
-}
 
 //hole Fahrtdaten
 $sql = "SELECT * FROM tour_table WHERE tour_id=$requested_job_id AND username='$requested_user_name'";
