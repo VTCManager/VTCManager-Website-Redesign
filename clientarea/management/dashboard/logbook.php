@@ -25,6 +25,20 @@ include '../php/get_user_data.php';
 		// Animate loader off screen
 		$(".se-pre-con").fadeOut("slow");;
 	});</script>
+  <script>
+function delete_entry(elmnt) {
+	var save_val = $(elmnt).attr("data-id");
+	var res = save_val.split(",");
+	var xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange = function() {
+		console.log(xmlhttp.response);
+			
+	};
+	xmlhttp.open("GET", "delete_entry.php?tour_id="+res[1]+"&username="+res[0], true);
+	xmlhttp.send();
+	window.location.reload();
+}
+</script>
   <style>
 
     .map-container{

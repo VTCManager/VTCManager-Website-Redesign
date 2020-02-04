@@ -1,46 +1,4 @@
 <?php
-/*$username_cookie = $_COOKIE["username"]; 
-$authCode_cookie = $_COOKIE["authWebToken"]; 
-if (!isset($_COOKIE["authWebToken"])&&!isset($_COOKIE["username"])) {
-    header("Status: 404 Not Found");
-	die();
-}*/
-$host = 'localhost:3306';    
-$conn = mysqli_connect($host, "system_user_vtc", "8rh98w23nrfubsediofnm<pbi9ufuoipbgiwtFFF","vtcmanager"); 
-if(! $conn )  
-{  
-  die("2");  
-}  
-/*
-$sql = "SELECT * FROM authCode_table WHERE Token='$authCode_cookie'";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        $found_token_owner = $row["User"];
-    }
-} else {
-    echo "0 results";
-}
-if ($found_token_owner != $username_cookie) {
-	die("wrong owner detected");
-}
-$sql = "SELECT * FROM user_data WHERE username='$found_token_owner'";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-		$found_rank = $row["rank"];
-		$found_company = $row["userCompanyID"];
-    }
-} else {
-    echo "0 results";
-}
-if ($found_rank != "owner"){
-	die("404: not found");
-}*/
 $sql = "SELECT * FROM tour_table WHERE companyID=$company ORDER BY `tour_date` DESC";
 $result = $conn->query($sql);
 
@@ -66,7 +24,7 @@ if ($result->num_rows > 0) {
 				if ($EditLogbook=="1"){
 				$tour_approved_line = 
 					<<<EOT
-					<button type="button" onclick="window.location='http://vtc.northwestvideo.de/job_report?username=$found_tour_username&jobid=$found_tour';" class="btn btn-info">Prüfung</button>
+					<button type="button" onclick="window.location='job_report?username=$found_tour_username&jobid=$found_tour';" class="btn btn-info">Prüfung</button>
 					EOT;
 				}
 			}
@@ -91,13 +49,13 @@ if ($result->num_rows > 0) {
 			// output data of each row
 			while($row2 = $result2->fetch_assoc()) {
 				$found_job_user_id = $row2["userID"];
-				echo '<td><a href="http://vtc.northwestvideo.de/account/?userid='.$found_job_user_id.'">'.$found_tour_username.'</a></td>';
+				echo '<td><a href="/account/?userid='.$found_job_user_id.'">'.$found_tour_username.'</a></td>';
 			}
 		} else {
 			echo '<td>'.$found_tour_username.'</td>';
 		}
 		echo <<<EOT
-		<td><a href="http://vtc.northwestvideo.de/job_report?username=$found_tour_username&jobid=$found_tour">$found_tour_cargo</a></td>
+		<td><a href="job_report?username=$found_tour_username&jobid=$found_tour">$found_tour_cargo</a></td>
 		<td>$found_tour_depature</td>
 		<td>$found_tour_destination</td>
 		<td>$money_earned €</td>
