@@ -160,7 +160,7 @@ position:absolute;
             <div class="card-body">
 
               <div class="card-header text-center">
-                Fahrtenbuch von Firma XYZ
+                Fahrtenbuch von <?php echo $company_name; ?>
               </div>
               <!-- List group links -->
               <div class="list-group list-group-flush">
