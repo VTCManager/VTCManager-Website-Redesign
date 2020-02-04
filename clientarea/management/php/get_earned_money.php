@@ -1,13 +1,6 @@
 
 <?php
 include 'get_user_data.php';
-$sql = "SELECT * FROM company_information_table WHERE id=$company";
-		$result = $conn->query($sql);
-		if ($result->num_rows > 0) {
-			while($row = $result->fetch_assoc()) {
-				$company_name = $row["name"];
-			}
-		}
 $day = date('w');
 $week_start = date('Y-m-d', strtotime('-'.$day.' days + 1 day'));
 $date = new DateTime();

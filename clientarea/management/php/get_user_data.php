@@ -78,4 +78,12 @@ if ($conn->query($sql) === TRUE) {
     echo "Error updating record: " . $conn->error;
 	die();
 }
+$sql = "SELECT * FROM company_information_table WHERE id=$company";
+		$result = $conn->query($sql);
+		if ($result->num_rows > 0) {
+			while($row = $result->fetch_assoc()) {
+				$company_name = $row["name"];
+			}
+		}
 }
+		?>
