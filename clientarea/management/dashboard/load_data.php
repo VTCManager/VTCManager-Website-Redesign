@@ -41,7 +41,7 @@ if ($result->num_rows > 0) {
 if ($found_rank != "owner"){
 	die("404: not found");
 }*/
-$sql = "SELECT * FROM tour_table WHERE companyID=1 ORDER BY `tour_date` DESC";
+$sql = "SELECT * FROM tour_table WHERE companyID=$company ORDER BY `tour_date` DESC";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
