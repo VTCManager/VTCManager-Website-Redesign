@@ -1,0 +1,47 @@
+____Alle wichtigen Daten und Ordnerstrukturen____
+
+1. Variablen
+1.1. von get_user_data.php
+2. Funktionen
+2.1 Wie lade ich Standard-Benutzer-Daten/prüfe ich die Benutzeranmeldung/stelle Verbindung zur DB her?
+
+______________________________________________________________________________________________________
+
+***1. Variablen***
+
+***1.1 Variablen von get_user_data.php***
+
+Benutzerdaten:
+Variable           Datensatz
+userID             Benutzer ID als String (sollte eig nicht in einen INT konvertiert werden. Warum den?)
+user_rank          Rang des Benutzers innerhalb seiner Firma
+user_avatar_url    Link zum Profilbild des Benutzers
+user_company_id    Firmen ID des Benutzers als String (sollte eig nicht in einen INT konvertiert werden. Warum den?) (Wenn ID=0, dann arbeitslos)
+user_company_name  Firmen Name des Benutzers als String (nicht bei arbeitslos)
+
+
+Berechtigungen
+Wenn Berechtigung aktiv, dann sind sie ein String ("1")
+
+Variable           Beschreibung
+SeeBank            Firmenkonto kann eingesehen werden (Transaktionen & Kontostand)
+UseBank            Überweisungen/Transaktionen können über das Firmenkonto getätigt werden
+EditProfile        Das Firmenprofil kann bearbeitet werden
+EditEmployees      Mitarbeiter und Stellenanzeigen können bearbeitet werden
+EditSalary         Gehälter bearbeiten (zurzeit unbenutzt)
+SeeLogbook         Firmen Fahrtenbuch einsehen
+EditLogbook        Touren im Firmen Fahrtenbuch überprüfen und löschen
+
+______________________________________________________________________________________________________
+
+***2. Funktionen***
+
+***2.1 Wie lade ich Standard-Benutzer-Daten/prüfe ich die Benutzeranmeldung/stelle Verbindung zur DB her?***
+
+Die Prüfung der Gültigkeit der Benutzeranmeldung, das holen der Standard-Benutzerdaten und -rechte (1.1) und das Herstellen zur DB läuft über die get_user_data.php.
+Diese befindet sich im Ordner: /basis_files/php . Sollte der Benutzer eine ungültige oder keine Anmeldung besitzen, wird er zur Homepage redirected.
+Die MySQL-Verbindung ist in der Variable $conn abrufbar.
+
+Einbinden:
+Die get_user_data.php einfach in der 1.Zeile des Dokumentes mit include einbinden.
+!!!Am Ende des Dokumentes (da sind alles Funktionen ausgeführt) mit "mysqli_close($conn);" die Verbindung schließen!!!
