@@ -53,6 +53,58 @@ position:absolute;
 	background: url(../img/loader.gif) center no-repeat black;
 }
 </style>
+<script>
+  window.setInterval(function(){
+  var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function(){
+				if(this.readyState == 4 && this.status == 200){
+					var response = this.responseText;
+          var myObj = JSON.parse(response);
+
+            if(myObj != "") {
+              const myNode = document.getElementById("traffic_list");
+              myNode.innerHTML = '';
+                user_count = myObj["response"].length;
+                for (var a in myObj["response"]) {
+                  var para = document.createElement("P");   
+                  if(myObj["response"][a]["severity"] == 'Heavy' || myObj["response"][a]["severity"] == 'Congested'){
+                    para.innerHTML = myObj["response"][a]["name"]+'<span class="badge badge-danger badge-pill pull-right">'+myObj["response"][a]["players"]+'</span>'; 
+                  }else if (myObj["response"][a]["severity"] == 'Moderate'){
+                    para.innerHTML = myObj["response"][a]["name"]+'<span class="badge badge-warning badge-pill pull-right">'+myObj["response"][a]["players"]+'</span>'; 
+                  }else{
+                    para.innerHTML = myObj["response"][a]["name"]+'<span class="badge badge-primary badge-pill pull-right">'+myObj["response"][a]["players"]+'</span>'; 
+                    }
+                  para.className = 'list-group-item list-group-item-action waves-effect';
+                  document.getElementById("traffic_list").appendChild(para); 
+                };
+                var para2 = document.createElement("A");
+                para2.innerHTML = 'powered by Trucky';
+                para2.className = 'text-right';
+                para2.href = 'https://truckyapp.com/';
+                document.getElementById("traffic_list").appendChild(para2); 
+            } else {
+            };
+				}
+			};
+			xhttp.open("GET", "https://api.truckyapp.com/v2/traffic/top?server=sim1&game=ets2", true);
+			xhttp.send();
+      var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function(){
+				if(this.readyState == 4 && this.status == 200){
+					var response = this.responseText;
+          var myObj = JSON.parse(response);
+
+            if(myObj != "") {
+              const myNode = document.getElementById("traffic_label");
+              myNode.innerHTML = 'Verkehr Sim 1 ['+myObj["response"][0]["players"]+'/'+myObj["response"][0]["maxplayers"]+']';;
+            } else {
+            };
+				}
+			};
+			xhttp.open("GET", "https://api.truckersmp.com/v2/servers", true);
+			xhttp.send();
+}, 10000);
+</script>
 </head>
 
 <body class="grey lighten-3">
@@ -183,12 +235,12 @@ position:absolute;
             <!--Card content-->
             <div class="card-body">
 
-              <div class="card-header text-center">
+              <div class="card-header text-center" id="traffic_label">
                 <?php include '../php/tmp-api.php';?>
                 Verkehr Sim 1 [<?php echo $sim1_players;?>]
               </div>
               <!-- List group links -->
-              <div class="list-group list-group-flush">
+              <div class="list-group list-group-flush" id="traffic_list">
                 <?php include '../php/truckyapi.php';?>
                 <a class="text-right" href="https://truckyapp.com/">powered by Trucky<a/>
               </div>
