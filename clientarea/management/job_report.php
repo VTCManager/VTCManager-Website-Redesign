@@ -1,5 +1,5 @@
 <?php
-include 'php/get_user_data.php';
+include '../../basis_files/php/get_user_data.php';
 //GET parameters
 $requested_user_name= $_GET['username'];
 $requested_job_id= $_GET['jobid'];

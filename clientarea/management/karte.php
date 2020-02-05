@@ -1,4 +1,5 @@
 <?php
+include '../../basis_files/php/get_user_data.php';
 $page_now = "management/map";
 ?>
 <!DOCTYPE html>

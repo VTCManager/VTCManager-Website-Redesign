@@ -43,5 +43,7 @@ Diese befindet sich im Ordner: /basis_files/php . Sollte der Benutzer eine ungü
 Die MySQL-Verbindung ist in der Variable $conn abrufbar.
 
 Einbinden:
-Die get_user_data.php einfach in der 1.Zeile des Dokumentes mit include einbinden.
+Die get_user_data.php einfach in der 1.Zeile (!) des Dokumentes (dass nachher vom User aufgerufen wird) mit include einbinden.
+!!!Es muss dann keine weitere Verbindung zur DB hergestellt werden, auch nicht bei include phps!!!
+!!!Ausnahmen sind JavaScript-Codes, die nach dem vollständigen Laden der Seite ausgeführt wird sowie redirects!!!
 !!!Am Ende des Dokumentes (da sind alles Funktionen ausgeführt) mit "mysqli_close($conn);" die Verbindung schließen!!!

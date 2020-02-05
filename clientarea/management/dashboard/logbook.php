@@ -1,6 +1,6 @@
 <?php
 $page_now = "management/dashboard";
-include '../php/get_user_data.php';
+include '../../../basis_files/php/get_user_data.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
