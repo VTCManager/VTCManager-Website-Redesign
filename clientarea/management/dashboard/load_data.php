@@ -1,5 +1,5 @@
 <?php
-$sql = "SELECT * FROM tour_table WHERE companyID=$company ORDER BY `tour_date` DESC";
+$sql = "SELECT * FROM tour_table WHERE companyID=$user_company_id ORDER BY `tour_date` DESC";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

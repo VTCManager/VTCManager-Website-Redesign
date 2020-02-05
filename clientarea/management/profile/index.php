@@ -200,9 +200,6 @@ include '../../../basis_files/php/get_user_data.php';
       <!--Grid row-->
     </div>
   </main>
-<?php
-} else {}
-?>
   <!--Main layout-->
 
   <!--Footer-->

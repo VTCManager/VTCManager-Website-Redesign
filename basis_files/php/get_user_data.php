@@ -51,9 +51,9 @@ if(isset($_COOKIE['authWebToken']) && isset($_COOKIE['username'])) {
 		die("We're sorry but we couldn't find your profile");
 	}
 	//Ist der Benutzer in einer Firma?
-	if($company != "0"){
+	if($user_company_id != "0"){
 		//Dann lade die Berechtigungen des Benutzers in der Firma
-		$sql = "SELECT * FROM rank WHERE name='$rank_user' AND forCompanyID=$company";
+		$sql = "SELECT * FROM rank WHERE name='$user_rank' AND forCompanyID=$user_company_id";
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0) {
 			while($row = $result->fetch_assoc()) {
@@ -67,7 +67,7 @@ if(isset($_COOKIE['authWebToken']) && isset($_COOKIE['username'])) {
 			}
 		}
 		//Lade den Namen der Firma
-		$sql = "SELECT * FROM company_information_table WHERE id=$company";
+		$sql = "SELECT * FROM company_information_table WHERE id=$user_company_id";
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0) {
 			while($row = $result->fetch_assoc()) {

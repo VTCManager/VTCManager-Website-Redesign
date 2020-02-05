@@ -1,11 +1,11 @@
 
 <?php
-include 'get_user_data.php';
+include '../../../basis_files/php/get_user_data.php'; 
 $day = date('w');
 $week_start = date('Y-m-d', strtotime('-'.$day.' days + 1 day'));
 $date = new DateTime();
 $week = $date->format("W");
-$sql = "SELECT amount FROM money_transfer WHERE receiver='$company_name' AND DATE( date_sent ) >= '$week_start'";
+$sql = "SELECT amount FROM money_transfer WHERE receiver='$user_company_name' AND DATE( date_sent ) >= '$week_start'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -27,7 +27,7 @@ if ($result->num_rows > 0) {
     $day = date('w');
 $week_start2 = date('Y-m-d',strtotime("$week_start -7 days",));
 $week = date('W', strtotime('-7 days'));
-$sql = "SELECT amount FROM money_transfer WHERE receiver='$company_name' AND DATE( date_sent ) >= '$week_start2'AND DATE( date_sent ) <= '$week_start'";
+$sql = "SELECT amount FROM money_transfer WHERE receiver='$user_company_name' AND DATE( date_sent ) >= '$week_start2'AND DATE( date_sent ) <= '$week_start'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -49,7 +49,7 @@ if ($result->num_rows > 0) {
         $day = date('w');
 $week_start3 = date('Y-m-d',strtotime("$week_start2 -7 days",));
 $week = date('W', strtotime('-14 days'));
-$sql = "SELECT amount FROM money_transfer WHERE receiver='$company_name' AND DATE( date_sent ) >= '$week_start3'AND DATE( date_sent ) <= '$week_start2'";
+$sql = "SELECT amount FROM money_transfer WHERE receiver='$user_company_name' AND DATE( date_sent ) >= '$week_start3'AND DATE( date_sent ) <= '$week_start2'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -71,7 +71,7 @@ if ($result->num_rows > 0) {
         $day = date('w');
 $week_start4 = date('Y-m-d',strtotime("$week_start3 -7 days",));
 $week = date('W', strtotime('-21 days'));
-$sql = "SELECT amount FROM money_transfer WHERE receiver='$company_name' AND DATE( date_sent ) >= '$week_start4'AND DATE( date_sent ) <= '$week_start3'";
+$sql = "SELECT amount FROM money_transfer WHERE receiver='$user_company_name' AND DATE( date_sent ) >= '$week_start4'AND DATE( date_sent ) <= '$week_start3'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -93,7 +93,7 @@ if ($result->num_rows > 0) {
         $day = date('w');
 $week_start3 = date('Y-m-d',strtotime("$week_start4 -7 days",));
 $week = date('W', strtotime('-28 days'));
-$sql = "SELECT amount FROM money_transfer WHERE receiver='$company_name' AND DATE( date_sent ) >= '$week_start5'AND DATE( date_sent ) <= '$week_start4'";
+$sql = "SELECT amount FROM money_transfer WHERE receiver='$user_company_name' AND DATE( date_sent ) >= '$week_start5'AND DATE( date_sent ) <= '$week_start4'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -106,7 +106,7 @@ if ($result->num_rows > 0) {
     "amount" => $current_amount,
     ];
 }else{
-        $array4 = [
+        $array5 = [
     "week" => $week,
     "amount" => 0,
     ];
