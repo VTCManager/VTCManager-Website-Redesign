@@ -29,18 +29,18 @@ if ($result->num_rows > 0) {
 				}
 			}
 			$tour_prog = "100";
-			$tour_status = '<i class="fas fa-check-circle" style="color: green !important;"></i> abgeschlossen';
+			$tour_status_tra = '<i class="fas fa-check-circle" style="color: green !important;"></i> abgeschlossen';
 		} else if ($tour_status== "accepted by driver"){
 			if (strtotime($tour_date) < strtotime("-1 day")){
 			$delete_bt = '<td><i class="fa fa-trash" onclick="delete_entry(this);" aria-hidden="true" data-id="'.$found_tour_username.','.$found_tour.'" style="cursor: pointer;"></i></td>';
 			}
-			$tour_status = '<i class="fas fa-business-time"></i> Auslieferung';
+			$tour_status_tra = '<i class="fas fa-business-time"></i> Auslieferung';
 		}else if ($tour_status== "canceled"){
-			$tour_status = '<i class="fas fa-ban" style="color: red !important;"></i> abgebrochen';
+			$tour_status_tra = '<i class="fas fa-ban" style="color: red !important;"></i> abgebrochen';
 		}else if ($tour_status== "declined"){
-			$tour_status = '<i class="fas fa-ban" style="color: red !important;"></i> abgelehnt';
+			$tour_status_tra = '<i class="fas fa-ban" style="color: red !important;"></i> abgelehnt';
 		}else if ($tour_status== "accepted"){
-			$tour_status = '<i class="fas fa-check-circle" style="color: green !important;"></i> akzeptiert';
+			$tour_status_tra = '<i class="fas fa-check-circle" style="color: green !important;"></i> akzeptiert';
 		}
 		$sql2 = "SELECT * FROM user_data WHERE username='$found_tour_username'";
 		$result2 = $conn->query($sql2);
@@ -58,10 +58,16 @@ if ($result->num_rows > 0) {
 		<td><a href="../job_report?username=$found_tour_username&jobid=$found_tour">$found_tour_cargo</a></td>
 		<td>$found_tour_depature</td>
 		<td>$found_tour_destination</td>
-		<td>$money_earned €</td>
+		EOT;
+		if($tour_status == "finished" || $tour_status == "accepted"){
+		echo "<td>$money_earned €</td>";
+		}else{
+		echo "<td></td>";
+		}
+		echo <<<EOT
 		<td>$found_truck_manu $found_truck_mod</td>
 		<td>$tour_date_nw</td>
-		<td>$tour_status</td>
+		<td>$tour_status_tra</td>
 		<td>$tour_prog %</td>
 		<td>$tour_approved_line</td>
 		<td>$delete_bt</td>
