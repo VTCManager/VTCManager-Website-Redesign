@@ -73,19 +73,18 @@ if($page_now_navbar == "management/dashboard/index"){?>
 	<!-- Right -->
 	<ul class="navbar-nav nav-flex-icons">
             <li class="nav-item">
-              <a href="https://www.facebook.com/mdbootstrap" class="nav-link waves-effect" target="_blank">
-                <i class="fab fa-facebook-f"></i>
+              <a href="https://www.instagram.com/tnwm_group/" class="nav-link waves-effect" target="_blank">
+                <i class="fab fa-instagram"></i>
               </a>
             </li>
             <li class="nav-item">
-              <a href="https://twitter.com/MDBootstrap" class="nav-link waves-effect" target="_blank">
+              <a href="https://twitter.com/TNWM_group" class="nav-link waves-effect" target="_blank">
                 <i class="fab fa-twitter"></i>
               </a>
             </li>
             <li class="nav-item">
-              <a href="https://github.com/mdbootstrap/bootstrap-material-design" class="nav-link border border-light rounded waves-effect"
-                target="_blank">
-                <i class="fab fa-github mr-2"></i>MDB GitHub
+              <a href="/account/logout" class="nav-link border border-light rounded waves-effect">
+                <i class="fas fa-sign-out-alt mr-2"></i>Abmelden
               </a>
             </li>
           </ul>
