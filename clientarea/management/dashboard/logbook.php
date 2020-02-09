@@ -68,6 +68,12 @@ position:absolute;
 	background: url(/clientarea/management/img/loader.gif) center no-repeat black;
 }
 </style>
+<style>
+  .darkmode-toggle {
+  z-index: 999;
+}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.4/lib/darkmode-js.min.js"></script>
 </head>
 
 <body class="grey lighten-3">
@@ -152,6 +158,14 @@ position:absolute;
           <!--/.Card-->
 
     </div>
+    <script>
+  var options = {
+  label: '🌓', // default: ''
+}
+
+const darkmode = new Darkmode(options);
+darkmode.showWidget();
+</script>
   </main>
   <!--Main layout-->
 
