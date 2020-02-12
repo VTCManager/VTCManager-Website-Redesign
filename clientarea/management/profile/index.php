@@ -144,17 +144,85 @@ include '../../../basis_files/php/get_user_data.php';
             <!--Card content-->
             <div class="card-body">
               <?php
-              $sql = "SELECT * FROM user_data WHERE username='$username_cookie'";
-              $result = $conn->query($sql);
-          		if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-              ?>
-              <h3><?php echo $row['username'];?></h3>
-              <div style="height: 50px;"></div>
-              <p>Bla</p>
-              <?php
-            }
-          }
+$username_cookie = $_COOKIE["username"];
+$authCode_cookie = $_COOKIE["authWebToken"];
+date_default_timezone_set('Europe/Berlin');
+$requested_user_id= $_GET['userid'];
+$host = 'localhost:3306';
+$conn = mysqli_connect($host, "system_user_vtc", "8rh98w23nrfubsediofnm<pbi9ufuoipbgiwtFFF","vtcmanager");
+if(! $conn )
+{
+  die("2");
+}
+
+$sql = "SELECT * FROM authCode_table WHERE Token='$authCode_cookie'";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        $found_token_owner = $row["User"];
+    }
+} else {
+
+}
+if ($found_token_owner != $username_cookie) {
+	$not_the_user = true;
+}
+
+$sql = "SELECT * FROM user_data WHERE userID=$requested_user_id";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+		date_default_timezone_set("+1");
+        $username_search = $row["username"];
+		$userCompanyID_search = $row["userCompanyID"];
+		$profile_pic_url_search = $row["profile_pic_url"];
+		$rank_search = $row["rank"];
+		$last_seen_search = $row["last_seen"];
+		$last_seen_search = date('d.m.Y H:i', strtotime($last_seen_search));
+		$last_seen_search = "zuletzt online am $last_seen_search";
+		$created_date_search = $row["created_date"];
+
+		$created_date_search = date('d.m.Y', strtotime($created_date_search));
+		if ($userCompanyID_search == "0") {
+			$company_txt_search = "arbeitslos";
+		}else{
+			$sql = "SELECT * FROM company_information_table WHERE id=$userCompanyID_search";
+			$result = $conn->query($sql);
+			if ($result->num_rows > 0) {
+				// output data of each row
+				while($row = $result->fetch_assoc()) {
+					$compname = $row["name"];
+					if ($rank_search != "owner") {
+						if ($rank_search == "driver"){
+							$rank_tr = "Fahrer";
+						}else{
+							$rank_tr = $rank_search;
+						}
+
+						$company_txt_search = "angestellt bei $compname als $rank_tr";
+					} else {
+						$company_txt_search = "selbstständig bei ".$compname;;
+					}
+				}
+			}
+		}
+	}
+    ?>
+    <h2><?php echo $username_search;?></h2>
+    <p><?php echo $last_seen_search;?></p>
+    <h4>Information</h4>
+    <p><i class="fa fa-briefcase"></i> <?php echo $company_txt_search;?></p>
+    <p><i class="fas fa-calendar-check"></i> registriert seit <?php echo $created_date_search;?></p>
+    <?php
+} else {
+    echo "Error: User not found";
+	die();
+}
+mysqli_close($conn);
               ?>
             </div>
 
@@ -176,15 +244,19 @@ include '../../../basis_files/php/get_user_data.php';
               <div class="card-header text-center">
                 Die Letzten 5 touren
               </div>
-              <!-- Add Last 5 Tours -->
-              <!-- Screen: https://cdn.discordapp.com/attachments/669997960829993032/671049813894234112/unknown.png -->
-              <!-- List group links -->
               <div class="list-group list-group-flush">
-                <a class="list-group-item list-group-item-action waves-effect">Bla</a>
-                <a class="list-group-item list-group-item-action waves-effect">Bla</a>
-                <a class="list-group-item list-group-item-action waves-effect">Bla</a>
-                <a class="list-group-item list-group-item-action waves-effect">Bla</a>
-                <a class="list-group-item list-group-item-action waves-effect">Bla</a>
+                <?php
+                    $sql = "SELECT * FROM tour_table WHERE username='EpommCookie'";
+                    $result = $conn->query($sql);
+
+                    if ($result->num_rows > 0) {
+                        // output data of each row
+                        while($row = $result->fetch_assoc()) {
+                            $found_tour_cargo = $row["cargo"];
+                    ?><p class="list-group-item list-group-item-action waves-effect"><?php echo $found_tour_cargo;?></p><?php       
+                        }
+                    }
+                  ?>
               </div>
               <!-- List group links -->
 
