@@ -222,7 +222,6 @@ if ($result->num_rows > 0) {
     echo "Error: User not found";
 	die();
 }
-mysqli_close($conn);
               ?>
             </div>
 
@@ -256,6 +255,7 @@ mysqli_close($conn);
                     ?><p class="list-group-item list-group-item-action waves-effect"><?php echo $found_tour_cargo;?></p><?php       
                         }
                     }
+                    mysqli_close($conn);
                   ?>
               </div>
               <!-- List group links -->
