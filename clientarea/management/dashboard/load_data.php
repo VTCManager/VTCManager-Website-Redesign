@@ -1,4 +1,5 @@
 <?php
+//hole alle Touren aus der DB
 $sql = "SELECT * FROM tour_table WHERE companyID=$user_company_id ORDER BY `tour_date` DESC";
 $result = $conn->query($sql);
 
@@ -17,20 +18,26 @@ if ($result->num_rows > 0) {
 		$tour_status = $row["status"];
 		$tour_prog = $row["percentage"];
 		$tour_approved = $row["tour_approved"];
+		//Konvertierung des Fahrtdatums
 		$tour_date_nw = date('d.m.Y', strtotime($tour_date));
+		//ist die Tour abgeschlossen?
 		if ($tour_status== "finished") {
+			//ist die Tour noch nicht bestätigt worden?
 			if($tour_approved == "0"){
-				
+				//hat der Benutzer Rechte zur Prüfung?
 				if ($EditLogbook=="1"){
+					//dann setze den Prüfen Button
 				$tour_approved_line = 
 					<<<EOT
-					<button type="button" onclick="window.location='../job_report?username=$found_tour_username&jobid=$found_tour';" class="btn btn-info">Prüfung</button>
+					<a class="btn btn-primary" data-toggle="modal" data-target="#tourcheck">Prüfung</a>
 					EOT;
 				}
 			}
 			$tour_prog = "100";
 			$tour_status_tra = '<i class="fas fa-check-circle" style="color: green !important;"></i> abgeschlossen';
+			//wird die Tour noch gefahren?
 		} else if ($tour_status== "accepted by driver"){
+		    
 			if (strtotime($tour_date) < strtotime("-1 day")){
 			$delete_bt = '<td><i class="fa fa-trash" onclick="delete_entry(this);" aria-hidden="true" data-id="'.$found_tour_username.','.$found_tour.'" style="cursor: pointer;"></i></td>';
 			}

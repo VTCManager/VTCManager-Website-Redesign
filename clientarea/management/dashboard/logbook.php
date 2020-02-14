@@ -90,6 +90,36 @@ position:absolute;
   <!--Main Navigation-->
 
   <!--Main layout-->
+  <?php //Lade Tour Prüfungs Fenster nur wenn User Berechtigung zum Bearbeiten des Logbuches hat
+  if($EditLogbook == "1") { ?>
+  <div class="modal fade" id="tourcheck" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Mit IFMP verknüpfen...</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <i class="fas fa-truck prefix grey-text"></i>
+          <input type="email" id="defaultForm-email" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="defaultForm-email">SteamID64 oder IFMP ID</label>
+        </div>
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button class="btn btn-default" onclick="checkIFMPuser()" id="IFMPConnectBT">Verknüpfen</button>
+        <button class="btn btn-default" id="IFMPConnectBTLoading" style="display:none;" type="button" disabled>
+			<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+			Verbinde...
+			</button>
+      </div>
+    </div>
+  </div>
+</div>
+<?php }?>
   <main class="pt-5 mx-lg-5">
     <div class="container-fluid mt-5">
 
