@@ -97,28 +97,74 @@ position:absolute;
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Mit IFMP verknüpfen...</h4>
+        <h4 class="modal-title w-100 font-weight-bold" id="TourCheckTitle">Daten werden abgerufen...</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body mx-3">
+      <div class="modal-body mx-3" style="display:none;" id="TourCheckContent">
         <div class="md-form mb-5">
-          <i class="fas fa-truck prefix grey-text"></i>
-          <input type="email" id="defaultForm-email" class="form-control validate">
-          <label data-error="wrong" data-success="right" for="defaultForm-email">SteamID64 oder IFMP ID</label>
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#general" role="tab" aria-controls="Allgemein"
+      aria-selected="true">Allgemein</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#invoice" role="tab" aria-controls="Abrechnung"
+      aria-selected="false">Abrechnung</a>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="general" role="tabpanel" aria-labelledby="home-tab">
+    <span id="departure">Startort:</span><br>
+    <span id="destination">Zielort:</span><br>
+  </div>
+  <div class="tab-pane fade" id="invoice" role="tabpanel" aria-labelledby="profile-tab">Food truck fixie
+    locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit,
+    blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee.
+    Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum
+    PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS
+    salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit,
+    sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester
+    stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</div>
         </div>
       </div>
       <div class="modal-footer d-flex justify-content-center">
-        <button class="btn btn-default" onclick="checkIFMPuser()" id="IFMPConnectBT">Verknüpfen</button>
-        <button class="btn btn-default" id="IFMPConnectBTLoading" style="display:none;" type="button" disabled>
+        <button class="btn btn-default" onclick="checkIFMPuser()" id="TourStatusSend" style="display:none;">Verknüpfen</button>
+        <button class="btn btn-default" id="TourStatusLoading" style="display:block;" type="button" disabled>
 			<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-			Verbinde...
+			Laden...
 			</button>
       </div>
     </div>
   </div>
 </div>
+</div>
+<script>
+function load_tourcheck(elmnt) {
+	var save_val = $(elmnt).attr("data-id");
+	var res = save_val.split(",");
+  console.log(res[1]+res[0]);
+	var xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange = function() {
+    console.log(xmlhttp.response);
+    var response = this.responseText;
+    var myObj = JSON.parse(response);
+    if(myObj != "") {
+    user_count = myObj.length;
+    }
+    document.getElementById("TourCheckTitle").innerHTML="Fahrer: "+myObj[0]["username"]+"|Tour Nr."+myObj[0]["tour_id"];
+    document.getElementById("departure").innerHTML="Startort: "+myObj[0]["departure"]+"|"+myObj[0]["depature_company"];
+    document.getElementById("destination").innerHTML="Zielort: "+myObj[0]["destination"]+"|"+myObj[0]["destination_company"];
+			
+	};
+	xmlhttp.open("GET", "get_tour.php?tour_id="+res[1]+"&username="+res[0], true);
+	xmlhttp.send();
+  document.getElementById("TourStatusLoading").style.display="none";
+  document.getElementById("TourStatusSend").style.display="block";
+  document.getElementById("TourCheckContent").style.display="block";
+}
+</script>
 <?php }?>
   <main class="pt-5 mx-lg-5">
     <div class="container-fluid mt-5">

@@ -29,7 +29,7 @@ if ($result->num_rows > 0) {
 					//dann setze den Prüfen Button
 				$tour_approved_line = 
 					<<<EOT
-					<a class="btn btn-primary" data-toggle="modal" data-target="#tourcheck">Prüfung</a>
+					<a class="btn btn-primary" data-id="$found_tour_username,$found_tour" onclick="load_tourcheck(this)" data-toggle="modal" data-target="#tourcheck">Prüfung</a>
 					EOT;
 				}
 			}
