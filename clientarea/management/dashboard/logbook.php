@@ -22,6 +22,10 @@ include '../../../basis_files/php/get_user_data.php';
   <!-- Your custom styles (optional) -->
   <link href="/clientarea/management/css/style.min.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+<script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
   <script>$(window).load(function() {
 		// Animate loader off screen
 		$(".se-pre-con").fadeOut("slow");;
@@ -68,7 +72,6 @@ position:absolute;
 	background: url(/clientarea/management/img/loader.gif) center no-repeat;
 }
 </style>
-</head>
 
 <body class="grey lighten-3">
   <div class="se-pre-con"></div>
@@ -113,33 +116,63 @@ position:absolute;
     <a class="nav-link" id="profile-tab" data-toggle="tab" href="#invoice" role="tab" aria-controls="Abrechnung"
       aria-selected="false">Abrechnung</a>
   </li>
+  <li class="nav-item">
+    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#map_tab" role="tab" aria-controls="Abrechnung"
+      aria-selected="false">Karte</a>
+  </li>
 </ul>
 <div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade" id="map_tab" role="tabpanel" aria-labelledby="home-tab">
+    <div style="height: 180px;" id="map"></div>
+  </div>
   <div class="tab-pane fade show active" id="general" role="tabpanel" aria-labelledby="home-tab">
     <span id="departure">Startort:</span><br>
     <span id="destination">Zielort:</span><br>
+    <span id="distance">Distanz:</span><br>
+    <span id="cargo">Fracht:</span><br>
+    <span id="weight">Frachtgewicht:</span><br>
+    <span id="truck">LKW:</span><br>
+    <span id="trailer_damage">Aufliegerschaden:</span><br>
+    <span id="departure_time">Abfahrt:</span><br>
+    <span id="destination_time">Ankunft:</span><br>
   </div>
-  <div class="tab-pane fade" id="invoice" role="tabpanel" aria-labelledby="profile-tab">Food truck fixie
-    locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit,
-    blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee.
-    Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum
-    PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS
-    salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit,
-    sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester
-    stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</div>
+  <div class="tab-pane fade" id="invoice" role="tabpanel" aria-labelledby="profile-tab">
+  <span style="color: green;" id="freight_value">Frachtwert:</span><br>
+  <span style="color: red;" id="taxes">Steuern:</span><br>
+  <span style="color: red;" id="damage_cost">Wartungskosten:</span><br>
+  <span style="color: green;" id="income">Umsatz:</span><br>
+  <div class="row d-flex justify-content-center">
+	<div class="col-md-12 mb-4">
+	<button type="button" onclick="window.location='http://vtc.northwestvideo.de/job_report?username=<?php echo $requested_user_name;?>&jobid=<?php echo $requested_job_id;?>&accpt=1';" class="btn btn-success"><i class="fas fa-check" aria-hidden="true"></i>Akzeptieren</button>
+	<button type="button" onclick="window.location='http://vtc.northwestvideo.de/job_report?username=<?php echo $requested_user_name;?>&jobid=<?php echo $requested_job_id;?>&accpt=2';" class="btn btn-danger"><i class="fas fa-ban" aria-hidden="true"></i>Ablehnen</button>
+	</div>
+  </div>
         </div>
       </div>
       <div class="modal-footer d-flex justify-content-center">
-        <button class="btn btn-default" onclick="checkIFMPuser()" id="TourStatusSend" style="display:none;">Verknüpfen</button>
-        <button class="btn btn-default" id="TourStatusLoading" style="display:block;" type="button" disabled>
-			<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-			Laden...
-			</button>
       </div>
     </div>
   </div>
 </div>
 </div>
+</div>
+<script>
+  var map = L.map('map').setView([51.505, -0.09], 13);
+  L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'pk.eyJ1Ijoiam9zY2hpc2VydmljZSIsImEiOiJjazZwODh1MDIwcnZ6M25xcG5hNXk4N2syIn0.4SvFM1_Zm0k3_M6Tz5Jvbw'
+}).addTo(map);
+  L.Routing.control({
+  waypoints: [
+    L.latLng(57.74, 11.94),
+    L.latLng(57.6792, 11.949)
+  ]
+}).addTo(map);</script>
+</head>
 <script>
 function load_tourcheck(elmnt) {
 	var save_val = $(elmnt).attr("data-id");
@@ -156,12 +189,24 @@ function load_tourcheck(elmnt) {
     document.getElementById("TourCheckTitle").innerHTML="Fahrer: "+myObj[0]["username"]+"|Tour Nr."+myObj[0]["tour_id"];
     document.getElementById("departure").innerHTML="Startort: "+myObj[0]["departure"]+"|"+myObj[0]["depature_company"];
     document.getElementById("destination").innerHTML="Zielort: "+myObj[0]["destination"]+"|"+myObj[0]["destination_company"];
-			
+    document.getElementById("cargo").innerHTML="Fracht: "+myObj[0]["cargo"];
+    document.getElementById("weight").innerHTML="Frachtgewicht: "+myObj[0]["cargo_weight"];
+    document.getElementById("truck").innerHTML="LKW: "+myObj[0]["truck_manufacturer"]+" "+myObj[0]["truck_model"];
+    var trailer_damage = parseInt(myObj[0]["trailer_damage"]);
+    document.getElementById("trailer_damage").innerHTML="Aufliegerschaden: "+trailer_damage;
+    document.getElementById("departure_time").innerHTML="Abfahrt: "+myObj[0]["tour_date"];
+    document.getElementById("distance").innerHTML="Distanz: "+myObj[0]["distance"]+"km";
+    var income = parseInt(myObj[0]["money_earned"]);
+    var taxes = income*0.20;
+    var damage_cost = trailer_damage*100;
+    var real_income = income-taxes-damage_cost;
+    document.getElementById("freight_value").innerHTML="Frachtwert: "+income.toFixed(2)+"€";
+    document.getElementById("taxes").innerHTML="Steuern: "+taxes.toFixed(2)+"€";
+    document.getElementById("damage_cost").innerHTML="Wartungskosten: "+damage_cost.toFixed(2)+"€";
+    document.getElementById("income").innerHTML="Umsatz: "+real_income.toFixed(2)+"€";
 	};
 	xmlhttp.open("GET", "get_tour.php?tour_id="+res[1]+"&username="+res[0], true);
 	xmlhttp.send();
-  document.getElementById("TourStatusLoading").style.display="none";
-  document.getElementById("TourStatusSend").style.display="block";
   document.getElementById("TourCheckContent").style.display="block";
 }
 </script>
