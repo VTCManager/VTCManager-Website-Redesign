@@ -5,7 +5,6 @@ if(!isset($_GET['username']) && !isset($_GET['tour_id'])){
     header("Status: 400 Bad Request");
     die();
     }
-
 //GET Variablen
 $requested_tour_id= $_GET['tour_id'];
 $requested_username= $_GET['username'];
@@ -24,5 +23,4 @@ if ($conn->query($sql) === TRUE) {
 }
 //close DB conn
 $conn->close();
-
 ?>
