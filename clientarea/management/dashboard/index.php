@@ -1,6 +1,8 @@
 <?php
+//aktuelle Seite für Nav und Sidebar
 $page_now = "management/dashboard";
 $page_now_navbar = "management/dashboard/index";
+//Connect and Check
 include '../../../basis_files/php/get_user_data.php';
 ?>
 <!DOCTYPE html>
@@ -180,12 +182,12 @@ position:absolute;
             <div class="card-body">
 
               <div class="card-header text-center" id="traffic_label">
-                <?php include '../php/tmp-api.php';?>
+                <?php include '../php/tmp-api.php';//load Server Stats?>
                 Verkehr Sim 1 [<?php echo $sim1_players;?>]
               </div>
               <!-- List group links -->
               <div class="list-group list-group-flush" id="traffic_list">
-                <?php include '../php/truckyapi.php';?>
+                <?php include '../php/truckyapi.php';//load Top Traffic?>
                 <a class="text-right" href="https://truckyapp.com/">powered by Trucky<a/>
               </div>
               <!-- List group links -->
@@ -230,7 +232,7 @@ position:absolute;
 
                 <!-- Table body -->
                 <tbody>
-                  <?php include '../php/get_latest_tours.php';?>
+                  <?php include '../php/get_latest_tours.php'; //hole die letzten Touren?>
 
                 </tbody>
                 <!-- Table body -->
@@ -380,7 +382,7 @@ position:absolute;
 
   <!--Footer-->
   <?php
-    include '../php/footer.php';?>
+    include '../php/footer.php'; //Footer laden?>
   <!--/.Footer-->
 
   <!-- SCRIPTS -->
@@ -585,3 +587,7 @@ position:absolute;
 </body>
 
 </html>
+<?php 
+//close DB conn
+$conn->close();
+?>
