@@ -1,4 +1,5 @@
 <?php  
+//Zweck ausgewählte Tour löschen
 //check GET request
 if(!isset($_GET['username']) && !isset($_GET['tour_id'])){
     //bad request
