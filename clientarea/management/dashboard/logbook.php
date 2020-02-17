@@ -1,6 +1,8 @@
 <?php
+//aktuelle Seite für Nav und Sidebar
 $page_now = "management/dashboard";
 $page_now_navbar = "management/dashboard/logbook";
+//Connect and Check
 include '../../../basis_files/php/get_user_data.php';
 ?>
 <!DOCTYPE html>
@@ -260,7 +262,7 @@ function load_tourcheck(elmnt) {
                     </tr>
                 </thead>
 				<tbody>
-					<?php include 'load_data.php'; ?>                  
+					<?php include 'load_data.php'; //Lade Aufträge?>                  
                 </tbody>
             </table>
         </div>
