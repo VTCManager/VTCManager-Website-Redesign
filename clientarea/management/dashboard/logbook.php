@@ -118,15 +118,8 @@ position:absolute;
     <a class="nav-link" id="profile-tab" data-toggle="tab" href="#invoice" role="tab" aria-controls="Abrechnung"
       aria-selected="false">Abrechnung</a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#map_tab" role="tab" aria-controls="Abrechnung"
-      aria-selected="false">Karte</a>
-  </li>
 </ul>
 <div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade" id="map_tab" role="tabpanel" aria-labelledby="home-tab">
-    <div style="height: 180px;" id="map"></div>
-  </div>
   <div class="tab-pane fade show active" id="general" role="tabpanel" aria-labelledby="home-tab">
     <span id="departure">Startort:</span><br>
     <span id="destination">Zielort:</span><br>
