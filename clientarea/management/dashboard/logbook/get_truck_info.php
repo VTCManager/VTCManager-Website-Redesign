@@ -12,7 +12,7 @@ include '../../../../basis_files/php/get_user_data.php';
 $requested_manufacturer = $_GET['manufacturer'];
 $requested_model = $_GET['model'];
 //lade Tour Daten aus DB
-$sql = "SELECT * FROM truck_info WHERE manufacturer=$requested_tour_id AND model='$requested_model'";
+$sql = "SELECT * FROM truck_info WHERE manufacturer='$requested_manufacturer' AND model='$requested_model'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
