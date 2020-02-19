@@ -10,7 +10,7 @@ if(!isset($_GET['username']) && !isset($_GET['tour_id'])){
 $requested_tour_id= $_GET['tour_id'];
 $requested_username= $_GET['username'];
 //Connect and Check
-include '../../../basis_files/php/get_user_data.php';
+include '../../../../basis_files/php/get_user_data.php';
 // sql to delete a record
 $sql = "DELETE FROM tour_table WHERE username='$requested_username' AND tour_id=$requested_tour_id";
 

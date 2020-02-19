@@ -7,7 +7,7 @@ if(!isset($_GET['username']) && !isset($_GET['tour_id'])){
     die();
     }
 //Connect and Check
-include '../../../basis_files/php/get_user_data.php';
+include '../../../../basis_files/php/get_user_data.php';
 //GET Variablen
 $requested_tour_id= $_GET['tour_id'];
 $requested_username= $_GET['username'];
