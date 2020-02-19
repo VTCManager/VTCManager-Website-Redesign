@@ -3,7 +3,7 @@
 $page_now = "management/dashboard";
 $page_now_navbar = "management/dashboard/logbook";
 //Connect and Check
-include '../../../basis_files/php/get_user_data.php';
+include '../../../../basis_files/php/get_user_data.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -83,12 +83,12 @@ position:absolute;
 
     <!-- Navbar -->
     <?php
-    include '../php/navbar.php';?>
+    include '../../php/navbar.php';?>
     <!-- Navbar -->
 
     <!-- Sidebar -->
     <?php
-    include '../php/sidebar.php';?>
+    include '../../php/sidebar.php';?>
     <!-- Sidebar -->
 
   </header>
@@ -273,7 +273,7 @@ function load_tourcheck(elmnt) {
 
   <!--Footer-->
   <?php
-    include '../php/footer.php';?>
+    include '../../php/footer.php';?>
   <!--/.Footer-->
 
   <!-- SCRIPTS -->
