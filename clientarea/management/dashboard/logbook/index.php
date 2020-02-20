@@ -118,6 +118,10 @@ position:absolute;
     <a class="nav-link" id="profile-tab" data-toggle="tab" href="#invoice" role="tab" aria-controls="Abrechnung"
       aria-selected="false">Abrechnung</a>
   </li>
+  <li class="nav-item">
+    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#invoice" role="tab" aria-controls="LKW"
+      aria-selected="false">LKW</a>
+  </li>
 </ul>
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="general" role="tabpanel" aria-labelledby="home-tab">
@@ -142,7 +146,13 @@ position:absolute;
 	<button type="button" onclick="window.location='http://vtc.northwestvideo.de/job_report?username=<?php echo $requested_user_name;?>&jobid=<?php echo $requested_job_id;?>&accpt=2';" class="btn btn-danger"><i class="fas fa-ban" aria-hidden="true"></i>Ablehnen</button>
 	</div>
   </div>
-        </div>
+  <div class="tab-pane fade" id="truck" role="tabpanel" aria-labelledby="profile-tab">
+    <span id="truck_name">LKW:</span><br>
+    <div class="d-flex justify-content-end">
+      <img src="https://mdbootstrap.com/img/logo/mdb192x192.jpg" class="img-fluid" alt="">
+    </div>
+  </div>
+</div>
       </div>
       <div class="modal-footer d-flex justify-content-center">
       </div>
