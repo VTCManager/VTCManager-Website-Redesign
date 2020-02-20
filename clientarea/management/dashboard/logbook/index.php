@@ -119,7 +119,7 @@ position:absolute;
       aria-selected="false">Abrechnung</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#invoice" role="tab" aria-controls="LKW"
+    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#truck_sec" role="tab" aria-controls="LKW"
       aria-selected="false">LKW</a>
   </li>
 </ul>
@@ -146,13 +146,15 @@ position:absolute;
 	<button type="button" onclick="window.location='http://vtc.northwestvideo.de/job_report?username=<?php echo $requested_user_name;?>&jobid=<?php echo $requested_job_id;?>&accpt=2';" class="btn btn-danger"><i class="fas fa-ban" aria-hidden="true"></i>Ablehnen</button>
 	</div>
   </div>
-  <div class="tab-pane fade" id="truck" role="tabpanel" aria-labelledby="profile-tab">
-    <span id="truck_name">LKW:</span><br>
-    <div class="d-flex justify-content-end">
-      <img src="https://mdbootstrap.com/img/logo/mdb192x192.jpg" class="img-fluid" alt="">
-    </div>
-  </div>
 </div>
+<div class="tab-pane fade" id="truck_sec" role="tabpanel" aria-labelledby="profile-tab">
+      <img src="https://mdbootstrap.com/img/logo/mdb192x192.jpg" id="truck_pic" class="rounded float-right" style="max-height:250px;" alt="">
+    <span id="truck_name">LKW:</span><br>
+    <span id="truck_performance">Motorleistung:</span><br>
+    <span id="truck_engine">Motor:</span><br>
+    <span id="truck_engine_manu">Motorhersteller:</span><br>
+    <span id="truck_emission_standard">Emissionsstandard:</span><br>
+  </div>
       </div>
       <div class="modal-footer d-flex justify-content-center">
       </div>
@@ -185,7 +187,6 @@ function load_tourcheck(elmnt) {
   console.log(res[1]+res[0]);
 	var xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function() {
-    console.log(xmlhttp.response);
     var response = this.responseText;
     var myObj = JSON.parse(response);
     if(myObj != "") {
@@ -195,11 +196,11 @@ function load_tourcheck(elmnt) {
     document.getElementById("departure").innerHTML="Startort: "+myObj[0]["departure"]+"|"+myObj[0]["depature_company"];
     document.getElementById("destination").innerHTML="Zielort: "+myObj[0]["destination"]+"|"+myObj[0]["destination_company"];
     document.getElementById("cargo").innerHTML="Fracht: "+myObj[0]["cargo"];
-    document.getElementById("weight").innerHTML="Frachtgewicht: "+myObj[0]["cargo_weight"];
+    document.getElementById("weight").innerHTML="Frachtgewicht: "+myObj[0]["cargo_weight"]+"t";
     document.getElementById("truck").innerHTML="LKW: "+myObj[0]["truck_manufacturer"]+" "+myObj[0]["truck_model"];
     var trailer_damage = parseInt(myObj[0]["trailer_damage"]);
-    document.getElementById("trailer_damage").innerHTML="Aufliegerschaden: "+trailer_damage;
-    document.getElementById("departure_time").innerHTML="Abfahrt: "+myObj[0]["tour_date"];
+    document.getElementById("trailer_damage").innerHTML="Aufliegerschaden: "+trailer_damage+"%";
+    document.getElementById("departure_time").innerHTML="Abfahrt: "+myObj[0]["tour_date"].replace(/-/g, '.');
     document.getElementById("distance").innerHTML="Distanz: "+myObj[0]["distance"]+"km";
     var income = parseInt(myObj[0]["money_earned"]);
     var taxes = income*0.20;
@@ -209,6 +210,24 @@ function load_tourcheck(elmnt) {
     document.getElementById("taxes").innerHTML="Steuern: "+taxes.toFixed(2)+"€";
     document.getElementById("damage_cost").innerHTML="Wartungskosten: "+damage_cost.toFixed(2)+"€";
     document.getElementById("income").innerHTML="Umsatz: "+real_income.toFixed(2)+"€";
+    //get Truck Info
+    var xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange = function() {
+    console.log(xmlhttp.response);
+    var response = this.responseText;
+    var myObj = JSON.parse(response);
+    if(myObj != "") {
+    user_count = myObj.length;
+    }
+    document.getElementById("truck_name").innerHTML="LKW: "+myObj[0]["manufacturer"]+" "+myObj[0]["model"];
+    document.getElementById("truck_performance").innerHTML="Leistung: "+myObj[0]["performance"];
+    document.getElementById("truck_engine").innerHTML="Motor: "+myObj[0]["engine"];
+    document.getElementById("truck_engine_manu").innerHTML="Motorhersteller: "+myObj[0]["engine_manufacturer"];
+    document.getElementById("truck_emission_standard").innerHTML="Emissionsstandard: "+myObj[0]["emission_standard"];
+    document.getElementById("truck_pic").src=myObj[0]["image_url"];
+	};
+	xmlhttp.open("GET", "get_truck_info.php?manufacturer="+myObj[0]["truck_manufacturer"]+"&model="+myObj[0]["truck_model"], true);
+	xmlhttp.send();
 	};
 	xmlhttp.open("GET", "get_tour.php?tour_id="+res[1]+"&username="+res[0], true);
 	xmlhttp.send();
