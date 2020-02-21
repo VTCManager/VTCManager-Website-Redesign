@@ -38,8 +38,9 @@ function delete_entry(elmnt) {
       document.getElementById(save_val).style.display="none";
       }
 	};
-	xmlhttp.open("GET", "delete_entry.php?tour_id="+res[1]+"&username="+res[0], true);
-	xmlhttp.send();
+	xmlhttp.open("POST", "delete_entry.php", true);
+  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xmlhttp.send("tour_id="+res[1]+"&username="+res[0]);
 }
 </script>
   <style>.no-js #loader { display: none;  }
