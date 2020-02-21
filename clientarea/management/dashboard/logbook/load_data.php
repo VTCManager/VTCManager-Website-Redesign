@@ -60,13 +60,13 @@ if ($result->num_rows > 0) {
 			// output data of each row
 			while($row2 = $result2->fetch_assoc()) {
 				$found_job_user_id = $row2["userID"];
-				echo '<td><a href="/account/?userid='.$found_job_user_id.'">'.$found_tour_username.'</a></td>';
+				echo '<td><a class="tour_url" href="/account/?userid='.$found_job_user_id.'">'.$found_tour_username.'</a></td>';
 			}
 		} else {
 			echo '<td>'.$found_tour_username.'</td>';
 		}
 		echo <<<EOT
-		<td><a href="../job_report?username=$found_tour_username&jobid=$found_tour">$found_tour_cargo</a></td>
+		<td><a class="tour_url" href="../job_report?username=$found_tour_username&jobid=$found_tour">$found_tour_cargo</a></td>
 		<td>$found_tour_depature</td>
 		<td>$found_tour_destination</td>
 		EOT;

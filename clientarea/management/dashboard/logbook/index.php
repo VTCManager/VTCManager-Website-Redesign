@@ -54,6 +54,9 @@ function delete_entry(elmnt) {
 	z-index: 9999;
 	background: url(/clientarea/management/img/loader.gif) center no-repeat white;
 }
+.tour_url:hover {
+color: #007bff;
+}
 </style>
 
 <body class="grey lighten-3">
