@@ -50,13 +50,14 @@ if ($result->num_rows > 0) {
 		}else{
 			$employee_joined_date = "nicht abrufbar";
 			}
-		echo "<tr data-id='$found_tour_username,$found_tour' id='$found_tour_username,$found_tour' >";
+		echo "<tr data-id='$employee_userID' id='$employee_userID' >";
 		?>
 		<td><img class="profilePicture" src="<?php echo $employee_avatar_url;?>"> <?php echo $employee_username; ?></td>
 		<td><?php echo $employee_rank; ?></td>
 		<td><?php echo $employee_joined_date; ?></td>
 		<td><?php echo $employee_tours; ?></td>
 		<td><?php echo $employee_online_status; ?></td>
+		<td><button class="btn btn-primary btn-sm" onclick="load_tourcheck(this)" data-toggle="modal" data-target="#tourcheck" style="margin:.0rem;"><i class="fas fa-magic mr-1"></i> Bearbeiten</button></td>
 		</tr>
 		<?php
     }
