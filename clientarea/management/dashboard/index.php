@@ -71,11 +71,11 @@ position:absolute;
                 for (var a in myObj["response"]) {
                   var para = document.createElement("P");   
                   if(myObj["response"][a]["severity"] == 'Heavy' || myObj["response"][a]["severity"] == 'Congested'){
-                    para.innerHTML = myObj["response"][a]["name"]+'<span class="badge badge-danger badge-pill pull-right">'+myObj["response"][a]["players"]+'</span>'; 
+                    para.innerHTML = myObj["response"][a]["name"]+' <span class="badge badge-danger badge-pill pull-right">'+myObj["response"][a]["players"]+'</span>'; 
                   }else if (myObj["response"][a]["severity"] == 'Moderate'){
-                    para.innerHTML = myObj["response"][a]["name"]+'<span class="badge badge-warning badge-pill pull-right">'+myObj["response"][a]["players"]+'</span>'; 
+                    para.innerHTML = myObj["response"][a]["name"]+' <span class="badge badge-warning badge-pill pull-right">'+myObj["response"][a]["players"]+'</span>'; 
                   }else{
-                    para.innerHTML = myObj["response"][a]["name"]+'<span class="badge badge-primary badge-pill pull-right">'+myObj["response"][a]["players"]+'</span>'; 
+                    para.innerHTML = myObj["response"][a]["name"]+' <span class="badge badge-primary badge-pill pull-right">'+myObj["response"][a]["players"]+'</span>'; 
                     }
                   para.className = 'list-group-item list-group-item-action waves-effect';
                   document.getElementById("traffic_list").appendChild(para); 
@@ -99,7 +99,7 @@ position:absolute;
 
             if(myObj != "") {
               const myNode = document.getElementById("traffic_label");
-              myNode.innerHTML = 'Verkehr Sim 1 ['+myObj["response"][0]["players"]+'/'+myObj["response"][0]["maxplayers"]+']';;
+              myNode.innerHTML = 'Verkehr Sim 1 ['+myObj["response"][0]["players"]+' / '+myObj["response"][0]["maxplayers"]+']';;
             } else {
             };
 				}
