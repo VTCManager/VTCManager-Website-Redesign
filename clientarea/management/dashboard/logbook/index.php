@@ -38,12 +38,12 @@ function delete_entry(elmnt) {
 	var res = save_val.split(",");
 	var xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function() {
-		console.log(xmlhttp.response);
-			
+    if(xmlhttp.response=="OK"){
+      document.getElementById(save_val).style.display="none";
+      }
 	};
 	xmlhttp.open("GET", "delete_entry.php?tour_id="+res[1]+"&username="+res[0], true);
 	xmlhttp.send();
-	window.location.reload();
 }
 </script>
   <style>
@@ -148,7 +148,7 @@ position:absolute;
   </div>
 </div>
 <div class="tab-pane fade" id="truck_sec" role="tabpanel" aria-labelledby="profile-tab">
-      <img src="https://mdbootstrap.com/img/logo/mdb192x192.jpg" id="truck_pic" class="rounded float-right" style="max-height:250px;" alt="">
+      <img src="" id="truck_pic" class="rounded float-right" style="max-height:250px;" alt="">
     <span id="truck_name">LKW:</span><br>
     <span id="truck_performance">Motorleistung:</span><br>
     <span id="truck_engine">Motor:</span><br>

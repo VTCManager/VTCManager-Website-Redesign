@@ -22,6 +22,7 @@ if ($conn->query($sql) === TRUE) {
     header("Status: 500 Internal Server Error");
     die();
 }
+echo "OK";
 //close DB conn
 $conn->close();
 ?>

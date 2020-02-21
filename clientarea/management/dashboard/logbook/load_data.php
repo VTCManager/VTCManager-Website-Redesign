@@ -44,14 +44,16 @@ if ($result->num_rows > 0) {
 			$tour_status_tra = '<i class="fas fa-business-time"></i> Auslieferung';
 		}else if ($tour_status== "canceled"){
 			$tour_status_tra = '<i class="fas fa-ban" style="color: red !important;"></i> abgebrochen';
+			$delete_bt = '<td><i class="fa fa-trash" onclick="delete_entry(this);" aria-hidden="true" data-id="'.$found_tour_username.','.$found_tour.'" style="cursor: pointer;"></i></td>';
 		}else if ($tour_status== "declined"){
 			$tour_status_tra = '<i class="fas fa-ban" style="color: red !important;"></i> abgelehnt';
+			$delete_bt = '<td><i class="fa fa-trash" onclick="delete_entry(this);" aria-hidden="true" data-id="'.$found_tour_username.','.$found_tour.'" style="cursor: pointer;"></i></td>';
 		}else if ($tour_status== "accepted"){
 			$tour_status_tra = '<i class="fas fa-check-circle" style="color: green !important;"></i> akzeptiert';
 		}
 		$sql2 = "SELECT * FROM user_data WHERE username='$found_tour_username'";
 		$result2 = $conn->query($sql2);
-		echo "<tr data-id='$found_tour_username,$found_tour'>";
+		echo "<tr data-id='$found_tour_username,$found_tour' id='$found_tour_username,$found_tour' >";
 		if ($result2->num_rows > 0) {
 			// output data of each row
 			while($row2 = $result2->fetch_assoc()) {
