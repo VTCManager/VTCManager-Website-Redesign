@@ -71,7 +71,7 @@ position:absolute;
 	width: 100%;
 	height: 100%;
 	z-index: 9999;
-	background: url(/clientarea/management/img/loader.gif) center no-repeat;
+	background: url(/clientarea/management/img/loader.gif) center no-repeat white;
 }
 </style>
 
