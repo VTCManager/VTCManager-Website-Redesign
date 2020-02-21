@@ -58,6 +58,15 @@ function delete_entry(elmnt) {
 color: #007bff;
 }
 </style>
+<style>
+	    .profilePicture {
+    height: auto;
+    border-radius: 50%;
+	height: 30px;
+	width: 30px;
+	object-fit: contain;
+}
+	  </style>
 
 <body class="grey lighten-3">
   <div class="se-pre-con"></div>
@@ -230,7 +239,7 @@ function load_tourcheck(elmnt) {
             <div class="card-body">
 
               <div class="card-header text-center">
-                Fahrtenbuch von <?php echo $user_company_name; ?>
+                Mitarbeiter von <?php echo $user_company_name; ?>
               </div>
               <!-- List group links -->
               <div class="list-group list-group-flush">
@@ -242,12 +251,6 @@ function load_tourcheck(elmnt) {
                         <td>Posten</td>
                         <td>angestellt seit</td>
                         <td>erfolgreiche Touren</td>
-                        <td>Gehalt</td>
-                        <td>LKW</td><?php //comment?>
-                        <td>Datum</td>
-                        <td>Status</td>
-						<td></td>
-						<td></td>
 						<td></td>
                     </tr>
                 </thead>
