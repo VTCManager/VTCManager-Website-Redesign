@@ -13,7 +13,7 @@ if ($result->num_rows > 0) {
 		$employee_rank = $row["rank"];
 		$employee_time_online_raw = $row["last_seen"];
 		if(strtotime($employee_time_online_raw) > strtotime("-2 minutes")) {
-			$employee_online_status = "online";
+			$employee_online_status = "<i class='fas fa-signal' style='color:green;'></i> online";
 			}else{
 				/*
 				$employee_time_online = new DateTime($employee_time_online_raw);
@@ -36,7 +36,7 @@ if ($result->num_rows > 0) {
 						$since_conv = $since->y." Jahren ".$since->m." Monaten ".$since->d." Tage ".$since->h." Stunden ".$since->i." Minuten";
 						}*/
 						$employee_time_online_raw = date('d.m.Y H:i', strtotime($employee_time_online_raw));
-				$employee_online_status = "zuletzt online ".$employee_time_online_raw;
+				$employee_online_status = "<i class='fas fa-bed'></i> zuletzt online ".$employee_time_online_raw;
 				}
 		$sql2 = "SELECT * FROM tour_table WHERE username='$employee_username' AND companyID=1 AND status='accepted'";
 		$result2 = $conn->query($sql2);
