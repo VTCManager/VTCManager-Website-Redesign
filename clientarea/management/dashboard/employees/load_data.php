@@ -52,7 +52,7 @@ if ($result->num_rows > 0) {
 			}
 		echo "<tr data-id='$found_tour_username,$found_tour' id='$found_tour_username,$found_tour' >";
 		?>
-		<td><img class="profilePicture" src="<?php echo $employee_avatar_url;?>"><?php echo $employee_username; ?></td>
+		<td><img class="profilePicture" src="<?php echo $employee_avatar_url;?>"> <?php echo $employee_username; ?></td>
 		<td><?php echo $employee_rank; ?></td>
 		<td><?php echo $employee_joined_date; ?></td>
 		<td><?php echo $employee_tours; ?></td>
