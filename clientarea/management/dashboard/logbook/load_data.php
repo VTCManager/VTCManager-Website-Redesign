@@ -39,15 +39,15 @@ if ($result->num_rows > 0) {
 		} else if ($tour_status== "accepted by driver"){
 		    
 			if (strtotime($tour_date) < strtotime("-1 day")){
-			$delete_bt = '<td><i class="fa fa-trash" onclick="delete_entry(this);" aria-hidden="true" data-id="'.$found_tour_username.','.$found_tour.'" style="cursor: pointer;"></i></td>';
+			$delete_bt = '<i class="fa fa-trash" onclick="delete_entry(this);" aria-hidden="true" data-id="'.$found_tour_username.','.$found_tour.'" style="cursor: pointer;"></i>';
 			}
 			$tour_status_tra = '<i class="fas fa-business-time"></i> Auslieferung';
 		}else if ($tour_status== "canceled"){
 			$tour_status_tra = '<i class="fas fa-ban" style="color: red !important;"></i> abgebrochen';
-			$delete_bt = '<td><i class="fa fa-trash" onclick="delete_entry(this);" aria-hidden="true" data-id="'.$found_tour_username.','.$found_tour.'" style="cursor: pointer;"></i></td>';
+			$delete_bt = '<i class="fa fa-trash" onclick="delete_entry(this);" aria-hidden="true" data-id="'.$found_tour_username.','.$found_tour.'" style="cursor: pointer;"></i>';
 		}else if ($tour_status== "declined"){
 			$tour_status_tra = '<i class="fas fa-ban" style="color: red !important;"></i> abgelehnt';
-			$delete_bt = '<td><i class="fa fa-trash" onclick="delete_entry(this);" aria-hidden="true" data-id="'.$found_tour_username.','.$found_tour.'" style="cursor: pointer;"></i></td>';
+			$delete_bt = '<i class="fa fa-trash" onclick="delete_entry(this);" aria-hidden="true" data-id="'.$found_tour_username.','.$found_tour.'" style="cursor: pointer;"></i>';
 		}else if ($tour_status== "accepted"){
 			$tour_status_tra = '<i class="fas fa-check-circle" style="color: green !important;"></i> akzeptiert';
 		}
