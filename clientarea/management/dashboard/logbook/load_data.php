@@ -46,9 +46,11 @@ if ($result->num_rows > 0) {
 			$tour_status_tra = '<i class="fas fa-ban" style="color: red !important;"></i> abgebrochen';
 			$delete_bt = '<i class="fa fa-trash" onclick="delete_entry(this);" aria-hidden="true" data-id="'.$found_tour_username.','.$found_tour.'" style="cursor: pointer;"></i>';
 		}else if ($tour_status== "declined"){
+		    $tour_prog = "100";
 			$tour_status_tra = '<i class="fas fa-ban" style="color: red !important;"></i> abgelehnt';
 			$delete_bt = '<i class="fa fa-trash" onclick="delete_entry(this);" aria-hidden="true" data-id="'.$found_tour_username.','.$found_tour.'" style="cursor: pointer;"></i>';
 		}else if ($tour_status== "accepted"){
+	     	$tour_prog = "100";
 			$tour_status_tra = '<i class="fas fa-check-circle" style="color: green !important;"></i> akzeptiert';
 		}
 		$sql2 = "SELECT * FROM user_data WHERE username='$found_tour_username'";
