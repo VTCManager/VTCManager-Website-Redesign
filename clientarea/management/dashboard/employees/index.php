@@ -90,7 +90,7 @@ color: #007bff;
   <!--Main layout-->
   <?php //Lade Tour Prüfungs Fenster nur wenn User Berechtigung zum Bearbeiten des Logbuches hat
   if($EditLogbook == "1") { ?>
-  <div class="modal fade" id="tourcheck" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  <div class="modal fade" id="viewemployee" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
   aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -158,7 +158,7 @@ color: #007bff;
 </div>
 </head>
 <script>
-function load_tourcheck(elmnt) {
+function load_employee(elmnt) {
 	var save_val = $(elmnt).attr("data-id");
 	var res = save_val.split(",");
   console.log(res[1]+res[0]);
@@ -203,7 +203,7 @@ function load_tourcheck(elmnt) {
     document.getElementById("truck_emission_standard").innerHTML="Emissionsstandard: "+myObj[0]["emission_standard"];
     document.getElementById("truck_pic").src=myObj[0]["image_url"];
 	};
-	xmlhttp.open("GET", "get_truck_info.php?manufacturer="+myObj[0]["truck_manufacturer"]+"&model="+myObj[0]["truck_model"], true);
+	xmlhttp.open("GET", "get_employee_info.php?manufacturer="+myObj[0]["truck_manufacturer"]+"&model="+myObj[0]["truck_model"], true);
 	xmlhttp.send();
 	};
 	xmlhttp.open("GET", "get_tour.php?tour_id="+res[1]+"&username="+res[0], true);
