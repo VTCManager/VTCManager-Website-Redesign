@@ -110,10 +110,10 @@ color: #007bff;
 </ul>
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="general" role="tabpanel" aria-labelledby="home-tab">
-    <span id="employee_name">Name:</span><br>
-    <span id="">Alter:</span><br>
-    <span id="employee_rank">Posten:</span><br>
-    <span id="employee_total_tours">erfolgreiche Touren:</span><br>
+    <i class="fas fa-user"></i> <span id="employee_name">Name:</span><br>
+    <i class="fas fa-calendar-day"></i> <span id="">Alter:</span><br>
+    <i class="fas fa-user-tag"></i> <span id="employee_rank">Posten:</span><br>
+    <i class="fas fa-truck-loading"></i> <span id="employee_total_tours">erfolgreiche Touren:</span><br>
     <span id="weight">Einnahmen durch Fahrer:</span><br>
   </div>
       </div>
