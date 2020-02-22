@@ -113,7 +113,7 @@ color: #007bff;
     <span id="employee_name">Name:</span><br>
     <span id="">Alter:</span><br>
     <span id="employee_rank">Posten:</span><br>
-    <span id="cargo">erfolgreiche Touren:</span><br>
+    <span id="employee_total_tours">erfolgreiche Touren:</span><br>
     <span id="weight">Einnahmen durch Fahrer:</span><br>
   </div>
       </div>
@@ -139,6 +139,7 @@ function load_employee(elmnt) {
     }
     document.getElementById("employee_name").innerHTML="Name: "+myObj[0]["username"];
     document.getElementById("employee_rank").innerHTML="Posten: "+myObj[0]["rank"];
+    document.getElementById("employee_total_tours").innerHTML="erfolgreiche Touren: "+myObj[0]["total_tours"];
 	};
 	xmlhttp.open("POST", "get_employee_info.php", true);
 	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");

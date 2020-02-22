@@ -18,12 +18,13 @@ if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
 		$rows[] = $row;
+		$found_employee_username = $row["username"];
 	}
 }else{
 	}
-$sql = 'SELECT * FROM tour_table WHERE username='.$rows["username"].' AND companyID=1 AND status="accepted"';
+$sql = 'SELECT * FROM tour_table WHERE username="'.$found_employee_username.'" AND companyID=1 AND status="accepted"';
 $result = $conn->query($sql);
-$rows["total_tours"] = $result->num_rows;
+$rows[0]["total_tours"] = $result->num_rows;
 echo json_encode($rows);
 //close DB conn
 $conn->close();
