@@ -114,7 +114,7 @@ color: #007bff;
     <i class="fas fa-calendar-day"></i> <span id="">Alter:</span><br>
     <i class="fas fa-user-tag"></i> <span id="employee_rank">Posten:</span><br>
     <i class="fas fa-truck-loading"></i> <span id="employee_total_tours">erfolgreiche Touren:</span><br>
-    <span id="weight">Einnahmen durch Fahrer:</span><br>
+    <i class="fas fa-money-bill"></i> <span id="employee_income">Einnahmen durch Fahrer:</span><br>
   </div>
       </div>
       <div class="modal-footer d-flex justify-content-center">
@@ -140,6 +140,7 @@ function load_employee(elmnt) {
     document.getElementById("employee_name").innerHTML="Name: "+myObj[0]["username"];
     document.getElementById("employee_rank").innerHTML="Posten: "+myObj[0]["rank"];
     document.getElementById("employee_total_tours").innerHTML="erfolgreiche Touren: "+myObj[0]["total_tours"];
+    document.getElementById("employee_income").innerHTML="Einnahmen durch Fahrer: "+myObj[0]["income"]+"€";
 	};
 	xmlhttp.open("POST", "get_employee_info.php", true);
 	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");

@@ -25,6 +25,20 @@ if ($result->num_rows > 0) {
 $sql = 'SELECT * FROM tour_table WHERE username="'.$found_employee_username.'" AND companyID=1 AND status="accepted"';
 $result = $conn->query($sql);
 $rows[0]["total_tours"] = $result->num_rows;
+$sql = 'SELECT * FROM tour_table WHERE username="'.$found_employee_username.'" AND companyID=1 AND status="accepted"';
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        //zähle Geld
+	$current_income = (int)$row["money_earned"];
+	$current_taxes = $current_income*0.20;
+	$current_damage_cost = ((int)$row["income"])*100;
+        $current_amount = $current_amount + ($current_income-$current_taxes-$current_damage_cost);
+	$current_income = 0;
+    }
+}
+    $current_amount = number_format($current_amount, 2, ',', '.');
+$rows[0]["income"] = $current_amount;
 echo json_encode($rows);
 //close DB conn
 $conn->close();
