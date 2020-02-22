@@ -137,7 +137,14 @@ color: #007bff;
       </form>
   </div>
   <div class="tab-pane fade" id="edit" role="tabpanel" aria-labelledby="home-tab">
-    <i class="fas fa-user"></i> <span id="employee_name">Name:</span><br>
+    <form>
+    <select class="browser-default custom-select">
+  <option value="" disabled selected>Choose your option</option>
+  <option value="1">Option 1</option>
+  <option value="2">Option 2</option>
+  <option value="3">Option 3</option>
+</select>
+</form>
     <hr>
   </div>
       </div>

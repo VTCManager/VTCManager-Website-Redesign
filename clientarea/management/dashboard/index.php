@@ -351,28 +351,6 @@ position:absolute;
 
         </div>
         <!--Grid column-->
-
-        <!--Grid column-->
-        <div class="col-lg-6 col-md-6 mb-4">
-
-          <!--Card-->
-          <div class="card">
-
-            <!-- Card header -->
-            <div class="card-header">Horizontal Bar Chart</div>
-
-            <!--Card content-->
-            <div class="card-body">
-
-              <canvas id="horizontalBar"></canvas>
-
-            </div>
-
-          </div>
-          <!--/.Card-->
-
-        </div>
-        <!--Grid column-->
       </div>
       <!--Grid row-->
 
@@ -548,40 +526,6 @@ position:absolute;
 			};
 			xhttp.open("GET", "../php/get_freight_data.php", true);
 			xhttp.send();
-
-  </script>
-
-  <script>
-    new Chart(document.getElementById("horizontalBar"), {
-      "type": "horizontalBar",
-      "data": {
-        "labels": ["Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Grey"],
-        "datasets": [{
-          "label": "My First Dataset",
-          "data": [22, 33, 55, 12, 86, 23, 14],
-          "fill": false,
-          "backgroundColor": ["rgba(255, 99, 132, 0.2)", "rgba(255, 159, 64, 0.2)",
-            "rgba(255, 205, 86, 0.2)", "rgba(75, 192, 192, 0.2)",
-            "rgba(54, 162, 235, 0.2)",
-            "rgba(153, 102, 255, 0.2)", "rgba(201, 203, 207, 0.2)"
-          ],
-          "borderColor": ["rgb(255, 99, 132)", "rgb(255, 159, 64)", "rgb(255, 205, 86)",
-            "rgb(75, 192, 192)", "rgb(54, 162, 235)", "rgb(153, 102, 255)",
-            "rgb(201, 203, 207)"
-          ],
-          "borderWidth": 1
-        }]
-      },
-      "options": {
-        "scales": {
-          "xAxes": [{
-            "ticks": {
-              "beginAtZero": true
-            }
-          }]
-        }
-      }
-    });
 
   </script>
 </body>
