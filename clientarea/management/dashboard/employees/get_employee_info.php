@@ -1,7 +1,7 @@
 <?php
 //Zweck: hole Daten für detaillierte Ansicht des Auftrages
 //check GET request
-if(!isset($_GET['userID'])){
+if(!isset($_POST['userID'])){
     //bad request
     header("Status: 400 Bad Request");
     die();
@@ -9,7 +9,7 @@ if(!isset($_GET['userID'])){
 //Connect and Check
 include '../../../../basis_files/php/get_user_data.php';
 //GET Variablen
-$requested_userid = $_GET['userID'];
+$requested_userid = $_POST['userID'];
 //lade Tour Daten aus DB
 $sql = "SELECT * FROM user_data WHERE userID=$requested_userid AND userCompanyID=1";
 $result = $conn->query($sql);

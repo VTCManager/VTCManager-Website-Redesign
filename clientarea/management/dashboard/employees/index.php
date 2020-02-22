@@ -155,7 +155,7 @@ function load_employee(elmnt) {
     }
     document.getElementById("truck_name").innerHTML="LKW: "+myObj[0]["manufacturer"]+" "+myObj[0]["model"];
 	};
-	xmlhttp.open("POST", "get_employee_info.php?manufacturer="+myObj[0]["truck_manufacturer"]+"&model="+myObj[0]["truck_model"], true);
+	xmlhttp.open("POST", "get_employee_info.php", true);
 	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xmlhttp.send("userID="+save_val);
   document.getElementById("TourCheckContent").style.display="block";
