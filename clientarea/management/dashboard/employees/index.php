@@ -107,6 +107,14 @@ color: #007bff;
     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#general" role="tab" aria-controls="Allgemein"
       aria-selected="true">Allgemein</a>
   </li>
+  <li class="nav-item">
+    <a class="nav-link" id="home-tab" data-toggle="tab" href="#edit" role="tab" aria-controls="Allgemein"
+      aria-selected="true">Bearbeiten</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="home-tab" data-toggle="tab" href="#fire" role="tab" aria-controls="Allgemein"
+      aria-selected="true">Kündigen</a>
+  </li>
 </ul>
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="general" role="tabpanel" aria-labelledby="home-tab">
@@ -115,9 +123,23 @@ color: #007bff;
     <i class="fas fa-user-tag"></i> <span id="employee_rank">Posten:</span><br>
     <i class="fas fa-truck-loading"></i> <span id="employee_total_tours">erfolgreiche Touren:</span><br>
     <i class="fas fa-money-bill"></i> <span id="employee_income">Einnahmen durch Fahrer:</span><br>
+    <hr>
   </div>
+  <div class="tab-pane fade" id="fire" role="tabpanel" aria-labelledby="home-tab">
+    <form action="#!">
+      <div class="md-form">
+  <textarea id="form7" class="md-textarea form-control" rows="3"></textarea>
+  <label for="form7">Kündigungsgrund</label>
+</div>
+<div class="d-flex justify-content-center">
+        <button class="btn btn-danger">Kündigen</button>
       </div>
-      <div class="modal-footer d-flex justify-content-center">
+      </form>
+  </div>
+  <div class="tab-pane fade" id="edit" role="tabpanel" aria-labelledby="home-tab">
+    <i class="fas fa-user"></i> <span id="employee_name">Name:</span><br>
+    <hr>
+  </div>
       </div>
     </div>
   </div>
