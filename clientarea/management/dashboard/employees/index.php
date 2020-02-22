@@ -118,28 +118,12 @@ color: #007bff;
 </ul>
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="general" role="tabpanel" aria-labelledby="home-tab">
-    <span id="departure">Startort:</span><br>
-    <span id="destination">Zielort:</span><br>
-    <span id="distance">Distanz:</span><br>
-    <span id="cargo">Fracht:</span><br>
-    <span id="weight">Frachtgewicht:</span><br>
-    <span id="truck">LKW:</span><br>
-    <span id="trailer_damage">Aufliegerschaden:</span><br>
-    <span id="departure_time">Abfahrt:</span><br>
-    <span id="destination_time">Ankunft:</span><br>
+    <span id="departure">Name:</span><br>
+    <span id="destination">Alter:</span><br>
+    <span id="distance">Posten:</span><br>
+    <span id="cargo">erfolgreiche Touren:</span><br>
+    <span id="weight">Einnahmen durch Fahrer:</span><br>
   </div>
-  <div class="tab-pane fade" id="invoice" role="tabpanel" aria-labelledby="profile-tab">
-  <span style="color: green;" id="freight_value">Frachtwert:</span><br>
-  <span style="color: red;" id="taxes">Steuern:</span><br>
-  <span style="color: red;" id="damage_cost">Wartungskosten:</span><br>
-  <span style="color: green;" id="income">Umsatz:</span><br>
-  <div class="row d-flex justify-content-center">
-	<div class="col-md-12 mb-4">
-	<button type="button" onclick="window.location='http://vtc.northwestvideo.de/job_report?username=<?php echo $requested_user_name;?>&jobid=<?php echo $requested_job_id;?>&accpt=1';" class="btn btn-success"><i class="fas fa-check" aria-hidden="true"></i>Akzeptieren</button>
-	<button type="button" onclick="window.location='http://vtc.northwestvideo.de/job_report?username=<?php echo $requested_user_name;?>&jobid=<?php echo $requested_job_id;?>&accpt=2';" class="btn btn-danger"><i class="fas fa-ban" aria-hidden="true"></i>Ablehnen</button>
-	</div>
-  </div>
-</div>
 <div class="tab-pane fade" id="truck_sec" role="tabpanel" aria-labelledby="profile-tab">
       <img src="" id="truck_pic" class="rounded float-right" style="max-height:250px;" alt="">
     <span id="truck_name">LKW:</span><br>

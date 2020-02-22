@@ -70,8 +70,10 @@ if ($result->num_rows > 0) {
 		<td>$found_tour_depature</td>
 		<td>$found_tour_destination</td>
 		EOT;
-		if($tour_status == "finished" || $tour_status == "accepted"){
+		if($tour_status == "accepted"){
 		echo "<td>$money_earned €</td>";
+		}else if($tour_status == "finished"){
+		echo "<td>ausstehend</td>";
 		}else{
 		echo "<td></td>";
 		}
