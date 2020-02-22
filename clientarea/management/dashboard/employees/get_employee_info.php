@@ -1,7 +1,7 @@
 <?php
 //Zweck: hole Daten für detaillierte Ansicht des Auftrages
 //check GET request
-if(!isset($_GET['manufacturer']) && !isset($_GET['model'])){
+if(!isset($_GET['userID'])){
     //bad request
     header("Status: 400 Bad Request");
     die();
@@ -9,10 +9,9 @@ if(!isset($_GET['manufacturer']) && !isset($_GET['model'])){
 //Connect and Check
 include '../../../../basis_files/php/get_user_data.php';
 //GET Variablen
-$requested_manufacturer = $_GET['manufacturer'];
-$requested_model = $_GET['model'];
+$requested_userid = $_GET['userID'];
 //lade Tour Daten aus DB
-$sql = "SELECT * FROM truck_info WHERE manufacturer='$requested_manufacturer' AND model='$requested_model'";
+$sql = "SELECT * FROM user_data WHERE userID=$requested_userid AND userCompanyID=1";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

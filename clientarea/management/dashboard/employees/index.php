@@ -144,33 +144,6 @@ color: #007bff;
 <script>
 function load_employee(elmnt) {
 	var save_val = $(elmnt).attr("data-id");
-	var res = save_val.split(",");
-  console.log(res[1]+res[0]);
-	var xmlhttp = new XMLHttpRequest();
-	xmlhttp.onreadystatechange = function() {
-    var response = this.responseText;
-    var myObj = JSON.parse(response);
-    if(myObj != "") {
-    user_count = myObj.length;
-    }
-    document.getElementById("TourCheckTitle").innerHTML="Fahrer: "+myObj[0]["username"]+"|Tour Nr."+myObj[0]["tour_id"];
-    document.getElementById("departure").innerHTML="Startort: "+myObj[0]["departure"]+"|"+myObj[0]["depature_company"];
-    document.getElementById("destination").innerHTML="Zielort: "+myObj[0]["destination"]+"|"+myObj[0]["destination_company"];
-    document.getElementById("cargo").innerHTML="Fracht: "+myObj[0]["cargo"];
-    document.getElementById("weight").innerHTML="Frachtgewicht: "+myObj[0]["cargo_weight"]+"t";
-    document.getElementById("truck").innerHTML="LKW: "+myObj[0]["truck_manufacturer"]+" "+myObj[0]["truck_model"];
-    var trailer_damage = parseInt(myObj[0]["trailer_damage"]);
-    document.getElementById("trailer_damage").innerHTML="Aufliegerschaden: "+trailer_damage+"%";
-    document.getElementById("departure_time").innerHTML="Abfahrt: "+myObj[0]["tour_date"].replace(/-/g, '.');
-    document.getElementById("distance").innerHTML="Distanz: "+myObj[0]["distance"]+"km";
-    var income = parseInt(myObj[0]["money_earned"]);
-    var taxes = income*0.20;
-    var damage_cost = trailer_damage*100;
-    var real_income = income-taxes-damage_cost;
-    document.getElementById("freight_value").innerHTML="Frachtwert: "+income.toFixed(2)+"€";
-    document.getElementById("taxes").innerHTML="Steuern: "+taxes.toFixed(2)+"€";
-    document.getElementById("damage_cost").innerHTML="Wartungskosten: "+damage_cost.toFixed(2)+"€";
-    document.getElementById("income").innerHTML="Umsatz: "+real_income.toFixed(2)+"€";
     //get Truck Info
     var xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function() {
@@ -181,17 +154,10 @@ function load_employee(elmnt) {
     user_count = myObj.length;
     }
     document.getElementById("truck_name").innerHTML="LKW: "+myObj[0]["manufacturer"]+" "+myObj[0]["model"];
-    document.getElementById("truck_performance").innerHTML="Leistung: "+myObj[0]["performance"];
-    document.getElementById("truck_engine").innerHTML="Motor: "+myObj[0]["engine"];
-    document.getElementById("truck_engine_manu").innerHTML="Motorhersteller: "+myObj[0]["engine_manufacturer"];
-    document.getElementById("truck_emission_standard").innerHTML="Emissionsstandard: "+myObj[0]["emission_standard"];
-    document.getElementById("truck_pic").src=myObj[0]["image_url"];
 	};
-	xmlhttp.open("GET", "get_employee_info.php?manufacturer="+myObj[0]["truck_manufacturer"]+"&model="+myObj[0]["truck_model"], true);
-	xmlhttp.send();
-	};
-	xmlhttp.open("GET", "get_tour.php?tour_id="+res[1]+"&username="+res[0], true);
-	xmlhttp.send();
+	xmlhttp.open("POST", "get_employee_info.php?manufacturer="+myObj[0]["truck_manufacturer"]+"&model="+myObj[0]["truck_model"], true);
+	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xmlhttp.send("userID="+save_val);
   document.getElementById("TourCheckContent").style.display="block";
 }
 </script>
