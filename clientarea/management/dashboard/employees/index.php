@@ -107,30 +107,14 @@ color: #007bff;
     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#general" role="tab" aria-controls="Allgemein"
       aria-selected="true">Allgemein</a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#invoice" role="tab" aria-controls="Abrechnung"
-      aria-selected="false">Abrechnung</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#truck_sec" role="tab" aria-controls="LKW"
-      aria-selected="false">LKW</a>
-  </li>
 </ul>
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="general" role="tabpanel" aria-labelledby="home-tab">
-    <span id="departure">Name:</span><br>
-    <span id="destination">Alter:</span><br>
-    <span id="distance">Posten:</span><br>
+    <span id="employee_name">Name:</span><br>
+    <span id="">Alter:</span><br>
+    <span id="employee_rank">Posten:</span><br>
     <span id="cargo">erfolgreiche Touren:</span><br>
     <span id="weight">Einnahmen durch Fahrer:</span><br>
-  </div>
-<div class="tab-pane fade" id="truck_sec" role="tabpanel" aria-labelledby="profile-tab">
-      <img src="" id="truck_pic" class="rounded float-right" style="max-height:250px;" alt="">
-    <span id="truck_name">LKW:</span><br>
-    <span id="truck_performance">Motorleistung:</span><br>
-    <span id="truck_engine">Motor:</span><br>
-    <span id="truck_engine_manu">Motorhersteller:</span><br>
-    <span id="truck_emission_standard">Emissionsstandard:</span><br>
   </div>
       </div>
       <div class="modal-footer d-flex justify-content-center">
@@ -153,7 +137,8 @@ function load_employee(elmnt) {
     if(myObj != "") {
     user_count = myObj.length;
     }
-    document.getElementById("truck_name").innerHTML="LKW: "+myObj[0]["manufacturer"]+" "+myObj[0]["model"];
+    document.getElementById("employee_name").innerHTML="Name: "+myObj[0]["username"];
+    document.getElementById("employee_rank").innerHTML="Posten: "+myObj[0]["rank"];
 	};
 	xmlhttp.open("POST", "get_employee_info.php", true);
 	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");

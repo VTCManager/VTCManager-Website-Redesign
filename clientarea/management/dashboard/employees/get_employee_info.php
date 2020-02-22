@@ -11,7 +11,7 @@ include '../../../../basis_files/php/get_user_data.php';
 //GET Variablen
 $requested_userid = $_POST['userID'];
 //lade Tour Daten aus DB
-$sql = "SELECT * FROM user_data WHERE userID=$requested_userid AND userCompanyID=1";
+$sql = "SELECT username,userID,rank FROM user_data WHERE userID=$requested_userid AND userCompanyID=1";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -19,9 +19,12 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
 		$rows[] = $row;
 	}
-	echo json_encode($rows);
 }else{
 	}
+$sql = 'SELECT * FROM tour_table WHERE username='.$rows["username"].' AND companyID=1 AND status="accepted"';
+$result = $conn->query($sql);
+$rows["total_tours"] = $result->num_rows;
+echo json_encode($rows);
 //close DB conn
 $conn->close();
 ?>
