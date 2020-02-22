@@ -1,6 +1,6 @@
 <?php
-//Zweck: hole Daten für detaillierte Ansicht des Auftrages
-//check GET request
+//Zweck: hole Daten für detaillierte Ansicht des Mitarbeiter
+//check POST request
 if(!isset($_POST['userID'])){
     //bad request
     header("Status: 400 Bad Request");
@@ -8,9 +8,9 @@ if(!isset($_POST['userID'])){
     }
 //Connect and Check
 include '../../../../basis_files/php/get_user_data.php';
-//GET Variablen
+//POST Variablen
 $requested_userid = $_POST['userID'];
-//lade Tour Daten aus DB
+//lade Mitarbeiter Daten
 $sql = "SELECT username,userID,rank FROM user_data WHERE userID=$requested_userid AND userCompanyID=1";
 $result = $conn->query($sql);
 
@@ -21,10 +21,14 @@ if ($result->num_rows > 0) {
 		$found_employee_username = $row["username"];
 	}
 }else{
+    //Mitarbeiter nicht gefunden
+    //Expection fehlt
 	}
+//lade Anzahl erfolgreicher Touren
 $sql = 'SELECT * FROM tour_table WHERE username="'.$found_employee_username.'" AND companyID=1 AND status="accepted"';
 $result = $conn->query($sql);
 $rows[0]["total_tours"] = $result->num_rows;
+//Gesamteinahmen durch Fahrer berechnen
 $sql = 'SELECT * FROM tour_table WHERE username="'.$found_employee_username.'" AND companyID=1 AND status="accepted"';
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
@@ -37,8 +41,9 @@ if ($result->num_rows > 0) {
 	$current_income = 0;
     }
 }
-    $current_amount = number_format($current_amount, 2, ',', '.');
+$current_amount = number_format($current_amount, 2, ',', '.');
 $rows[0]["income"] = $current_amount;
+//Array in JSON umwandeln
 echo json_encode($rows);
 //close DB conn
 $conn->close();
