@@ -141,7 +141,7 @@ color: #007bff;
     <form action="change_emp_rank" method="post">
       <input type="hidden" id="change_role_employeeID" value="" name="employeeID" />
       <br>
-    <select class="browser-default custom-select">
+    <select name="rank" class="browser-default custom-select">
   <option disabled selected>Neue Rolle zuweisen</option>
   <?php include 'load_ranks.php';?>
 </select>
