@@ -1,6 +1,6 @@
 <?php
 include '../../basis_files/php/get_user_data.php';
-$page_now = "management/company";
+$page_now = "management/news";
 ?>
 <!DOCTYPE html>
 <html lang="en">

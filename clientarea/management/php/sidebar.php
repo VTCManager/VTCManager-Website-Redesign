@@ -11,8 +11,8 @@ if($page_now == "management/dashboard"){?>
           <i class="fas fa-chart-pie mr-3"></i>Dashboard</a>
         <a href="/clientarea/management/profile" class="list-group-item list-group-item-action waves-effect">
           <i class="fas fa-money-bill-alt"></i> Mein Profil</a>
-        <a href="/clientarea/management/spedition" class="list-group-item list-group-item-action waves-effect">
-          <i class="fas fa-building"></i> Spedition</a>
+        <a href="/clientarea/management/news" class="list-group-item list-group-item-action waves-effect">
+          <i class="fas fa-building"></i> News</a>
         <a href="/clientarea/management/karte" class="list-group-item list-group-item-action waves-effect">
           <i class="fas fa-map-marked-alt"></i> Karte</a>
         <a href="/clientarea/management/events" class="list-group-item list-group-item-action waves-effect">
@@ -34,8 +34,8 @@ if($page_now == "management/dashboard"){?>
           <i class="fas fa-chart-pie"></i> Dashboard</a>
         <a href="/clientarea/management/profile" class="list-group-item list-group-item-action waves-effect">
           <i class="fas fa-money-bill-alt"></i> Mein Profil</a>
-        <a href="/clientarea/management/spedition" class="list-group-item list-group-item-action waves-effect">
-          <i class="fas fa-building"></i> Spedition</a>
+        <a href="/clientarea/management/news" class="list-group-item list-group-item-action waves-effect">
+          <i class="fas fa-building"></i> News</a>
         <a href="/clientarea/management/karte" class="list-group-item list-group-item-action waves-effect">
           <i class="fas fa-map-marked-alt"></i> Karte</a>
         <a href="/clientarea/management/events" class="list-group-item list-group-item-action waves-effect">
@@ -57,8 +57,8 @@ if($page_now == "management/dashboard"){?>
           <i class="fas fa-chart-pie"></i> Dashboard</a>
         <a href="/clientarea/management/profile" class="list-group-item list-group-item-action waves-effect">
           <i class="fas fa-money-bill-alt"></i> Mein Profil</a>
-        <a href="/clientarea/management/spedition" class="list-group-item list-group-item-action waves-effect">
-          <i class="fas fa-building"></i> Spedition</a>
+        <a href="/clientarea/management/news" class="list-group-item list-group-item-action waves-effect">
+          <i class="fas fa-building"></i> News</a>
         <a href="/clientarea/management/karte" class="list-group-item list-group-item-action waves-effect">
           <i class="fas fa-map-marked-alt"></i> Karte</a>
         <a href="/clientarea/management/events" class="list-group-item active waves-effect">
@@ -80,8 +80,8 @@ if($page_now == "management/dashboard"){?>
           <i class="fas fa-chart-pie"></i> Dashboard</a>
         <a href="/clientarea/management/profile" class="list-group-item list-group-item-action waves-effect">
           <i class="fas fa-money-bill-alt"></i> Mein Profil</a>
-        <a href="/clientarea/management/spedition" class="list-group-item list-group-item-action waves-effect">
-          <i class="fas fa-building"></i> Spedition</a>
+        <a href="/clientarea/management/news" class="list-group-item list-group-item-action waves-effect">
+          <i class="fas fa-building"></i> News</a>
         <a href="/clientarea/management/karte" class="list-group-item active waves-effect">
           <i class="fas fa-map-marked-alt mr-3"></i>Karte</a>
         <a href="/clientarea/management/events" class="list-group-item list-group-item-action waves-effect">
@@ -103,8 +103,8 @@ if($page_now == "management/dashboard"){?>
           <i class="fas fa-chart-pie"></i> Dashboard</a>
         <a href="/clientarea/management/profile" class="list-group-item active waves-effect">
           <i class="fas fa-money-bill-alt mr-3"></i>Mein Profil</a>
-        <a href="/clientarea/management/spedition" class="list-group-item list-group-item-action waves-effect">
-          <i class="fas fa-building"></i> Spedition</a>
+        <a href="/clientarea/management/news" class="list-group-item list-group-item-action waves-effect">
+          <i class="fas fa-building"></i> News</a>
         <a href="/clientarea/management/karte" class="list-group-item list-group-item-action waves-effect">
           <i class="fas fa-map-marked-alt"></i> Karte</a>
         <a href="/clientarea/management/events" class="list-group-item list-group-item-action waves-effect">
@@ -114,7 +114,7 @@ if($page_now == "management/dashboard"){?>
       </div>
 
     </div>
-    <?php }else if($page_now == "management/company"){?>
+    <?php }else if($page_now == "management/news"){?>
 		<div class="sidebar-fixed position-fixed">
 
       <a class="logo-wrapper waves-effect">
@@ -126,8 +126,8 @@ if($page_now == "management/dashboard"){?>
           <i class="fas fa-chart-pie"></i> Dashboard</a>
         <a href="/clientarea/management/profile" class="list-group-item list-group-item-action waves-effect">
           <i class="fas fa-money-bill-alt"></i> Mein Profil</a>
-        <a href="/clientarea/management/spedition" class="list-group-item active waves-effect">
-          <i class="fas fa-building mr-3"></i>Spedition</a>
+        <a href="/clientarea/management/news" class="list-group-item active waves-effect">
+          <i class="fas fa-building mr-3"></i>News</a>
         <a href="/clientarea/management/karte" class="list-group-item list-group-item-action waves-effect">
           <i class="fas fa-map-marked-alt"></i> Karte</a>
         <a href="/clientarea/management/events" class="list-group-item list-group-item-action waves-effect">
