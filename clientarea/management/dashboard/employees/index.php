@@ -139,11 +139,10 @@ color: #007bff;
   </div>
   <div class="tab-pane fade" id="edit" role="tabpanel" aria-labelledby="home-tab">
     <form>
+      <br>
     <select class="browser-default custom-select">
-  <option value="" disabled selected>Choose your option</option>
-  <option value="1">Option 1</option>
-  <option value="2">Option 2</option>
-  <option value="3">Option 3</option>
+  <option value="" disabled selected>Neue Rolle zuweisen</option>
+  <?php include 'load_ranks.php';?>
 </select>
 </form>
     <hr>
