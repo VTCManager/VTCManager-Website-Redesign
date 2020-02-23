@@ -31,8 +31,8 @@
     <div class="container">
 
       <!-- Brand -->
-      <a class="navbar-brand" href="https://mdbootstrap.com/docs/jquery/" target="_blank">
-        <strong>MDB</strong>
+      <a class="navbar-brand">
+        <img src="/media/images/favicon.png" height="30">
       </a>
 
       <!-- Collapse -->
