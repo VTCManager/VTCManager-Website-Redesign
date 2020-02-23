@@ -128,7 +128,7 @@ color: #007bff;
   <div class="tab-pane fade" id="fire" role="tabpanel" aria-labelledby="home-tab">
     <form action="fire_employee" method="post">
       <div class="md-form">
-        <input type="hidden" id="fire_employeeID" value="foo" name="employeeID" />
+        <input type="hidden" id="fire_employeeID" value="" name="employeeID" />
   <textarea id="form7" name="reason" class="md-textarea form-control" rows="3" maxlength="250" required></textarea>
   <label for="form7">Kündigungsgrund</label>
 </div>
@@ -138,12 +138,16 @@ color: #007bff;
       </form>
   </div>
   <div class="tab-pane fade" id="edit" role="tabpanel" aria-labelledby="home-tab">
-    <form>
+    <form action="change_emp_rank" method="post">
+      <input type="hidden" id="change_role_employeeID" value="" name="employeeID" />
       <br>
     <select class="browser-default custom-select">
-  <option value="" disabled selected>Neue Rolle zuweisen</option>
+  <option disabled selected>Neue Rolle zuweisen</option>
   <?php include 'load_ranks.php';?>
 </select>
+<div class="d-flex justify-content-center">
+        <button class="btn btn-success">Speichern</button>
+      </div>
 </form>
     <hr>
   </div>
@@ -171,6 +175,7 @@ function load_employee(elmnt) {
     document.getElementById("employee_total_tours").innerHTML="erfolgreiche Touren: "+myObj[0]["total_tours"];
     document.getElementById("employee_income").innerHTML="Einnahmen durch Fahrer: "+myObj[0]["income"]+"€";
     document.getElementById("fire_employeeID").value=myObj[0]["userID"];
+    document.getElementById("change_role_employeeID").value=myObj[0]["userID"];
 	};
 	xmlhttp.open("POST", "get_employee_info.php", true);
 	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
