@@ -93,4 +93,8 @@ mail($to, $subject, $message, $headers);
 
 //close DB conn
 $conn->close();
+
+//redirect
+header("Location: /clientarea/management/dashboard/employees/");
+exit;
 ?>
