@@ -62,7 +62,7 @@ if ($result->num_rows > 0) {
 		<td><?php echo $employee_joined_date; ?></td>
 		<td><?php echo $employee_tours; ?></td>
 		<td><?php echo $employee_online_status; ?></td>
-		<td><button class="btn btn-primary btn-sm" data-id="<?php echo $employee_userID; ?>" onclick="load_employee(this)" data-toggle="modal" data-target="#viewemployee" style="margin:.0rem;"><i class="fas fa-magic mr-1"></i> Informationen</button></td>
+		<td><button class="btn btn-primary btn-sm" data-id="<?php echo $employee_userID; ?>" onclick="load_employee(this)" data-toggle="modal" data-target="#viewemployee" style="margin:.0rem;"><i class="fas fa-info-circle mr-1"></i> Informationen</button></td>
 		</tr>
 		<?php
     }
