@@ -128,6 +128,7 @@ color: #007bff;
   <div class="tab-pane fade" id="fire" role="tabpanel" aria-labelledby="home-tab">
     <form action="fire_employee" method="post">
       <div class="md-form">
+        <input type="hidden" id="fire_employeeID" value="foo" name="employeeID" />
   <textarea id="form7" name="reason" class="md-textarea form-control" rows="3" maxlength="250" required></textarea>
   <label for="form7">Kündigungsgrund</label>
 </div>
@@ -170,6 +171,7 @@ function load_employee(elmnt) {
     document.getElementById("employee_rank").innerHTML="Posten: "+myObj[0]["rank"];
     document.getElementById("employee_total_tours").innerHTML="erfolgreiche Touren: "+myObj[0]["total_tours"];
     document.getElementById("employee_income").innerHTML="Einnahmen durch Fahrer: "+myObj[0]["income"]+"€";
+    document.getElementById("fire_employeeID").value=myObj[0]["userID"];
 	};
 	xmlhttp.open("POST", "get_employee_info.php", true);
 	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
