@@ -144,31 +144,11 @@ include '../../../basis_files/php/get_user_data.php';
             <!--Card content-->
             <div class="card-body">
               <?php
-$username_cookie = $_COOKIE["username"];
-$authCode_cookie = $_COOKIE["authWebToken"];
 date_default_timezone_set('Europe/Berlin');
 $requested_user_id= $_GET['userid'];
-$host = 'localhost:3306';
-$conn = mysqli_connect($host, "system_user_vtc", "8rh98w23nrfubsediofnm<pbi9ufuoipbgiwtFFF","vtcmanager");
-if(! $conn )
-{
-  die("2");
-}
-
-$sql = "SELECT * FROM authCode_table WHERE Token='$authCode_cookie'";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        $found_token_owner = $row["User"];
-    }
-} else {
-
-}
-if ($found_token_owner != $username_cookie) {
-	$not_the_user = true;
-}
+if(empty($requested_user_id)){
+  $requested_user_id = $userID;
+  }
 
 $sql = "SELECT * FROM user_data WHERE userID=$requested_user_id";
 $result = $conn->query($sql);
@@ -212,7 +192,7 @@ if ($result->num_rows > 0) {
 		}
 	}
     ?>
-    <h2><?php echo $username_search;?></h2>
+    <img class="rounded float-left" src="<?php echo $profile_pic_url_search;?>" style="height: 80px;width: 80px;height: auto;"><h2 style="margin-left: 90px;"><?php echo $username_search;?></h2>
     <p><?php echo $last_seen_search;?></p>
     <h4>Information</h4>
     <p><i class="fa fa-briefcase"></i> <?php echo $company_txt_search;?></p>
