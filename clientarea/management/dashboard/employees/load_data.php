@@ -13,9 +13,14 @@ if ($result->num_rows > 0) {
 		$employee_avatar_url = $row["profile_pic_url"];
 		$employee_rank = $row["rank"];
 		$employee_time_online_raw = $row["last_seen"];
+		$employee_pos_x = $row["coordinate_x"];
+		$employee_pos_y = $row["coordinate_y"];
 		//check von Online Status
 		if(strtotime($employee_time_online_raw) > strtotime("-2 minutes")) {
 			$employee_online_status = "<i class='fas fa-signal' style='color:green;'></i> online";
+			$json_trucky = file_get_contents("https://api.truckyapp.com/v2/map/ets2/resolve?x=$employee_pos_x&y=$employee_pos_y");
+			$obj_trucky = json_decode($json_trucky);
+			$employee_online_status = "<i class='fas fa-signal' style='color:green;'></i> online in der Nähe von ".$obj_trucky->response->poi->realName;
 			}else{
 				/*
 				$employee_time_online = new DateTime($employee_time_online_raw);
