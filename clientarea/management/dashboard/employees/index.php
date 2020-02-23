@@ -128,7 +128,7 @@ color: #007bff;
   <div class="tab-pane fade" id="fire" role="tabpanel" aria-labelledby="home-tab">
     <form action="fire_employee" method="post">
       <div class="md-form">
-  <textarea id="form7" name="reason" class="md-textarea form-control" rows="3" required></textarea>
+  <textarea id="form7" name="reason" class="md-textarea form-control" rows="3" maxlength="250" required></textarea>
   <label for="form7">Kündigungsgrund</label>
 </div>
 <div class="d-flex justify-content-center">
