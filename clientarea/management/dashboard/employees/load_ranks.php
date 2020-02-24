@@ -1,4 +1,5 @@
 <?php
+//Rollen für Rollenvergabe in der Mitarbeiterliste laden
 $sql = "SELECT * FROM rank WHERE forCompanyID=$user_company_id";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {

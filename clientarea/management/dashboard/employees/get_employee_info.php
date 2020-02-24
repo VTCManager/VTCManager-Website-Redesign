@@ -7,7 +7,7 @@ if(!isset($_POST['userID'])){
     die();
     }
 //Connect and Check
-include '../../../../basis_files/php/get_user_data.php';
+include '../../get_user_data.php';
 //POST Variablen
 $requested_userid = $_POST['userID'];
 //lade Mitarbeiter Daten
