@@ -1,9 +1,8 @@
 <?php
 //Sprachen redirect
 if ($lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) != "de") {
-}else{
 	header("Location: /en/account/login");
-die();
+	die();
 }
 
 ?>
