@@ -57,9 +57,12 @@ function delete_entry(elmnt) {
 .tour_url:hover {
 color: #007bff;
 }
+table.table a {
+  color:white;
+  }
 </style>
 
-<body class="grey lighten-3">
+<body class="elegant-color-dark">
   <div class="se-pre-con"></div>
 
   <!--Main Navigation-->
@@ -84,16 +87,16 @@ color: #007bff;
   <div class="modal fade" id="tourcheck" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
   aria-hidden="true">
   <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
+    <div class="modal-content elegant-color white-text">
+      <div class="modal-header text-center unique-color white-text">
         <h4 class="modal-title w-100 font-weight-bold" id="TourCheckTitle">Daten werden abgerufen...</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body mx-3" style="display:none;" id="TourCheckContent">
+      <div class="modal-body mx-3 elegant-color white-text" style="display:none;" id="TourCheckContent">
         <div class="md-form mb-5">
-          <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <ul class="nav nav-tabs elegant-color white-text" id="myTab" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#general" role="tab" aria-controls="Allgemein"
       aria-selected="true">Allgemein</a>
@@ -210,7 +213,7 @@ function load_tourcheck(elmnt) {
       <div class="card mb-4 wow fadeIn">
 
         <!--Card content-->
-        <div class="card-body d-sm-flex justify-content-between">
+        <div class="card-body d-sm-flex elegant-color white-text justify-content-between">
 
           <h4 class="mb-2 mb-sm-0 pt-1">
             <a href="dashboard">Dashboard</a>
@@ -227,15 +230,15 @@ function load_tourcheck(elmnt) {
           <div class="card mb-4">
 
             <!--Card content-->
-            <div class="card-body">
+            <div class="card-body elegant-color white-text">
 
-              <div class="card-header text-center">
+              <div class="card-header unique-color white-text text-center">
                 Fahrtenbuch von <?php echo $user_company_name; ?>
               </div>
               <!-- List group links -->
               <div class="list-group list-group-flush">
                 <div class="vertical-scroll">
-            <table class="table">
+            <table class="table white-text">
                 <thead>
                     <tr>
 						<td>Fahrer</td>
@@ -251,7 +254,7 @@ function load_tourcheck(elmnt) {
 						<td></td>
                     </tr>
                 </thead>
-				<tbody>
+				<tbody class="white-text">
 					<?php include 'load_data.php'; //Lade Aufträge?>                  
                 </tbody>
             </table>
