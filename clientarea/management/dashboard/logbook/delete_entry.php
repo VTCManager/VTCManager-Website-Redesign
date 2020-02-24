@@ -10,7 +10,7 @@ if(!isset($_POST['username']) && !isset($_POST['tour_id'])){
 $requested_tour_id= $_POST['tour_id'];
 $requested_username= $_POST['username'];
 //Connect and Check
-include '../../../../basis_files/php/get_user_data.php';
+include '../../get_user_data.php';
 // sql to delete a record
 $sql = "DELETE FROM tour_table WHERE username='$requested_username' AND tour_id=$requested_tour_id";
 

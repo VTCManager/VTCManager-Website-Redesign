@@ -7,7 +7,7 @@ if(!isset($_GET['username']) && !isset($_GET['tour_id'])){
     die();
     }
 //Connect and Check
-include '../../../../basis_files/php/get_user_data.php';
+include '../../get_user_data.php';
 //GET Variablen
 $requested_tour_id= $_GET['tour_id'];
 $requested_username= $_GET['username'];
@@ -16,7 +16,6 @@ $sql = "SELECT * FROM tour_table WHERE tour_id=$requested_tour_id AND username='
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    // output data of each row
     while($row = $result->fetch_assoc()) {
 		$rows[] = $row;
 	}

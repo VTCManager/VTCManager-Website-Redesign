@@ -28,31 +28,33 @@ if ($result->num_rows > 0) {
 				if ($EditLogbook=="1"){
 					//dann setze den Prüfen Button
 				$tour_approved_line = 
-					<<<EOT
-					<a class="btn btn-primary" data-id="$found_tour_username,$found_tour" onclick="load_tourcheck(this)" data-toggle="modal" data-target="#tourcheck">Prüfung</a>
-					EOT;
+					'<a class="btn btn-primary" data-id="$found_tour_username,$found_tour" onclick="load_tourcheck(this)" data-toggle="modal" data-target="#tourcheck">Prüfung</a>';
 				}
 			}
 			$tour_prog = "100";
 			$tour_status_tra = '<i class="fas fa-check-circle" style="color: green !important;"></i> abgeschlossen';
 			//wird die Tour noch gefahren?
 		} else if ($tour_status== "accepted by driver"){
-		    
-			if (strtotime($tour_date) < strtotime("-1 day")){
+		    //Tour älter als 2 Tage?
+			if (strtotime($tour_date) < strtotime("-2 days")){
 			$delete_bt = '<i class="fa fa-trash" onclick="delete_entry(this);" aria-hidden="true" data-id="'.$found_tour_username.','.$found_tour.'" style="cursor: pointer;"></i>';
 			}
 			$tour_status_tra = '<i class="fas fa-business-time"></i> Auslieferung';
 		}else if ($tour_status== "canceled"){
+			//Tour abgebrochen
 			$tour_status_tra = '<i class="fas fa-ban" style="color: red !important;"></i> abgebrochen';
 			$delete_bt = '<i class="fa fa-trash" onclick="delete_entry(this);" aria-hidden="true" data-id="'.$found_tour_username.','.$found_tour.'" style="cursor: pointer;"></i>';
 		}else if ($tour_status== "declined"){
+			//Tour angelehnt
 		    $tour_prog = "100";
 			$tour_status_tra = '<i class="fas fa-ban" style="color: red !important;"></i> abgelehnt';
 			$delete_bt = '<i class="fa fa-trash" onclick="delete_entry(this);" aria-hidden="true" data-id="'.$found_tour_username.','.$found_tour.'" style="cursor: pointer;"></i>';
 		}else if ($tour_status== "accepted"){
+			//Tour angenommen
 	     	$tour_prog = "100";
 			$tour_status_tra = '<i class="fas fa-check-circle" style="color: green !important;"></i> akzeptiert';
 		}
+		//Fahrer ID laden
 		$sql2 = "SELECT * FROM user_data WHERE username='$found_tour_username'";
 		$result2 = $conn->query($sql2);
 		echo "<tr data-id='$found_tour_username,$found_tour' id='$found_tour_username,$found_tour' >";
@@ -65,27 +67,27 @@ if ($result->num_rows > 0) {
 		} else {
 			echo '<td>'.$found_tour_username.'</td>';
 		}
-		echo <<<EOT
-		<td><a class="tour_url" href="../job_report?username=$found_tour_username&jobid=$found_tour">$found_tour_cargo</a></td>
-		<td>$found_tour_depature</td>
-		<td>$found_tour_destination</td>
-		EOT;
+		echo '<td><a class="tour_url" href="../job_report?username='.$found_tour_username.'&jobid='.$found_tour.'">'.$found_tour_cargo.'</a></td>';
+		echo '<td>'.$found_tour_depature.'</td>';
+		echo '<td>.'$found_tour_destination.'</td>';
+		//soll Einkommen angezeigt werden?
 		if($tour_status == "accepted"){
+			//wenn bestätigt
 		echo "<td>$money_earned €</td>";
 		}else if($tour_status == "finished"){
+			//wenn Tour abgeschlossen
 		echo "<td>ausstehend</td>";
 		}else{
 		echo "<td></td>";
 		}
-		echo <<<EOT
-		<td>$found_truck_manu $found_truck_mod</td>
-		<td>$tour_date_nw</td>
-		<td>$tour_status_tra</td>
-		<td>$tour_prog %</td>
-		<td>$tour_approved_line</td>
-		<td>$delete_bt</td>
-		</tr>
-		EOT;
+		echo '<td>'.$found_truck_manu.' '.$found_truck_mod.'</td>';
+		echo '<td>'.$tour_date_nw.'</td>';
+		echo '<td>'.$tour_status_tra.'</td>';
+		echo '<td>'.$tour_prog.' %</td>';
+		echo '<td>'.$tour_approved_line.'</td>';
+		echo '<td>'.$delete_bt.'</td>';
+		echo '</tr>';
+		//Werte zurücksetzen
 		$tour_approved_line = "";
 		$delete_bt = "";
     }
