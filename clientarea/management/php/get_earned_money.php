@@ -1,6 +1,6 @@
 <?php
 //connect and Check
-include '../../../basis_files/php/get_user_data.php'; 
+include '../get_user_data.php'; 
 //Abfrage aktuelle Woche
 $day = date('w');
 $week_start = date('Y-m-d', strtotime('-'.$day.' days + 1 day'));

@@ -1,6 +1,6 @@
 
 <?php
-include '../../../basis_files/php/get_user_data.php';   
+include '../get_user_data.php';   
 $sql = "SELECT cargo,COUNT(*) AS num FROM tour_table WHERE companyID=$user_company_id GROUP BY cargo ORDER BY COUNT(*) DESC LIMIT 5";
 $result = $conn->query($sql);
 
