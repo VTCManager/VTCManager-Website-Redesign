@@ -1,8 +1,8 @@
 <?php
 //Sprachen redirect
-if (substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) != "de") {
+if ($lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) != "de") {
 }else{
-	header("Location: https://vtc.northwestvideo.de/en/account/login");
+	header("Location: /en/account/login");
 die();
 }
 
