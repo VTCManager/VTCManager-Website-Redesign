@@ -1,5 +1,5 @@
 <?php //begin of navbar?>
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark unique-color-dark scrolling-navbar">
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark stylish-color-dark scrolling-navbar">
       <div class="container-fluid">
 <?php
 if($page_now_navbar == "management/dashboard/index"){?>

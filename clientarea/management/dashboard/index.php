@@ -77,7 +77,7 @@ position:absolute;
                   }else{
                     para.innerHTML = myObj["response"][a]["name"]+' <span class="badge badge-primary badge-pill pull-right">'+myObj["response"][a]["players"]+'</span>'; 
                     }
-                  para.className = 'list-group-item list-group-item-action waves-effect';
+                  para.className = 'list-group-item list-group-item-action waves-effect elegant-color white-text';
                   document.getElementById("traffic_list").appendChild(para); 
                 };
                 var para2 = document.createElement("A");
@@ -110,7 +110,7 @@ position:absolute;
 </script>
 </head>
 
-<body class="grey lighten-3">
+<body class="elegant-color-dark">
   <div class="se-pre-con"></div>
 
   <!--Main Navigation-->
@@ -137,7 +137,7 @@ position:absolute;
       <div class="card mb-4 wow fadeIn">
 
         <!--Card content-->
-        <div class="card-body d-sm-flex justify-content-between">
+        <div class="card-body d-sm-flex elegant-color white-text justify-content-between">
 
           <h4 class="mb-2 mb-sm-0 pt-1">
             <a href="dashboard">Homepage</a>
@@ -160,7 +160,7 @@ position:absolute;
           <div class="card">
 
             <!--Card content-->
-            <div class="card-body">
+            <div class="card-body elegant-color white-text">
 
               <canvas id="incomechart"></canvas>
 
@@ -179,9 +179,9 @@ position:absolute;
           <div class="card mb-4">
 
             <!--Card content-->
-            <div class="card-body">
+            <div class="card-body elegant-color white-text">
 
-              <div class="card-header text-center" id="traffic_label">
+              <div class="card-header text-center unique-color white-text" id="traffic_label">
                 <?php include '../php/tmp-api.php';//load Server Stats?>
                 Verkehr Sim 1 [<?php echo $sim1_players;?>]
               </div>
@@ -212,15 +212,15 @@ position:absolute;
           <!--Card-->
           <div class="card">
 
-            <div class="card-header">Die letzten 3 Touren</div>
+            <div class="card-header unique-color white-text">Die letzten 3 Touren</div>
             <!--Card content-->
-            <div class="card-body">
+            <div class="card-body elegant-color white-text">
 
 
               <!-- Table  -->
               <table class="table table-hover">
                 <!-- Table head -->
-                <thead class="blue-grey lighten-4">
+                <thead class="stylish-color-dark white-text">
                   <tr>
                     <th>Startort</th>
                     <th>Zielort</th>
@@ -231,7 +231,7 @@ position:absolute;
                 <!-- Table head -->
 
                 <!-- Table body -->
-                <tbody>
+                <tbody class="white-text">
                   <?php include '../php/get_latest_tours.php'; //hole die letzten Touren?>
 
                 </tbody>
@@ -315,10 +315,10 @@ position:absolute;
           <div class="card">
 
             <!-- Card header -->
-            <div class="card-header">Touren Diagramm</div>
+            <div class="card-header unique-color white-text">Touren Diagramm</div>
 
             <!--Card content-->
-            <div class="card-body">
+            <div class="card-body elegant-color white-text">
 
               <canvas id="lineChart"></canvas>
 
