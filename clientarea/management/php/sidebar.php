@@ -10,15 +10,15 @@ if($page_now == "management/dashboard"){?>
       <div class="list-group list-group-flush">
         <a href="dashboard" class="list-group-item active waves-effect">
           <i class="fas fa-chart-pie mr-3"></i>Dashboard</a>
-        <a href="/clientarea/management/profile" class="list-group-item list-group-item-action waves-effect elegant-color white-text">
+        <a href="/clientarea/management/profile" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-money-bill-alt"></i> Mein Profil</a>
-        <a href="/clientarea/management/news" class="list-group-item list-group-item-action waves-effect elegant-color white-text">
+        <a href="/clientarea/management/news" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-building"></i> News</a>
-        <a href="/clientarea/management/karte" class="list-group-item list-group-item-action waves-effect elegant-color white-text">
+        <a href="/clientarea/management/karte" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-map-marked-alt"></i> Karte</a>
-        <a href="/clientarea/management/events" class="list-group-item list-group-item-action waves-effect elegant-color white-text">
+        <a href="/clientarea/management/events" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-user"></i> Events</a>
-        <a href="/clientarea/management/einstellungen" class="list-group-item list-group-item-action waves-effect elegant-color white-text">
+        <a href="/clientarea/management/einstellungen" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-cog"></i> Einstellungen</a>
       </div>
 
@@ -31,17 +31,17 @@ if($page_now == "management/dashboard"){?>
       </a>
 
       <div class="list-group list-group-flush">
-        <a href="/clientarea/management/dashboard" class="list-group-item list-group-item-action waves-effect elegant-color white-text">
+        <a href="/clientarea/management/dashboard" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-chart-pie"></i> Dashboard</a>
-        <a href="/clientarea/management/profile" class="list-group-item list-group-item-action waves-effect elegant-color white-text">
+        <a href="/clientarea/management/profile" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-money-bill-alt"></i> Mein Profil</a>
-        <a href="/clientarea/management/news" class="list-group-item list-group-item-action waves-effect elegant-color white-text">
+        <a href="/clientarea/management/news" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-building"></i> News</a>
-        <a href="/clientarea/management/karte" class="list-group-item list-group-item-action waves-effect elegant-color white-text">
+        <a href="/clientarea/management/karte" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-map-marked-alt"></i> Karte</a>
-        <a href="/clientarea/management/events" class="list-group-item list-group-item-action waves-effect elegant-color white-text">
+        <a href="/clientarea/management/events" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-user"></i> Events</a>
-        <a href="/clientarea/management/einstellungen" class="list-group-item active waves-effect elegant-color white-text">
+        <a href="/clientarea/management/einstellungen" class="list-group-item active waves-effect stylish-color-dark white-text">
           <i class="fas fa-cog mr-3"></i>Einstellungen</a>
       </div>
 
@@ -54,17 +54,17 @@ if($page_now == "management/dashboard"){?>
       </a>
 
       <div class="list-group list-group-flush">
-        <a href="/clientarea/management/dashboard" class="list-group-item list-group-item-action waves-effect elegant-color white-text">
+        <a href="/clientarea/management/dashboard" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-chart-pie"></i> Dashboard</a>
-        <a href="/clientarea/management/profile" class="list-group-item list-group-item-action waves-effect elegant-color white-text">
+        <a href="/clientarea/management/profile" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-money-bill-alt"></i> Mein Profil</a>
-        <a href="/clientarea/management/news" class="list-group-item list-group-item-action waves-effect elegant-color white-text">
+        <a href="/clientarea/management/news" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-building"></i> News</a>
-        <a href="/clientarea/management/karte" class="list-group-item list-group-item-action waves-effect elegant-color white-text">
+        <a href="/clientarea/management/karte" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-map-marked-alt"></i> Karte</a>
-        <a href="/clientarea/management/events" class="list-group-item active waves-effect elegant-color white-text">
+        <a href="/clientarea/management/events" class="list-group-item active waves-effect stylish-color-dark white-text">
           <i class="fas fa-user mr-3"></i>Events</a>
-        <a href="/clientarea/management/einstellungen" class="list-group-item list-group-item-action waves-effect elegant-color white-text">
+        <a href="/clientarea/management/einstellungen" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-cog"></i> Einstellungen</a>
       </div>
 
@@ -77,17 +77,17 @@ if($page_now == "management/dashboard"){?>
       </a>
 
       <div class="list-group list-group-flush">
-        <a href="/clientarea/management/dashboard" class="list-group-item list-group-item-action waves-effect elegant-color white-text">
+        <a href="/clientarea/management/dashboard" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-chart-pie"></i> Dashboard</a>
-        <a href="/clientarea/management/profile" class="list-group-item list-group-item-action waves-effect elegant-color white-text">
+        <a href="/clientarea/management/profile" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-money-bill-alt"></i> Mein Profil</a>
-        <a href="/clientarea/management/news" class="list-group-item list-group-item-action waves-effect elegant-color white-text">
+        <a href="/clientarea/management/news" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-building"></i> News</a>
-        <a href="/clientarea/management/karte" class="list-group-item active waves-effect elegant-color white-text">
+        <a href="/clientarea/management/karte" class="list-group-item active waves-effect stylish-color-dark white-text">
           <i class="fas fa-map-marked-alt mr-3"></i>Karte</a>
-        <a href="/clientarea/management/events" class="list-group-item list-group-item-action waves-effect elegant-color white-text">
+        <a href="/clientarea/management/events" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-user"></i> Events</a>
-        <a href="/clientarea/management/einstellungen" class="list-group-item list-group-item-action waves-effect elegant-color white-text">
+        <a href="/clientarea/management/einstellungen" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-cog"></i> Einstellungen</a>
       </div>
 
@@ -100,17 +100,17 @@ if($page_now == "management/dashboard"){?>
       </a>
 
       <div class="list-group list-group-flush">
-        <a href="/clientarea/management/dashboard" class="list-group-item list-group-item-action waves-effect elegant-color white-text">
+        <a href="/clientarea/management/dashboard" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-chart-pie"></i> Dashboard</a>
-        <a href="/clientarea/management/profile" class="list-group-item active waves-effect elegant-color white-text">
+        <a href="/clientarea/management/profile" class="list-group-item active waves-effect stylish-color-dark white-text">
           <i class="fas fa-money-bill-alt mr-3"></i>Mein Profil</a>
-        <a href="/clientarea/management/news" class="list-group-item list-group-item-action waves-effect elegant-color white-text">
+        <a href="/clientarea/management/news" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-building"></i> News</a>
-        <a href="/clientarea/management/karte" class="list-group-item list-group-item-action waves-effect elegant-color white-text">
+        <a href="/clientarea/management/karte" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-map-marked-alt"></i> Karte</a>
-        <a href="/clientarea/management/events" class="list-group-item list-group-item-action waves-effect elegant-color white-text">
+        <a href="/clientarea/management/events" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-user"></i> Events</a>
-        <a href="/clientarea/management/einstellungen" class="list-group-item list-group-item-action waves-effect elegant-color white-text">
+        <a href="/clientarea/management/einstellungen" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-cog"></i> Einstellungen</a>
       </div>
 
@@ -123,17 +123,17 @@ if($page_now == "management/dashboard"){?>
       </a>
 
       <div class="list-group list-group-flush">
-        <a href="/clientarea/management/dashboard" class="list-group-item list-group-item-action waves-effect elegant-color white-text">
+        <a href="/clientarea/management/dashboard" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-chart-pie"></i> Dashboard</a>
-        <a href="/clientarea/management/profile" class="list-group-item list-group-item-action waves-effect elegant-color white-text">
+        <a href="/clientarea/management/profile" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-money-bill-alt"></i> Mein Profil</a>
-        <a href="/clientarea/management/news" class="list-group-item active waves-effect elegant-color white-text">
+        <a href="/clientarea/management/news" class="list-group-item active waves-effect stylish-color-dark white-text">
           <i class="fas fa-building mr-3"></i>News</a>
-        <a href="/clientarea/management/karte" class="list-group-item list-group-item-action waves-effect elegant-color white-text">
+        <a href="/clientarea/management/karte" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-map-marked-alt"></i> Karte</a>
-        <a href="/clientarea/management/events" class="list-group-item list-group-item-action waves-effect elegant-color white-text">
+        <a href="/clientarea/management/events" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-user"></i> Events</a>
-        <a href="/clientarea/management/einstellungen" class="list-group-item list-group-item-action waves-effect elegant-color white-text">
+        <a href="/clientarea/management/einstellungen" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-cog"></i> Einstellungen</a>
       </div>
 

@@ -252,9 +252,12 @@ position:absolute;
 
           <!--Card-->
           <div class="card">
+            
+            <!-- Card header -->
+            <div class="card-header unique-color white-text">Noch nicht verfügbar</div>
 
             <!--Card content-->
-            <div class="card-body">
+            <div class="card-body elegant-color white-text">
 
               <!-- Table  -->
               <table class="table table-hover">
@@ -270,7 +273,7 @@ position:absolute;
                 <!-- Table head -->
 
                 <!-- Table body -->
-                <tbody>
+                <tbody class="white-text">
                   <tr>
                     <th scope="row">1</th>
                     <td>Cell 1</td>
@@ -337,10 +340,10 @@ position:absolute;
           <div class="card">
 
             <!-- Card header -->
-            <div class="card-header">Fracht Diagramm</div>
+            <div class="card-header unique-color white-text">Fracht Diagramm</div>
 
             <!--Card content-->
-            <div class="card-body">
+            <div class="card-body elegant-color white-text">
 
               <canvas id="freightchart"></canvas>
 
