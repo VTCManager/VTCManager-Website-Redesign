@@ -1,3 +1,11 @@
+<?php
+//Sprachen redirect
+if ($lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) != "de") {
+	header("Location: /en/account/register");
+	die();
+}
+
+?>
 <!DOCTYPE html>
 <html lang="de" class="gr__vtcmanager_de"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         

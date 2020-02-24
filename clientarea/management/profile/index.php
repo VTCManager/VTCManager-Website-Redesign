@@ -210,44 +210,6 @@ if ($result->num_rows > 0) {
 
         </div>
         <!--Grid column-->
-
-        <!--Grid column-->
-        <div class="col-md-3 mb-4">
-
-          <!--Card-->
-          <div class="card mb-4">
-
-            <!--Card content-->
-            <div class="card-body">
-
-              <div class="card-header text-center">
-                Die Letzten 5 touren
-              </div>
-              <div class="list-group list-group-flush">
-                <?php
-                    $sql = "SELECT * FROM tour_table WHERE username='EpommCookie'";
-                    $result = $conn->query($sql);
-
-                    if ($result->num_rows > 0) {
-                        // output data of each row
-                        while($row = $result->fetch_assoc()) {
-                            $found_tour_cargo = $row["cargo"];
-                    ?><p class="list-group-item list-group-item-action waves-effect"><?php echo $found_tour_cargo;?></p><?php       
-                        }
-                    }
-                    mysqli_close($conn);
-                  ?>
-              </div>
-              <!-- List group links -->
-
-            </div>
-
-          </div>
-          <!--/.Card-->
-
-        </div>
-        <!--Grid column-->
-
       </div>
       <!--Grid row-->
     </div>
