@@ -38,13 +38,13 @@ include '../get_user_data.php';
   </style>
 </head>
 
-<body class="grey lighten-3">
+<body class="elegant-color-dark">
 
   <!--Main Navigation-->
   <header>
 
     <!-- Navbar -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark stylish-color-dark scrolling-navbar">
       <div class="container-fluid">
 
         <!-- Brand -->
@@ -121,7 +121,7 @@ include '../get_user_data.php';
       <div class="card mb-4 wow fadeIn">
 
         <!--Card content-->
-        <div class="card-body d-sm-flex justify-content-between">
+        <div class="card-body elegant-color white-text d-sm-flex justify-content-between">
 
           <h4 class="mb-2 mb-sm-0 pt-1">
             <a href="dashboard">Homepage</a>
@@ -139,7 +139,7 @@ include '../get_user_data.php';
           <div class="card" style="width:100%;">
 
             <!--Card content-->
-            <div class="card-body" style="width:100%;">
+            <div class="card-body elegant-color white-text" style="width:100%;">
               <?php
 date_default_timezone_set('Europe/Berlin');
 $requested_user_id= $_GET['userid'];
