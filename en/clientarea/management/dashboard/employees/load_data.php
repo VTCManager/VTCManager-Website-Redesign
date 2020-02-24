@@ -1,11 +1,10 @@
 <?php
 date_default_timezone_set('Europe/Berlin');
-//hole alle Touren aus der DB der Firma
+//hole alle Mitarbeiter der Firma
 $sql = "SELECT * FROM user_data WHERE userCompanyID=1";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    // output data of each row
     while($row = $result->fetch_assoc()) {
 		//Daten
 		$employee_userID = $row["userID"];

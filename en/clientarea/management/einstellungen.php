@@ -1,5 +1,5 @@
 <?php
-include '../../basis_files/php/get_user_data.php';
+include 'get_user_data.php';
 $page_now = "management/settings";
 ?>
 <!DOCTYPE html>

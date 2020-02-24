@@ -1,6 +1,6 @@
 <?php
 $page_now = "management/profile";
-include '../../../basis_files/php/get_user_data.php';
+include '../get_user_data.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

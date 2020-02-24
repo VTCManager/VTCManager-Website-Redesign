@@ -7,7 +7,7 @@ if(!isset($_POST['rank']) && !isset($_POST['employeeID']) && !empty($_POST['rank
     die();
     }
 //Connect and Check
-include '../../../../basis_files/php/get_user_data.php';
+include '../../get_user_data.php';
 
 //Überprüfe Berechtigung
 if($EditEmployees != "1"){

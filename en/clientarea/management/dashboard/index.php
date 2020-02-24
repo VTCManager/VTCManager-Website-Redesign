@@ -3,7 +3,7 @@
 $page_now = "management/dashboard";
 $page_now_navbar = "management/dashboard/index";
 //Connect and Check
-include '../../../basis_files/php/get_user_data.php';
+include '../get_user_data.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
