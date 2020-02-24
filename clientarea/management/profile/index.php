@@ -131,18 +131,13 @@ include '../get_user_data.php';
 
       </div>
       <!-- Heading -->
-
-      <!--Grid row-->
-      <div class="row wow fadeIn">
-
-        <!--Grid column-->
-        <div class="col-md-9 mb-4">
+      <div class="card mb-4 wow fadeIn">
 
           <!--Card-->
-          <div class="card">
+          <div class="card" style="width:100%;">
 
             <!--Card content-->
-            <div class="card-body">
+            <div class="card-body" style="width:100%;">
               <?php
 date_default_timezone_set('Europe/Berlin');
 $requested_user_id= $_GET['userid'];
@@ -204,15 +199,11 @@ if ($result->num_rows > 0) {
 }
               ?>
             </div>
+             </div>
 
           </div>
           <!--/.Card-->
-
-        </div>
-        <!--Grid column-->
       </div>
-      <!--Grid row-->
-    </div>
   </main>
   <!--Main layout-->
 
