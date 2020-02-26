@@ -99,7 +99,7 @@ position:absolute;
 
             if(myObj != "") {
               const myNode = document.getElementById("traffic_label");
-              myNode.innerHTML = 'Verkehr Sim 1 ['+myObj["response"][0]["players"]+' / '+myObj["response"][0]["maxplayers"]+']';;
+              myNode.innerHTML = 'Verkehr Sim 1 ['+myObj["response"][0]["players"]+' / '+myObj["response"][0]["maxplayers"]+']';
             } else {
             };
 				}
@@ -125,7 +125,49 @@ position:absolute;
     <?php
     include '../php/sidebar.php';?>
     <!-- Sidebar -->
-
+<div class="modal fade" id="viewchangelog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content elegant-color white-text">
+      <div class="modal-header text-center unique-color white-text">
+        <h4 class="modal-title w-100 font-weight-bold">Changelog</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3 elegant-color white-text">
+        <div class="md-form mb-5">
+          <ul class="nav nav-tabs elegant-color white-text" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#webinterface" role="tab" aria-controls="WebInterface"
+      aria-selected="true">WebInterface</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="home-tab" data-toggle="tab" href="#client" role="tab" aria-controls="Client"
+      aria-selected="true">Client</a>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="webinterface" role="tabpanel" aria-labelledby="home-tab">
+    <p class="h2">aktuelle Version: 0.0.1 Alpha Build<p>
+    <p class="h2 lead">Changelog Version 0.0.1 Alpha Build</p><br>
+    <ul>
+      <li>Unterscheidung beim Onlinestatus zwischen VTConnect und VTCMInterface</li>
+      <li>Changelog hinzugefügt</li>
+      <li>Tourlistenverteilung hinzugefügt</li>
+    </ul>
+    
+    <hr>
+  </div>
+  <div class="tab-pane fade show active" id="client" role="tabpanel" aria-labelledby="home-tab">
+    <h2>Noch nicht verfügbar</h2>
+  </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
   </header>
   <!--Main Navigation-->
 
@@ -144,7 +186,9 @@ position:absolute;
             <span>/</span>
             <span>Dashboard</span>
           </h4>
-
+          <div class="d-flex justify-content-end">
+            <button type="button" class="btn btn-primary" data-toggle="modal" style="margin:.0rem;" data-target="#viewchangelog">Changelog</button>
+          </div>
         </div>
 
       </div>

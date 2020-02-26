@@ -4,6 +4,9 @@ $page_now = "management/dashboard";
 $page_now_navbar = "management/dashboard/logbook";
 //Connect and Check
 include '../../get_user_data.php';
+if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
+$results_per_page = 20;
+$start_from = ($page-1) * $results_per_page;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -258,6 +261,20 @@ function load_tourcheck(elmnt) {
 					<?php include 'load_data.php'; //Lade Aufträge?>                  
                 </tbody>
             </table>
+            <div class="text-center">
+            <?php 
+$sql = "SELECT COUNT(tour_date) AS total FROM tour_table WHERE companyID=$user_company_id";
+$result = $conn->query($sql);
+$row = $result->fetch_assoc();
+$total_pages = ceil($row["total"] / $results_per_page); // calculate total pages with results
+  
+for ($i=1; $i<=$total_pages; $i++) {  // print links for all pages
+            echo "<a href='index.php?page=".$i."'";
+            if ($i==$page)  echo " style='color:grey;'";
+            echo ">".$i."</a> "; 
+}; 
+?>
+</div>
         </div>
               </div>
               <!-- List group links -->

@@ -1,6 +1,6 @@
 <?php
 //hole alle Touren aus der DB der Firma
-$sql = "SELECT * FROM tour_table WHERE companyID=$user_company_id ORDER BY `tour_date` DESC";
+$sql = "SELECT * FROM tour_table WHERE companyID=$user_company_id ORDER BY `tour_date` DESC LIMIT $start_from, ".$results_per_page;
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

@@ -36,13 +36,13 @@ $page_now = "management/profile";
   </style>
 </head>
 
-<body class="grey lighten-3">
+<body class="elegant-color-dark">
 
   <!--Main Navigation-->
   <header>
 
     <!-- Navbar -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark stylish-color-dark scrolling-navba">
       <div class="container-fluid">
 
         <!-- Brand -->
@@ -111,6 +111,18 @@ $page_now = "management/profile";
 function checkIFMPuser() {
   document.getElementById("IFMPConnectBT").style.display="none";
   document.getElementById("IFMPConnectBTLoading").style.display="block";
+  var save_val = document.getElementById("IFMPConnectID").value;
+  console.log(save_val);
+	var xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange = function() {
+    if(this.readyState == 4 && this.status == 200){
+      console.log(xmlhttp.response);
+    }
+    }
+	xmlhttp.open("GET", "https://infinitetruckers.com/api/v1/player/"+save_val, true);
+  xmlhttp.withCredentials = true;
+  xmlhttp.setRequestHeader('Access-Control-Allow-Headers', '*');
+  xmlhttp.send();
 }
 </script>
 
@@ -118,87 +130,6 @@ function checkIFMPuser() {
   <!--Main Navigation-->
 
   <!--Main layout-->
-  <?php
-  //ist Cookie gesetzt?
-  if(isset($_COOKIE['authWebToken'])) {
-  	//hole Cookie Daten
-  		$username_cookie = $_COOKIE["username"];
-  		$authCode_cookie = $_COOKIE["authWebToken"];
-
-  		//Verbindung zur DB
-  		$host = 'localhost:3306';
-  		$conn = mysqli_connect($host, "system_user_vtc", "8rh98w23nrfubsediofnm<pbi9ufuoipbgiwtFFF","vtcmanager");
-  		if(! $conn )
-  		{
-  			die("2");
-  		}
-
-  		//suche nach exakt gleichen AuthCode Token
-  		$sql = "SELECT * FROM authCode_table WHERE Token='$authCode_cookie'";
-  		$result = $conn->query($sql);
-  		if ($result->num_rows > 0) {
-  			while($row = $result->fetch_assoc()) {
-  				$found_token_owner = $row["User"];
-  			}
-  		} else {
-  			//reset der Cookies und redirect zur Homepage
-  			setcookie("username", "", time() - 13600,'/');
-  			setcookie("authWebToken", "", time() - 13600,'/');
-  			header("Refresh:0; url=/");
-  			die("wrong owner detected");
-  		}
-  		//Prüfung ober der in der DB für den AuthCode Token hinterlegte Username mit Username Cookie übereinstimmt
-  		if ($found_token_owner != $username_cookie) {
-  			//reset der Cookies und redirect zur Homepage
-  			setcookie("username", "", time() - 13600,'/');
-  			setcookie("authWebToken", "", time() - 13600,'/');
-  			header("Refresh:0; url=/");
-  			die("wrong owner detected");
-  		}
-  		//hole Daten
-  		$sql = "SELECT * FROM user_data WHERE username='$username_cookie'";
-  		$result = $conn->query($sql);
-  		if ($result->num_rows > 0) {
-  			while($row = $result->fetch_assoc()) {
-  				$navbar_userid = $row["userID"];
-  				$rank_user = $row["rank"];
-  				$profile_pic = $row["profile_pic_url"];
-  				$company = $row["userCompanyID"];
-  			}
-  		} else {
-  			//reset der Cookies und redirect zur Homepage
-  			setcookie("username", "", time() - 13600,'/');
-  			setcookie("authWebToken", "", time() - 13600,'/');
-  			header("Refresh:0; url=/");
-  			die("profile not found");
-  		}
-  $sql = "SELECT * FROM rank WHERE name='$rank_user' AND forCompanyID=$company";
-  		$result = $conn->query($sql);
-  		if ($result->num_rows > 0) {
-  			// output data of each row
-  			while($row = $result->fetch_assoc()) {
-  				//hole Berechtigungen des Benutzers
-  				$SeeBank = $row["SeeBank"];
-  				$EditProfile = $row["EditProfile"];
-  				$SeeLogbook = $row["SeeLogbook"];
-  				$EditLogbook = $row["EditLogbook"];
-  				$UseBank = $row["UseBank"];
-  				$EditEmployees = $row["EditEmployees"];
-  				$EditSalary = $row["EditSalary"];
-
-  			}
-  		} else {
-  		}
-  		//aktualisiere zuletzt online
-  	$sql = "UPDATE user_data SET `last_seen`=NOW()  WHERE username='$username_cookie'";
-
-  if ($conn->query($sql) === TRUE) {
-  	echo $rotation;
-  } else {
-      echo "Error updating record: " . $conn->error;
-  	die();
-  }
-  ?>
   <main class="pt-5 mx-lg-5">
     <div class="container-fluid mt-5">
 
@@ -206,7 +137,7 @@ function checkIFMPuser() {
       <div class="card mb-4 wow fadeIn">
 
         <!--Card content-->
-        <div class="card-body d-sm-flex justify-content-between">
+        <div class="card-body d-sm-flex elegant-color white-text justify-content-between">
 
           <h4 class="mb-2 mb-sm-0 pt-1">
             <a href="dashboard">Homepage</a>
@@ -220,17 +151,17 @@ function checkIFMPuser() {
       <div class="modal fade" id="connecttoIFMP" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
   aria-hidden="true">
   <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
+    <div class="modal-content elegant-color white-text">
+      <div class="modal-header text-center unique-color white-text">
         <h4 class="modal-title w-100 font-weight-bold">Mit IFMP verknüpfen...</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
+      <div class="modal-body mx-3 elegant-color white-text">
+        <div class="md-form mb-5 elegant-color white-text">
           <i class="fas fa-truck prefix grey-text"></i>
-          <input type="email" id="defaultForm-email" class="form-control validate">
+          <input type="text" id="IFMPConnectID" class="form-control validate">
           <label data-error="wrong" data-success="right" for="defaultForm-email">SteamID64 oder IFMP ID</label>
         </div>
       </div>
@@ -281,9 +212,6 @@ function checkIFMPuser() {
 <!-- Card Wider -->
     </div>
   </main>
-<?php
-} else {}
-?>
   <!--Main layout-->
 
   <!--Footer-->
