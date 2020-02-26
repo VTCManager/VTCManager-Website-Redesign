@@ -48,7 +48,7 @@ if ($result->num_rows > 0) {
         die();
     }
 }
-$sql = "UPDATE user_data SET coordinate_x='$coordinate_x',coordinate_y='$coordinate_y',rotation='$rotation',`last_seen`=NOW()  WHERE username='$found_user'";
+$sql = "UPDATE user_data SET coordinate_x='$coordinate_x',coordinate_y='$coordinate_y',rotation='$rotation',`last_seen`=NOW(),`last_loc_update`=NOW()   WHERE username='$found_user'";
 
 if ($conn->query($sql) === TRUE) {
 	echo $rotation;
