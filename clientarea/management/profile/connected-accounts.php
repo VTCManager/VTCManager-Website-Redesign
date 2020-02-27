@@ -119,7 +119,7 @@ function checkIFMPuser() {
       console.log(xmlhttp.response);
     }
     }
-	xmlhttp.open("GET", "https://infinitetruckers.com/api/v1/player/"+save_val, true);
+	xmlhttp.open("GET", "ifmp_add_user.php?ifmpID="+save_val, true);
   xmlhttp.send();
 }
 </script>
