@@ -120,8 +120,6 @@ function checkIFMPuser() {
     }
     }
 	xmlhttp.open("GET", "https://infinitetruckers.com/api/v1/player/"+save_val, true);
-  xmlhttp.withCredentials = true;
-  xmlhttp.setRequestHeader('Access-Control-Allow-Headers', '*');
   xmlhttp.send();
 }
 </script>
