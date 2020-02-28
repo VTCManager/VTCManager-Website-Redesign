@@ -153,7 +153,8 @@ position:absolute;
     <p class="h2 lead">Changelog Version 0.0.2 Alpha Build</p><br>
     <ul>
       <li>Startseite weiter angepasst</li>
-      <li>Bestätigung des Auftrages verbessert (POST-Anfrage, PHP Code fehlt z.Z.)</li>
+      <li>Bestätigung des Auftrages verbessert (POST-Anfrage)</li>
+      <li>Aufträge können nun bestätigt werden mit visuellem Feedback</li>
     </ul>
     
     <hr>
