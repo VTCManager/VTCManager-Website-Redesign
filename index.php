@@ -70,8 +70,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="https://github.com/mdbootstrap/bootstrap-material-design" class="nav-link border border-light rounded"
-              target="_blank">
+            <a href="/account/login" class="nav-link border border-light rounded">
               <i class="fas fa-sign-in-alt mr-2"></i>Anmelden
             </a>
           </li>
@@ -99,7 +98,7 @@
 
       <!--First slide-->
       <div class="carousel-item active">
-        <div class="view" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/77.jpg'); background-repeat: no-repeat; background-size: cover;">
+        <div class="view" style="background-image: url('/media/images/highway-w-trucks.png'); background-repeat: no-repeat; background-size: cover;">
 
           <!-- Mask & flexbox options-->
           <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -114,9 +113,8 @@
                 <strong>Funktionsreiches und modern gestalltes Verwaltungssystem.</strong>
               </p>
 
-              <a target="_blank" href="https://mdbootstrap.com/education/bootstrap/" class="btn btn-outline-white btn-lg">Start
-                free tutorial
-                <i class="fas fa-graduation-cap ml-2"></i>
+              <a target="_blank" href="/account/register" class="btn btn-outline-white btn-lg">Registrieren
+                <i class="fas fa-sign-in-alt ml-2"></i>
               </a>
             </div>
             <!-- Content -->
@@ -130,7 +128,7 @@
 
       <!--Second slide-->
       <div class="carousel-item">
-        <div class="view" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/47.jpg'); background-repeat: no-repeat; background-size: cover;">
+        <div class="view" style="background-image: url('/media/images/white-truck-on-black-road-1003868.jpg'); background-repeat: no-repeat; background-size: cover;">
 
           <!-- Mask & flexbox options-->
           <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -145,9 +143,8 @@
                 <strong>Funktionsreiches und modern gestalltes Verwaltungssystem.</strong>
               </p>
 
-              <a target="_blank" href="https://mdbootstrap.com/education/bootstrap/" class="btn btn-outline-white btn-lg">Start
-                free tutorial
-                <i class="fas fa-graduation-cap ml-2"></i>
+              <a target="_blank" href="/account/register" class="btn btn-outline-white btn-lg">Registrieren
+                <i class="fas fa-sign-in-alt ml-2"></i>
               </a>
             </div>
             <!-- Content -->
@@ -161,7 +158,7 @@
 
       <!--Third slide-->
       <div class="carousel-item">
-        <div class="view" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/79.jpg'); background-repeat: no-repeat; background-size: cover;">
+        <div class="view" style="background-image: url('/media/images/building-business-ceiling-empty-209251.jpg'); background-repeat: no-repeat; background-size: cover;">
 
           <!-- Mask & flexbox options-->
           <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -176,9 +173,8 @@
                 <strong>Funktionsreiches und modern gestalltes Verwaltungssystem.</strong>
               </p>
 
-              <a target="_blank" href="https://mdbootstrap.com/education/bootstrap/" class="btn btn-outline-white btn-lg">Start
-                free tutorial
-                <i class="fas fa-graduation-cap ml-2"></i>
+              <a target="_blank" href="/account/register" class="btn btn-outline-white btn-lg">Registrieren
+                <i class="fas fa-sign-in-alt ml-2"></i>
               </a>
             </div>
             <!-- Content -->
