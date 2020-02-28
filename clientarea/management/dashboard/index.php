@@ -150,6 +150,13 @@ position:absolute;
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="webinterface" role="tabpanel" aria-labelledby="home-tab">
     <p class="h2">aktuelle Version: 0.0.1 Alpha Build<p>
+    <p class="h2 lead">Changelog Version 0.0.2 Alpha Build</p><br>
+    <ul>
+      <li>Startseite weiter angepasst</li>
+      <li>Bestätigung des Auftrages verbessert (POST-Anfrage, PHP Code fehlt z.Z.)</li>
+    </ul>
+    
+    <hr>
     <p class="h2 lead">Changelog Version 0.0.1 Alpha Build</p><br>
     <ul>
       <li>Unterscheidung beim Onlinestatus zwischen VTConnect und VTCMInterface</li>
