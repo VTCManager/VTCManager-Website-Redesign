@@ -132,8 +132,18 @@ table.table a {
   <span style="color: green;" id="income">Umsatz:</span><br>
   <div class="row d-flex justify-content-center">
 	<div class="col-md-12 mb-4">
-	<button type="button" onclick="window.location='http://vtc.northwestvideo.de/job_report?username=<?php echo $requested_user_name;?>&jobid=<?php echo $requested_job_id;?>&accpt=1';" class="btn btn-success"><i class="fas fa-check" aria-hidden="true"></i>Akzeptieren</button>
-	<button type="button" onclick="window.location='http://vtc.northwestvideo.de/job_report?username=<?php echo $requested_user_name;?>&jobid=<?php echo $requested_job_id;?>&accpt=2';" class="btn btn-danger"><i class="fas fa-ban" aria-hidden="true"></i>Ablehnen</button>
+  <form action="/clientarea/management/dashboard/logbook/" method="post" style="display: inline-block;">
+    <input type="hidden" id="driverUserName" value="" name="driverUserName" />
+    <input type="hidden" id="jobID" value="" name="jobID" />
+    <input type="hidden" value="accept" name="command" />
+    <button type="submit" class="btn btn-success"><i class="fas fa-check" aria-hidden="true"></i>Akzeptieren</button>
+  </form>
+  <form action="/clientarea/management/dashboard/logbook/" method="post" style="display: inline-block;">
+    <input type="hidden" id="driverUserName2" value="" name="driverUserName" />
+    <input type="hidden" id="jobID2" value="" name="jobID" />
+    <input type="hidden" value="decline" name="command" />
+    <button type="submit" class="btn btn-danger"><i class="fas fa-ban" aria-hidden="true"></i>Ablehnen</button>
+  </form>
 	</div>
   </div>
 </div>
@@ -184,6 +194,10 @@ function load_tourcheck(elmnt) {
     document.getElementById("taxes").innerHTML="Steuern: "+taxes.toFixed(2)+"€";
     document.getElementById("damage_cost").innerHTML="Wartungskosten: "+damage_cost.toFixed(2)+"€";
     document.getElementById("income").innerHTML="Umsatz: "+real_income.toFixed(2)+"€";
+    document.getElementById("driverUserName").value = myObj[0]["username"];
+    document.getElementById("jobID").value = myObj[0]["tour_id"];
+    document.getElementById("driverUserName2").value = myObj[0]["username"];
+    document.getElementById("jobID2").value = myObj[0]["tour_id"];
     //get Truck Info
     var xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function() {
