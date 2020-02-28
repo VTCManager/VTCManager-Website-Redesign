@@ -8,6 +8,7 @@ $page_now = "management/profile";
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" href="/clientarea/management/img/favicon.png" type="image/x-icon">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>VTCMInterface</title>
   <!-- Font Awesome -->

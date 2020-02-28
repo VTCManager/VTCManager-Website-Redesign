@@ -6,8 +6,7 @@ if(!isset($_GET['ifmpID'])){
     die();
     }
 //Einreihung in whitelist für CoolDown
-$sql = "INSERT INTO process_whitelist (event, value1, userID, created_date)
-VALUES ('connectToIFMP', '$_POST['ifmpID']', $userID,NOW())";
+$sql = "INSERT INTO process_whitelist (event, value1, userID, created_date) VALUES ('connectToIFMP', '".$_GET['ifmpID']."', $userID,NOW())";
 
 if ($conn->query($sql) === TRUE) {
     echo "OK";
