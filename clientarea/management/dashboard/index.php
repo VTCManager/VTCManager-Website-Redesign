@@ -149,7 +149,7 @@ position:absolute;
 </ul>
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="webinterface" role="tabpanel" aria-labelledby="home-tab">
-    <p class="h2">aktuelle Version: 0.0.1 Alpha Build<p>
+    <p class="h2">aktuelle Version: 0.0.2 Alpha Build<p>
     <p class="h2 lead">Changelog Version 0.0.2 Alpha Build</p><br>
     <ul>
       <li>Startseite weiter angepasst</li>
@@ -166,7 +166,7 @@ position:absolute;
     
     <hr>
   </div>
-  <div class="tab-pane fade show active" id="client" role="tabpanel" aria-labelledby="home-tab">
+  <div class="tab-pane fade" id="client" role="tabpanel" aria-labelledby="home-tab">
     <h2>Noch nicht verfügbar</h2>
   </div>
       </div>
