@@ -31,9 +31,6 @@ foreach ($_POST as $key => $value) {
         case 'distance':
             $distance_tour = $value;
             break;
-        case 'HASH_TAG':
-            $hash_tag = $value;
-            break;
         default:
             break;
     }
@@ -51,8 +48,6 @@ $weight = $conn->real_escape_string($weight);
 $depature_company = $conn->real_escape_string($depature_company);
 $destination_company = $conn->real_escape_string($destination_company);
 $distance_tour = $conn->real_escape_string($distance_tour);
-$hash_tag = $conn->real_escape_string($hash_tag);
-
 
 $sql = "SELECT User FROM authCode_table WHERE Token='$authcode'";
 $result = $conn->query($sql);
@@ -88,52 +83,65 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        $latest_tour = $row["last_tour_id"];
+        $latest_tour = $row["last_tour_id"]; 
 		$company = $row["userCompanyID"];
     }
 } else {
     echo $found_user;
     die("no user");
 }
-$sql = "SELECT * FROM tour_table WHERE hash_tag='$hash_tag'";
-$result = $conn->query($sql);
-$count = $result->num_rows;
 
-if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        $latest_tour = $row["tour_id"];
-        echo $latest_tour;
-        exit;
-    }
-} else {
-	(int)$latest_tour++;
-}
-
-$sql = "UPDATE user_data SET last_tour_id='$latest_tour' WHERE username='$found_user'";
-
+/*
 if ($conn->query($sql) === TRUE) {
     
 } else {
     echo "Error updating record: " . $conn->error;
 }
+*/
+$sql = "SELECT * FROM tour_table WHERE tour_id=$latest_tour";
+$result = $conn->query($sql);
 
-
-if($count >= 1) {
-	// Mache ein Update wenn der Tour Hash vorhanden ist ...
-$sql = "UPDATE tour_table SET 
-`tour_id` = '$latest_tour',
-`status` = 'accepted by driver',
-`distance` = '$distance_tour' WHERE hash_tag = '$hash_tag'";
-
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        $departure_compare = $row["departure"]; 
+	$destination_compare = $row["destination"];
+	$cargo_weight_compare = $row["cargo_weight"];
+	$cargo_compare = $row["cargo"];
+	$depature_company_compare = $row["depature_company"]; 
+	$destination_company_compare = $row["destination_company"];
+    }
 } else {
-	// ... ansonsten schreibe eine neue Tour in Database
-$sql = "INSERT INTO tour_table (username, departure, destination, truck_manufacturer, truck_model, cargo_weight, cargo, money_earned, tour_id, status, companyID, depature_company, destination_company, distance, hash_tag)
-VALUES ('$found_user', '$source', '$destination', '$truck_manu', '$truck_model', '$weight', '$cargo', '','$latest_tour', 'accepted by driver', $company, '$depature_company', '$destination_company', $distance_tour, '$hash_tag')";
+    echo $found_user;
+    die("no user");
 }
+if($departure_compare == $source && $destination_compare == $destination && $cargo_weight_compare == $weight && $cargo_compare == $cargo && $depature_company_compare == $depature_company && $destination_company_compare == $destination_company){
+    $sql3 = "UPDATE tour_table SET username = '$found_user',
+		departure = '$source',
+		destination = '$destination', 
+		truck_manufacturer = '$truck_manu', 
+		truck_model = '$truck_model', 
+		cargo_weight = '$weight', 
+		cargo = '$cargo', 
+		money_earned = '', 
+		status = 'accepted by driver', 
+		companyID = '$company', 
+		depature_company = '$depature_company', 
+		destination_company = '$destination_company', 
+		distance = '$distance_tour' WHERE tour_id = '$latest_tour' AND username = '$found_user'";
+	    }else{
+		$latest_tour++;
+	$sql = "UPDATE user_data SET last_tour_id='$latest_tour' WHERE username='$found_user'";
+
+	
+	$sql3 = "INSERT INTO tour_table (username, departure, destination, truck_manufacturer, truck_model, cargo_weight, cargo, money_earned, tour_id, status, companyID, depature_company, destination_company, distance)
+VALUES ('$found_user', '$source', '$destination', '$truck_manu', '$truck_model', '$weight', '$cargo', '','$latest_tour', 'accepted by driver', $company, '$depature_company', '$destination_company', $distance_tour)";
+		}
 
 
-if ($conn->query($sql) === TRUE) {
+
+if ($conn->query($sql3) === TRUE) {
+	$conn->query($sql);
     echo $latest_tour;
 	exit;
 } else {
