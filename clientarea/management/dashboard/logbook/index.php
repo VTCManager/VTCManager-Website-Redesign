@@ -7,6 +7,65 @@ include '../../get_user_data.php';
 if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
 $results_per_page = 20;
 $start_from = ($page-1) * $results_per_page;
+
+if(isset($_POST['jobID']) && isset($_POST['driverUserName']) && isset($_POST['command']) && !empty($_POST['jobID']) && !empty($_POST['driverUserName']) && !empty($_POST['command'])) {
+  $sql = "SELECT * FROM tour_table WHERE tour_id=".$_POST['jobID']." AND username='".$_POST['driverUserName']."'";
+  $result = $conn->query($sql);
+  if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+      $income = $row["money_earned"];
+      $trailer_damage = $row["trailer_damage"];
+      $departure_comp = $row["depature_company"];
+      $tour_approved = $row["tour_approved"];
+      }
+  }
+  if($tour_approved == "0"){
+  if($_POST['command'] == "accept")
+  {
+    //execute tour accept
+    //Tourdaten aktualisieren
+    $sql = "UPDATE tour_table SET tour_approved=1, status='accepted' WHERE tour_id=".$_POST['jobID']." AND username='".$_POST['driverUserName']."'";
+    if ($conn->query($sql) === TRUE) {
+      //setze visuelles Feedback
+      $info = '<div class="alert alert-success alert-dismissible fade show" role="alert">Tour erfolgreich bestätigt!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
+      //Transaktionsvorgang wird gestartet
+      //alten Kontostand der Firma holen
+      $sql = "SELECT * FROM company_information_table WHERE id=$user_company_id";
+      $result = $conn->query($sql);
+      if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+          $tra_comp_bank_balance = $row["bank_balance"];
+        }
+      } else {
+        $info = '<div class="alert alert-danger" role="alert">Fehler bei der Tourbestätigung: Fehlercode: Company Not Found 1001</div>';
+      }
+			$tra_comp_bank_balance_conv = floatval($tra_comp_bank_balance);
+			//Berechnung des Gewinnes der Firma durch die Tour
+			$umsatz = (int)$income - ((int)$income*0.19 )-((int)$trailer_damage*100 ); //Berechnung des Gewinnes (Abzug von Schaden und Steuern
+			$tra_comp_bank_balance_new = $tra_comp_bank_balance_conv + $umsatz; //neuer Kontostand
+			//Überweisung in DB eintragen
+			$sql = "INSERT INTO money_transfer (sender, receiver, message, amount, status) VALUES ('$departure_comp', '$user_company_name', 'Tour Einnahmen',$umsatz, 'sent')";
+			if ($conn->query($sql) === TRUE) {
+			} else {
+			 echo "Error: " . $sql . "<br>" . $conn->error;
+			die("Fehler: Etwas ist schiefgelaufen.  Kontaktiere den Support!");
+			}
+			//Kontostand der Firma aktualisieren
+      $sql = "UPDATE company_information_table SET bank_balance=$tra_comp_bank_balance_new WHERE id='$user_company_id'";
+      if ($conn->query($sql) === TRUE) {
+      } else {
+          echo "Error updating record: " . $conn->error;
+          die("Fehler: Etwas ist schiefgelaufen.  Kontaktiere den Support!");
+      }
+    }
+  }else if($_POST['command'] == "decline")
+  {
+    //execute tour decline
+    }
+  }else{
+    $info = '<div class="alert alert-danger alert-dismissible fade show" role="alert">Diese Tour wurde bereits geprüft!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
+    }
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -242,6 +301,7 @@ function load_tourcheck(elmnt) {
 
       </div>
       <!-- Heading -->
+      <?php echo $info;?>
 
           <!--Card-->
           <div class="card mb-4">
