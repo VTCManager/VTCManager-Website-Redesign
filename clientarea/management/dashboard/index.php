@@ -153,7 +153,10 @@ position:absolute;
       <p class="h2 lead">Changelog Version 0.0.3 Alpha Build</p><br>
     <ul>
       <li>Daten werden nun aus der Benutzerfirma geladen und nicht aus der Test-Firma</li>
+      <li>Liste der letzten 3 Transaktionen hinzugefügt</li>
     </ul>
+    <hr>
+    
     <p class="h2 lead">Changelog Version 0.0.2 Alpha Build</p><br>
     <ul>
       <li>Startseite weiter angepasst</li>
@@ -310,7 +313,7 @@ position:absolute;
           <div class="card">
             
             <!-- Card header -->
-            <div class="card-header unique-color white-text">Noch nicht verfügbar</div>
+            <div class="card-header unique-color white-text">Die letzten 3 Transaktionen</div>
 
             <!--Card content-->
             <div class="card-body elegant-color white-text">
@@ -318,36 +321,19 @@ position:absolute;
               <!-- Table  -->
               <table class="table table-hover">
                 <!-- Table head -->
-                <thead class="blue lighten-4">
+                <thead class="stylish-color-dark white-text">
                   <tr>
-                    <th>#</th>
-                    <th>Lorem</th>
-                    <th>Ipsum</th>
-                    <th>Dolor</th>
+                    <th>Absender</th>
+                    <th>Empfänger</th>
+                    <th>Betrag</th>
+                    <th>Nachricht</th>
                   </tr>
                 </thead>
                 <!-- Table head -->
 
                 <!-- Table body -->
                 <tbody class="white-text">
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Cell 1</td>
-                    <td>Cell 2</td>
-                    <td>Cell 3</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Cell 4</td>
-                    <td>Cell 5</td>
-                    <td>Cell 6</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Cell 7</td>
-                    <td>Cell 8</td>
-                    <td>Cell 9</td>
-                  </tr>
+                <?php include '../php/get_latest_transactions.php';?>
                 </tbody>
                 <!-- Table body -->
               </table>
