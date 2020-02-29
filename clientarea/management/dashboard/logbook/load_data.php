@@ -18,6 +18,8 @@ if ($result->num_rows > 0) {
 		$tour_status = $row["status"];
 		$tour_prog = $row["percentage"];
 		$tour_approved = $row["tour_approved"];
+		$trailer_damage = $row["trailer_damage"];
+		$umsatz = (int)$money_earned - ((int)$money_earned*0.19 )-((int)$trailer_damage*100);
 		//Konvertierung des Fahrtdatums
 		$tour_date_nw = date('d.m.Y', strtotime($tour_date));
 		//ist die Tour abgeschlossen?
@@ -73,7 +75,7 @@ if ($result->num_rows > 0) {
 		//soll Einkommen angezeigt werden?
 		if($tour_status == "accepted"){
 			//wenn bestätigt
-		echo "<td>$money_earned €</td>";
+		echo "<td>$umsatz €</td>";
 		}else if($tour_status == "finished"){
 			//wenn Tour abgeschlossen
 		echo "<td>ausstehend</td>";

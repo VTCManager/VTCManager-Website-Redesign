@@ -156,6 +156,8 @@ position:absolute;
       <li>Liste der letzten 3 Transaktionen hinzugefügt</li>
       <li>Mitarbeitername in Mitarbeiter-Modal hinzugefügt</li>
       <li>Lade-Hintergrund angepasst</li>
+      <li>API aktualisiert</li>
+      <li>Verdienst in Tourenliste wird nun genauer berechnet</li>
     </ul>
     <hr>
     
