@@ -81,7 +81,7 @@ if ($conn->query($sql) === TRUE) {
     echo "Error updating record: " . $conn->error;
 	die();
 }
-$sql = "UPDATE tour_table SET fuelconsumption='$fuelconsumption' WHERE username='$found_user' AND tour_id='$job_id'";
+$sql = "UPDATE tour_table SET fuelconsumption=$fuelconsumption, finished_date=NOW() WHERE username='$found_user' AND tour_id='$job_id'";
 
 if ($conn->query($sql) === TRUE) {
     echo "Record updated successfully";
