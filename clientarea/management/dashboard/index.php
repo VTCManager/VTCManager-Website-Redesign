@@ -149,7 +149,11 @@ position:absolute;
 </ul>
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="webinterface" role="tabpanel" aria-labelledby="home-tab">
-    <p class="h2">aktuelle Version: 0.0.2 Alpha Build<p>
+    <p class="h2">aktuelle Version: 0.0.3 Alpha Build<p>
+      <p class="h2 lead">Changelog Version 0.0.3 Alpha Build</p><br>
+    <ul>
+      <li>Daten werden nun aus der Benutzerfirma geladen und nicht aus der Test-Firma</li>
+    </ul>
     <p class="h2 lead">Changelog Version 0.0.2 Alpha Build</p><br>
     <ul>
       <li>Startseite weiter angepasst</li>

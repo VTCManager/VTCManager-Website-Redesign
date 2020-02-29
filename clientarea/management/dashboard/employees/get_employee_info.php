@@ -11,7 +11,7 @@ include '../../get_user_data.php';
 //POST Variablen
 $requested_userid = $_POST['userID'];
 //lade Mitarbeiter Daten
-$sql = "SELECT username,userID,rank FROM user_data WHERE userID=$requested_userid AND userCompanyID=1";
+$sql = "SELECT username,userID,rank FROM user_data WHERE userID=$requested_userid AND userCompanyID=$user_company_id";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

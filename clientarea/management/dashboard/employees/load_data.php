@@ -1,7 +1,7 @@
 <?php
 date_default_timezone_set('Europe/Berlin');
 //hole alle Mitarbeiter der Firma
-$sql = "SELECT * FROM user_data WHERE userCompanyID=1";
+$sql = "SELECT * FROM user_data WHERE userCompanyID=$user_company_id";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -49,11 +49,11 @@ if ($result->num_rows > 0) {
 				$employee_online_status = "<i class='fas fa-bed'></i> zuletzt online ".$employee_time_online_raw;
 				}
 		//lade Anzahl der abgeschlossen und akzeptierten Touren
-		$sql2 = "SELECT * FROM tour_table WHERE username='$employee_username' AND companyID=1 AND status='accepted'";
+		$sql2 = "SELECT * FROM tour_table WHERE username='$employee_username' AND companyID=$user_company_id AND status='accepted'";
 		$result2 = $conn->query($sql2);
 		$employee_tours = $result2->num_rows;
 		//lade Einstellungsdatum
-		$sql2 = "SELECT * FROM career_table WHERE username='$employee_username' AND atCompanyID=1 AND end_date=0000-00-00";
+		$sql2 = "SELECT * FROM career_table WHERE username='$employee_username' AND atCompanyID=$user_company_id AND end_date=0000-00-00";
 		$result2 = $conn->query($sql2);
 		if ($result2->num_rows > 0) {
 			while($row2 = $result2->fetch_assoc()) {
