@@ -53,7 +53,7 @@ position:absolute;
 	width: 100%;
 	height: 100%;
 	z-index: 9999;
-	background: url(../img/loader.gif) center no-repeat white;
+	background: url(../img/loader.gif) center no-repeat #212121!important;
 }
 </style>
 <script>
@@ -155,6 +155,7 @@ position:absolute;
       <li>Daten werden nun aus der Benutzerfirma geladen und nicht aus der Test-Firma</li>
       <li>Liste der letzten 3 Transaktionen hinzugefügt</li>
       <li>Mitarbeitername in Mitarbeiter-Modal hinzugefügt</li>
+      <li>Lade-Hintergrund angepasst</li>
     </ul>
     <hr>
     

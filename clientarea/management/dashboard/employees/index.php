@@ -52,7 +52,7 @@ function delete_entry(elmnt) {
 	width: 100%;
 	height: 100%;
 	z-index: 9999;
-	background: url(/clientarea/management/img/loader.gif) center no-repeat white;
+	background: url(/clientarea/management/img/loader.gif) center no-repeat #212121!important;
 }
 .tour_url:hover {
 color: #007bff;

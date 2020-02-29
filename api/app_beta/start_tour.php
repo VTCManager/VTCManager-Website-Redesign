@@ -98,7 +98,7 @@ if ($conn->query($sql) === TRUE) {
     echo "Error updating record: " . $conn->error;
 }
 */
-$sql = "SELECT * FROM tour_table WHERE tour_id=$latest_tour";
+$sql = "SELECT * FROM tour_table WHERE tour_id=$latest_tour AND username='$found_user'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -112,8 +112,6 @@ if ($result->num_rows > 0) {
 	$destination_company_compare = $row["destination_company"];
     }
 } else {
-    echo $found_user;
-    die("no user");
 }
 if($departure_compare == $source && $destination_compare == $destination && $cargo_weight_compare == $weight && $cargo_compare == $cargo && $depature_company_compare == $depature_company && $destination_company_compare == $destination_company){
     $sql3 = "UPDATE tour_table SET username = '$found_user',
