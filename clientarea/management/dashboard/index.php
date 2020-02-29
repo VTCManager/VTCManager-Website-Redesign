@@ -154,6 +154,7 @@ position:absolute;
     <ul>
       <li>Daten werden nun aus der Benutzerfirma geladen und nicht aus der Test-Firma</li>
       <li>Liste der letzten 3 Transaktionen hinzugefügt</li>
+      <li>Mitarbeitername in Mitarbeiter-Modal hinzugefügt</li>
     </ul>
     <hr>
     

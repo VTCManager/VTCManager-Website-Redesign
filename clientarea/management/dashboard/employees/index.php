@@ -95,7 +95,7 @@ color: #007bff;
   <div class="modal-dialog" role="document">
     <div class="modal-content elegant-color white-text">
       <div class="modal-header text-center unique-color white-text">
-        <h4 class="modal-title w-100 font-weight-bold" id="TourCheckTitle">Daten werden abgerufen...</h4>
+        <h4 class="modal-title w-100 font-weight-bold" id="Employee_details_Title">Daten werden abgerufen...</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -170,6 +170,7 @@ function load_employee(elmnt) {
     if(myObj != "") {
     user_count = myObj.length;
     }
+    document.getElementById("Employee_details_Title").innerHTML=myObj[0]["username"];
     document.getElementById("employee_name").innerHTML="Name: "+myObj[0]["username"];
     document.getElementById("employee_rank").innerHTML="Posten: "+myObj[0]["rank"];
     document.getElementById("employee_total_tours").innerHTML="erfolgreiche Touren: "+myObj[0]["total_tours"];
