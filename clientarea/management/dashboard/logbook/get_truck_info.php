@@ -8,9 +8,13 @@ if(!isset($_GET['manufacturer']) && !isset($_GET['model'])){
     }
 //Connect and Check
 include '../../get_user_data.php';
+
 //GET Variablen
 $requested_manufacturer = $_GET['manufacturer'];
 $requested_model = $_GET['model'];
+//mysql escape
+$requested_manufacturer = $conn->real_escape_string($requested_manufacturer);
+$requested_model = $conn->real_escape_string($requested_model);
 //lade LKW Daten
 $sql = "SELECT * FROM truck_info WHERE manufacturer='$requested_manufacturer' AND model='$requested_model'";
 $result = $conn->query($sql);

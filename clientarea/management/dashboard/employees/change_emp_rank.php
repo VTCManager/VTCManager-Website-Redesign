@@ -18,6 +18,9 @@ if($EditEmployees != "1"){
 //POST Variablen
 $employee_rank = $_POST['rank'];
 $employeeID = $_POST['employeeID'];
+//mysql escape
+$employee_rank = $conn->real_escape_string($employee_rank);
+$employeeID = $conn->real_escape_string($employeeID);
 
 //Benutzer Informationen anpassen
 $sql = "UPDATE user_data SET rank='$employee_rank' WHERE userID=$employeeID";

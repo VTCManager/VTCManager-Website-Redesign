@@ -11,6 +11,9 @@ include '../../get_user_data.php';
 //GET Variablen
 $requested_tour_id= $_GET['tour_id'];
 $requested_username= $_GET['username'];
+//mysql escape
+$requested_tour_id = $conn->real_escape_string($requested_tour_id);
+$requested_username = $conn->real_escape_string($requested_username);
 //lade Tour Daten aus DB
 $sql = "SELECT * FROM tour_table WHERE tour_id=$requested_tour_id AND username='$requested_username'";
 $result = $conn->query($sql);

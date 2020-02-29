@@ -18,6 +18,9 @@ if($EditEmployees != "1"){
 //POST Variablen
 $reason_text = $_POST['reason'];
 $employeeID = $_POST['employeeID'];
+//mysql escape
+$reason_text = $conn->real_escape_string($reason_text);
+$employeeID = $conn->real_escape_string($employeeID);
 //hole username des Mitarbeiter
 $sql = "SELECT * FROM user_data WHERE userID=$employeeID AND userCompanyID=$user_company_id";
 $result = $conn->query($sql);
@@ -58,7 +61,7 @@ if ($result->num_rows > 0) {
 $conn->close();
 
 //Connect and Check
-include '../../../../basis_files/php/get_user_data.php';
+include '../../get_user_data.php';
 
 //Eintrag im Lebenslauf anpassen und Grund setzen
 $sql = "UPDATE career_table SET fire_reason='$reason_text', end_date=NOW() WHERE userID=$employeeID AND end_date=0000-00-00";

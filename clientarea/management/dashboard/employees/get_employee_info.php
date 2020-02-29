@@ -10,6 +10,9 @@ if(!isset($_POST['userID'])){
 include '../../get_user_data.php';
 //POST Variablen
 $requested_userid = $_POST['userID'];
+
+//mysql escape
+$requested_userid = $conn->real_escape_string($requested_userid);
 //lade Mitarbeiter Daten
 $sql = "SELECT username,userID,rank FROM user_data WHERE userID=$requested_userid AND userCompanyID=$user_company_id";
 $result = $conn->query($sql);

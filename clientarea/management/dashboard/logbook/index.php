@@ -20,11 +20,14 @@ if(isset($_POST['jobID']) && isset($_POST['driverUserName']) && isset($_POST['co
       }
   }
   if($tour_approved == "0"){
+    //mysql escape
+    $jobID = $conn->real_escape_string($_POST['jobID']);
+    $driverUserName = $conn->real_escape_string($_POST['driverUserName']);
   if($_POST['command'] == "accept")
   {
     //execute tour accept
     //Tourdaten aktualisieren
-    $sql = "UPDATE tour_table SET tour_approved=1, status='accepted' WHERE tour_id=".$_POST['jobID']." AND username='".$_POST['driverUserName']."'";
+    $sql = "UPDATE tour_table SET tour_approved=1, status='accepted' WHERE tour_id=".$jobID." AND username='".$driverUserName."'";
     if ($conn->query($sql) === TRUE) {
       //setze visuelles Feedback
       $info = '<div class="alert alert-success alert-dismissible fade show" role="alert">Tour erfolgreich bestätigt!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';

@@ -11,6 +11,9 @@ $requested_tour_id= $_POST['tour_id'];
 $requested_username= $_POST['username'];
 //Connect and Check
 include '../../get_user_data.php';
+//mysql escape
+$requested_tour_id = $conn->real_escape_string($requested_tour_id);
+$requested_username = $conn->real_escape_string($requested_username);
 // sql to delete a record
 $sql = "DELETE FROM tour_table WHERE username='$requested_username' AND tour_id=$requested_tour_id";
 
