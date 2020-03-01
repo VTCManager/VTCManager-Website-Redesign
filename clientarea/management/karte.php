@@ -36,7 +36,7 @@ position:absolute;
   </style>
 </head>
 
-<body class="grey lighten-3">
+<body class="elegant-color-dark">
 
   <!--Main Navigation-->
   <header>
@@ -57,7 +57,7 @@ position:absolute;
       <div class="card mb-4 wow fadeIn">
 
         <!--Card content-->
-        <div class="card-body d-sm-flex justify-content-between">
+        <div class="card-body d-sm-flex elegant-color white-text justify-content-between">
 
           <h4 class="mb-2 mb-sm-0 pt-1">
             <a href="dashboard">Homepage</a>
@@ -80,7 +80,7 @@ position:absolute;
           <div class="card" >
 
             <!--Card content-->
-            <div class="card-body">
+            <div class="card-body elegant-color white-text">
 				<div id="map-container" class="z-depth-1-half map-container" style="height: 500px">
   <iframe src="/map/" frameborder="0"
     style="border:0" allowfullscreen></iframe>
@@ -101,9 +101,9 @@ position:absolute;
           <div class="card mb-4">
 
             <!--Card content-->
-            <div class="card-body" >
+            <div class="card-body elegant-color white-text" >
 
-              <div class="card-header text-center">
+              <div class="card-header text-center unique-color white-text">
                 Verkehr (Trucky)
               </div>
               <!-- List group links -->
