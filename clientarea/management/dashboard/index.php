@@ -134,7 +134,7 @@ position:absolute;
   <div class="tab-pane fade show active" id="webinterface" role="tabpanel" aria-labelledby="home-tab">
     <p class="h2">aktuelle Version: 0.0.4 Alpha Build<p>
       <p class="h2 lead">Changelog Version 0.0.4 Alpha Build</p><br>
-    <ul
+    <ul>
       <li>Lade-Animation entfernt (störend, da die Webseite schnell lädt)</li>
     </ul>
     
