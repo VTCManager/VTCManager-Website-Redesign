@@ -24,10 +24,6 @@ include '../get_user_data.php';
   <!-- Your custom styles (optional) -->
   <link href="/clientarea/management/css/style.min.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-  <script>$(window).load(function() {
-		// Animate loader off screen
-		$(".se-pre-con").fadeOut("slow");;
-	});</script>
   <style>
 
     .map-container{
@@ -44,18 +40,6 @@ width:100%;
 position:absolute;
 }
   </style>
-  <style>.no-js #loader { display: none;  }
-.js #loader { display: block; position: absolute; left: 100px; top: 0; }
-.se-pre-con {
-	position: fixed;
-	left: 0px;
-	top: 0px;
-	width: 100%;
-	height: 100%;
-	z-index: 9999;
-	background: url(../img/loader.gif) center no-repeat #212121!important;
-}
-</style>
 <script>
   window.setInterval(function(){
   var xhttp = new XMLHttpRequest();
@@ -111,7 +95,6 @@ position:absolute;
 </head>
 
 <body class="elegant-color-dark">
-  <div class="se-pre-con"></div>
 
   <!--Main Navigation-->
   <header>
@@ -149,7 +132,13 @@ position:absolute;
 </ul>
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="webinterface" role="tabpanel" aria-labelledby="home-tab">
-    <p class="h2">aktuelle Version: 0.0.3 Alpha Build<p>
+    <p class="h2">aktuelle Version: 0.0.4 Alpha Build<p>
+      <p class="h2 lead">Changelog Version 0.0.4 Alpha Build</p><br>
+    <ul
+      <li>Lade-Animation entfernt (störend, da die Webseite schnell lädt)</li>
+    </ul>
+    
+    <hr>
       <p class="h2 lead">Changelog Version 0.0.3 Alpha Build</p><br>
     <ul>
       <li>Daten werden nun aus der Benutzerfirma geladen und nicht aus der Test-Firma</li>

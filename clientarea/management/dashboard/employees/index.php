@@ -24,10 +24,6 @@ include '../../get_user_data.php';
   <!-- Your custom styles (optional) -->
   <link href="/clientarea/management/css/style.min.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-  <script>$(window).load(function() {
-		// Animate loader off screen
-		$(".se-pre-con").fadeOut("slow");;
-	});</script>
   <script>
 function delete_entry(elmnt) {
 	var save_val = $(elmnt).attr("data-id");
@@ -43,17 +39,7 @@ function delete_entry(elmnt) {
 	xmlhttp.send("tour_id="+res[1]+"&username="+res[0]);
 }
 </script>
-  <style>.no-js #loader { display: none;  }
-.js #loader { display: block; position: absolute; left: 100px; top: 0; }
-.se-pre-con {
-	position: fixed;
-	left: 0px;
-	top: 0px;
-	width: 100%;
-	height: 100%;
-	z-index: 9999;
-	background: url(/clientarea/management/img/loader.gif) center no-repeat #212121!important;
-}
+  <style>
 .tour_url:hover {
 color: #007bff;
 }
@@ -69,7 +55,6 @@ color: #007bff;
 	  </style>
 
 <body class="elegant-color-dark">
-  <div class="se-pre-con"></div>
 
   <!--Main Navigation-->
   <header>
