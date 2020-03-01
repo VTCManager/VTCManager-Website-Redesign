@@ -62,7 +62,7 @@ position:absolute;
           <h4 class="mb-2 mb-sm-0 pt-1">
             <a href="dashboard">Homepage</a>
             <span>/</span>
-            <span>Karte</span>
+            <span>Firmekarte</span>
           </h4>
 
         </div>
@@ -104,7 +104,8 @@ position:absolute;
             <div class="card-body elegant-color white-text" >
 
               <div class="card-header text-center unique-color white-text">
-                Verkehr (Trucky)
+                <?php include 'php/tmp-api.php';//load Server Stats?>
+                Verkehr Sim 1 [<?php echo $sim1_players;?>]
               </div>
               <!-- List group links -->
               <div class="list-group list-group-flush">

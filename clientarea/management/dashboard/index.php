@@ -136,6 +136,8 @@ position:absolute;
       <p class="h2 lead">Changelog Version 0.0.4 Alpha Build</p><br>
     <ul>
       <li>Lade-Animation entfernt (störend, da die Webseite schnell lädt)</li>
+      <li>Sidebar DarkMode Fehler behoben</li>
+      <li>Map an DarkMode angepasst</li>
     </ul>
     
     <hr>
