@@ -138,6 +138,7 @@ position:absolute;
       <li>Lade-Animation entfernt (störend, da die Webseite schnell lädt)</li>
       <li>Sidebar DarkMode Fehler behoben</li>
       <li>Map an DarkMode angepasst</li>
+      <li>Homepage an Projektinformationen angepasst</li>
     </ul>
     
     <hr>

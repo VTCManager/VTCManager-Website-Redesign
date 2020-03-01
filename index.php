@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <link rel="icon" href="/media/images/favicon.png" type="image/x-icon">
-  <title>Home - VTCManager</title>
+  <title>VTCManager</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
   <!-- Bootstrap core CSS -->
@@ -216,7 +216,7 @@
           <!--Grid column-->
           <div class="col-md-6 mb-4">
 
-            <img src="https://mdbootstrap.com/img/Marketing/mdb-press-pack/mdb-main.jpg" class="img-fluid z-depth-1-half"
+            <img src="media/vtcminterface-screenshot.png" class="img-fluid z-depth-1-half"
               alt="">
 
           </div>
@@ -226,28 +226,17 @@
           <div class="col-md-6 mb-4">
 
             <!-- Main heading -->
-            <h3 class="h3 mb-3">Material Design for Bootstrap</h3>
-            <p>This template is created with Material Design for Bootstrap (
-              <strong>MDB</strong> ) framework.</p>
-            <p>Read details below to learn more about MDB.</p>
+            <h3 class="h3 mb-3">Maximale Kontrolle und Übersicht über dein Unternehmen</h3>
+            <p>Mit unserem eigens entwickelten Interface hast du immer die aktuellsten Informationen und Statistiken auf einen Blick</p>
             <!-- Main heading -->
 
             <hr>
-
-            <p>
-              <strong>400+</strong> material UI elements,
-              <strong>600+</strong> material icons,
-              <strong>74</strong> CSS animations, SASS files, templates, tutorials and many more.
-              <strong>Free for personal and commercial use.</strong>
-            </p>
-
             <!-- CTA -->
-            <a target="_blank" href="https://mdbootstrap.com/docs/jquery/getting-started/download/" class="btn btn-grey btn-md">Download
-              <i class="fas fa-download ml-1"></i>
+            <a href="/account/register" class="btn btn-grey btn-md">Registrieren
+              <i class="fas fa-sign-in-alt ml-1"></i>
             </a>
-            <a target="_blank" href="https://mdbootstrap.com/docs/jquery/components/" class="btn btn-grey btn-md">Live
-              demo
-              <i class="far fa-image ml-1"></i>
+            <a href="/account/login" class="btn btn-grey btn-md">Anmelden
+              <i class="fas fa-sign-in-alt ml-1"></i>
             </a>
 
           </div>
@@ -259,234 +248,12 @@
       </section>
       <!--Section: Main info-->
 
-      <hr class="my-5">
-
-      <!--Section: Main features & Quick Start-->
-      <section>
-
-        <h3 class="h3 text-center mb-5">About MDB</h3>
-
-        <!--Grid row-->
-        <div class="row wow fadeIn">
-
-          <!--Grid column-->
-          <div class="col-lg-6 col-md-12 px-4">
-
-            <!--First row-->
-            <div class="row">
-              <div class="col-1 mr-3">
-                <i class="fas fa-code fa-2x indigo-text"></i>
-              </div>
-              <div class="col-10">
-                <h5 class="feature-title">Bootstrap 4</h5>
-                <p class="grey-text">Thanks to MDB you can take advantage of all feature of newest Bootstrap 4.</p>
-              </div>
-            </div>
-            <!--/First row-->
-
-            <div style="height:30px"></div>
-
-            <!--Second row-->
-            <div class="row">
-              <div class="col-1 mr-3">
-                <i class="fas fa-book fa-2x blue-text"></i>
-              </div>
-              <div class="col-10">
-                <h5 class="feature-title">Detailed documentation</h5>
-                <p class="grey-text">We give you detailed user-friendly documentation at your disposal. It will help
-                  you to implement your ideas
-                  easily.
-                </p>
-              </div>
-            </div>
-            <!--/Second row-->
-
-            <div style="height:30px"></div>
-
-            <!--Third row-->
-            <div class="row">
-              <div class="col-1 mr-3">
-                <i class="fas fa-graduation-cap fa-2x cyan-text"></i>
-              </div>
-              <div class="col-10">
-                <h5 class="feature-title">Lots of tutorials</h5>
-                <p class="grey-text">We care about the development of our users. We have prepared numerous tutorials,
-                  which allow you to learn
-                  how to use MDB as well as other technologies.</p>
-              </div>
-            </div>
-            <!--/Third row-->
-
-          </div>
-          <!--/Grid column-->
-
-          <!--Grid column-->
-          <div class="col-lg-6 col-md-12">
-
-            <p class="h5 text-center mb-4">Watch our "5 min Quick Start" tutorial</p>
-            <div class="embed-responsive embed-responsive-16by9">
-              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/cXTThxoywNQ" allowfullscreen></iframe>
-            </div>
-          </div>
-          <!--/Grid column-->
-
-        </div>
-        <!--/Grid row-->
-
-      </section>
-      <!--Section: Main features & Quick Start-->
-
-      <hr class="my-5">
-
-      <!--Section: Not enough-->
-      <section>
-
-        <h2 class="my-5 h3 text-center">Not enough?</h2>
-
-        <!--First row-->
-        <div class="row features-small mb-5 mt-3 wow fadeIn">
-
-          <!--First column-->
-          <div class="col-md-4">
-            <!--First row-->
-            <div class="row">
-              <div class="col-2">
-                <i class="fas fa-check-circle fa-2x indigo-text"></i>
-              </div>
-              <div class="col-10">
-                <h6 class="feature-title">Free for personal and commercial use</h6>
-                <p class="grey-text">Our license is user-friendly. Feel free to use MDB for both private as well as
-                  commercial projects.
-                </p>
-                <div style="height:15px"></div>
-              </div>
-            </div>
-            <!--/First row-->
-
-            <!--Second row-->
-            <div class="row">
-              <div class="col-2">
-                <i class="fas fa-check-circle fa-2x indigo-text"></i>
-              </div>
-              <div class="col-10">
-                <h6 class="feature-title">400+ UI elements</h6>
-                <p class="grey-text">An impressive collection of flexible components allows you to develop any project.
-                </p>
-                <div style="height:15px"></div>
-              </div>
-            </div>
-            <!--/Second row-->
-
-            <!--Third row-->
-            <div class="row">
-              <div class="col-2">
-                <i class="fas fa-check-circle fa-2x indigo-text"></i>
-              </div>
-              <div class="col-10">
-                <h6 class="feature-title">600+ icons</h6>
-                <p class="grey-text">Hundreds of useful, scalable, vector icons at your disposal.</p>
-                <div style="height:15px"></div>
-              </div>
-            </div>
-            <!--/Third row-->
-
-            <!--Fourth row-->
-            <div class="row">
-              <div class="col-2">
-                <i class="fas fa-check-circle fa-2x indigo-text"></i>
-              </div>
-              <div class="col-10">
-                <h6 class="feature-title">Fully responsive</h6>
-                <p class="grey-text">It doesn't matter whether your project will be displayed on desktop, laptop,
-                  tablet or mobile phone. MDB
-                  looks great on each screen.</p>
-                <div style="height:15px"></div>
-              </div>
-            </div>
-            <!--/Fourth row-->
-          </div>
-          <!--/First column-->
-
-          <!--Second column-->
-          <div class="col-md-4 flex-center">
-            <img src="https://mdbootstrap.com/img/Others/screens.png" alt="MDB Magazine Template displayed on iPhone"
-              class="z-depth-0 img-fluid">
-          </div>
-          <!--/Second column-->
-
-          <!--Third column-->
-          <div class="col-md-4 mt-2">
-            <!--First row-->
-            <div class="row">
-              <div class="col-2">
-                <i class="fas fa-check-circle fa-2x indigo-text"></i>
-              </div>
-              <div class="col-10">
-                <h6 class="feature-title">70+ CSS animations</h6>
-                <p class="grey-text">Neat and easy to use animations, which will increase the interactivity of your
-                  project and delight your visitors.
-                </p>
-                <div style="height:15px"></div>
-              </div>
-            </div>
-            <!--/First row-->
-
-            <!--Second row-->
-            <div class="row">
-              <div class="col-2">
-                <i class="fas fa-check-circle fa-2x indigo-text"></i>
-              </div>
-              <div class="col-10">
-                <h6 class="feature-title">Plenty of useful templates</h6>
-                <p class="grey-text">Need inspiration? Use one of our predefined templates for free.</p>
-                <div style="height:15px"></div>
-              </div>
-            </div>
-            <!--/Second row-->
-
-            <!--Third row-->
-            <div class="row">
-              <div class="col-2">
-                <i class="fas fa-check-circle fa-2x indigo-text"></i>
-              </div>
-              <div class="col-10">
-                <h6 class="feature-title">Easy installation</h6>
-                <p class="grey-text">5 minutes, a few clicks and... done. You will be surprised at how easy it is.
-                </p>
-                <div style="height:15px"></div>
-              </div>
-            </div>
-            <!--/Third row-->
-
-            <!--Fourth row-->
-            <div class="row">
-              <div class="col-2">
-                <i class="fas fa-check-circle fa-2x indigo-text"></i>
-              </div>
-              <div class="col-10">
-                <h6 class="feature-title">Easy to use and customize</h6>
-                <p class="grey-text">Using MDB is straightforward and pleasant. Components flexibility allows you deep
-                  customization. You will
-                  easily adjust each component to suit your needs.</p>
-                <div style="height:15px"></div>
-              </div>
-            </div>
-            <!--/Fourth row-->
-          </div>
-          <!--/Third column-->
-
-        </div>
-        <!--/First row-->
-
-      </section>
-      <!--Section: Not enough-->
-
-      <hr class="mb-5">
+     <hr class="mb-5">
 
       <!--Section: More-->
       <section>
 
-        <h2 class="my-5 h3 text-center">...and even more</h2>
+        <h2 class="my-5 h3 text-center">...und noch viel mehr</h2>
 
         <!--First row-->
         <div class="row features-small mt-5 wow fadeIn">
@@ -496,12 +263,11 @@
             <!--Grid row-->
             <div class="row">
               <div class="col-2">
-                <i class="fab fa-firefox fa-2x mb-1 indigo-text" aria-hidden="true"></i>
+                <i class="fas fa-moon fa-2x mb-1 indigo-text" aria-hidden="true"></i>
               </div>
               <div class="col-10 mb-2 pl-3">
-                <h5 class="feature-title font-bold mb-1">Cross-browser compatibility</h5>
-                <p class="grey-text mt-2">Chrome, Firefox, IE, Safari, Opera, Microsoft Edge - MDB loves all browsers;
-                  all browsers love MDB.
+                <h5 class="feature-title font-bold mb-1">DarkMode</h5>
+                <p class="grey-text mt-2">Nichts blendet dich mehr. Für angenehmere Nachtfahrten und -arbeit.
                 </p>
               </div>
             </div>
@@ -514,12 +280,11 @@
             <!--Grid row-->
             <div class="row">
               <div class="col-2">
-                <i class="fas fa-level-up-alt fa-2x mb-1 indigo-text" aria-hidden="true"></i>
+                <i class="fas fa-chart-line fa-2x mb-1 indigo-text" aria-hidden="true"></i>
               </div>
               <div class="col-10 mb-2">
-                <h5 class="feature-title font-bold mb-1">Frequent updates</h5>
-                <p class="grey-text mt-2">MDB becomes better every month. We love the project and enhance as much as
-                  possible.
+                <h5 class="feature-title font-bold mb-1">Statistiken</h5>
+                <p class="grey-text mt-2">Detailierte Statistiken, die die Optimierung deiner Firma so viel mehr erleichtern.
                 </p>
               </div>
             </div>
@@ -532,12 +297,11 @@
             <!--Grid row-->
             <div class="row">
               <div class="col-2">
-                <i class="fas fa-comments fa-2x mb-1 indigo-text" aria-hidden="true"></i>
+                <i class="fas fa-users fa-2x mb-1 indigo-text" aria-hidden="true"></i>
               </div>
               <div class="col-10 mb-2">
-                <h5 class="feature-title font-bold mb-1">Active community</h5>
-                <p class="grey-text mt-2">Our society grows day by day. Visit our forum and check how it is to be a
-                  part of our family.
+                <h5 class="feature-title font-bold mb-1">Aktive Community</h5>
+                <p class="grey-text mt-2">Fahre nicht mehr alleine. Du findest immer jemanden.
                 </p>
               </div>
             </div>
@@ -553,10 +317,8 @@
                 <i class="fas fa-code fa-2x mb-1 indigo-text" aria-hidden="true"></i>
               </div>
               <div class="col-10 mb-2">
-                <h5 class="feature-title font-bold mb-1">jQuery 3.x</h5>
-                <p class="grey-text mt-2">MDB is integrated with newest jQuery. Therefore you can use all the latest
-                  features which come along with
-                  it.
+                <h5 class="feature-title font-bold mb-1">Regelmäßige Updates</h5>
+                <p class="grey-text mt-2">Unser großartiges Team entwickelt, codiert und designed rund um die Uhr.
                 </p>
               </div>
             </div>
@@ -575,13 +337,11 @@
             <!--Grid row-->
             <div class="row">
               <div class="col-2">
-                <i class="fas fa-cubes fa-2x mb-1 indigo-text" aria-hidden="true"></i>
+                <i class="fas fa-truck fa-2x mb-1 indigo-text" aria-hidden="true"></i>
               </div>
               <div class="col-10 mb-2">
-                <h5 class="feature-title font-bold mb-1">Modularity</h5>
-                <p class="grey-text mt-2">Material Design for Bootstrap comes with both, compiled, ready to use
-                  libraries including all features as
-                  well as modules for CSS (SASS files) and JS.</p>
+                <h5 class="feature-title font-bold mb-1">Offizieller InfiniteTruckersMultiPlayer-Partner</h5>
+                <p class="grey-text mt-2">Wir sind ein Partner von IFMP und bieten zahlreiche Optimierungen und Anpassungen für den MultiPlayer an.</p>
               </div>
             </div>
             <!--/Grid row-->
@@ -593,12 +353,11 @@
             <!--Grid row-->
             <div class="row">
               <div class="col-2">
-                <i class="fas fa-question fa-2x mb-1 indigo-text" aria-hidden="true"></i>
+                <i class="fas fa-calendar-check fa-2x mb-1 indigo-text" aria-hidden="true"></i>
               </div>
               <div class="col-10 mb-2">
-                <h5 class="feature-title font-bold mb-1">Technical support</h5>
-                <p class="grey-text mt-2">We care about reliability. If you have any questions - do not hesitate to
-                  contact us.
+                <h5 class="feature-title font-bold mb-1">Events</h5>
+                <p class="grey-text mt-2">Plane und finde Events so einfach wie niemals zuvor.
                 </p>
               </div>
             </div>
@@ -611,11 +370,11 @@
             <!--Grid row-->
             <div class="row">
               <div class="col-2">
-                <i class="fas fa-th fa-2x mb-1 indigo-text" aria-hidden="true"></i>
+                <i class="fas fa-truck-loading fa-2x mb-1 indigo-text" aria-hidden="true"></i>
               </div>
               <div class="col-10 mb-2">
-                <h5 class="feature-title font-bold mb-1">Flexbox</h5>
-                <p class="grey-text mt-2">MDB fully supports Flex Box. You can forget about alignment issues.</p>
+                <h5 class="feature-title font-bold mb-1">Echtzeit Fracht-Kreisläufe (demnächst)</h5>
+                <p class="grey-text mt-2">Reale Frachtkreisläufe, realistische Disponentenplanung.</p>
               </div>
             </div>
             <!--/Grid row-->
@@ -627,11 +386,11 @@
             <!--Grid row-->
             <div class="row">
               <div class="col-2">
-                <i class="far fa-file-code fa-2x mb-1 indigo-text" aria-hidden="true"></i>
+                <i class="fas fa-shield-alt fa-2x mb-1 indigo-text" aria-hidden="true"></i>
               </div>
               <div class="col-10 mb-2">
-                <h5 class="feature-title font-bold mb-1">SASS files</h5>
-                <p class="grey-text mt-2">Arranged and well documented .scss files can't wait until you compile them.</p>
+                <h5 class="feature-title font-bold mb-1">Für Konvoi-Sicherheitsfirmen (demnächst)</h5>
+                <p class="grey-text mt-2">Eine herausragende Planung. Für dich und dein gesamtes Team.</p>
               </div>
             </div>
             <!--/Grid row-->
@@ -643,6 +402,79 @@
 
       </section>
       <!--Section: More-->
+      <hr class="my-5">
+
+      <!--Section: Main features & Quick Start-->
+      <section>
+
+        <h3 class="h3 text-center mb-5">VTConnect</h3>
+
+        <!--Grid row-->
+        <div class="row wow fadeIn">
+
+          <!--Grid column-->
+          <div class="col-lg-6 col-md-12 px-4">
+
+            <!--First row-->
+            <div class="row">
+              <div class="col-1 mr-3">
+                <i class="fas fa-users fa-2x indigo-text"></i>
+              </div>
+              <div class="col-10">
+                <h5 class="feature-title">Multiplayer Kompatibilität</h5>
+                <p class="grey-text">Unser Fahrtenerkennungstool ist mit jedem Multiplayer kompatibel und zeigt aktuelle Verkehrsinformationen an.</p>
+              </div>
+            </div>
+            <!--/First row-->
+
+            <div style="height:30px"></div>
+
+            <!--Second row-->
+            <div class="row">
+              <div class="col-1 mr-3">
+                <i class="fas fa-couch fa-2x blue-text"></i>
+              </div>
+              <div class="col-10">
+                <h5 class="feature-title">Maximaler Komfort</h5>
+                <p class="grey-text">Tragen deine Touren niemals mehr selber ein. Wir erledigen das!
+                </p>
+              </div>
+            </div>
+            <!--/Second row-->
+
+            <div style="height:30px"></div>
+
+            <!--Third row-->
+            <div class="row">
+              <div class="col-1 mr-3">
+                <i class="fas fa-file-code fa-2x cyan-text"></i>
+              </div>
+              <div class="col-10">
+                <h5 class="feature-title">Ständige Entwicklung</h5>
+                <p class="grey-text">Wir veröffentlichen regelmäßig Updates. Sei gespannt auf neue Funktionen, die du noch nie gesehen hast!</p>
+              </div>
+            </div>
+            <!--/Third row-->
+
+          </div>
+          <!--/Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-6 col-md-12">
+
+            <p class="h5 text-center mb-4">VTConnect - Automatische Tourenerkennung</p>
+              <img src="media/vtcmanager-beta-client.jpg" class="img-fluid z-depth-1-half"
+              alt="">
+          </div>
+          <!--/Grid column-->
+
+        </div>
+        <!--/Grid row-->
+
+      </section>
+      <!--Section: Main features & Quick Start-->
+
+      <hr class="my-5">
 
     </div>
   </main>
