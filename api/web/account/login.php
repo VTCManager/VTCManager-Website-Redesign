@@ -1,4 +1,58 @@
 <?php
+if(isset($_COOKIE['authWebToken']) && isset($_COOKIE['username'])) {
+	//lade die Cookie-Daten
+	$username_cookie = $_COOKIE["username"]; 
+	$authCode_cookie = $_COOKIE["authWebToken"]; 
+		
+	//Verbindung mit DB herstellen
+	$host = 'localhost:3306';    
+	$conn = mysqli_connect($host, "system_user_vtc", "8rh98w23nrfubsediofnm<pbi9ufuoipbgiwtFFF","vtcmanager"); 
+	if(! $conn ){  
+		die("2");  
+	}  
+		
+	//Suche nach dem gleichen AuthCode
+	$sql = "SELECT * FROM authCode_table WHERE Token='$authCode_cookie'";
+	$result = $conn->query($sql);
+	if ($result->num_rows > 0) {
+		while($row = $result->fetch_assoc()) {
+			$found_token_owner = $row["User"];
+			}
+	} else {
+		//AuthCode nicht gefunden
+		//Reset der Cookies und redirect zur Homepage
+		setcookie("username", "", time() - 13600,'/');
+		setcookie("authWebToken", "", time() - 13600,'/');
+		header("Refresh:0; url=/");
+		die("We couldn't find your session in our database. Redirecting to our homepage...");
+	}
+	//Prüfung ober der in der DB für den AuthCode Token hinterlegte Username mit Username Cookie übereinstimmt
+	//Sicherheitsprüfung für unbrechtigten Zugang
+	if ($found_token_owner != $username_cookie) {
+		//Reset der Cookies und redirect zur Homepage
+		setcookie("username", "", time() - 13600,'/');
+		setcookie("authWebToken", "", time() - 13600,'/');
+		header("Refresh:0; url=/");
+		die("wrong owner detected");
+	}
+	//Lade Benutzerdaten aus der DB
+	$sql = "SELECT * FROM user_data WHERE username='$username_cookie'";
+	$result = $conn->query($sql);
+	if ($result->num_rows > 0) {
+		while($row = $result->fetch_assoc()) {
+			$userID = $row["userID"];
+			$user_rank = $row["rank"];
+			$user_avatar_url = $row["profile_pic_url"];
+			$user_company_id = $row["userCompanyID"];
+		}
+	} else {
+		//Der Benutzer konnte in der DB nicht gefunden werden
+		die("We're sorry but we couldn't find your profile");
+	}
+	//load data and redirect to specific interface
+	header("Location: /clientarea/management/dashboard");
+	die();
+}
 foreach ($_POST as $key => $value) {
     switch ($key) {
         case 'username':

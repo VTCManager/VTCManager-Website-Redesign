@@ -1,4 +1,9 @@
 <?php
+//already logged in
+if(isset($_COOKIE['authWebToken']) && isset($_COOKIE['username'])) {
+	header("Location: /api/web/account/login.php");
+	die();
+}
 //Sprachen redirect
 if ($lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) != "de") {
 	header("Location: /en/account/login");

@@ -136,6 +136,8 @@ position:absolute;
       <p class="h2 lead">Changelog Version 0.0.5 Alpha Build</p><br>
     <ul>
       <li>Touren können abgelehnt werden</li>
+      <li>Footer auf der HP hinzugefügt</li>
+      <li>Angemeldete Benutzer können über HP direkt auf Interface zugreifen ohne erneutes LogIn</li>
     </ul>
     
     <hr>
