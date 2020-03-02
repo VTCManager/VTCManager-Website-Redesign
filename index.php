@@ -71,7 +71,11 @@
           </li>
           <li class="nav-item">
             <a href="/account/login" class="nav-link border border-light rounded">
+              <?php if(!isset($_COOKIE['authWebToken']) && !isset($_COOKIE['username'])) {?>
               <i class="fas fa-sign-in-alt mr-2"></i>Anmelden
+              <?php }else{ ?>
+                <i class="fas fa-sign-in-alt mr-2"></i>Öffnen
+                <?php } ?>
             </a>
           </li>
         </ul>
@@ -112,8 +116,11 @@
               <p>
                 <strong>Funktionsreiches und modern gestalltes Verwaltungssystem.</strong>
               </p>
-
+              <?php if(!isset($_COOKIE['authWebToken']) && !isset($_COOKIE['username'])) {?>
               <a target="_blank" href="/account/register" class="btn btn-outline-white btn-lg">Registrieren
+              <?php }else{?>
+                <a target="_blank" href="/account/login" class="btn btn-outline-white btn-lg">Öffnen
+                <?php } ?>
                 <i class="fas fa-sign-in-alt ml-2"></i>
               </a>
             </div>
@@ -143,7 +150,11 @@
                 <strong>Funktionsreiches und modern gestalltes Verwaltungssystem.</strong>
               </p>
 
+              <?php if(!isset($_COOKIE['authWebToken']) && !isset($_COOKIE['username'])) {?>
               <a target="_blank" href="/account/register" class="btn btn-outline-white btn-lg">Registrieren
+              <?php }else{?>
+                <a target="_blank" href="/account/login" class="btn btn-outline-white btn-lg">Öffnen
+                <?php } ?>
                 <i class="fas fa-sign-in-alt ml-2"></i>
               </a>
             </div>
@@ -173,7 +184,11 @@
                 <strong>Funktionsreiches und modern gestalltes Verwaltungssystem.</strong>
               </p>
 
+              <?php if(!isset($_COOKIE['authWebToken']) && !isset($_COOKIE['username'])) {?>
               <a target="_blank" href="/account/register" class="btn btn-outline-white btn-lg">Registrieren
+              <?php }else{?>
+                <a target="_blank" href="/account/login" class="btn btn-outline-white btn-lg">Öffnen
+                <?php } ?>
                 <i class="fas fa-sign-in-alt ml-2"></i>
               </a>
             </div>
@@ -232,12 +247,18 @@
 
             <hr>
             <!-- CTA -->
+            <?php if(!isset($_COOKIE['authWebToken']) && !isset($_COOKIE['username'])) {?>
             <a href="/account/register" class="btn btn-grey btn-md">Registrieren
               <i class="fas fa-sign-in-alt ml-1"></i>
             </a>
             <a href="/account/login" class="btn btn-grey btn-md">Anmelden
               <i class="fas fa-sign-in-alt ml-1"></i>
             </a>
+            <?php }else{ ?>
+              <a href="/account/login" class="btn btn-grey btn-md">Öffnen
+              <i class="fas fa-sign-in-alt ml-1"></i>
+            </a>
+            <?php } ?>
 
           </div>
           <!--Grid column-->
