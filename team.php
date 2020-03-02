@@ -1,7 +1,3 @@
-<?php
-$page_now = "management/profile";
-include '../get_user_data.php';
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,11 +11,11 @@ include '../get_user_data.php';
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
   <!-- Bootstrap core CSS -->
-  <link href="/clientarea/management/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/home/css/bootstrap.min.css" rel="stylesheet">
   <!-- Material Design Bootstrap -->
-  <link href="/clientarea/management/css/mdb.min.css" rel="stylesheet">
+  <link href="/home/css/mdb.min.css" rel="stylesheet">
   <!-- Your custom styles (optional) -->
-  <link href="/clientarea/management/css/style.min.css" rel="stylesheet">
+  <link href="/home/css/style.min.css" rel="stylesheet">
   <style>
 
 .map-container{
@@ -63,19 +59,12 @@ include '../get_user_data.php';
 
           <!-- Left -->
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link waves-effect" href="#">Übersicht
-                <span class="sr-only">(current)</span>
+            <li class="nav-item">
+              <a class="nav-link waves-effect" href="index">Home
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link waves-effect" href="https://mdbootstrap.com/docs/jquery/">Fahrtenbuch</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link waves-effect" href="connected-accounts">Verknüpfungen</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link waves-effect" href="https://mdbootstrap.com/education/bootstrap/">Einstellungen</a>
+            <li class="nav-item active">
+              <a class="nav-link waves-effect" href="team">Team</a>
             </li>
           </ul>
 
@@ -104,11 +93,6 @@ include '../get_user_data.php';
       </div>
     </nav>
     <!-- Navbar -->
-
-    <!-- Sidebar -->
-    <?php
-    include '../php/sidebar.php';?>
-    <!-- Sidebar -->
 
   </header>
   <!--Main Navigation-->
@@ -140,13 +124,45 @@ include '../get_user_data.php';
 
             <!--Card content-->
             <div class="card-body elegant-color white-text" style="width:100%;">
-                <div>
-                  <img class="rounded float-left" src="https://vtc.northwestvideo.de/media/profile_pictures/EpommCookie.gif" style="height: 80px;width: 80px;height: auto;">
-                  <h2 style="margin-left: 90px;">EpommCookie</h2>
-                  <p>Developer</p>
+                <div class="row justify-content-center mb-xl-5">
+                  <div class="col-sm-12 pt-md-3">
+                    <h1 style="color: rgb(233, 30, 99);" class="mx-auto text-center">Project Director</h1>
+                  </div>
+                  <div class="col-sm-12 h-25 pb-0">
+                    <hr class="mx-auto col-md-8 m-0 role-underline">
+                  </div>
+                  <div class="col-sm-12 h-25 pb-0 text-center">
+                    <p class="mx-auto col-md-8 mt-md-3 role-description">Der Oberster der Ränge.</p>
+                  </div>
+                    <div class="col-sm-auto m-md-5">
+                      <div class="card bg-dark text-white shadow-lg">
+                        <div class="card-body">
+                          <img style="height: 184px;width: 184px;" src="https://vtc.northwestvideo.de/media/profile_pictures/joschi_service.PNG">
+                          <a href="#"><h4 class="text-white mt-3 mb-0 text-center">Joschi_service</h4></a>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center mb-xl-5">
+                  <div class="col-sm-12 pt-md-3">
+                    <h1 style="color: rgb(250, 0, 0);" class="mx-auto text-center">Project Manager</h1>
+                  </div>
+                  <div class="col-sm-12 h-25 pb-0">
+                    <hr class="mx-auto col-md-8 m-0 role-underline">
+                  </div>
+                  <div class="col-sm-12 h-25 pb-0 text-center">
+                    <p class="mx-auto col-md-8 mt-md-3 role-description">Der fast Oberste der Ränge</p>
+                  </div>
+                    <div class="col-sm-auto m-md-5">
+                      <div class="card bg-dark text-white shadow-lg">
+                        <div class="card-body">
+                          <img style="height: 184px;width: 184px;" src="https://image.freepik.com/vektoren-kostenlos/in-kuerze-nachricht-mit-lichtprojektor-beleuchtet_1284-3622.jpg">
+                          <a href="#"><h4 class="text-white mt-3 mb-0 text-center">Thommy</h4></a>
+                        </div>
+                      </div>
+                    </div>
                 </div>
             </div>
-
           </div>
           <!--/.Card-->
       </div>
@@ -156,18 +172,18 @@ include '../get_user_data.php';
 
   <!--Footer-->
   <?php
-    include '../php/footer.php'; //Footer laden?>
+    include 'clientarea/management/php/footer.php'; //Footer laden?>
   <!--/.Footer-->
 
   <!-- SCRIPTS -->
   <!-- JQuery -->
-  <script type="text/javascript" src="/clientarea/management/js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="/home/js/jquery-3.4.1.min.js"></script>
   <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="/clientarea/management/js/popper.min.js"></script>
+  <script type="text/javascript" src="/home/js/popper.min.js"></script>
   <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="/clientarea/management/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/home/js/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="/clientarea/management/js/mdb.min.js"></script>
+  <script type="text/javascript" src="/home/js/mdb.min.js"></script>
   <!-- Initializations -->
   <script type="text/javascript">
     // Animations initialization

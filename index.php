@@ -53,7 +53,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://mdbootstrap.com/docs/jquery/" target="_blank">Team</a>
+            <a class="nav-link" href="team" target="_blank">Team</a>
           </li>
         </ul>
 
