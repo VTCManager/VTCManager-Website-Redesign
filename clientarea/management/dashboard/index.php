@@ -199,7 +199,7 @@ position:absolute;
         <div class="card-body d-sm-flex elegant-color white-text justify-content-between">
 
           <h4 class="mb-2 mb-sm-0 pt-1">
-            <a href="dashboard">Homepage</a>
+            <a href="/">Homepage</a>
             <span>/</span>
             <span>Dashboard</span>
           </h4>
