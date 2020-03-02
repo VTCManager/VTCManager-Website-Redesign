@@ -63,7 +63,15 @@ if(isset($_POST['jobID']) && isset($_POST['driverUserName']) && isset($_POST['co
     }
   }else if($_POST['command'] == "decline")
   {
-    //execute tour decline
+    //die Tour sll abgelehnt werden
+				    //Aktualisierung des Tour Status
+				    $sql = "UPDATE tour_table SET tour_approved=2, status='declined' WHERE tour_id=".$_POST['jobID']." AND username='".$driverUserName."'";
+				    if ($conn->query($sql) === TRUE) {
+					    //visuelles Feedback
+					    $info = '<div class="alert alert-success alert-dismissible fade show" role="alert">Tour erfolgreich abgelehnt!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
+				    } else {
+					    echo "Error updating record: " . $conn->error;
+				    }
     }
   }else{
     $info = '<div class="alert alert-danger alert-dismissible fade show" role="alert">Diese Tour wurde bereits geprüft!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
