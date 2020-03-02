@@ -227,7 +227,7 @@
                     <hr class="mx-auto col-md-8 m-0 role-underline">
                   </div>
                   <div class="col-sm-12 h-25 pb-0 text-center">
-                    <p class="mx-auto col-md-8 mt-md-3 role-description">Unterstützt Neue Spieler und hielft bei Fragen.</p>
+                    <p class="mx-auto col-md-8 mt-md-3 role-description">Unterstützt Neue Spieler und hilft bei Fragen.</p>
                   </div>
                     <div class="col-sm-auto m-md-5">
                       <div class="card bg-dark text-white shadow-lg">
