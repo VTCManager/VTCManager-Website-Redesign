@@ -136,6 +136,8 @@ position:absolute;
       <p class="h2 lead">Changelog Version 0.0.5 Alpha Build</p><br>
     <ul>
       <li>Touren können abgelehnt werden</li>
+      <li>Footer auf der HP hinzugefügt</li>
+      <li>Angemeldete Benutzer können über HP direkt auf Interface zugreifen ohne erneutes LogIn</li>
     </ul>
     
     <hr>
@@ -199,7 +201,7 @@ position:absolute;
         <div class="card-body d-sm-flex elegant-color white-text justify-content-between">
 
           <h4 class="mb-2 mb-sm-0 pt-1">
-            <a href="dashboard">Homepage</a>
+            <a href="/">Homepage</a>
             <span>/</span>
             <span>Dashboard</span>
           </h4>
