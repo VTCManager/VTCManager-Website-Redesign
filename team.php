@@ -162,6 +162,82 @@
                       </div>
                     </div>
                 </div>
+                <div class="row justify-content-center mb-xl-5">
+                  <div class="col-sm-12 pt-md-3">
+                    <h1 style="color: rgb(153, 45, 34);" class="mx-auto text-center">Event / Konvoi-Manager</h1>
+                  </div>
+                  <div class="col-sm-12 h-25 pb-0">
+                    <hr class="mx-auto col-md-8 m-0 role-underline">
+                  </div>
+                  <div class="col-sm-12 h-25 pb-0 text-center">
+                    <p class="mx-auto col-md-8 mt-md-3 role-description">Macht Events und Konvoi.</p>
+                  </div>
+                    <div class="col-sm-auto m-md-5">
+                      <div class="card bg-dark text-white shadow-lg">
+                        <div class="card-body">
+                          <img style="height: 184px;width: 184px;" src="https://image.freepik.com/vektoren-kostenlos/in-kuerze-nachricht-mit-lichtprojektor-beleuchtet_1284-3622.jpg">
+                          <a href="#"><h4 class="text-white mt-3 mb-0 text-center">None</h4></a>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center mb-xl-5">
+                  <div class="col-sm-12 pt-md-3">
+                    <h1 style="color: rgb(153, 45, 34);" class="mx-auto text-center">Radio Manager</h1>
+                  </div>
+                  <div class="col-sm-12 h-25 pb-0">
+                    <hr class="mx-auto col-md-8 m-0 role-underline">
+                  </div>
+                  <div class="col-sm-12 h-25 pb-0 text-center">
+                    <p class="mx-auto col-md-8 mt-md-3 role-description">Alles um und mit unseren Radio</p>
+                  </div>
+                    <div class="col-sm-auto m-md-5">
+                      <div class="card bg-dark text-white shadow-lg">
+                        <div class="card-body">
+                          <img style="height: 184px;width: 184px;" src="https://image.freepik.com/vektoren-kostenlos/in-kuerze-nachricht-mit-lichtprojektor-beleuchtet_1284-3622.jpg">
+                          <a href="#"><h4 class="text-white mt-3 mb-0 text-center">None</h4></a>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center mb-xl-5">
+                  <div class="col-sm-12 pt-md-3">
+                    <h1 style="color: rgb(17, 128, 106);" class="mx-auto text-center">Developer</h1>
+                  </div>
+                  <div class="col-sm-12 h-25 pb-0">
+                    <hr class="mx-auto col-md-8 m-0 role-underline">
+                  </div>
+                  <div class="col-sm-12 h-25 pb-0 text-center">
+                    <p class="mx-auto col-md-8 mt-md-3 role-description">Programmiert den VTCManager</p>
+                  </div>
+                    <div class="col-sm-auto m-md-5">
+                      <div class="card bg-dark text-white shadow-lg">
+                        <div class="card-body">
+                          <img style="height: 184px;width: 184px;" src="https://vtc.northwestvideo.de/media/profile_pictures/EpommCookie.gif">
+                          <a href="#"><h4 class="text-white mt-3 mb-0 text-center">EpommCookie</h4></a>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center mb-xl-5">
+                  <div class="col-sm-12 pt-md-3">
+                    <h1 style="color: rgb(31, 139, 76)"; class="mx-auto text-center">Supporter</h1>
+                  </div>
+                  <div class="col-sm-12 h-25 pb-0">
+                    <hr class="mx-auto col-md-8 m-0 role-underline">
+                  </div>
+                  <div class="col-sm-12 h-25 pb-0 text-center">
+                    <p class="mx-auto col-md-8 mt-md-3 role-description">Unterstützt Neue Spieler und hielft bei Fragen.</p>
+                  </div>
+                    <div class="col-sm-auto m-md-5">
+                      <div class="card bg-dark text-white shadow-lg">
+                        <div class="card-body">
+                          <img style="height: 184px;width: 184px;" src="https://vtc.northwestvideo.de/media/profile_pictures/EpommCookie.gif">
+                          <a href="#"><h4 class="text-white mt-3 mb-0 text-center">LeonDLand</h4></a>
+                        </div>
+                      </div>
+                    </div>
+                </div>
             </div>
           </div>
           <!--/.Card-->
