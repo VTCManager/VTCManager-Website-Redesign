@@ -225,39 +225,9 @@ position:absolute;
             <div class="card-body elegant-color white-text">
 
             <h2>Headline</h2>
-            <p>Tiny Text...</p>
-            <a href="list?eventid="><button type="button" class="btn btn-primary">Weiter</button></a>
-
-            </div>
-
-          </div>
-          <!--/.Card-->
-          
-          <!--Card-->
-          <div class="card">
-
-            <!--Card content-->
-            <div class="card-body elegant-color white-text">
-
-            <h2>Headline</h2>
-            <p>Tiny Text...</p>
-            <a href="list?eventid="><button type="button" class="btn btn-primary">Weiter</button></a>
-
-            </div>
-
-          </div>
-          <!--/.Card-->
-          
-          <!--Card-->
-          <div class="card">
-
-            <!--Card content-->
-            <div class="card-body elegant-color white-text">
-
-            <h2>Headline</h2>
-            <p>Tiny Text...</p>
-            <a href="list?eventid="><button type="button" class="btn btn-primary">Weiter</button></a>
-
+            <h5>Creator</h5>
+            <p>Long Text...</p>
+            <a href=""><button type="button" class="btn btn-primary">Beitreten</button></a>
             </div>
 
           </div>

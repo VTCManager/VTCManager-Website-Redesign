@@ -230,34 +230,27 @@ position:absolute;
 
             </div>
 
-          </div>
-          <!--/.Card-->
-          
-          <!--Card-->
-          <div class="card">
+         <!-- Card -->
+<div class="card">
 
-            <!--Card content-->
-            <div class="card-body elegant-color white-text">
+  <!-- Card image -->
+  <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" alt="Card image cap">
 
-            <h2>Headline</h2>
-            <p>Tiny Text...</p>
-            <a href="list?eventid="><button type="button" class="btn btn-primary">Weiter</button></a>
+  <!-- Card content -->
+  <div class="card-body">
 
-            </div>
+    <!-- Title -->
+    <h4 class="card-title"><a>Card title</a></h4>
+    <!-- Text -->
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+      content.</p>
+    <!-- Button -->
+    <a href="#" class="btn btn-primary">Button</a>
 
-          </div>
-          <!--/.Card-->
-          
-          <!--Card-->
-          <div class="card">
+  </div>
 
-            <!--Card content-->
-            <div class="card-body elegant-color white-text">
-
-            <h2>Headline</h2>
-            <p>Tiny Text...</p>
-            <a href="list?eventid="><button type="button" class="btn btn-primary">Weiter</button></a>
-
+</div>
+<!-- Card -->
             </div>
 
           </div>
