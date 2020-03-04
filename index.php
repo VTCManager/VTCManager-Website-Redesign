@@ -1,29 +1,10 @@
+<?php $current_page = "home"; ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <link rel="icon" href="/media/images/favicon.png" type="image/x-icon">
-  <meta name="theme-color" content="rgba(0, 255, 229, 1)">
+  <?php include 'home/head.php'; ?>
   <title>VTCManager</title>
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-  <!-- Bootstrap core CSS -->
-  <link href="home/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Material Design Bootstrap -->
-  <link href="home/css/mdb.min.css" rel="stylesheet">
-  <!-- Your custom styles (optional) -->
-  <link href="home/css/style.min.css" rel="stylesheet">
-  <style type="text/css">
-    @media (min-width: 800px) and (max-width: 850px) {
-      .navbar:not(.top-nav-collapse) {
-        background: #1C2331 !important;
-      }
-    }
-
-  </style>
 </head>
 
 <body>
@@ -503,47 +484,7 @@
   <!--Main layout-->
 
   <!--Footer-->
-  <footer class="page-footer text-center font-small unique-color-dark mt-4 wow fadeIn">
-
-    <!--Call to action-->
-    <div class="pt-4">
-      <a class="btn btn-outline-white" href="/account/login"
-        role="button">Download
-        <i class="fas fa-download ml-2"></i>
-      </a>
-    </div>
-    <!--/.Call to action-->
-
-    <hr class="my-4">
-
-    <!-- Social icons -->
-    <div class="pb-4">
-      <a href="https://www.instagram.com/tnwm_group/" target="_blank">
-        <i class="fab fa-instagram mr-3"></i>
-      </a>
-
-      <a href="https://twitter.com/TNWM_group" target="_blank">
-        <i class="fab fa-twitter mr-3"></i>
-      </a>
-
-      <a href="https://www.youtube.com/" target="_blank">
-        <i class="fab fa-youtube mr-3"></i>
-      </a>
-
-      <a href="https://github.com/TheNorthWestMediaGroup" target="_blank">
-        <i class="fab fa-github mr-3"></i>
-      </a>
-    </div>
-    <!-- Social icons -->
-
-    <!--Copyright-->
-    <div class="footer-copyright py-3">
-      © 2020 Copyright:
-      <a href="https://northwestvideo.de" target="_blank"> TheNorthWestMedia Group </a>
-    </div>
-    <!--/.Copyright-->
-
-  </footer>
+  <?php include 'home/footer.php'; ?>
   <!--/.Footer-->
 
   <!-- SCRIPTS -->
