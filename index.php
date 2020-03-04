@@ -1,4 +1,5 @@
-<?php $current_page = "home"; ?>
+<?php $current_page = "home";
+include 'home/connect_mysql.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -151,7 +152,32 @@
 
       <!--Section: Main info-->
       <section class="mt-5 wow fadeIn">
-
+        <!--Stats-->
+        <?php include 'home/stats.php';?>
+    <div class="row text-center d-flex justify-content-center my-5">
+      <div class="col-lg-3 col-md-6 mb-4">
+        <i class="fas fa-users fa-3x mb-4 grey-text"></i>
+        <h5 class="font-weight-normal mb-3">Subscription Ready</h5>
+        <p class="text-muted mb-0">Benutzer</p>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <i class="fas fa-user fa-3x mb-4 grey-text"></i>
+        <h5 class="font-weight-normal mb-3">Block Variety</h5>
+        <p class="text-muted mb-0">Team Mitglieder</p>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <i class="fas fa-building fa-3x mb-4 grey-text"></i>
+        <h5 class="font-weight-normal mb-3">Color Pallet</h5>
+        <p class="text-muted mb-0">registrierte Firmen</p>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <i class="fas fa-truck-loading fa-3x mb-4 grey-text"></i>
+        <h5 class="font-weight-normal mb-3">Page Builder</h5>
+        <p class="text-muted mb-0">abgeschlossene Touren</p>
+      </div>
+    </div>
+    <!--Stats-->
+    <hr class="mb-5">
         <!--Grid row-->
         <div class="row">
 
@@ -288,7 +314,7 @@
                 <i class="fas fa-truck fa-2x mb-1 indigo-text" aria-hidden="true"></i>
               </div>
               <div class="col-10 mb-2">
-                <h5 class="feature-title font-bold mb-1">Offizieller InfiniteTruckersMultiPlayer-Partner</h5>
+                <h5 class="feature-title font-bold mb-1">Offizieller InfiniteTruckersMP-Partner</h5>
                 <p class="grey-text mt-2">Wir sind ein Partner von IFMP und bieten zahlreiche Optimierungen und Anpassungen für den MultiPlayer an.</p>
               </div>
             </div>
