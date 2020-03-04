@@ -1,4 +1,5 @@
-<?php $current_page = "team"; ?>
+<?php $current_page = "team"; 
+include 'home/connect_mysql.php';?>
 <!DOCTYPE html>
 <html lang="de">
 
@@ -27,13 +28,10 @@
       <div class="card mb-4 wow fadeIn">
 
         <!--Card content-->
-        <div class="card-body elegant-color white-text d-sm-flex justify-content-between">
-
-          <h4 class="mb-2 mb-sm-0 pt-1">
-            <a href="dashboard">Homepage</a>
-            <span>/</span>
-            <span>Team</span>
-          </h4>
+        <div class="card-body elegant-color white-text text-center">
+          <a class="h4">
+            VTCManager-Team
+          </a>
 
         </div>
 
@@ -51,18 +49,13 @@
                     <h1 style="color: rgb(233, 30, 99);" class="mx-auto text-center">Project Director</h1>
                   </div>
                   <div class="col-sm-12 h-25 pb-0">
-                    <hr class="mx-auto col-md-8 m-0 role-underline">
+                    <hr class="mx-auto col-md-8 m-0">
                   </div>
                   <div class="col-sm-12 h-25 pb-0 text-center">
-                    <p class="mx-auto col-md-8 mt-md-3 role-description">Der Oberster der Ränge.</p>
+                    <p class="mx-auto col-md-8 mt-md-3">Gründer von VTCManager. Er übernimmt wichtige Aufgabenbereiche, wie das Projekt-Managment und die Entwicklung.</p>
                   </div>
                     <div class="col-sm-auto m-md-5">
-                      <div class="card bg-dark text-white shadow-lg">
-                        <div class="card-body">
-                          <img style="height: 184px;width: 184px;" src="https://vtc.northwestvideo.de/media/profile_pictures/joschi_service.PNG">
-                          <a href="#"><h4 class="text-white mt-3 mb-0 text-center">Joschi_service</h4></a>
-                        </div>
-                      </div>
+                      <?php include 'home/team/get_project_director.php';?>
                     </div>
                 </div>
                 <div class="row justify-content-center mb-xl-5">
@@ -70,18 +63,13 @@
                     <h1 style="color: rgb(250, 0, 0);" class="mx-auto text-center">Project Manager</h1>
                   </div>
                   <div class="col-sm-12 h-25 pb-0">
-                    <hr class="mx-auto col-md-8 m-0 role-underline">
+                    <hr class="mx-auto col-md-8 m-0">
                   </div>
                   <div class="col-sm-12 h-25 pb-0 text-center">
-                    <p class="mx-auto col-md-8 mt-md-3 role-description">Der fast Oberste der Ränge</p>
+                    <p class="mx-auto col-md-8 mt-md-3">Zuständig für die Planung und das Managment unserer Software.</p>
                   </div>
                     <div class="col-sm-auto m-md-5">
-                      <div class="card bg-dark text-white shadow-lg">
-                        <div class="card-body">
-                          <img style="height: 184px;width: 184px;" src="https://image.freepik.com/vektoren-kostenlos/in-kuerze-nachricht-mit-lichtprojektor-beleuchtet_1284-3622.jpg">
-                          <a href="#"><h4 class="text-white mt-3 mb-0 text-center">Thommy</h4></a>
-                        </div>
-                      </div>
+                      <?php include 'home/team/get_project_manager.php'; ?>
                     </div>
                 </div>
                 <div class="row justify-content-center mb-xl-5">
@@ -89,37 +77,13 @@
                     <h1 style="color: rgb(153, 45, 34);" class="mx-auto text-center">Event / Konvoi-Manager</h1>
                   </div>
                   <div class="col-sm-12 h-25 pb-0">
-                    <hr class="mx-auto col-md-8 m-0 role-underline">
+                    <hr class="mx-auto col-md-8 m-0">
                   </div>
                   <div class="col-sm-12 h-25 pb-0 text-center">
-                    <p class="mx-auto col-md-8 mt-md-3 role-description">Macht Events und Konvoi.</p>
+                    <p class="mx-auto col-md-8 mt-md-3">Planung von offizielen VTCM-Events/Konvois.</p>
                   </div>
                     <div class="col-sm-auto m-md-5">
-                      <div class="card bg-dark text-white shadow-lg">
-                        <div class="card-body">
-                          <img style="height: 184px;width: 184px;" src="https://image.freepik.com/vektoren-kostenlos/in-kuerze-nachricht-mit-lichtprojektor-beleuchtet_1284-3622.jpg">
-                          <a href="#"><h4 class="text-white mt-3 mb-0 text-center">Mein Rechter Rechter Platz ist frei.</h4></a>
-                        </div>
-                      </div>
-                    </div>
-                </div>
-                <div class="row justify-content-center mb-xl-5">
-                  <div class="col-sm-12 pt-md-3">
-                    <h1 style="color: rgb(17, 128, 106);" class="mx-auto text-center">Radio Manager</h1>
-                  </div>
-                  <div class="col-sm-12 h-25 pb-0">
-                    <hr class="mx-auto col-md-8 m-0 role-underline">
-                  </div>
-                  <div class="col-sm-12 h-25 pb-0 text-center">
-                    <p class="mx-auto col-md-8 mt-md-3 role-description">Alles um und mit unseren Radio</p>
-                  </div>
-                    <div class="col-sm-auto m-md-5">
-                      <div class="card bg-dark text-white shadow-lg">
-                        <div class="card-body">
-                          <img style="height: 184px;width: 184px;" src="https://image.freepik.com/vektoren-kostenlos/in-kuerze-nachricht-mit-lichtprojektor-beleuchtet_1284-3622.jpg">
-                          <a href="#"><h4 class="text-white mt-3 mb-0 text-center">Mein Rechter Rechter Platz ist frei.</h4></a>
-                        </div>
-                      </div>
+                      <?php include 'home/team/get_event_convoy_manager.php'; ?>
                     </div>
                 </div>
                 <div class="row justify-content-center mb-xl-5">
@@ -130,15 +94,10 @@
                     <hr class="mx-auto col-md-8 m-0 role-underline">
                   </div>
                   <div class="col-sm-12 h-25 pb-0 text-center">
-                    <p class="mx-auto col-md-8 mt-md-3 role-description">Programmiert den VTCManager</p>
+                    <p class="mx-auto col-md-8 mt-md-3 role-description">Unsere Entwickler entwickeln unsere zahlreichen einzigartigen Features.</p>
                   </div>
                     <div class="col-sm-auto m-md-5">
-                      <div class="card bg-dark text-white shadow-lg">
-                        <div class="card-body">
-                          <img style="height: 184px;width: 184px;" src="https://vtc.northwestvideo.de/media/profile_pictures/EpommCookie.gif">
-                          <a href="#"><h4 class="text-white mt-3 mb-0 text-center">EpommCookie</h4></a>
-                        </div>
-                      </div>
+                      <?php include 'home/team/get_developer.php';?>
                     </div>
                 </div>
                 <div class="row justify-content-center mb-xl-5">
@@ -149,15 +108,10 @@
                     <hr class="mx-auto col-md-8 m-0 role-underline">
                   </div>
                   <div class="col-sm-12 h-25 pb-0 text-center">
-                    <p class="mx-auto col-md-8 mt-md-3 role-description">Unterstützt Neue Spieler und hilft bei Fragen.</p>
+                    <p class="mx-auto col-md-8 mt-md-3 role-description">Unsere Supporter sind immer für dich da und helfen bei allen Fragen.</p>
                   </div>
                     <div class="col-sm-auto m-md-5">
-                      <div class="card bg-dark text-white shadow-lg">
-                        <div class="card-body">
-                          <img style="height: 184px;width: 184px;" src="https://image.freepik.com/vektoren-kostenlos/in-kuerze-nachricht-mit-lichtprojektor-beleuchtet_1284-3622.jpg">
-                          <a href="#"><h4 class="text-white mt-3 mb-0 text-center">LeonDLand</h4></a>
-                        </div>
-                      </div>
+                      <?php include 'home/team/get_supporter.php';?>
                     </div>
                 </div>
             </div>
