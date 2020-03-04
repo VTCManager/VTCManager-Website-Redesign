@@ -219,16 +219,45 @@ position:absolute;
         <div class="col-md-9 mb-4">
 
           <!--Card-->
-          <div class="card">
+          <div class="card"  style="width: 50%;">
 
             <!--Card content-->
             <div class="card-body elegant-color white-text">
 
-            <h2>Headline</h2>
-            <h5>Creator</h5>
-            <p>Long Text...</p>
-            <a href=""><button type="button" class="btn btn-primary">Beitreten</button></a>
+            <!-- Card -->
+            <div class="card">
+
+              <!-- Card content -->
+              <div class="card-body elegant-color white-text">
+
+                <!-- Title -->
+                <h4 class="card-title"><a>Header</a></h4>
+                <!-- Text -->
+                <p class="card-text">Tiny Text...</p>
+                <!-- Button -->
+                <a href="#" class="btn btn-primary">Weiter</a>
+
+              </div>
+
             </div>
+            <!-- Card -->
+            <!-- Card -->
+            <div class="card">
+
+              <!-- Card content -->
+              <div class="card-body elegant-color white-text">
+
+                <!-- Title -->
+                <h4 class="card-title"><a>Header</a></h4>
+                <!-- Text -->
+                <p class="card-text">Tiny Text...</p>
+                <!-- Button -->
+                <a href="#" class="btn btn-primary">Weiter</a>
+
+              </div>
+
+            </div>
+            <!-- Card -->
 
           </div>
           <!--/.Card-->
