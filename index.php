@@ -1,4 +1,5 @@
-<?php $current_page = "home"; ?>
+<?php $current_page = "home";
+include 'home/connect_mysql.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,62 +11,7 @@
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
-    <div class="container">
-
-      <!-- Brand -->
-      <a class="navbar-brand">
-        <img src="/media/images/favicon.png" height="30">
-      </a>
-
-      <!-- Collapse -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <!-- Links -->
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-        <!-- Left -->
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="team" target="_blank">Team</a>
-          </li>
-        </ul>
-
-        <!-- Right -->
-        <ul class="navbar-nav nav-flex-icons">
-          <li class="nav-item">
-            <a href="https://www.instagram.com/tnwm_group/" class="nav-link" target="_blank">
-              <i class="fab fa-instagram"></i>
-              </a>
-          </li>
-          <li class="nav-item">
-            <a href="https://twitter.com/TNWM_group" class="nav-link" target="_blank">
-              <i class="fab fa-twitter"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="/account/login" class="nav-link border border-light rounded">
-              <?php if(!isset($_COOKIE['authWebToken']) && !isset($_COOKIE['username'])) {?>
-              <i class="fas fa-sign-in-alt mr-2"></i>Anmelden
-              <?php }else{ ?>
-                <i class="fas fa-sign-in-alt mr-2"></i>Öffnen
-                <?php } ?>
-            </a>
-          </li>
-        </ul>
-
-      </div>
-
-    </div>
-  </nav>
+  <?php include 'home/navbar.php'; ?>
   <!-- Navbar -->
 
   <!--Carousel Wrapper-->
@@ -206,7 +152,32 @@
 
       <!--Section: Main info-->
       <section class="mt-5 wow fadeIn">
-
+        <!--Stats-->
+        <?php include 'home/stats.php';?>
+    <div class="row text-center d-flex justify-content-center my-5">
+      <div class="col-lg-3 col-md-6 mb-4">
+        <i class="fas fa-users fa-3x mb-4 grey-text"></i>
+        <h5 class="font-weight-normal mb-3">Subscription Ready</h5>
+        <p class="text-muted mb-0">Benutzer</p>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <i class="fas fa-user fa-3x mb-4 grey-text"></i>
+        <h5 class="font-weight-normal mb-3">Block Variety</h5>
+        <p class="text-muted mb-0">Team Mitglieder</p>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <i class="fas fa-building fa-3x mb-4 grey-text"></i>
+        <h5 class="font-weight-normal mb-3">Color Pallet</h5>
+        <p class="text-muted mb-0">registrierte Firmen</p>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <i class="fas fa-truck-loading fa-3x mb-4 grey-text"></i>
+        <h5 class="font-weight-normal mb-3">Page Builder</h5>
+        <p class="text-muted mb-0">abgeschlossene Touren</p>
+      </div>
+    </div>
+    <!--Stats-->
+    <hr class="mb-5">
         <!--Grid row-->
         <div class="row">
 
@@ -343,7 +314,7 @@
                 <i class="fas fa-truck fa-2x mb-1 indigo-text" aria-hidden="true"></i>
               </div>
               <div class="col-10 mb-2">
-                <h5 class="feature-title font-bold mb-1">Offizieller InfiniteTruckersMultiPlayer-Partner</h5>
+                <h5 class="feature-title font-bold mb-1">Offizieller InfiniteTruckersMP-Partner</h5>
                 <p class="grey-text mt-2">Wir sind ein Partner von IFMP und bieten zahlreiche Optimierungen und Anpassungen für den MultiPlayer an.</p>
               </div>
             </div>
