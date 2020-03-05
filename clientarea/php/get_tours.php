@@ -5,7 +5,7 @@ $day = date('w');
 $week_start = date('Y-m-d', strtotime('-'.$day.' days + 1 day'));
 $date = new DateTime();
 $week = $date->format("W");
-$sql = "SELECT COUNT(*) AS num FROM tour_table WHERE companyID=$user_company_id AND DATE( tour_date ) >= '$week_start'";
+$sql = "SELECT COUNT(*) AS num FROM tour_table WHERE username='$username_cookie' AND DATE( tour_date ) >= '$week_start'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -27,7 +27,7 @@ if ($result->num_rows > 0) {
     $day = date('w');
 $week_start2 = date('Y-m-d',strtotime("$week_start -7 days",));
 $week = date('W', strtotime('-7 days'));
-$sql = "SELECT COUNT(*) AS num FROM tour_table WHERE companyID=$user_company_id AND DATE( tour_date ) >= '$week_start2'AND DATE( tour_date ) <= '$week_start'";
+$sql = "SELECT COUNT(*) AS num FROM tour_table WHERE username='$username_cookie' AND DATE( tour_date ) >= '$week_start2'AND DATE( tour_date ) <= '$week_start'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -49,7 +49,7 @@ if ($result->num_rows > 0) {
         $day = date('w');
 $week_start3 = date('Y-m-d',strtotime("$week_start2 -7 days",));
 $week = date('W', strtotime('-14 days'));
-$sql = "SELECT COUNT(*) AS num FROM tour_table WHERE companyID=$user_company_id AND DATE( tour_date ) >= '$week_start3'AND DATE( tour_date ) <= '$week_start2'";
+$sql = "SELECT COUNT(*) AS num FROM tour_table WHERE username='$username_cookie' AND DATE( tour_date ) >= '$week_start3'AND DATE( tour_date ) <= '$week_start2'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -71,7 +71,7 @@ if ($result->num_rows > 0) {
         $day = date('w');
 $week_start4 = date('Y-m-d',strtotime("$week_start3 -7 days",));
 $week = date('W', strtotime('-21 days'));
-$sql = "SELECT COUNT(*) AS num FROM tour_table WHERE companyID=$user_company_id AND DATE( tour_date ) >= '$week_start4'AND DATE( tour_date ) <= '$week_start3'";
+$sql = "SELECT COUNT(*) AS num FROM tour_table WHERE username='$username_cookie' AND DATE( tour_date ) >= '$week_start4'AND DATE( tour_date ) <= '$week_start3'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -93,7 +93,7 @@ if ($result->num_rows > 0) {
         $day = date('w');
 $week_start3 = date('Y-m-d',strtotime("$week_start4 -7 days",));
 $week = date('W', strtotime('-28 days'));
-$sql = "SELECT COUNT(*) AS num FROM tour_table WHERE companyID=$user_company_id AND DATE( tour_date ) >= '$week_start5'AND DATE( tour_date ) <= '$week_start4'";
+$sql = "SELECT COUNT(*) AS num FROM tour_table WHERE username='$username_cookie' AND DATE( tour_date ) >= '$week_start5'AND DATE( tour_date ) <= '$week_start4'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

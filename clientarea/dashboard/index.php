@@ -329,7 +329,7 @@ position:absolute;
           <div class="card">
             
             <!-- Card header -->
-            <div class="card-header unique-color white-text">Die letzten 3 Transaktionen</div>
+            <div class="card-header unique-color white-text">Deine letzten 3 Transaktionen</div>
 
             <!--Card content-->
             <div class="card-body elegant-color white-text">
@@ -376,7 +376,7 @@ position:absolute;
           <div class="card">
 
             <!-- Card header -->
-            <div class="card-header unique-color white-text">Touren Diagramm</div>
+            <div class="card-header unique-color white-text">Touren pro Woche</div>
 
             <!--Card content-->
             <div class="card-body elegant-color white-text">
@@ -398,7 +398,7 @@ position:absolute;
           <div class="card">
 
             <!-- Card header -->
-            <div class="card-header unique-color white-text">Fracht Diagramm</div>
+            <div class="card-header unique-color white-text">Meistgefahrene Fracht</div>
 
             <!--Card content-->
             <div class="card-body elegant-color white-text">

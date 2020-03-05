@@ -4,7 +4,7 @@ $day = date('w');
 $week_start = date('Y-m-d', strtotime('-'.$day.' days + 1 day'));
 $date = new DateTime();
 $week = $date->format("W");
-$sql = "SELECT * FROM money_transfer WHERE sender='$user_company_name' OR receiver='$user_company_name' ORDER BY date_sent DESC LIMIT 3";
+$sql = "SELECT * FROM money_transfer WHERE sender='$username_cookie' OR receiver='$username_cookie' ORDER BY date_sent DESC LIMIT 3";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

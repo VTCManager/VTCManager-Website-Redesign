@@ -1,7 +1,7 @@
 
 <?php
 include '../get_user_data.php';   
-$sql = "SELECT cargo,COUNT(*) AS num FROM tour_table WHERE companyID=$user_company_id GROUP BY cargo ORDER BY COUNT(*) DESC LIMIT 5";
+$sql = "SELECT cargo,COUNT(*) AS num FROM tour_table WHERE username='$username_cookie' GROUP BY cargo ORDER BY COUNT(*) DESC LIMIT 5";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

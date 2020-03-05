@@ -1,4 +1,4 @@
-<footer class="page-footer text-center font-small unique-color-dark mt-4 wow fadeIn">
+<footer class="page-footer text-center font-small unique-color-dark mt-4 wow fadeIn" style="padding-left: 0px;padding-right: 0px;">
 
     <!--Call to action-->
     <div class="pt-4">
