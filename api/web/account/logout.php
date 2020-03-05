@@ -9,11 +9,6 @@ if (isset($_COOKIE['username'])) {
     setcookie('username', null, -1, '/'); 
 } else {
 }
-if ($lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) == "de") {
-	header("Location: https://vtc.northwestvideo.de"); 
-	exit;
-}else{
-	header("Location: https://vtc.northwestvideo.de/en"); 
-	exit;
-}
+header("Location: /"); 
+exit;
 ?>
