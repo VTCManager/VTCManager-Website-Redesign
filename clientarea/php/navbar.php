@@ -21,15 +21,27 @@ if($page_now_navbar == "management/dashboard/index"){?>
           <!-- Left -->
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link waves-effect" href="#">Übersicht
+              <a class="nav-link waves-effect" href="#"><i class="fas fa-chart-pie"></i>Übersicht
                 <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link waves-effect" href="logbook">Fahrtenbuch</a>
+              <a class="nav-link waves-effect" href="logbook"><i class="fas fa-truck-loading"></i>Fahrtenbuch</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link waves-effect" href="https://mdbootstrap.com/education/bootstrap/">Einstellungen</a>
+              <a class="nav-link waves-effect" href=""><i class="fas fa-building"></i>Meine Firma</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link waves-effect" href=""><i class="fas fa-money-bill"></i>Bank</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link waves-effect" href=""><i class="fas fa-calendar-alt"></i>Events</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link waves-effect" href=""><i class="fas fa-newspaper"></i>News</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link waves-effect" href="https://mdbootstrap.com/education/bootstrap/"><i class="fas fa-cogs"></i>Einstellungen</a>
             </li>
           </ul>
     <?php }else if($page_now_navbar == "management/dashboard/logbook"){?>
