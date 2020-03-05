@@ -1,11 +1,11 @@
 <?php //begin of navbar?>
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark stylish-color-dark scrolling-navbar">
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark stylish-color-dark scrolling-navbar" style="padding-left: 10px;padding-right: 10px;">
       <div class="container-fluid">
 <?php
 if($page_now_navbar == "management/dashboard/index"){?>
 
         <!-- Brand -->
-        <a class="navbar-brand waves-effect" target="_blank">
+        <a class="navbar-brand waves-effect">
           <strong class="blue-text">VTCMI</strong>
         </a>
 

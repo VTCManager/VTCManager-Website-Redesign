@@ -106,7 +106,7 @@ position:absolute;
 
     <!-- Sidebar -->
     <?php
-    include '../php/sidebar.php';?>
+    //include '../php/sidebar.php';?>
     <!-- Sidebar -->
 <div class="modal fade" id="viewchangelog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
   aria-hidden="true">
@@ -203,7 +203,7 @@ position:absolute;
   <!--Main Navigation-->
 
   <!--Main layout-->
-  <main class="pt-5 mx-lg-5">
+  <main class="pt-5" style="padding-left: 10px;padding-right: 10px;">
     <div class="container-fluid mt-5">
 
       <!-- Heading -->
@@ -287,7 +287,7 @@ position:absolute;
           <!--Card-->
           <div class="card">
 
-            <div class="card-header unique-color white-text">Die letzten 3 Touren</div>
+            <div class="card-header unique-color white-text">Deine letzten 3 Touren</div>
             <!--Card content-->
             <div class="card-body elegant-color white-text">
 
@@ -300,7 +300,7 @@ position:absolute;
                     <th>Startort</th>
                     <th>Zielort</th>
                     <th>Fracht</th>
-                    <th>Fahrer</th>
+                    <th>Status</th>
                   </tr>
                 </thead>
                 <!-- Table head -->
