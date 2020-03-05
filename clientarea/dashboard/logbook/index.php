@@ -131,11 +131,6 @@ table.table a {
     include '../../php/navbar.php';?>
     <!-- Navbar -->
 
-    <!-- Sidebar -->
-    <?php
-    include '../../php/sidebar.php';?>
-    <!-- Sidebar -->
-
   </header>
   <!--Main Navigation-->
 
@@ -160,10 +155,6 @@ table.table a {
       aria-selected="true">Allgemein</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#invoice" role="tab" aria-controls="Abrechnung"
-      aria-selected="false">Abrechnung</a>
-  </li>
-  <li class="nav-item">
     <a class="nav-link" id="profile-tab" data-toggle="tab" href="#truck_sec" role="tab" aria-controls="LKW"
       aria-selected="false">LKW</a>
   </li>
@@ -180,28 +171,6 @@ table.table a {
     <span id="departure_time">Abfahrt:</span><br>
     <span id="destination_time">Ankunft:</span><br>
   </div>
-  <div class="tab-pane fade" id="invoice" role="tabpanel" aria-labelledby="profile-tab">
-  <span style="color: green;" id="freight_value">Frachtwert:</span><br>
-  <span style="color: red;" id="taxes">Steuern:</span><br>
-  <span style="color: red;" id="damage_cost">Wartungskosten:</span><br>
-  <span style="color: green;" id="income">Umsatz:</span><br>
-  <div class="row d-flex justify-content-center">
-	<div class="col-md-12 mb-4">
-  <form action="/clientarea/management/dashboard/logbook/" method="post" style="display: inline-block;">
-    <input type="hidden" id="driverUserName" value="" name="driverUserName" />
-    <input type="hidden" id="jobID" value="" name="jobID" />
-    <input type="hidden" value="accept" name="command" />
-    <button type="submit" class="btn btn-success"><i class="fas fa-check" aria-hidden="true"></i>Akzeptieren</button>
-  </form>
-  <form action="/clientarea/management/dashboard/logbook/" method="post" style="display: inline-block;">
-    <input type="hidden" id="driverUserName2" value="" name="driverUserName" />
-    <input type="hidden" id="jobID2" value="" name="jobID" />
-    <input type="hidden" value="decline" name="command" />
-    <button type="submit" class="btn btn-danger"><i class="fas fa-ban" aria-hidden="true"></i>Ablehnen</button>
-  </form>
-	</div>
-  </div>
-</div>
 <div class="tab-pane fade" id="truck_sec" role="tabpanel" aria-labelledby="profile-tab">
       <img src="" id="truck_pic" class="rounded float-right" style="max-height:250px;" alt="">
     <span id="truck_name">LKW:</span><br>
@@ -241,14 +210,6 @@ function load_tourcheck(elmnt) {
     document.getElementById("trailer_damage").innerHTML="Aufliegerschaden: "+trailer_damage+"%";
     document.getElementById("departure_time").innerHTML="Abfahrt: "+myObj[0]["tour_date"].replace(/-/g, '.');
     document.getElementById("distance").innerHTML="Distanz: "+myObj[0]["distance"]+"km";
-    var income = parseInt(myObj[0]["money_earned"]);
-    var taxes = income*0.20;
-    var damage_cost = trailer_damage*100;
-    var real_income = income-taxes-damage_cost;
-    document.getElementById("freight_value").innerHTML="Frachtwert: "+income.toFixed(2)+"€";
-    document.getElementById("taxes").innerHTML="Steuern: "+taxes.toFixed(2)+"€";
-    document.getElementById("damage_cost").innerHTML="Wartungskosten: "+damage_cost.toFixed(2)+"€";
-    document.getElementById("income").innerHTML="Umsatz: "+real_income.toFixed(2)+"€";
     document.getElementById("driverUserName").value = myObj[0]["username"];
     document.getElementById("jobID").value = myObj[0]["tour_id"];
     document.getElementById("driverUserName2").value = myObj[0]["username"];
@@ -278,7 +239,7 @@ function load_tourcheck(elmnt) {
 }
 </script>
 <?php }?>
-  <main class="pt-5 mx-lg-5">
+  <main class="pt-5 mx-lg-5" style="padding-left: 10px;padding-right: 10px;">
     <div class="container-fluid mt-5">
 
       <!-- Heading -->
@@ -314,7 +275,6 @@ function load_tourcheck(elmnt) {
             <table class="table white-text">
                 <thead>
                     <tr>
-						<td>Fahrer</td>
                         <td>Fracht</td>
                         <td>Von</td>
                         <td>Nach</td>
@@ -333,7 +293,7 @@ function load_tourcheck(elmnt) {
             </table>
             <div class="text-center">
             <?php 
-$sql = "SELECT COUNT(tour_date) AS total FROM tour_table WHERE companyID=$user_company_id";
+$sql = "SELECT COUNT(tour_date) AS total FROM tour_table WHERE username='$username_cookie'";
 $result = $conn->query($sql);
 $row = $result->fetch_assoc();
 $total_pages = ceil($row["total"] / $results_per_page); // calculate total pages with results

@@ -1,6 +1,6 @@
 <?php
 //hole alle Touren aus der DB der Firma
-$sql = "SELECT * FROM tour_table WHERE companyID=$user_company_id ORDER BY `tour_date` DESC LIMIT $start_from, ".$results_per_page;
+$sql = "SELECT * FROM tour_table WHERE username='$username_cookie' ORDER BY `tour_date` DESC LIMIT $start_from, ".$results_per_page;
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -24,15 +24,6 @@ if ($result->num_rows > 0) {
 		$tour_date_nw = date('d.m.Y', strtotime($tour_date));
 		//ist die Tour abgeschlossen?
 		if ($tour_status== "finished") {
-			//ist die Tour noch nicht bestätigt worden?
-			if($tour_approved == "0"){
-				//hat der Benutzer Rechte zur Prüfung?
-				if ($EditLogbook=="1"){
-					//dann setze den Prüfen Button
-				$tour_approved_line = 
-					'<a class="btn btn-primary" data-id="'.$found_tour_username.','.$found_tour.'" onclick="load_tourcheck(this)" data-toggle="modal" data-target="#tourcheck">Prüfung</a>';
-				}
-			}
 			$tour_prog = "100";
 			$tour_status_tra = '<i class="fas fa-check-circle" style="color: green !important;"></i> abgeschlossen';
 			//wird die Tour noch gefahren?
@@ -56,19 +47,7 @@ if ($result->num_rows > 0) {
 	     	$tour_prog = "100";
 			$tour_status_tra = '<i class="fas fa-check-circle" style="color: green !important;"></i> akzeptiert';
 		}
-		//Fahrer ID laden
-		$sql2 = "SELECT * FROM user_data WHERE username='$found_tour_username'";
-		$result2 = $conn->query($sql2);
 		echo "<tr data-id='$found_tour_username,$found_tour' id='$found_tour_username,$found_tour' >";
-		if ($result2->num_rows > 0) {
-			// output data of each row
-			while($row2 = $result2->fetch_assoc()) {
-				$found_job_user_id = $row2["userID"];
-				echo '<td><a class="tour_url" href="/account/?userid='.$found_job_user_id.'">'.$found_tour_username.'</a></td>';
-			}
-		} else {
-			echo '<td>'.$found_tour_username.'</td>';
-		}
 		echo '<td><a class="tour_url" href="../job_report?username='.$found_tour_username.'&jobid='.$found_tour.'">'.$found_tour_cargo.'</a></td>';
 		echo '<td>'.$found_tour_depature.'</td>';
 		echo '<td>'.$found_tour_destination.'</td>';
