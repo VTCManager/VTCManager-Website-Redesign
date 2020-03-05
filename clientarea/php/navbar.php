@@ -29,7 +29,7 @@ if($page_now_navbar == "management/dashboard/index"){?>
               <a class="nav-link waves-effect" href="logbook"><i class="fas fa-truck-loading"></i>Fahrtenbuch</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link waves-effect" href=""><i class="fas fa-building"></i>Meine Firma</a>
+              <a class="nav-link waves-effect" href="/clientarea/management"><i class="fas fa-building"></i>Meine Firma</a>
             </li>
             <li class="nav-item">
               <a class="nav-link waves-effect" href=""><i class="fas fa-money-bill"></i>Bank</a>
