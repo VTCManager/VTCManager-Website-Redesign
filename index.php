@@ -157,22 +157,22 @@ include 'home/connect_mysql.php'; ?>
     <div class="row text-center d-flex justify-content-center my-5">
       <div class="col-lg-3 col-md-6 mb-4">
         <i class="fas fa-users fa-3x mb-4 grey-text"></i>
-        <h5 class="font-weight-normal mb-3">Subscription Ready</h5>
+        <h5 class="font-weight-normal mb-3"><?php echo $stats_total_user;?></h5>
         <p class="text-muted mb-0">Benutzer</p>
       </div>
       <div class="col-lg-3 col-md-6 mb-4">
         <i class="fas fa-user fa-3x mb-4 grey-text"></i>
-        <h5 class="font-weight-normal mb-3">Block Variety</h5>
+        <h5 class="font-weight-normal mb-3"><?php echo $stats_total_staff;?></h5>
         <p class="text-muted mb-0">Team Mitglieder</p>
       </div>
       <div class="col-lg-3 col-md-6 mb-4">
         <i class="fas fa-building fa-3x mb-4 grey-text"></i>
-        <h5 class="font-weight-normal mb-3">Color Pallet</h5>
+        <h5 class="font-weight-normal mb-3"><?php echo $stats_total_company;?></h5>
         <p class="text-muted mb-0">registrierte Firmen</p>
       </div>
       <div class="col-lg-3 col-md-6 mb-4">
         <i class="fas fa-truck-loading fa-3x mb-4 grey-text"></i>
-        <h5 class="font-weight-normal mb-3">Page Builder</h5>
+        <h5 class="font-weight-normal mb-3"><?php echo $stats_total_tours_done;?></h5>
         <p class="text-muted mb-0">abgeschlossene Touren</p>
       </div>
     </div>

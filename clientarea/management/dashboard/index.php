@@ -132,7 +132,19 @@ position:absolute;
 </ul>
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="webinterface" role="tabpanel" aria-labelledby="home-tab">
-    <p class="h2">aktuelle Version: 0.0.5 Alpha Build<p>
+    <p class="h2">aktuelle Version: 0.0.7 Alpha Build<p>
+      <p class="h2 lead">Changelog Version 0.0.7 Alpha Build</p><br>
+    <ul>
+      <li>Echtzeit Statistiken auf der Homepage hinzugefügt</li>
+    </ul>
+      <p class="h2 lead">Changelog Version 0.0.6 Alpha Build</p><br>
+    <ul>
+      <li>Team Seite hinzugefügt</li>
+      <li>Echtzeit Aktualisierung der Team Seite hinzugefügt</li>
+      <li>Code aufgeräumt</li>
+    </ul>
+    
+    <hr>
       <p class="h2 lead">Changelog Version 0.0.5 Alpha Build</p><br>
     <ul>
       <li>Touren können abgelehnt werden</li>
