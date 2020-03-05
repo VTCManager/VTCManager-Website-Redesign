@@ -125,7 +125,7 @@ if($userLangID != "de"){
     }
 setcookie("authWebToken",$token,time() + 86400,'/');
 setcookie("username",$user,time() + 86400, '/');
-header("Location: /clientarea/management/dashboard"); 
+header("Location: /clientarea"); 
 exit;
 
 
