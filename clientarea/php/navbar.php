@@ -51,48 +51,12 @@ if($page_now_navbar == "management/dashboard/index"){?>
           <!-- Left -->
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link waves-effect" href="/clientarea/management/dashboard">Übersicht
+              <a class="nav-link waves-effect" href="/clientarea/dashboard">Übersicht
                 
               </a>
             </li>
             <li class="nav-item active">
               <a class="nav-link waves-effect" target="_blank">Fahrtenbuch<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link waves-effect" href="/clientarea/management/dashboard/employees">Mitarbeiter</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link waves-effect" href="https://mdbootstrap.com/education/bootstrap/" target="_blank">Einstellungen</a>
-            </li>
-          </ul>
-          <?php }else if($page_now_navbar == "management/dashboard/employees"){?>
-
-        <!-- Brand -->
-        <a class="navbar-brand waves-effect" target="_blank">
-          <strong class="blue-text">VTCMI</strong>
-        </a>
-
-        <!-- Collapse -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <!-- Links -->
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-          <!-- Left -->
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link waves-effect" href="/clientarea/management/dashboard">Übersicht
-                
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link waves-effect" href="/clientarea/management/dashboard/logbook">Fahrtenbuch</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link waves-effect">Mitarbeiter<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link waves-effect" href="https://mdbootstrap.com/education/bootstrap/" target="_blank">Einstellungen</a>
