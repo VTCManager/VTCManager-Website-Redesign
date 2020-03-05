@@ -4,6 +4,7 @@
       <p class="h2 lead">Changelog Version 0.0.7 Alpha Build</p><br>
     <ul>
       <li>Echtzeit Statistiken auf der Homepage hinzugefügt</li>
+      <li>User-Bereich vom Firmen-Bereich getrennt und angepasst</li>
     </ul>
       <p class="h2 lead">Changelog Version 0.0.6 Alpha Build</p><br>
     <ul>
