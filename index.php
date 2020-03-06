@@ -45,9 +45,9 @@ include 'home/connect_mysql.php'; ?>
                 <strong>Funktionsreiches und modern gestalltes Verwaltungssystem.</strong>
               </p>
               <?php if(!isset($_COOKIE['authWebToken']) && !isset($_COOKIE['username'])) {?>
-              <a target="_blank" href="/account/register" class="btn btn-outline-white btn-lg">Registrieren
+              <a href="/account/register" class="btn btn-outline-white btn-lg">Registrieren
               <?php }else{?>
-                <a target="_blank" href="/account/login" class="btn btn-outline-white btn-lg">Öffnen
+                <a href="/account/login" class="btn btn-outline-white btn-lg">Öffnen
                 <?php } ?>
                 <i class="fas fa-sign-in-alt ml-2"></i>
               </a>
@@ -79,9 +79,9 @@ include 'home/connect_mysql.php'; ?>
               </p>
 
               <?php if(!isset($_COOKIE['authWebToken']) && !isset($_COOKIE['username'])) {?>
-              <a target="_blank" href="/account/register" class="btn btn-outline-white btn-lg">Registrieren
+              <a href="/account/register" class="btn btn-outline-white btn-lg">Registrieren
               <?php }else{?>
-                <a target="_blank" href="/account/login" class="btn btn-outline-white btn-lg">Öffnen
+                <a href="/account/login" class="btn btn-outline-white btn-lg">Öffnen
                 <?php } ?>
                 <i class="fas fa-sign-in-alt ml-2"></i>
               </a>
@@ -113,9 +113,9 @@ include 'home/connect_mysql.php'; ?>
               </p>
 
               <?php if(!isset($_COOKIE['authWebToken']) && !isset($_COOKIE['username'])) {?>
-              <a target="_blank" href="/account/register" class="btn btn-outline-white btn-lg">Registrieren
+              <a href="/account/register" class="btn btn-outline-white btn-lg">Registrieren
               <?php }else{?>
-                <a target="_blank" href="/account/login" class="btn btn-outline-white btn-lg">Öffnen
+                <a href="/account/login" class="btn btn-outline-white btn-lg">Öffnen
                 <?php } ?>
                 <i class="fas fa-sign-in-alt ml-2"></i>
               </a>
