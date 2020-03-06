@@ -50,7 +50,7 @@ if(isset($_COOKIE['authWebToken']) && isset($_COOKIE['username'])) {
 		die("We're sorry but we couldn't find your profile");
 	}
 	//load data and redirect to specific interface
-	header("Location: /clientarea/management/dashboard");
+	header("Location: /clientarea");
 	die();
 }
 foreach ($_POST as $key => $value) {
