@@ -10,11 +10,7 @@ if(!isset($_POST['reason']) && !isset($_POST['employeeID']) && !empty($_POST['re
 include '../../get_user_data.php';
 
 //Überprüfe Berechtigung
-if($EditEmployees != "1"){
-    //redirect zurück zu Liste mit Fehler-Info
-    echo "Keine Berechtigung";
-    die();
-    }
+
 //POST Variablen
 $reason_text = $_POST['reason'];
 $employeeID = $_POST['employeeID'];
@@ -64,16 +60,10 @@ $conn->close();
 include '../../get_user_data.php';
 
 //Eintrag im Lebenslauf anpassen und Grund setzen
-$sql = "UPDATE career_table SET fire_reason='$reason_text', end_date=NOW() WHERE userID=$employeeID AND end_date=0000-00-00";
-
-if ($conn->query($sql) === TRUE) {
-} else {
-    echo "Error updating record: " . $conn->error;
-    die();
-}
+//fehlt
 
 //Benutzer Informationen anpassen
-$sql = "UPDATE user_data SET userCompanyID=0, rank='Fahrer' WHERE userID=$employeeID";
+$sql = "UPDATE user_data SET staff_role='', staff_struct_id=0 WHERE userID=$employeeID";
 
 if ($conn->query($sql) === TRUE) {
 } else {
@@ -85,7 +75,7 @@ include 'emails/fire_employee/fire_employee.php';
 
 //Email erstellen
 $to = $employee_email_address;
-$subject = 'Du wurdest aus deiner Spedition entlassen|VTCManager';
+$subject = 'Du wurdest aus dem Team entlassen|VTCManager';
 $headers = "From: service@northwestvideo.de\r\n";
 $headers .= "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: text/html; charset=UTF-8\r\n";

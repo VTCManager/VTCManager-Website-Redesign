@@ -6,7 +6,7 @@ if($page_now_navbar == "management/dashboard/index"){?>
 
         <!-- Brand -->
         <a class="navbar-brand waves-effect" target="_blank">
-          <strong class="blue-text">VTCMI</strong>
+          <strong class="blue-text">Team-Interface</strong>
         </a>
 
         <!-- Collapse -->
@@ -36,7 +36,7 @@ if($page_now_navbar == "management/dashboard/index"){?>
 
         <!-- Brand -->
         <a class="navbar-brand waves-effect" target="_blank">
-          <strong class="blue-text">VTCMI</strong>
+          <strong class="blue-text">Team-Interface</strong>
         </a>
 
         <!-- Collapse -->
@@ -59,9 +59,6 @@ if($page_now_navbar == "management/dashboard/index"){?>
               <a class="nav-link waves-effect">Mitglieder<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link waves-effect" href="/clientarea/management/dashboard/employees">Mitarbeiter</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link waves-effect" href="https://mdbootstrap.com/education/bootstrap/" target="_blank">Einstellungen</a>
             </li>
           </ul>
@@ -69,7 +66,7 @@ if($page_now_navbar == "management/dashboard/index"){?>
 
         <!-- Brand -->
         <a class="navbar-brand waves-effect" target="_blank">
-          <strong class="blue-text">VTCMI</strong>
+          <strong class="blue-text">Team-Interface</strong>
         </a>
 
         <!-- Collapse -->
@@ -84,15 +81,12 @@ if($page_now_navbar == "management/dashboard/index"){?>
           <!-- Left -->
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link waves-effect" href="/clientarea/management/dashboard">Übersicht
+              <a class="nav-link waves-effect" href="/staffarea/dashboard">Übersicht
                 
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link waves-effect" href="/clientarea/management/dashboard/logbook">Fahrtenbuch</a>
-            </li>
             <li class="nav-item active">
-              <a class="nav-link waves-effect">Mitarbeiter<span class="sr-only">(current)</span></a>
+              <a class="nav-link waves-effect">Mitglieder<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link waves-effect" href="https://mdbootstrap.com/education/bootstrap/" target="_blank">Einstellungen</a>
