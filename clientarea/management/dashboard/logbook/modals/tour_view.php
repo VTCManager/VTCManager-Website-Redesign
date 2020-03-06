@@ -94,6 +94,7 @@ function load_tourview(elmnt) {
 	xmlhttp.onreadystatechange = function() {
     console.log(xmlhttp.response);
     var response = this.responseText;
+    if(response != ""){
     var myObj = JSON.parse(response);
     if(myObj != "") {
     user_count = myObj.length;
@@ -104,6 +105,7 @@ function load_tourview(elmnt) {
     document.getElementById("truck_engine_manu2").innerHTML="Motorhersteller: "+myObj[0]["engine_manufacturer"];
     document.getElementById("truck_emission_standard2").innerHTML="Emissionsstandard: "+myObj[0]["emission_standard"];
     document.getElementById("truck_pic2").src=myObj[0]["image_url"];
+    }
 	};
 	xmlhttp.open("GET", "get_truck_info.php?manufacturer="+myObj[0]["truck_manufacturer"]+"&model="+myObj[0]["truck_model"], true);
 	xmlhttp.send();
