@@ -51,12 +51,12 @@ if($page_now_navbar == "management/dashboard/index"){?>
           <!-- Left -->
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link waves-effect" href="/clientarea/management/dashboard">Übersicht
+              <a class="nav-link waves-effect" href="/staffarea/dashboard">Übersicht
                 
               </a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link waves-effect" target="_blank">Fahrtenbuch<span class="sr-only">(current)</span></a>
+              <a class="nav-link waves-effect">Mitglieder<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link waves-effect" href="/clientarea/management/dashboard/employees">Mitarbeiter</a>

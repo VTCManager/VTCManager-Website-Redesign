@@ -106,8 +106,7 @@ color: #007bff;
     <i class="fas fa-user"></i> <span id="employee_name">Name:</span><br>
     <i class="fas fa-calendar-day"></i> <span id="">Alter:</span><br>
     <i class="fas fa-user-tag"></i> <span id="employee_rank">Posten:</span><br>
-    <i class="fas fa-truck-loading"></i> <span id="employee_total_tours">erfolgreiche Touren:</span><br>
-    <i class="fas fa-money-bill"></i> <span id="employee_income">Einnahmen durch Fahrer:</span><br>
+    <i class="fas fa-truck-loading"></i> <span id="staff_company">Firma:</span><br>
     <hr>
   </div>
   <div class="tab-pane fade" id="fire" role="tabpanel" aria-labelledby="home-tab">
@@ -123,8 +122,8 @@ color: #007bff;
       </form>
   </div>
   <div class="tab-pane fade" id="edit" role="tabpanel" aria-labelledby="home-tab">
-    <form action="change_emp_rank" method="post">
-      <input type="hidden" id="change_role_employeeID" value="" name="employeeID" />
+    <form action="change_staff_rank" method="post">
+      <input type="hidden" id="change_role_employeeID" value="" name="staffID" />
       <br>
     <select name="rank" class="browser-default custom-select">
   <option disabled selected>Neue Rolle zuweisen</option>
@@ -157,9 +156,8 @@ function load_employee(elmnt) {
     }
     document.getElementById("Employee_details_Title").innerHTML=myObj[0]["username"];
     document.getElementById("employee_name").innerHTML="Name: "+myObj[0]["username"];
-    document.getElementById("employee_rank").innerHTML="Posten: "+myObj[0]["rank"];
-    document.getElementById("employee_total_tours").innerHTML="erfolgreiche Touren: "+myObj[0]["total_tours"];
-    document.getElementById("employee_income").innerHTML="Einnahmen durch Fahrer: "+myObj[0]["income"]+"€";
+    document.getElementById("employee_rank").innerHTML="Posten: "+myObj[0]["staff_role"];
+    document.getElementById("staff_company").innerHTML="Firma: "+myObj[0]["company"];
     document.getElementById("fire_employeeID").value=myObj[0]["userID"];
     document.getElementById("change_role_employeeID").value=myObj[0]["userID"];
 	};
@@ -173,23 +171,6 @@ function load_employee(elmnt) {
   <main class="pt-5 mx-lg-5">
     <div class="container-fluid mt-5">
 
-      <!-- Heading -->
-      <div class="card mb-4 wow fadeIn">
-
-        <!--Card content-->
-        <div class="card-body d-sm-flex elegant-color white-text justify-content-between">
-
-          <h4 class="mb-2 mb-sm-0 pt-1">
-            <a href="dashboard">Dashboard</a>
-            <span>/</span>
-            <span>Mitarbeiter</span>
-          </h4>
-
-        </div>
-
-      </div>
-      <!-- Heading -->
-
           <!--Card-->
           <div class="card mb-4">
 
@@ -197,7 +178,7 @@ function load_employee(elmnt) {
             <div class="card-body elegant-color white-text">
 
               <div class="card-header unique-color white-text text-center">
-                Mitarbeiter von <?php echo $user_company_name; ?>
+                Team-Mitglieder von VTCManager
               </div>
               <!-- List group links -->
               <div class="list-group list-group-flush">
@@ -207,8 +188,6 @@ function load_employee(elmnt) {
                     <tr>
                         <td>Mitarbeiter</td>
                         <td>Posten</td>
-                        <td>angestellt seit</td>
-                        <td>erfolgreiche Touren</td>
 						<td></td>
             <td></td>
                     </tr>
