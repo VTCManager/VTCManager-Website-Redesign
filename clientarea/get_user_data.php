@@ -45,6 +45,7 @@ if(isset($_COOKIE['authWebToken']) && isset($_COOKIE['username'])) {
 			$user_rank = $row["rank"];
 			$user_avatar_url = $row["profile_pic_url"];
 			$user_company_id = $row["userCompanyID"];
+			$user_team_role = $row["staff_role"];
 		}
 	} else {
 		//Der Benutzer konnte in der DB nicht gefunden werden

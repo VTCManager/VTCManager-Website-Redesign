@@ -43,6 +43,11 @@ if($page_now_navbar == "management/dashboard/index"){?>
             <li class="nav-item">
               <a class="nav-link waves-effect" href="https://mdbootstrap.com/education/bootstrap/"><i class="fas fa-cogs"></i>Einstellungen</a>
             </li>
+            <?php if($user_team_role == "Project Director"){ ?>
+              <li class="nav-item">
+              <a class="nav-link waves-effect" href="/staffarea"><i class="fas fa-newspaper"></i>Administration</a>
+            </li>
+              <?php } ?>
           </ul>
     <?php }else if($page_now_navbar == "management/dashboard/logbook"){?>
 

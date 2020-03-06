@@ -1,7 +1,7 @@
 <?php
 date_default_timezone_set('Europe/Berlin');
 //hole alle Mitarbeiter der Firma
-$sql = "SELECT * FROM user_data WHERE userCompanyID=$user_company_id";
+$sql = "SELECT * FROM user_data WHERE staff_role!=''";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

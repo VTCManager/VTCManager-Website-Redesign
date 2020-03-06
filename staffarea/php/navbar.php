@@ -26,10 +26,7 @@ if($page_now_navbar == "management/dashboard/index"){?>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link waves-effect" href="logbook">Fahrtenbuch</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link waves-effect" href="employees">Mitarbeiter</a>
+              <a class="nav-link waves-effect" href="staff_list">Mitglieder</a>
             </li>
             <li class="nav-item">
               <a class="nav-link waves-effect" href="https://mdbootstrap.com/education/bootstrap/">Einstellungen</a>

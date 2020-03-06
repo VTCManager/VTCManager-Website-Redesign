@@ -1,4 +1,4 @@
 <?php
-header("Location: /clientarea/management/dashboard"); 
+header("Location: /staffarea/dashboard"); 
 exit;
 ?>
