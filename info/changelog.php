@@ -1,11 +1,19 @@
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="webinterface" role="tabpanel" aria-labelledby="home-tab">
-    <p class="h2">aktuelle Version: 0.0.7 Alpha Build<p>
+    <p class="h2">aktuelle Version: 0.0.8 Alpha Build<p>
+      <p class="h2 lead">Changelog Version 0.0.8 Alpha Build</p><br>
+    <ul>
+      <li>Team-Bereich hinzugefügt</li>
+      <li>Team-Liste hinzugefügt</li>
+      <li>Infos von alten Touren können nun aufgerufen werden</li>
+    </ul>
+    <hr>
       <p class="h2 lead">Changelog Version 0.0.7 Alpha Build</p><br>
     <ul>
       <li>Echtzeit Statistiken auf der Homepage hinzugefügt</li>
       <li>User-Bereich vom Firmen-Bereich getrennt und angepasst</li>
     </ul>
+    <hr>
       <p class="h2 lead">Changelog Version 0.0.6 Alpha Build</p><br>
     <ul>
       <li>Team Seite hinzugefügt</li>
