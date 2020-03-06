@@ -1,8 +1,5 @@
-<html>
-  <head>
-    <meta http-equiv="content-type" content="text/plain">
-  </head>
 <?php
+header('Content-Type: application/json');
 //Zweck: hole Daten für detaillierte Ansicht des Auftrages
 //check GET request
 if(!isset($_GET['username']) && !isset($_GET['tour_id'])){
@@ -32,4 +29,3 @@ if ($result->num_rows > 0) {
 //close DB conn
 $conn->close();
 ?>
-</html>

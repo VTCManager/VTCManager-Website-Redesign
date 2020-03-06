@@ -82,6 +82,7 @@ function load_tourcheck(elmnt) {
   console.log(res[1]+res[0]);
 	var xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
     var response = this.responseText;
     var myObj = JSON.parse(response);
     if(myObj != "") {
@@ -129,6 +130,7 @@ function load_tourcheck(elmnt) {
 	};
 	xmlhttp.open("GET", "get_truck_info.php?manufacturer="+myObj[0]["truck_manufacturer"]+"&model="+myObj[0]["truck_model"], true);
 	xmlhttp.send();
+    }
 	};
 	xmlhttp.open("GET", "get_tour.php?tour_id="+res[1]+"&username="+res[0], true);
 	xmlhttp.send();

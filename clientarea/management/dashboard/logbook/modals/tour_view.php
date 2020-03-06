@@ -12,20 +12,20 @@
         <div class="md-form mb-5">
           <ul class="nav nav-tabs elegant-color white-text" id="myTab" role="tablist">
   <li class="nav-item">
-    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#general" role="tab" aria-controls="Allgemein"
+    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#general2" role="tab" aria-controls="Allgemein"
       aria-selected="true">Allgemein</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#invoice" role="tab" aria-controls="Abrechnung"
+    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#invoice2" role="tab" aria-controls="Abrechnung"
       aria-selected="false">Abrechnung</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#truck_sec" role="tab" aria-controls="LKW"
+    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#truck_sec2" role="tab" aria-controls="LKW"
       aria-selected="false">LKW</a>
   </li>
 </ul>
 <div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="general" role="tabpanel" aria-labelledby="home-tab">
+  <div class="tab-pane fade show active" id="general2" role="tabpanel" aria-labelledby="home-tab">
     <span id="departure2">Startort:</span><br>
     <span id="destination2">Zielort:</span><br>
     <span id="distance2">Distanz:</span><br>
@@ -36,14 +36,14 @@
     <span id="departure_time2">Abfahrt:</span><br>
     <span id="destination_time2">Ankunft:</span><br>
   </div>
-  <div class="tab-pane fade" id="invoice" role="tabpanel" aria-labelledby="profile-tab">
+  <div class="tab-pane fade" id="invoice2" role="tabpanel" aria-labelledby="profile-tab">
   <span style="color: green;" id="freight_value2">Frachtwert:</span><br>
   <span style="color: red;" id="taxes2">Steuern:</span><br>
   <span style="color: red;" id="damage_cost2">Wartungskosten:</span><br>
   <span style="color: green;" id="income2">Umsatz:</span><br>
 </div>
-<div class="tab-pane fade" id="truck_sec" role="tabpanel" aria-labelledby="profile-tab">
-      <img src="" id="truck_pic" class="rounded float-right" style="max-height:250px;" alt="">
+<div class="tab-pane fade" id="truck_sec2" role="tabpanel" aria-labelledby="profile-tab">
+      <img src="" id="truck_pic2" class="rounded float-right" style="max-height:250px;" alt="">
     <span id="truck_name2">LKW:</span><br>
     <span id="truck_performance2">Motorleistung:</span><br>
     <span id="truck_engine2">Motor:</span><br>
@@ -66,6 +66,7 @@ function load_tourview(elmnt) {
   console.log(res[1]+res[0]);
 	var xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
     var response = this.responseText;
     var myObj = JSON.parse(response);
     if(myObj != "") {
@@ -109,9 +110,10 @@ function load_tourview(elmnt) {
 	};
 	xmlhttp.open("GET", "get_truck_info.php?manufacturer="+myObj[0]["truck_manufacturer"]+"&model="+myObj[0]["truck_model"], true);
 	xmlhttp.send();
+    }
 	};
 	xmlhttp.open("GET", "get_tour.php?tour_id="+res[1]+"&username="+res[0], true);
 	xmlhttp.send();
-  document.getElementById("TourCheckContent2").style.display="block";
+    document.getElementById("TourCheckContent2").style.display="block";
 }
 </script>

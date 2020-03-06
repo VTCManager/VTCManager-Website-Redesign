@@ -1,8 +1,5 @@
-<html>
-  <head>
-    <meta http-equiv="content-type" content="text/plain">
-  </head>
 <?php
+header('Content-Type: application/json');
 //Zweck: hole Daten für detaillierte Ansicht des LKW
 //check GET request
 if(!isset($_GET['manufacturer']) && !isset($_GET['model'])){
@@ -33,4 +30,3 @@ if ($result->num_rows > 0) {
 //close DB conn
 $conn->close();
 ?>
-</html>
