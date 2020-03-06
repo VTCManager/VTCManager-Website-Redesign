@@ -69,7 +69,7 @@ if ($result->num_rows > 0) {
 		} else {
 			echo '<td>'.$found_tour_username.'</td>';
 		}
-		echo '<td><a class="tour_url" href="../job_report?username='.$found_tour_username.'&jobid='.$found_tour.'">'.$found_tour_cargo.'</a></td>';
+		echo '<td><a class="tour_url"  data-id="'.$found_tour_username.','.$found_tour.'" onclick="load_tourview(this)" data-toggle="modal" data-target="#tourview">'.$found_tour_cargo.'</a></td>';
 		echo '<td>'.$found_tour_depature.'</td>';
 		echo '<td>'.$found_tour_destination.'</td>';
 		//soll Einkommen angezeigt werden?

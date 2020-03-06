@@ -1,3 +1,7 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/plain">
+  </head>
 <?php
 //Zweck: hole Daten für detaillierte Ansicht des Auftrages
 //check GET request
@@ -28,3 +32,4 @@ if ($result->num_rows > 0) {
 //close DB conn
 $conn->close();
 ?>
+</html>

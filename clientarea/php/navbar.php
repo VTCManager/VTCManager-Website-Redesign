@@ -21,7 +21,7 @@ if($page_now_navbar == "management/dashboard/index"){?>
           <!-- Left -->
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link waves-effect" href="#"><i class="fas fa-chart-pie"></i>Übersicht
+              <a class="nav-link waves-effect"><i class="fas fa-chart-pie"></i>Übersicht
                 <span class="sr-only">(current)</span>
               </a>
             </li>
@@ -68,16 +68,33 @@ if($page_now_navbar == "management/dashboard/index"){?>
           <!-- Left -->
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link waves-effect" href="/clientarea/dashboard">Übersicht
+              <a class="nav-link waves-effect" href="/clientarea/dashboard"><i class="fas fa-chart-pie"></i>Übersicht
                 
               </a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link waves-effect" target="_blank">Fahrtenbuch<span class="sr-only">(current)</span></a>
+              <a class="nav-link waves-effect"><i class="fas fa-truck-loading"></i>Fahrtenbuch</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link waves-effect" href="https://mdbootstrap.com/education/bootstrap/" target="_blank">Einstellungen</a>
+              <a class="nav-link waves-effect" href="/clientarea/management"><i class="fas fa-building"></i>Meine Firma<span class="sr-only">(current)</span></a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link waves-effect" href=""><i class="fas fa-money-bill"></i>Bank</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link waves-effect" href=""><i class="fas fa-calendar-alt"></i>Events</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link waves-effect" href=""><i class="fas fa-newspaper"></i>News</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link waves-effect" href="https://mdbootstrap.com/education/bootstrap/"><i class="fas fa-cogs"></i>Einstellungen</a>
+            </li>
+            <?php if($user_team_role == "Project Director"){ ?>
+              <li class="nav-item">
+              <a class="nav-link waves-effect" href="/staffarea"><i class="fas fa-newspaper"></i>Administration</a>
+            </li>
+              <?php } ?>
           </ul>
 	<?php } //here comes the icons always output them ?>
 	<!-- Right -->
