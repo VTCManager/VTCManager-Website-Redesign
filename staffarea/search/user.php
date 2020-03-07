@@ -168,7 +168,20 @@ if ($result->num_rows > 0) {
 		$search_last_loc_update = $row["last_loc_update"];
 		$search_last_loc_update = date('d.m.Y H:i', strtotime($search_last_loc_update));
 		$search_language = $row["lang"];
-
+		
+		$conn2 = mysqli_connect($host, "root", "paswdmysqlllol29193093KK","nwv_api");  
+		if(! $conn2 )  
+		{  
+			die("2");  
+		} 
+		$sql2 = "SELECT * FROM user_data WHERE username='$username_search'";
+		$result2 = $conn2->query($sql2);
+		if($result2->num_rows > 0){
+			 while($row = $result2->fetch_assoc()) {
+				 $search_email_address = $row["email_address"];
+			 }
+		}
+		$conn2->close();
 		$created_date_search = date('d.m.Y', strtotime($created_date_search));
 		if ($userCompanyID_search == "0") {
 			$company_txt_search = "arbeitslos";
@@ -207,7 +220,9 @@ if ($result->num_rows > 0) {
     <p><i class="fas fa-money-bill"></i> Kontostand: <?php echo $search_bank_balance;?>€</p>
     <p><i class="fas fa-sync"></i> zuletzt online (Client): <?php echo $search_last_loc_update;?></p>
     <p><i class="fas fa-desktop"></i> zuletzt online (Website): <?php echo $last_seen_search_format;?></p>
+    <h4>Kontakt</h4>
     <p><i class="fas fa-language"></i> Benutzersprache: <?php echo $search_language;?></p>
+    <p><i class="fas fa-envelope"></i> E-Mail-Adresse: <?php echo $search_email_address;?></p>
     <?php
 } else {
     echo "Error: User not found";
