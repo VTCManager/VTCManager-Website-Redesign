@@ -71,7 +71,11 @@ if(isset($_COOKIE['authWebToken']) && isset($_COOKIE['username'])) {
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0) {
 			while($row = $result->fetch_assoc()) {
+				$user_company_avatar = $row["company_pic_url"];
 				$user_company_name = $row["name"];
+				$discord_url = $row["discord_url"];
+				$website_url = $row["website_url"];
+				$teamspeak_url = $row["teamspeak_url"];
 			}
 		}
 	}
