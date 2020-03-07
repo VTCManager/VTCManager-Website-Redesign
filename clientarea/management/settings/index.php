@@ -50,8 +50,8 @@ position:absolute;
   <!--Main Navigation-->
 
   <!--Main layout-->
-  <main class="pt-5 mx-lg-5">
-    <div class="container-fluid mt-5">
+  <main class="mx-lg-5">
+    <div class="container-fluid">
 
       <!-- Heading -->
       <div class="card mb-4 wow fadeIn">
@@ -77,26 +77,26 @@ position:absolute;
               <img class="rounded float-left" src="<?php echo $user_company_avatar; ?>" style="height: 80px;width: 80px;height: auto;"> <h2 style="margin-left: 90px;"><?php echo $user_company_name;?> </h2>
               <br>
 		  <?php if($_GET['idc'] == "sc"){
-	echo '<div class="container"><div class="success" style="background-color: #ddffdd;
+	echo '<div class="success black-text" style="background-color: #ddffdd;
   border-left: 6px solid #4CAF50;">
   <p><strong>&nbsp;Profil erfolgreich aktualisiert!</strong></p>
-</div></div>';} else if($_GET['idc'] == "pic_not_img"){
-	echo '<div class="container"><div class="danger" style="background-color: #f59898;
+</div>';} else if($_GET['idc'] == "pic_not_img"){
+	echo '<div class="danger black-text" style="background-color: #f59898;
   border-left: 6px solid #f23333;">
   <p><strong>&nbsp;Das hochgeladene Bild ist kein Bild!</strong></p>
-</div></div>';}else if($_GET['idc'] == "pic_too_lg"){
-	echo '<div class="container"><div class="danger" style="background-color: #f59898;
+</div>';}else if($_GET['idc'] == "pic_too_lg"){
+	echo '<div class="danger black-text" style="background-color: #f59898;
   border-left: 6px solid #f23333;">
   <p><strong>&nbsp;Das hochgeladene Bild ist zu groß (maximal 5MB)!</strong></p>
-</div></div>';}else if($_GET['idc'] == "ic_format"){
-	echo '<div class="container"><div class="danger" style="background-color: #f59898;
+</div>';}else if($_GET['idc'] == "ic_format"){
+	echo '<div class="danger black-text" style="background-color: #f59898;
   border-left: 6px solid #f23333;">
   <p><strong>&nbsp;Das hochgeladene Bildformat wird nicht unterstützt! (unterstützt: gif, jpg, png, jpeg)</strong></p>
-</div></div>';}else if($_GET['idc'] == "server_fail"){
-	echo '<div class="container"><div class="danger" style="background-color: #f59898;
+</div>';}else if($_GET['idc'] == "server_fail"){
+	echo '<div class="danger black-text" style="background-color: #f59898;
   border-left: 6px solid #f23333;">
   <p><strong>&nbsp;Upload abgebrochen. Unbekannter Fehler.</strong></p>
-</div></div>';} ?>
+</div>';} ?>
 <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item active"><a class="nav-link active" href="#profil" data-toggle="tab"><i class="fa fa-info"></i> Profil</a></li>
 	<li class="nav-item"><a class="nav-link" href="#rank" data-toggle="tab"><i class="fas fa-cogs"></i> Rollen</a></li>
@@ -104,7 +104,7 @@ position:absolute;
                     </ul>
 <div id="myTabContent" class="tab-content">
                                 <div class="tab-pane active in" id="profil">
-									<form action="/company/save_data"  method="post" enctype="multipart/form-data">
+									<form action="save_data"  method="post" enctype="multipart/form-data">
                     <div class="md-form">
 										<textarea class="md-textarea form-control white-text" name="exampleFormControlTextarea1" rows="10"><?php $breaks = array("<br />"); echo (str_ireplace($breaks, "", file_get_contents("https://vtc.northwestvideo.de/media/articles/company_about_us/".$user_company_id.'.txt'))); ?></textarea>
                     <label for="exampleFormControlTextarea1">Über uns</label>
@@ -128,7 +128,7 @@ position:absolute;
                       <input type="text" name="websiteurl" id="websiteurl" class="form-control white-text" value="<?php echo $website_url;?>">
                       <label for="websiteurl">Webseite</label>
                     </div>
-										<button type="submit" class="btn btn-primary" onclick="window.location.href = '$url_on_click_redi';" style="background-color: #4CAF50;"><i class="fas fa-cogs"></i> Speichern</button>
+										<button type="submit" class="btn btn-primary" style="background-color: #4CAF50;"><i class="fas fa-cogs"></i> Speichern</button>
 										</form>
             </div>
 	<div class="tab-pane" id="settings">
@@ -141,7 +141,7 @@ position:absolute;
 		    <div class="pull-rigt">
 				<a href="#" class="btn btn-default pull-right" data-toggle="modal" data-target="#createnewrank">Neue Rolle erstellen</a>
 			</div>
-            <table class="table">
+            <table class="table white-text">
                 <thead>
                     <tr>
 						<td>Rolle</td>
@@ -150,7 +150,7 @@ position:absolute;
 			<td></td>
                     </tr>
                 </thead>
-				<tbody>
+				<tbody class="white-text">
 					<?php include 'load_ranks.php'; ?>                  
                 </tbody>
             </table>

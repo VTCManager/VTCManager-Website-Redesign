@@ -18,7 +18,7 @@ if($page_now == "management/dashboard"){?>
           <i class="fas fa-map-marked-alt"></i> Karte</a>
         <a href="/clientarea/management/events" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-user"></i> Events</a>
-        <a href="/clientarea/management/einstellungen" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
+        <a href="/clientarea/management/settings" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-cog"></i> Einstellungen</a>
       </div>
 
@@ -41,7 +41,7 @@ if($page_now == "management/dashboard"){?>
           <i class="fas fa-map-marked-alt"></i> Karte</a>
         <a href="/clientarea/management/events" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-user"></i> Events</a>
-        <a href="/clientarea/management/einstellungen" class="list-group-item active waves-effect">
+        <a href="/clientarea/management/settings" class="list-group-item active waves-effect">
           <i class="fas fa-cog mr-3"></i>Einstellungen</a>
       </div>
 
@@ -64,7 +64,7 @@ if($page_now == "management/dashboard"){?>
           <i class="fas fa-map-marked-alt"></i> Karte</a>
         <a href="/clientarea/management/events" class="list-group-item active waves-effect">
           <i class="fas fa-user mr-3"></i>Events</a>
-        <a href="/clientarea/management/einstellungen" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
+        <a href="/clientarea/management/settings" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-cog"></i> Einstellungen</a>
       </div>
 
@@ -87,7 +87,7 @@ if($page_now == "management/dashboard"){?>
           <i class="fas fa-map-marked-alt mr-3"></i>Karte</a>
         <a href="/clientarea/management/events" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-user"></i> Events</a>
-        <a href="/clientarea/management/einstellungen" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
+        <a href="/clientarea/management/settings" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-cog"></i> Einstellungen</a>
       </div>
 
@@ -110,7 +110,7 @@ if($page_now == "management/dashboard"){?>
           <i class="fas fa-map-marked-alt"></i> Karte</a>
         <a href="/clientarea/management/events" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-user"></i> Events</a>
-        <a href="/clientarea/management/einstellungen" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
+        <a href="/clientarea/management/settings" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-cog"></i> Einstellungen</a>
       </div>
 
@@ -133,7 +133,7 @@ if($page_now == "management/dashboard"){?>
           <i class="fas fa-map-marked-alt"></i> Karte</a>
         <a href="/clientarea/management/events" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-user"></i> Events</a>
-        <a href="/clientarea/management/einstellungen" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
+        <a href="/clientarea/management/settings" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-cog"></i> Einstellungen</a>
       </div>
 
