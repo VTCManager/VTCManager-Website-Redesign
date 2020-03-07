@@ -142,10 +142,10 @@ table.table a {
   <!--Main layout-->
   <?php //Lade Tour Prüfungs Fenster nur wenn User Berechtigung zum Bearbeiten des Logbuches hat
   if($EditLogbook == "1") { 
-    include 'modals/tour_check.php';
-    include 'modals/tour_view.php';?>
+    include 'modals/tour_check.php';?>
 </head>
-<?php }?>
+<?php }
+include 'modals/tour_view.php';?>
   <main class="pt-5 mx-lg-5">
     <div class="container-fluid mt-5">
 

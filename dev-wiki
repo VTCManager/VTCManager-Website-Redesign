@@ -18,6 +18,8 @@ user_rank          Rang des Benutzers innerhalb seiner Firma
 user_avatar_url    Link zum Profilbild des Benutzers
 user_company_id    Firmen ID des Benutzers als String (sollte eig nicht in einen INT konvertiert werden. Warum den?) (Wenn ID=0, dann arbeitslos)
 user_company_name  Firmen Name des Benutzers als String (nicht bei arbeitslos)
+username_cookie    Benutzername
+user_team_role     Rolle im VTCM-Team
 
 
 Berechtigungen
