@@ -10,8 +10,8 @@ if($page_now == "management/dashboard"){?>
       <div class="list-group list-group-flush">
         <a href="dashboard" class="list-group-item active waves-effect">
           <i class="fas fa-chart-pie mr-3"></i>Dashboard</a>
-        <a href="/clientarea/management/profile" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
-          <i class="fas fa-money-bill-alt"></i> Mein Profil</a>
+        <a href="/staffarea/search" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
+          <i class="fas fa-money-bill-alt"></i> Suche...</a>
         <a href="/clientarea/management/news" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-building"></i> News</a>
         <a href="/clientarea/management/karte" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
@@ -33,8 +33,8 @@ if($page_now == "management/dashboard"){?>
       <div class="list-group list-group-flush">
         <a href="/clientarea/management/dashboard" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-chart-pie"></i> Dashboard</a>
-        <a href="/clientarea/management/profile" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
-          <i class="fas fa-money-bill-alt"></i> Mein Profil</a>
+        <a href="/staffarea/search" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
+          <i class="fas fa-money-bill-alt"></i> Suche...</a>
         <a href="/clientarea/management/news" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-building"></i> News</a>
         <a href="/clientarea/management/karte" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
@@ -56,8 +56,8 @@ if($page_now == "management/dashboard"){?>
       <div class="list-group list-group-flush">
         <a href="/clientarea/management/dashboard" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-chart-pie"></i> Dashboard</a>
-        <a href="/clientarea/management/profile" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
-          <i class="fas fa-money-bill-alt"></i> Mein Profil</a>
+        <a href="/staffarea/search" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
+          <i class="fas fa-money-bill-alt"></i> Suche...</a>
         <a href="/clientarea/management/news" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-building"></i> News</a>
         <a href="/clientarea/management/karte" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
@@ -79,8 +79,8 @@ if($page_now == "management/dashboard"){?>
       <div class="list-group list-group-flush">
         <a href="/clientarea/management/dashboard" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-chart-pie"></i> Dashboard</a>
-        <a href="/clientarea/management/profile" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
-          <i class="fas fa-money-bill-alt"></i> Mein Profil</a>
+        <a href="/staffarea/search" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
+          <i class="fas fa-money-bill-alt"></i> Suche...</a>
         <a href="/clientarea/management/news" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-building"></i> News</a>
         <a href="/clientarea/management/karte" class="list-group-item active waves-effect">
@@ -92,7 +92,7 @@ if($page_now == "management/dashboard"){?>
       </div>
 
     </div>
-    <?php }else if($page_now == "management/profile"){?>
+    <?php }else if($page_now == "staffarea/search"){?>
 		    <div class="sidebar-fixed stylish-color-dark position-fixed" id="slide-out">
 
       <a class="logo-wrapper waves-effect">
@@ -102,8 +102,8 @@ if($page_now == "management/dashboard"){?>
       <div class="list-group list-group-flush">
         <a href="/clientarea/management/dashboard" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-chart-pie"></i> Dashboard</a>
-        <a href="/clientarea/management/profile" class="list-group-item active waves-effect">
-          <i class="fas fa-money-bill-alt mr-3"></i>Mein Profil</a>
+        <a class="list-group-item active waves-effect">
+          <i class="fas fa-money-bill-alt mr-3"></i> Suche...</a>
         <a href="/clientarea/management/news" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-building"></i> News</a>
         <a href="/clientarea/management/karte" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
@@ -125,8 +125,8 @@ if($page_now == "management/dashboard"){?>
       <div class="list-group list-group-flush">
         <a href="/clientarea/management/dashboard" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-chart-pie"></i> Dashboard</a>
-        <a href="/clientarea/management/profile" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
-          <i class="fas fa-money-bill-alt"></i> Mein Profil</a>
+        <a href="/staffarea/search" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
+          <i class="fas fa-money-bill-alt"></i> Suche...</a>
         <a href="/clientarea/management/news" class="list-group-item active waves-effect">
           <i class="fas fa-building mr-3"></i>News</a>
         <a href="/clientarea/management/karte" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">

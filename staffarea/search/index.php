@@ -1,5 +1,5 @@
 <?php
-$page_now = "management/profile";
+$page_now = "staffarea/search";
 include '../get_user_data.php';
 ?>
 <!DOCTYPE html>
@@ -140,66 +140,31 @@ include '../get_user_data.php';
 
             <!--Card content-->
             <div class="card-body elegant-color white-text" style="width:100%;">
-              <?php
-date_default_timezone_set('Europe/Berlin');
-$requested_user_id= $_GET['userid'];
-if(empty($requested_user_id)){
-  $requested_user_id = $userID;
-  }
-
-$sql = "SELECT * FROM user_data WHERE userID=$requested_user_id";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-		date_default_timezone_set("+1");
-        $username_search = $row["username"];
-		$userCompanyID_search = $row["userCompanyID"];
-		$profile_pic_url_search = $row["profile_pic_url"];
-		$rank_search = $row["rank"];
-		$last_seen_search = $row["last_seen"];
-		$last_seen_search = date('d.m.Y H:i', strtotime($last_seen_search));
-		$last_seen_search = "zuletzt online am $last_seen_search";
-		$created_date_search = $row["created_date"];
-
-		$created_date_search = date('d.m.Y', strtotime($created_date_search));
-		if ($userCompanyID_search == "0") {
-			$company_txt_search = "arbeitslos";
-		}else{
-			$sql = "SELECT * FROM company_information_table WHERE id=$userCompanyID_search";
-			$result = $conn->query($sql);
-			if ($result->num_rows > 0) {
-				// output data of each row
-				while($row = $result->fetch_assoc()) {
-					$compname = $row["name"];
-					if ($rank_search != "owner") {
-						if ($rank_search == "driver"){
-							$rank_tr = "Fahrer";
-						}else{
-							$rank_tr = $rank_search;
-						}
-
-						$company_txt_search = "angestellt bei $compname als $rank_tr";
-					} else {
-						$company_txt_search = "selbstständig bei ".$compname;;
-					}
-				}
-			}
-		}
-	}
-    ?>
-    <img class="rounded float-left" src="<?php echo $profile_pic_url_search;?>" style="height: 80px;width: 80px;height: auto;"><h2 style="margin-left: 90px;"><?php echo $username_search;?></h2>
-    <p><?php echo $last_seen_search;?></p>
-    <h4>Information</h4>
-    <p><i class="fa fa-briefcase"></i> <?php echo $company_txt_search;?></p>
-    <p><i class="fas fa-calendar-check"></i> registriert seit <?php echo $created_date_search;?></p>
-    <?php
-} else {
-    echo "Error: User not found";
-	die();
-}
-              ?>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#user" role="tab" aria-controls="home"
+      aria-selected="true">Benutzer</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#company" role="tab" aria-controls="profile"
+      aria-selected="false">Firma</a>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <br>
+  <div class="tab-pane fade show active" id="user" role="tabpanel" aria-labelledby="user">
+    <form action="/company/" method="post" name="createnewrankForm" id="createnewrankForm">
+			<input class="form-control" type="text" name="companyname" id="user_search_field" placeholder="Nach Benutzer suchen..." aria-label="Search">
+			<button type="submit" class="btn btn-primary" name="submit" id="submit">Öffnen</button>
+			</form>
+  </div>
+  <div class="tab-pane fade" id="company" role="tabpanel" aria-labelledby="company">
+    <form action="/company/" method="post" name="createnewrankForm" id="createnewrankForm">
+			<input class="form-control" type="text" name="companyname" id="company_search_field" placeholder="Nach Firma suchen..." aria-label="Search">
+			<button type="submit" class="btn btn-primary" name="submit" id="submit">Öffnen</button>
+			</form>
+  </div>
+</div>
             </div>
              </div>
 
@@ -229,6 +194,31 @@ if ($result->num_rows > 0) {
     new WOW().init();
 
   </script>
+  <!-- jQuery UI library -->
+	  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	  <script>
+		  $(function() {
+    $("#user_search_field").autocomplete({
+        source: "user_search.php",
+        select: function( event, ui ) {
+            event.preventDefault();
+            $("#user_search_field").val(ui.item.id);
+        }
+    });
+});
+</script>
+<script>
+		  $(function() {
+    $("#company_search_field").autocomplete({
+        source: "company_search.php",
+        select: function( event, ui ) {
+            event.preventDefault();
+            $("#company_search_field").val(ui.item.id);
+        }
+    });
+});
+</script>
 
 </body>
 
