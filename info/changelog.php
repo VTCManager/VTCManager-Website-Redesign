@@ -5,6 +5,8 @@
     <ul>
       <li>Tour-Details nun auch für Fahrer sichtbar</li>
       <li>Team-Seite: Design angepasst</li>
+      <li>User und Firmensuche hinzugefügt (TI)</li>
+      <li>User-Ansicht hinzugefügt (TI)</li>
     </ul>
     <hr>
       <p class="h2 lead">Changelog Version 0.0.8 Alpha Build</p><br>
