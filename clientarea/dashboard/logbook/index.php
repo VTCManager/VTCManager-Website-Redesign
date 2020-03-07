@@ -137,7 +137,6 @@ table.table a {
   <!--Main layout-->
   <?php include 'modals/tour_view.php'; ?>
 </head>
-<?php }?>
   <main class="pt-5 mx-lg-5" style="padding-left: 10px;padding-right: 10px;">
     <div class="container-fluid mt-5">
 
@@ -166,7 +165,7 @@ table.table a {
             <div class="card-body elegant-color white-text">
 
               <div class="card-header unique-color white-text text-center">
-                Fahrtenbuch von <?php echo $user_company_name; ?>
+                Fahrtenbuch von <?php echo $username_cookie; ?>
               </div>
               <!-- List group links -->
               <div class="list-group list-group-flush">

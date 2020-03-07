@@ -17,7 +17,7 @@
   </li>
   <li class="nav-item">
     <a class="nav-link" id="profile-tab" data-toggle="tab" href="#invoice2" role="tab" aria-controls="Abrechnung"
-      aria-selected="false">Abrechnung</a>
+      aria-selected="false">Kosten</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" id="profile-tab" data-toggle="tab" href="#truck_sec2" role="tab" aria-controls="LKW"
