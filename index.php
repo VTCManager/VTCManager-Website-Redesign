@@ -1,17 +1,30 @@
-<?php $current_page = "home";
-include 'home/connect_mysql.php'; ?>
-<!DOCTYPE html>
+<?php 
+//aktuelle Seite für Navbar setzen
+$current_page = "home";
+//Verbindung zu DB herstellen
+include 'home/connect_mysql.php'; 
+//Wenn Benutzer angemeldet, dann "öffnen" statt "registrieren"
+if(!isset($_COOKIE['authWebToken']) && !isset($_COOKIE['username'])) {
+  $register_bt_text = '<a href="/account/register" class="btn btn-outline-white btn-lg">Registrieren';
+}else{
+  $register_bt_text = '<a href="/account/login" class="btn btn-outline-white btn-lg">Öffnen';
+}
+  ?>
 <html lang="en">
 
 <head>
-  <?php include 'home/head.php'; ?>
+  <?php
+  //Head für HP importieren 
+  include 'home/head.php'; ?>
   <title>VTCManager</title>
 </head>
 
 <body>
 
   <!-- Navbar -->
-  <?php include 'home/navbar.php'; ?>
+  <?php 
+  //Navbar importieren
+  include 'home/navbar.php'; ?>
   <!-- Navbar -->
 
   <!--Carousel Wrapper-->
@@ -44,11 +57,7 @@ include 'home/connect_mysql.php'; ?>
               <p>
                 <strong>Funktionsreiches und modern gestalltes Verwaltungssystem.</strong>
               </p>
-              <?php if(!isset($_COOKIE['authWebToken']) && !isset($_COOKIE['username'])) {?>
-              <a href="/account/register" class="btn btn-outline-white btn-lg">Registrieren
-              <?php }else{?>
-                <a href="/account/login" class="btn btn-outline-white btn-lg">Öffnen
-                <?php } ?>
+              <?php echo $register_bt_text; ?>
                 <i class="fas fa-sign-in-alt ml-2"></i>
               </a>
             </div>
@@ -78,11 +87,7 @@ include 'home/connect_mysql.php'; ?>
                 <strong>Funktionsreiches und modern gestalltes Verwaltungssystem.</strong>
               </p>
 
-              <?php if(!isset($_COOKIE['authWebToken']) && !isset($_COOKIE['username'])) {?>
-              <a href="/account/register" class="btn btn-outline-white btn-lg">Registrieren
-              <?php }else{?>
-                <a href="/account/login" class="btn btn-outline-white btn-lg">Öffnen
-                <?php } ?>
+              <?php echo $register_bt_text; ?>
                 <i class="fas fa-sign-in-alt ml-2"></i>
               </a>
             </div>
@@ -112,11 +117,7 @@ include 'home/connect_mysql.php'; ?>
                 <strong>Funktionsreiches und modern gestalltes Verwaltungssystem.</strong>
               </p>
 
-              <?php if(!isset($_COOKIE['authWebToken']) && !isset($_COOKIE['username'])) {?>
-              <a href="/account/register" class="btn btn-outline-white btn-lg">Registrieren
-              <?php }else{?>
-                <a href="/account/login" class="btn btn-outline-white btn-lg">Öffnen
-                <?php } ?>
+              <?php echo $register_bt_text; ?>
                 <i class="fas fa-sign-in-alt ml-2"></i>
               </a>
             </div>
@@ -153,7 +154,9 @@ include 'home/connect_mysql.php'; ?>
       <!--Section: Main info-->
       <section class="mt-5 wow fadeIn">
         <!--Stats-->
-        <?php include 'home/stats.php';?>
+        <?php
+        //Lade Statistiken
+        include 'home/stats.php';?>
     <div class="row text-center d-flex justify-content-center my-5">
       <div class="col-lg-3 col-md-6 mb-4">
         <i class="fas fa-users fa-3x mb-4 grey-text"></i>
@@ -200,14 +203,18 @@ include 'home/connect_mysql.php'; ?>
 
             <hr>
             <!-- CTA -->
-            <?php if(!isset($_COOKIE['authWebToken']) && !isset($_COOKIE['username'])) {?>
+            <?php 
+            if(!isset($_COOKIE['authWebToken']) && !isset($_COOKIE['username'])) {
+              //User nicht angemeldet
+              ?>
             <a href="/account/register" class="btn btn-grey btn-md">Registrieren
               <i class="fas fa-sign-in-alt ml-1"></i>
             </a>
             <a href="/account/login" class="btn btn-grey btn-md">Anmelden
               <i class="fas fa-sign-in-alt ml-1"></i>
             </a>
-            <?php }else{ ?>
+            <?php }else{ 
+              //User angemeldet?>
               <a href="/account/login" class="btn btn-grey btn-md">Öffnen
               <i class="fas fa-sign-in-alt ml-1"></i>
             </a>
