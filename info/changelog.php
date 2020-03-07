@@ -4,6 +4,7 @@
       <p class="h2 lead">Changelog Version 0.0.9 Alpha Build</p><br>
     <ul>
       <li>Tour-Details nun auch für Fahrer sichtbar</li>
+      <li>Team-Seite: Design angepasst</li>
     </ul>
     <hr>
       <p class="h2 lead">Changelog Version 0.0.8 Alpha Build</p><br>
