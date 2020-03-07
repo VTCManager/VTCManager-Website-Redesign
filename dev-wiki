@@ -41,11 +41,11 @@ ________________________________________________________________________________
 ***2.1 Wie lade ich Standard-Benutzer-Daten/prüfe ich die Benutzeranmeldung/stelle Verbindung zur DB her?***
 
 Die Prüfung der Gültigkeit der Benutzeranmeldung, das holen der Standard-Benutzerdaten und -rechte (1.1) und das Herstellen zur DB läuft über die get_user_data.php.
-Diese befindet sich im Ordner: /basis_files/php . Sollte der Benutzer eine ungültige oder keine Anmeldung besitzen, wird er zur Homepage redirected.
+Diese ist für jedes Interface angepasst und befindet sich im jeweiligen Ordner für das jeweilige Interface . Sollte der Benutzer eine ungültige oder keine Anmeldung besitzen, wird er zur Homepage redirected.
 Die MySQL-Verbindung ist in der Variable $conn abrufbar.
 
 Einbinden:
 Die get_user_data.php einfach in der 1.Zeile (!) des Dokumentes (dass nachher vom User aufgerufen wird) mit include einbinden.
 !!!Es muss dann keine weitere Verbindung zur DB hergestellt werden, auch nicht bei include phps!!!
-!!!Ausnahmen sind JavaScript-Codes, die nach dem vollständigen Laden der Seite ausgeführt wird sowie redirects!!!
+!!!Diese Datei wird nur in den Bereichen aufgerufen, in denen der Benutzer eingeloggt sein muss!!!
 !!!Am Ende des Dokumentes (da sind alles Funktionen ausgeführt) mit "mysqli_close($conn);" die Verbindung schließen!!!
