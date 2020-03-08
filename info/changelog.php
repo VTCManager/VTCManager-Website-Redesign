@@ -4,6 +4,7 @@
     <p class="h2 lead">Changelog Version 0.0.10 Alpha Build</p><br>
     <ul>
       <li>Syntax Fehler beim Laden der Tourenliste behoben</li>
+      <li>Es können nun neue Rollen angelegt werden</li>
     </ul>
     <hr>
       <p class="h2 lead">Changelog Version 0.0.9 Alpha Build</p><br>
