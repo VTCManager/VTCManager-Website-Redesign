@@ -169,7 +169,7 @@ $page_now = "management/settings";
               </form>
             </div>
             <div class="tab-pane" id="settings">
-              <?php if ($rank_search == "owner") { ?>
+              <?php if ($user_rank == "owner") { ?>
                 <button type="button" class="btn btn-danger" onclick="window.location.href = '<?php echo "https://vtc.northwestvideo.de/company/delete"; ?>';">Firma
                   auflösen</button>
               <?php } ?>
