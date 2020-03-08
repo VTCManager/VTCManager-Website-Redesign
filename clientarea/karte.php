@@ -8,33 +8,22 @@ $page_now = "management/map";
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Map VTCMInterface</title>
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-  <!-- Bootstrap core CSS -->
-  <link href="/clientarea/management/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Material Design Bootstrap -->
-  <link href="/clientarea/management/css/mdb.min.css" rel="stylesheet">
-  <!-- Your custom styles (optional) -->
-  <link href="/clientarea/management/css/style.min.css" rel="stylesheet">
+  <?php include 'head.php' ?>
   <style>
+    .map-container {
+      overflow: hidden;
+      padding-bottom: 56.25%;
+      position: relative;
+      height: 0;
+    }
 
-    .map-container{
-overflow:hidden;
-padding-bottom:56.25%;
-position:relative;
-height:0;
-}
-.map-container iframe{
-left:0;
-top:0;
-height:100%;
-width:100%;
-position:absolute;
-}
+    .map-container iframe {
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+    }
   </style>
 </head>
 
@@ -44,8 +33,8 @@ position:absolute;
   <header>
 
     <!-- Sidebar -->
-    <?php 
-    include 'php/sidebar.php';?>
+    <?php
+    include 'php/sidebar.php'; ?>
     <!-- Sidebar -->
 
   </header>
@@ -73,20 +62,19 @@ position:absolute;
       <!-- Heading -->
 
       <!--Grid row-->
-      <div class="row wow fadeIn" >
+      <div class="row wow fadeIn">
 
         <!--Grid column-->
         <div class="col-md-9 mb-4">
 
           <!--Card-->
-          <div class="card" >
+          <div class="card">
 
             <!--Card content-->
             <div class="card-body elegant-color white-text">
-				<div id="map-container" class="z-depth-1-half map-container" style="height: 500px">
-  <iframe src="/map/" frameborder="0"
-    style="border:0" allowfullscreen></iframe>
-</div>
+              <div id="map-container" class="z-depth-1-half map-container" style="height: 500px">
+                <iframe src="/map/" frameborder="0" style="border:0" allowfullscreen></iframe>
+              </div>
 
             </div>
 
@@ -103,15 +91,17 @@ position:absolute;
           <div class="card mb-4">
 
             <!--Card content-->
-            <div class="card-body elegant-color white-text" >
+            <div class="card-body elegant-color white-text">
 
               <div class="card-header text-center unique-color white-text">
-                <?php include 'php/tmp-api.php';//lade Onlinespieler?>
-                Verkehr Sim 1 [<?php echo $sim1_players;?>]
+                <?php include 'php/tmp-api.php'; //lade Onlinespieler
+                ?>
+                Verkehr Sim 1 [<?php echo $sim1_players; ?>]
               </div>
               <!-- List group links -->
               <div class="list-group list-group-flush">
-                <?php include 'php/truckyapi.php'; //lade Verkehrsdaten?>
+                <?php include 'php/truckyapi.php'; //lade Verkehrsdaten
+                ?>
               </div>
               <!-- List group links -->
 
@@ -147,7 +137,6 @@ position:absolute;
   <script type="text/javascript">
     // Animations initialization
     new WOW().init();
-
   </script>
 </body>
 

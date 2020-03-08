@@ -6,33 +6,22 @@ $page_now = "management/news";
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>VTCMInterface</title>
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-  <!-- Bootstrap core CSS -->
-  <link href="/clientarea/management/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Material Design Bootstrap -->
-  <link href="/clientarea/management/css/mdb.min.css" rel="stylesheet">
-  <!-- Your custom styles (optional) -->
-  <link href="/clientarea/management/css/style.min.css" rel="stylesheet">
+  <?php include 'head.php' ?>
   <style>
+    .map-container {
+      overflow: hidden;
+      padding-bottom: 56.25%;
+      position: relative;
+      height: 0;
+    }
 
-    .map-container{
-overflow:hidden;
-padding-bottom:56.25%;
-position:relative;
-height:0;
-}
-.map-container iframe{
-left:0;
-top:0;
-height:100%;
-width:100%;
-position:absolute;
-}
+    .map-container iframe {
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+    }
   </style>
 </head>
 
@@ -51,8 +40,7 @@ position:absolute;
         </a>
 
         <!-- Collapse -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -90,8 +78,7 @@ position:absolute;
               </a>
             </li>
             <li class="nav-item">
-              <a href="https://github.com/mdbootstrap/bootstrap-material-design" class="nav-link border border-light rounded waves-effect"
-                target="_blank">
+              <a href="https://github.com/mdbootstrap/bootstrap-material-design" class="nav-link border border-light rounded waves-effect" target="_blank">
                 <i class="fab fa-github mr-2"></i>MDB GitHub
               </a>
             </li>
@@ -104,8 +91,8 @@ position:absolute;
     <!-- Navbar -->
 
     <!-- Sidebar -->
-    <?php 
-    include 'php/sidebar.php';?>
+    <?php
+    include 'php/sidebar.php'; ?>
     <!-- Sidebar -->
 
   </header>
@@ -393,8 +380,7 @@ position:absolute;
 
     <!--Call to action-->
     <div class="pt-4">
-      <a class="btn btn-outline-white" href="https://mdbootstrap.com/docs/jquery/getting-started/download/" target="_blank"
-        role="button">Download
+      <a class="btn btn-outline-white" href="https://mdbootstrap.com/docs/jquery/getting-started/download/" target="_blank" role="button">Download
         MDB
         <i class="fas fa-download ml-2"></i>
       </a>
@@ -466,7 +452,6 @@ position:absolute;
   <script type="text/javascript">
     // Animations initialization
     new WOW().init();
-
   </script>
 
   <!-- Charts -->
@@ -518,17 +503,16 @@ position:absolute;
       data: {
         labels: ["Januar", "Februar", "März", "April", "Mai", "Juni"],
         datasets: [{
-            label: "Gefahrene Touren",
-            backgroundColor: [
-              'rgba(105, 0, 132, .2)',
-            ],
-            borderColor: [
-              'rgba(200, 99, 132, .7)',
-            ],
-            borderWidth: 2,
-            data: [0, 0, 0, 0, 0, 0]
-          }
-        ]
+          label: "Gefahrene Touren",
+          backgroundColor: [
+            'rgba(105, 0, 132, .2)',
+          ],
+          borderColor: [
+            'rgba(200, 99, 132, .7)',
+          ],
+          borderWidth: 2,
+          data: [0, 0, 0, 0, 0, 0]
+        }]
       },
       options: {
         responsive: true
@@ -552,7 +536,6 @@ position:absolute;
         responsive: true
       }
     });
-
   </script>
 
   <script>
@@ -586,7 +569,6 @@ position:absolute;
         }
       }
     });
-
   </script>
 </body>
 
