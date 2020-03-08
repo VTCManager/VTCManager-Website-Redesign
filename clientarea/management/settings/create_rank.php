@@ -17,7 +17,7 @@ if($EditEmployees != "1"){
 	die("no permission");
 }
 (int)$salary;
-$sql = "INSERT INTO rank (name, forCompanyID, EditProfile, SeeLogbook, EditLogbook, SeeBank, UseBank, EditEmployees, EditSalary, salary, struct_id) VALUES ('$requested_rank',$userCompanyID,0,0,0,0,0,0,0,$salary,0)";
+$sql = "INSERT INTO rank (name, forCompanyID, EditProfile, SeeLogbook, EditLogbook, SeeBank, UseBank, EditEmployees, EditSalary, salary, struct_id) VALUES ('$requested_rank',$user_company_id,0,0,0,0,0,0,0,$salary,0)";
 
 if ($conn->query($sql) === TRUE) {
 } else {
