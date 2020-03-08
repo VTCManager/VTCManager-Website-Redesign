@@ -38,7 +38,7 @@ $page_now = "management/settings";
 <div class="modal fade" id="createnewrank" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content elegant-color white-text">
-      <form action="/company/create_rank" method="post" name="createnewrankForm" id="createnewrankForm">
+      <form action="create_rank" method="post" name="createnewrankForm" id="createnewrankForm">
         <div class="modal-header unique-color white-text">
           <h4 class="modal-title" id="myModalLabel">Neue Rolle erstellen</h4>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
