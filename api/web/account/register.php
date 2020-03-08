@@ -23,7 +23,7 @@ if ($username=="" or $passwd=="" or $email=="") {
 $activate_hash = md5( rand(0,1000) ); 
 $passwdhsh = hash('sha256',$passwd);
 $host = 'localhost:3306';     
-$conn = mysqli_connect($host, "root", "paswdmysqlllol29193093KK","nwv_api");  
+$conn = mysqli_connect($host, "nwv_api_user", "paswdmysqlllol29193093KK","nwv_api");  
 $sql = "SELECT email_address FROM user_data WHERE email_address='$email'"; //check falls email schon registriert
 $result = $conn->query($sql);
 

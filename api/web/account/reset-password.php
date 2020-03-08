@@ -13,7 +13,7 @@ if ($email=="") {
 }
 $reset_hash = md5( rand(0,1000) ); 
 $host = 'localhost:3306';     
-$conn = mysqli_connect($host, "root", "paswdmysqlllol29193093KK","nwv_api");  
+$conn = mysqli_connect($host, "nwv_api_user", "paswdmysqlllol29193093KK","nwv_api");  
 $sql = "SELECT * FROM user_data WHERE email_address='$email'";
 $result = $conn->query($sql);
 
