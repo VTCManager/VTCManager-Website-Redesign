@@ -61,7 +61,7 @@ if ($result->num_rows > 0) {
 		echo <<<EOT
 		<td>$rank_name_tra</td>
 		<td>$rank_salary €</td>
-		<td><form action="/company/rank_edit" method="post">
+		<td><form action="rank_edit" method="post">
 		<button class="btn btn-info" type="submit" name="rank" value="$rank_name" class="btn-link">Bearbeiten</button></td>
 		</form></td>
 		<td><form action="delete_role" method="post">
