@@ -1,6 +1,11 @@
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="webinterface" role="tabpanel" aria-labelledby="home-tab">
-    <p class="h2">aktuelle Version: 0.0.9 Alpha Build<p>
+    <p class="h2">aktuelle Version: 0.0.10 Alpha Build<p>
+    <p class="h2 lead">Changelog Version 0.0.10 Alpha Build</p><br>
+    <ul>
+      <li>Syntax Fehler beim Laden der Tourenliste behoben</li>
+    </ul>
+    <hr>
       <p class="h2 lead">Changelog Version 0.0.9 Alpha Build</p><br>
     <ul>
       <li>Tour-Details nun auch für Fahrer sichtbar</li>
