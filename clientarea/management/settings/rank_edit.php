@@ -33,7 +33,7 @@ if ($requested_rank == "driver") {
 } else {
     $requested_rank_tra = $requested_rank;
 }
-mysqli_close($conn); 
+mysqli_close($conn);
 ?>
 <!DOCTYPE html>
 <html lang="de">
@@ -41,20 +41,20 @@ mysqli_close($conn);
 <head>
     <?php include '../../head.php'; ?>
     <style>
-    .map-container {
-        overflow: hidden;
-        padding-bottom: 56.25%;
-        position: relative;
-        height: 0;
-    }
+        .map-container {
+            overflow: hidden;
+            padding-bottom: 56.25%;
+            position: relative;
+            height: 0;
+        }
 
-    .map-container iframe {
-        left: 0;
-        top: 0;
-        height: 100%;
-        width: 100%;
-        position: absolute;
-    }
+        .map-container iframe {
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+        }
     </style>
 </head>
 
@@ -97,21 +97,62 @@ mysqli_close($conn);
                 <!--Card content-->
                 <div class="card-body elegant-color white-text">
                     <h2>Rolle: <?php echo $requested_rank_tra; ?></h2>
-                    <form action="/company/save_ranks" method="post" enctype="multipart/form-data">
+                    <form action="save_ranks" method="post" enctype="multipart/form-data">
                         <input type='hidden' name='rank' value='<?php echo $requested_rank; ?>' />
                         <?php if ($requested_rank != "owner") { ?>
-                        <input type="checkbox" name="EditProfile" value="1" <?php if ($EditProfile_se == "1") {echo "checked";} ?>> Firmenprofil bearbeiten<br>
-                        <input type="checkbox" name="SeeLogbook" value="1" <?php if ($SeeLogbook_se == "1") {echo "checked";} ?>> Fahrtenbuch einsehen<br>
-                        <input type="checkbox" name="EditLogbook" value="1" <?php if ($EditLogbook_se == "1") {echo "checked";} ?>> Fahrtenbuch verwalten<br>
-                        <input type="checkbox" name="SeeBank" value="1" <?php if ($SeeBank_se == "1") {echo "checked";} ?>> Firmenkonto einsehen<br>
-                        <input type="checkbox" name="UseBank" value="1" <?php if ($UseBank_se == "1") {echo "checked";} ?>> Überweisungen tätigen<br>
-                        <input type="checkbox" name="EditSalary" value="1" <?php if ($EditSalary_se == "1") {echo "checked";} ?>> Gehalt bearbeiten<br>
-                        <input type="checkbox" name="EditEmployees" value="1" <?php if ($EditEmployees_se == "1") {echo "checked";} ?>> Mitarbeiter & Stellenanzeigen verwalten<br>
-                        Gehalt: <input type="text" name="salary" id="salary" value="<?php echo $salary_se; ?>">€<br>
-                        StrukturierungsID: <input type="text" name="struct_id" id="struct_id" value="<?php echo $struct_id_se; ?>"><br>
+                            <input type="checkbox" name="EditProfile" value="1" <?php if ($EditProfile_se == "1") {
+                                                                                    echo "checked";
+                                                                                } ?>> Firmenprofil bearbeiten<br>
+                            <input type="checkbox" name="SeeLogbook" value="1" <?php if ($SeeLogbook_se == "1") {
+                                                                                    echo "checked";
+                                                                                } ?>> Fahrtenbuch einsehen<br>
+                            <input type="checkbox" name="EditLogbook" value="1" <?php if ($EditLogbook_se == "1") {
+                                                                                    echo "checked";
+                                                                                } ?>> Fahrtenbuch verwalten<br>
+                            <input type="checkbox" name="SeeBank" value="1" <?php if ($SeeBank_se == "1") {
+                                                                                echo "checked";
+                                                                            } ?>> Firmenkonto einsehen<br>
+                            <input type="checkbox" name="UseBank" value="1" <?php if ($UseBank_se == "1") {
+                                                                                echo "checked";
+                                                                            } ?>> Überweisungen tätigen<br>
+                            <input type="checkbox" name="EditSalary" value="1" <?php if ($EditSalary_se == "1") {
+                                                                                    echo "checked";
+                                                                                } ?>> Gehalt bearbeiten<br>
+                            <input type="checkbox" name="EditEmployees" value="1" <?php if ($EditEmployees_se == "1") {
+                                                                                        echo "checked";
+                                                                                    } ?>> Mitarbeiter & Stellenanzeigen
+                            verwalten<br>
+                            <div class="input-group">
+                                <div class="md-form input-group mb-0 white-text">
+                                    <input type="number" class="form-control white-text" name="salary" id="form1" required="" value="<?php echo $salary_se; ?>">
+                                    <label for="form1">Gehalt</label>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text md-addon white-text">€</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <div class="md-form input-group mb-0 white-text">
+                                    <input type="number" class="form-control white-text" name="struct_id" id="struct_id" required="" value="<?php echo $struct_id_se; ?>">
+                                    <label for="struct_id">StrukturierungsID</label>
+                                </div>
+                            </div>
                         <?php } else { ?>
-                            Gehalt: <input type="text" name="salary" id="salary" value="<?php echo $salary_se; ?>">€<br>
-                            StrukturierungsID: <input type="text" name="struct_id" id="struct_id" value="<?php echo $struct_id_se; ?>"><br>
+                            <div class="input-group">
+                                <div class="md-form input-group mb-0 white-text">
+                                    <input type="number" class="form-control white-text" name="salary" id="form1" required="" value="<?php echo $salary_se; ?>">
+                                    <label for="form1">Gehalt</label>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text md-addon white-text">€</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <div class="md-form input-group mb-0 white-text">
+                                    <input type="number" class="form-control white-text" name="struct_id" id="struct_id" required="" value="<?php echo $struct_id_se; ?>">
+                                    <label for="struct_id">StrukturierungsID</label>
+                                </div>
+                            </div>
                         <?php } ?>
                         <button type="submit" name="submit" class="btn btn-primary" style="background-color: #4CAF50;"><i class="fas fa-cogs"></i> Speichern</button>
                     </form>
@@ -140,8 +181,8 @@ mysqli_close($conn);
     <script type="text/javascript" src="/clientarea/management/js/mdb.min.js"></script>
     <!-- Initializations -->
     <script type="text/javascript">
-    // Animations initialization
-    new WOW().init();
+        // Animations initialization
+        new WOW().init();
     </script>
 </body>
 
