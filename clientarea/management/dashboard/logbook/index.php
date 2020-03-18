@@ -161,6 +161,7 @@ if (isset($_POST['jobID']) && isset($_POST['driverUserName']) && isset($_POST['c
 
         <!--Card content-->
         <div class="card-body elegant-color white-text">
+          <?php if($SeeLogbook == "1"){ ?>
 
           <div class="card-header unique-color white-text text-center">
             Fahrtenbuch von <?php echo $user_company_name; ?>
@@ -208,7 +209,7 @@ if (isset($_POST['jobID']) && isset($_POST['driverUserName']) && isset($_POST['c
           <!-- List group links -->
 
         </div>
-
+              <?php }else{echo "Keine Berechtigung";}?>
       </div>
       <!--/.Card-->
 

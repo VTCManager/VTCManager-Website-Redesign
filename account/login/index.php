@@ -1,5 +1,5 @@
 <?php
-//Redirect wenn bereits eingeloggt
+//already logged in
 if(isset($_COOKIE['authWebToken']) && isset($_COOKIE['username'])) {
 	header("Location: /api/web/account/login.php");
 	die();

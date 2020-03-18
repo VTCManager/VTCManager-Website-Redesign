@@ -169,7 +169,7 @@ if ($result->num_rows > 0) {
 		$search_last_loc_update = date('d.m.Y H:i', strtotime($search_last_loc_update));
 		$search_language = $row["lang"];
 		
-		$conn2 = mysqli_connect($host, "root", "paswdmysqlllol29193093KK","nwv_api");  
+		$conn2 = mysqli_connect($host, "nwv_api_user", "paswdmysqlllol29193093KK","nwv_api");  
 		if(! $conn2 )  
 		{  
 			die("2");  

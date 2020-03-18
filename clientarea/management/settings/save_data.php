@@ -62,7 +62,7 @@ if ($conn->query($sql) === TRUE) {
 } else {
     echo "Error updating record: " . $conn->error;
 }
-$myfile = fopen("../../../media/articles/company_about_us/$userCompanyID.txt", "w") or die("Unable to open file!");
+$myfile = fopen("../../../../media.northwestvideo.de/media/articles/company_about_us/$userCompanyID.txt", "w") or die("Unable to open file!");
 fwrite($myfile, nl2br($user_about));
 fclose($myfile);
 if(!file_exists($_FILES['fileToUpload']['tmp_name']) || !is_uploaded_file($_FILES['fileToUpload']['tmp_name'])) {
@@ -70,7 +70,7 @@ if(!file_exists($_FILES['fileToUpload']['tmp_name']) || !is_uploaded_file($_FILE
     header("Location: /clientarea/management/settings/?idc=sc");
 	exit();
 }
-$target_dir = "../../../media/company_profile_pictures/";
+$target_dir = "../../../../media.northwestvideo.de/media/company_profile_pictures/";
 $nameofile = $_FILES["fileToUpload"]["name"];
 $ext = end((explode(".", $nameofile)));
 $target_file = $target_dir . basename($userCompanyID.'.'.$ext);
@@ -106,7 +106,7 @@ if ($uploadOk == 0) {
     echo "Sorry, your file was not uploaded.";
 // if everything is ok, try to upload file
 } else {
-    $files = glob("../media/company_profile_pictures/".$userCompanyID.".*");
+    $files = glob("../../../media/company_profile_pictures/".$userCompanyID.".*");
     foreach ($files as $file) {
 	unlink($file);
     }
@@ -118,7 +118,7 @@ if ($uploadOk == 0) {
 	exit();
     }
 }
-$sql = "UPDATE company_information_table SET company_pic_url='https://vtc.northwestvideo.de/media/company_profile_pictures/$userCompanyID.$ext' WHERE id=$userCompanyID";
+$sql = "UPDATE company_information_table SET company_pic_url='/media/company_profile_pictures/$userCompanyID.$ext' WHERE id=$userCompanyID";
 
 if ($conn->query($sql) === TRUE) {
     echo "Record updated successfully";

@@ -39,7 +39,7 @@ $conn->close();
 
 //Verbindung zu User Data DB
 $host = 'localhost:3306';    
-$conn = mysqli_connect($host, "root", "paswdmysqlllol29193093KK","nwv_api");  
+$conn = mysqli_connect($host, "nwv_api_user", "paswdmysqlllol29193093KK","nwv_api");  
 if(! $conn )  
 {  
   die("2");  

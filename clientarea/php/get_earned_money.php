@@ -7,18 +7,14 @@ $week_start = date('Y-m-d', strtotime('-'.$day.' days + 1 day'));
 $date = new DateTime();
 $week = $date->format("W");
 //hole Umsätze aus dieser Woche
-$sql = "SELECT amount FROM money_transfer WHERE receiver='$user_company_name' AND DATE( date_sent ) >= '$week_start'";
+$sql = "SELECT tour_id FROM tour_table WHERE username='$username_cookie' AND DATE( tour_date ) >= '$week_start'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
-        //zähle Geld
-        $current_amount = $current_amount + (int)$row["amount"];
-    }
     //wenn Ergebnisse gefunden
     $array = [
     "week" => $week,
-    "amount" => $current_amount,
+    "amount" => $result->num_rows,
     ];
 }else{
     //wenn keine Ergebnisse gefunden
@@ -34,18 +30,14 @@ $day = date('w');
 $week_start2 = date('Y-m-d',strtotime("$week_start -7 days",));
 $week = date('W', strtotime('-7 days'));
 //hole Umsätze
-$sql = "SELECT amount FROM money_transfer WHERE receiver='$user_company_name' AND DATE( date_sent ) >= '$week_start2'AND DATE( date_sent ) <= '$week_start'";
+$sql = "SELECT tour_id FROM tour_table WHERE username='$username_cookie' AND DATE( tour_date ) >= '$week_start2'AND DATE( tour_date ) <= '$week_start'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
-        //zähle Geld
-        $current_amount = $current_amount + (int)$row["amount"];
-    }
     //wenn Ergebnisse gefunden
     $array2 = [
     "week" => $week,
-    "amount" => $current_amount,
+    "amount" => $result->num_rows,
     ];
 }else{
     //wenn keine Ergebnisse gefunden
@@ -61,18 +53,15 @@ $day = date('w');
 $week_start3 = date('Y-m-d',strtotime("$week_start2 -7 days",));
 $week = date('W', strtotime('-14 days'));
 //hole Umsätze
-$sql = "SELECT amount FROM money_transfer WHERE receiver='$user_company_name' AND DATE( date_sent ) >= '$week_start3'AND DATE( date_sent ) <= '$week_start2'";
+$sql = "SELECT tour_id FROM tour_table WHERE username='$username_cookie' AND DATE( tour_date ) >= '$week_start3'AND DATE( tour_date ) <= '$week_start2'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
-        //zähle Geld
-        $current_amount = $current_amount + (int)$row["amount"];
-    }
+
     //wenn Ergebnisse gefunden
     $array3 = [
     "week" => $week,
-    "amount" => $current_amount,
+    "amount" => $result->num_rows,
     ];
 }else{
     //wenn keine Ergebnisse gefunden
@@ -86,17 +75,13 @@ if ($result->num_rows > 0) {
         $day = date('w');
 $week_start4 = date('Y-m-d',strtotime("$week_start3 -7 days",));
 $week = date('W', strtotime('-21 days'));
-$sql = "SELECT amount FROM money_transfer WHERE receiver='$user_company_name' AND DATE( date_sent ) >= '$week_start4'AND DATE( date_sent ) <= '$week_start3'";
+$sql = "SELECT tour_id FROM tour_table WHERE username='$username_cookie' AND DATE( tour_date ) >= '$week_start4'AND DATE( tour_date ) <= '$week_start3'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        $current_amount = $current_amount + (int)$row["amount"];
-    }
     $array4 = [
     "week" => $week,
-    "amount" => $current_amount,
+    "amount" => $result->num_rows,
     ];
 }else{
         $array4 = [
@@ -109,17 +94,13 @@ if ($result->num_rows > 0) {
         $day = date('w');
 $week_start3 = date('Y-m-d',strtotime("$week_start4 -7 days",));
 $week = date('W', strtotime('-28 days'));
-$sql = "SELECT amount FROM money_transfer WHERE receiver='$user_company_name' AND DATE( date_sent ) >= '$week_start5'AND DATE( date_sent ) <= '$week_start4'";
+$sql = "SELECT tour_id FROM tour_table WHERE username='$username_cookie' AND DATE( tour_date ) >= '$week_start5'AND DATE( tour_date ) <= '$week_start4'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        $current_amount = $current_amount + (int)$row["amount"];
-    }
     $array5 = [
     "week" => $week,
-    "amount" => $current_amount,
+    "amount" => $result->num_rows,
     ];
 }else{
         $array5 = [

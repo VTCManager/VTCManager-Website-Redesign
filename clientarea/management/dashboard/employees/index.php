@@ -60,7 +60,7 @@ include '../../get_user_data.php';
 
   <!--Main layout-->
   <?php //Lade Tour Prüfungs Fenster nur wenn User Berechtigung zum Bearbeiten des Logbuches hat
-  if ($EditLogbook == "1") { ?>
+  if ($EditEmployees == "1") { ?>
     <div class="modal fade" id="viewemployee" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content elegant-color white-text">
@@ -96,7 +96,7 @@ include '../../get_user_data.php';
                   <form action="fire_employee" method="post">
                     <div class="md-form">
                       <input type="hidden" id="fire_employeeID" value="" name="employeeID" />
-                      <textarea id="form7" name="reason" class="md-textarea form-control" rows="3" maxlength="250" required></textarea>
+                      <textarea id="form7" name="reason" class="md-textarea form-control white-text" rows="3" maxlength="250" required></textarea>
                       <label for="form7">Kündigungsgrund</label>
                     </div>
                     <div class="d-flex justify-content-center">

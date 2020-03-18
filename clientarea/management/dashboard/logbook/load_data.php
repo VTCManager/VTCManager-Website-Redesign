@@ -87,7 +87,11 @@ if ($result->num_rows > 0) {
 		echo '<td>'.$tour_status_tra.'</td>';
 		echo '<td>'.$tour_prog.' %</td>';
 		echo '<td>'.$tour_approved_line.'</td>';
+		if($EditLogbook == "1"){
 		echo '<td>'.$delete_bt.'</td>';
+		}else{
+			echo'<td></td>';
+		}
 		echo '</tr>';
 		//Werte zurücksetzen
 		$tour_approved_line = "";

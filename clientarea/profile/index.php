@@ -1,9 +1,9 @@
 <?php
-$page_now = "management/profile";
+$page_now_navbar = "clientarea/profile";
 include '../get_user_data.php';
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
   <?php include '../head.php' ?>
@@ -28,78 +28,19 @@ include '../get_user_data.php';
 <body class="elegant-color-dark">
 
   <!--Main Navigation-->
-  <header>
+  <?php include '../php/navbar.php'; ?>
+  <!-- Navbar -->
 
-    <!-- Navbar -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark stylish-color-dark scrolling-navbar">
-      <div class="container-fluid">
-
-        <!-- Brand -->
-        <a class="navbar-brand waves-effect" target="_blank">
-          <strong class="blue-text">VTCMI</strong>
-        </a>
-
-        <!-- Collapse -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <!-- Links -->
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-          <!-- Left -->
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link waves-effect" href="#">Übersicht
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link waves-effect" href="https://mdbootstrap.com/docs/jquery/">Fahrtenbuch</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link waves-effect" href="connected-accounts">Verknüpfungen</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link waves-effect" href="https://mdbootstrap.com/education/bootstrap/">Einstellungen</a>
-            </li>
-          </ul>
-
-          <!-- Right -->
-          <ul class="navbar-nav nav-flex-icons">
-            <li class="nav-item">
-              <a href="https://www.facebook.com/mdbootstrap" class="nav-link waves-effect" target="_blank">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="https://twitter.com/MDBootstrap" class="nav-link waves-effect" target="_blank">
-                <i class="fab fa-twitter"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="https://github.com/mdbootstrap/bootstrap-material-design" class="nav-link border border-light rounded waves-effect" target="_blank">
-                <i class="fab fa-github mr-2"></i>MDB GitHub
-              </a>
-            </li>
-          </ul>
-
-        </div>
-
-      </div>
-    </nav>
-    <!-- Navbar -->
-
-    <!-- Sidebar -->
-    <?php
-    include '../php/sidebar.php'; ?>
-    <!-- Sidebar -->
+  <!-- Sidebar -->
+  <?php
+  include '../php/sidebar.php'; ?>
+  <!-- Sidebar -->
 
   </header>
   <!--Main Navigation-->
 
   <!--Main layout-->
-  <main class="pt-5 mx-lg-5">
+  <main class="pt-5" style="padding-left: 10px;padding-right: 10px;">
     <div class="container-fluid mt-5">
 
       <!-- Heading -->
@@ -109,7 +50,7 @@ include '../get_user_data.php';
         <div class="card-body elegant-color white-text d-sm-flex justify-content-between">
 
           <h4 class="mb-2 mb-sm-0 pt-1">
-            <a href="dashboard">Homepage</a>
+            <a href="/clientarea/">Dashboard</a>
             <span>/</span>
             <span>Mein Profil</span>
           </h4>
@@ -143,6 +84,7 @@ include '../get_user_data.php';
                 $userCompanyID_search = $row["userCompanyID"];
                 $profile_pic_url_search = $row["profile_pic_url"];
                 $rank_search = $row["rank"];
+                $staff_role_search = $row["staff_role"];
                 $last_seen_search = $row["last_seen"];
                 $last_seen_search = date('d.m.Y H:i', strtotime($last_seen_search));
                 $last_seen_search = "zuletzt online am $last_seen_search";
@@ -175,22 +117,94 @@ include '../get_user_data.php';
               }
             ?>
               <img class="rounded float-left" src="<?php echo $profile_pic_url_search; ?>" style="height: 80px;width: 80px;height: auto;">
-              <h2 style="margin-left: 90px;"><?php echo $username_search; ?></h2>
+              <h2 style="margin-left: 90px;"><?php echo $username_search; ?><?php if ($staff_role_search != "") { ?> |<a style="color:red;">
+                  <?php echo $staff_role_search; ?></a>
+              <?php } ?></h2>
               <p><?php echo $last_seen_search; ?></p>
+              <hr>
+              <h4>Über mich:</h4>
+              <p>
+                <?php
+                echo file_get_contents("https://vtc.northwestvideo.de/media/articles/profil_about_me/" . $userCompanyID_search . '.txt');
+                ?>
+              </p>
+              <hr>
               <h4>Information</h4>
               <p><i class="fa fa-briefcase"></i> <?php echo $company_txt_search; ?></p>
-              <p><i class="fas fa-calendar-check"></i> registriert seit <?php echo $created_date_search; ?></p>
+              <p><i class="fas fa-calendar-check"></i> registriert seit <?php echo $created_date_search; ?>
+              </p>
             <?php
             } else {
               echo "Error: User not found";
               die();
             }
             ?>
+            <br>
+            <br>
+            <div style="max-width: 70%;">
+              <div class="text-center">
+                <h2>Lebenslauf</h2>
+              </div>
+              <table class="table white-text" style="max-height: 150px !important; overflow: auto !important;">
+                <thead>
+                  <tr>
+                    <td>von</td>
+                    <td>bis</td>
+                    <td></td>
+                  </tr>
+                </thead>
+
+                <tbody>
+
+
+
+
+                  <?php
+                  $sql = "SELECT * FROM career_table WHERE userID=$requested_user_id ORDER BY start_date DESC";
+                  $result = $conn->query($sql);
+                  if ($result->num_rows > 0) {
+                    // output data of each row
+                    while ($row = $result->fetch_assoc()) {
+                      $atCompanyID_search = $row["atCompanyID"];
+                      $career_job_search = $row["job"];
+                      $start_date_search = $row["start_date"];
+                      $end_date_search = $row["end_date"];
+                      $sql = "SELECT name FROM company_information_table WHERE id=$atCompanyID_search";
+                      $result2 = $conn->query($sql);
+                      if ($result2->num_rows > 0) {
+                        // output data of each row
+                        while ($row = $result2->fetch_assoc()) {
+                          $atCompanyname_search_2 = $row["name"];
+                        }
+                      }
+                      if ($career_job_search == "owner") {
+                        $career_job_search = "selbstständig bei $atCompanyname_search_2";
+                      } else if ($career_job_search == "driver") {
+                        $career_job_search = "Fahrer bei $atCompanyname_search_2";
+                      } else {
+                        $career_job_search = "$career_job_search bei $atCompanyname_search_2";
+                      }
+                      $start_date_search = date('d.m.Y', strtotime($start_date_search));
+                      if ($end_date_search == "0000-00-00") {
+                        $end_date_search = "heute";
+                      } else {
+                        $end_date_search = date('d.m.Y', strtotime($end_date_search));
+                      }
+
+                      echo '<tr><td>' . $start_date_search . '</td><td>' . $end_date_search . '</td><td>' . $career_job_search . '</td></tr>';
+                    }
+                  }
+                  $conn->close();
+                  ?>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
-
       </div>
-      <!--/.Card-->
+
+    </div>
+    <!--/.Card-->
     </div>
   </main>
   <!--Main layout-->

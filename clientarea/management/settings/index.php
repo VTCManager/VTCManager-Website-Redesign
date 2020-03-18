@@ -93,6 +93,7 @@ $page_now = "management/settings";
 
         <!--Card content-->
         <div class="card-body elegant-color white-text">
+         <?php if($EditProfile == "1"){ ?>
           <img class="rounded float-left" src="<?php echo $user_company_avatar; ?>" style="height: 80px;width: 80px;height: auto;">
           <h2 style="margin-left: 90px;"><?php echo $user_company_name; ?> </h2>
           <br>
@@ -185,7 +186,7 @@ $page_now = "management/settings";
             </div>
           </div>
         </div>
-
+              <?php }else{ echo "Keine Berechtigung";}?>
       </div>
       <!--/.Card-->
 

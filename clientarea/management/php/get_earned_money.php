@@ -107,7 +107,7 @@ if ($result->num_rows > 0) {
                 $current_amount = 0;
                 //Abfrage vorvorvorletzte Woche
         $day = date('w');
-$week_start3 = date('Y-m-d',strtotime("$week_start4 -7 days",));
+$week_start5 = date('Y-m-d',strtotime("$week_start4 -7 days",));
 $week = date('W', strtotime('-28 days'));
 $sql = "SELECT amount FROM money_transfer WHERE receiver='$user_company_name' AND DATE( date_sent ) >= '$week_start5'AND DATE( date_sent ) <= '$week_start4'";
 $result = $conn->query($sql);

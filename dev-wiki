@@ -18,8 +18,6 @@ user_rank          Rang des Benutzers innerhalb seiner Firma
 user_avatar_url    Link zum Profilbild des Benutzers
 user_company_id    Firmen ID des Benutzers als String (sollte eig nicht in einen INT konvertiert werden. Warum den?) (Wenn ID=0, dann arbeitslos)
 user_company_name  Firmen Name des Benutzers als String (nicht bei arbeitslos)
-username_cookie    Benutzername
-user_team_role     Rolle im VTCM-Team
 
 
 Berechtigungen
@@ -41,11 +39,11 @@ ________________________________________________________________________________
 ***2.1 Wie lade ich Standard-Benutzer-Daten/prüfe ich die Benutzeranmeldung/stelle Verbindung zur DB her?***
 
 Die Prüfung der Gültigkeit der Benutzeranmeldung, das holen der Standard-Benutzerdaten und -rechte (1.1) und das Herstellen zur DB läuft über die get_user_data.php.
-Diese ist für jedes Interface angepasst und befindet sich im jeweiligen Ordner für das jeweilige Interface . Sollte der Benutzer eine ungültige oder keine Anmeldung besitzen, wird er zur Homepage redirected.
+Diese befindet sich im Ordner: /basis_files/php . Sollte der Benutzer eine ungültige oder keine Anmeldung besitzen, wird er zur Homepage redirected.
 Die MySQL-Verbindung ist in der Variable $conn abrufbar.
 
 Einbinden:
 Die get_user_data.php einfach in der 1.Zeile (!) des Dokumentes (dass nachher vom User aufgerufen wird) mit include einbinden.
 !!!Es muss dann keine weitere Verbindung zur DB hergestellt werden, auch nicht bei include phps!!!
-!!!Diese Datei wird nur in den Bereichen aufgerufen, in denen der Benutzer eingeloggt sein muss!!!
+!!!Ausnahmen sind JavaScript-Codes, die nach dem vollständigen Laden der Seite ausgeführt wird sowie redirects!!!
 !!!Am Ende des Dokumentes (da sind alles Funktionen ausgeführt) mit "mysqli_close($conn);" die Verbindung schließen!!!

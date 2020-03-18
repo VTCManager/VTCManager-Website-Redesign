@@ -136,7 +136,7 @@ if (isset($_POST['jobID']) && isset($_POST['driverUserName']) && isset($_POST['c
         <div class="card-body d-sm-flex elegant-color white-text justify-content-between">
 
           <h4 class="mb-2 mb-sm-0 pt-1">
-            <a href="dashboard">Dashboard</a>
+            <a href="/clientarea/">Dashboard</a>
             <span>/</span>
             <span>Fahrtenbuch</span>
           </h4>

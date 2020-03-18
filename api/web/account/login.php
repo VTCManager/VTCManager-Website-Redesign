@@ -8,7 +8,7 @@ if(isset($_COOKIE['authWebToken']) && isset($_COOKIE['username'])) {
 	$host = 'localhost:3306';    
 	$conn = mysqli_connect($host, "system_user_vtc", "8rh98w23nrfubsediofnm<pbi9ufuoipbgiwtFFF","vtcmanager"); 
 	if(! $conn ){  
-		die("2");  
+		die("Keine Verbindung möglich");  
 	}  
 		
 	//Suche nach dem gleichen AuthCode
@@ -69,7 +69,7 @@ $host = 'localhost:3306';
 $conn = mysqli_connect($host, "nwv_api_user", "paswdmysqlllol29193093KK","nwv_api");  
 if(! $conn )  
 {  
-  die("2");  
+  die("Keine Verbindung möglich");  
 }  
 $passwdhsh = hash('sha256',$passwd);
 

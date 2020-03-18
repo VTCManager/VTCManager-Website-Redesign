@@ -386,7 +386,7 @@ include '../get_user_data.php';
             data: {
               labels: [categories2[0], categories2[1], categories2[2], categories2[3], categories2[4]],
               datasets: [{
-                label: 'Umsatz in €',
+                label: 'Touren in der Woche',
                 data: [counts2[0], counts2[1], counts2[2], counts2[3], counts2[4]],
                 backgroundColor: [
                   'rgba(255, 99, 132, 0.2)',

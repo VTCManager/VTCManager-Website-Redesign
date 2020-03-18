@@ -1,9 +1,59 @@
 <?php
 $page_now = "management/profile";
 include '../get_user_data.php';
+
+
+$sql = "SELECT * FROM company_information_table WHERE id=$user_company_id";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+  // output data of each row
+  while ($row = $result->fetch_assoc()) {
+    $name = $row["name"];
+    $founded_date = $row["founded_date"];
+    $driven_km = $row["driven_km"];
+    $rank_route = $row["rank_route"];
+    $rank_money = $row["rank_money"];
+    $Company_avatar = $row["company_pic_url"];
+    $discord_url = $row["discord_url"];
+    $website_url = $row["website_url"];
+    $teamspeak_url = $row["teamspeak_url"];
+  }
+} else {
+  echo "Error: Company not found";
+  die();
+}
+$sql = "SELECT * FROM user_data WHERE userCompanyID=$user_company_id";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+  // output data of each row
+  $employees = $result->num_rows;
+} else {
+}
+$sql = "SELECT * FROM tour_table WHERE companyID=$user_company_id AND status='accepted'";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+  // output data of each row
+  $tours_done = $result->num_rows;
+} else {
+}
+$sql = "SELECT * FROM user_data WHERE userCompanyID=$user_company_id AND rank='owner'";
+$result = $conn->query($sql);
+$owners = array();
+if ($result->num_rows > 0) {
+  // output data of each row
+  while ($row = $result->fetch_assoc()) {
+    $name_owner_comp = $row["username"];
+    array_push($owners, $name_owner_comp);
+  }
+} else {
+}
+$founded_date = date('d.m.Y', strtotime($founded_date));
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
   <?php include '../../head.php'; ?>
@@ -55,35 +105,31 @@ include '../get_user_data.php';
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link waves-effect" href="https://mdbootstrap.com/docs/jquery/">Fahrtenbuch</a>
+              <a class="nav-link waves-effect" href="/clientarea/management/dashboard/employees">Mitarbeiter</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link waves-effect" href="connected-accounts">Verknüpfungen</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link waves-effect" href="https://mdbootstrap.com/education/bootstrap/">Einstellungen</a>
+              <a class="nav-link waves-effect" href="/clientarea/management/profile/jobs">Jobs</a>
             </li>
           </ul>
 
           <!-- Right -->
           <ul class="navbar-nav nav-flex-icons">
             <li class="nav-item">
-              <a href="https://www.facebook.com/mdbootstrap" class="nav-link waves-effect" target="_blank">
-                <i class="fab fa-facebook-f"></i>
+              <a href="https://www.instagram.com/tnwm_group/" class="nav-link waves-effect" target="_blank">
+                <i class="fab fa-instagram"></i>
               </a>
             </li>
             <li class="nav-item">
-              <a href="https://twitter.com/MDBootstrap" class="nav-link waves-effect" target="_blank">
+              <a href="https://twitter.com/TNWM_group" class="nav-link waves-effect" target="_blank">
                 <i class="fab fa-twitter"></i>
               </a>
             </li>
             <li class="nav-item">
-              <a href="https://github.com/mdbootstrap/bootstrap-material-design" class="nav-link border border-light rounded waves-effect" target="_blank">
-                <i class="fab fa-github mr-2"></i>MDB GitHub
+              <a href="/account/logout" class="nav-link border border-light rounded waves-effect">
+                <i class="fas fa-sign-out-alt mr-2"></i>Abmelden
               </a>
             </li>
           </ul>
-
         </div>
 
       </div>
@@ -111,7 +157,7 @@ include '../get_user_data.php';
           <h4 class="mb-2 mb-sm-0 pt-1">
             <a href="/clientarea/management/">Spedition</a>
             <span>/</span>
-            <span>Mein Profil</span>
+            <span>Profil</span>
           </h4>
 
         </div>
@@ -125,67 +171,49 @@ include '../get_user_data.php';
 
           <!--Card content-->
           <div class="card-body elegant-color white-text" style="width:100%;">
+            <img src="<?php echo $Company_avatar; ?>" class="rounded float-left" style="height: 80px;width: 80px;height: auto;">
+            <?php if ($EditProfile == "1") { ?>
+              <div class="float-right">
+                <button type="button" class="btn btn-info" onclick="location.href = '/clientarea/management/settings/';">Bearbeiten</button>
+              </div>
+            <?php } ?>
+            <?php if ($user_rank != "owner") { ?>
+              <div class="float-right">
+                <button type="button" class="btn btn-danger" onclick="location.href = 'leave';">Kündigen</button>
+              </div>
+            <?php } ?>
+            <h1 style="margin-left: 90px;"> <?php echo $name; ?> </h1>
             <?php
-            date_default_timezone_set('Europe/Berlin');
-            $requested_user_id = $_GET['userid'];
-            if (empty($requested_user_id)) {
-              $requested_user_id = $userID;
-            }
-
-            $sql = "SELECT * FROM user_data WHERE userID=$requested_user_id";
-            $result = $conn->query($sql);
-
-            if ($result->num_rows > 0) {
-              // output data of each row
-              while ($row = $result->fetch_assoc()) {
-                date_default_timezone_set("+1");
-                $username_search = $row["username"];
-                $userCompanyID_search = $row["userCompanyID"];
-                $profile_pic_url_search = $row["profile_pic_url"];
-                $rank_search = $row["rank"];
-                $last_seen_search = $row["last_seen"];
-                $last_seen_search = date('d.m.Y H:i', strtotime($last_seen_search));
-                $last_seen_search = "zuletzt online am $last_seen_search";
-                $created_date_search = $row["created_date"];
-
-                $created_date_search = date('d.m.Y', strtotime($created_date_search));
-                if ($userCompanyID_search == "0") {
-                  $company_txt_search = "arbeitslos";
-                } else {
-                  $sql = "SELECT * FROM company_information_table WHERE id=$userCompanyID_search";
-                  $result = $conn->query($sql);
-                  if ($result->num_rows > 0) {
-                    // output data of each row
-                    while ($row = $result->fetch_assoc()) {
-                      $compname = $row["name"];
-                      if ($rank_search != "owner") {
-                        if ($rank_search == "driver") {
-                          $rank_tr = "Fahrer";
-                        } else {
-                          $rank_tr = $rank_search;
-                        }
-
-                        $company_txt_search = "angestellt bei $compname als $rank_tr";
-                      } else {
-                        $company_txt_search = "selbstständig bei " . $compname;;
-                      }
-                    }
-                  }
-                }
-              }
+            echo file_get_contents("https://media.northwestvideo.de/media/articles/company_about_us/" . $user_company_id . '.txt');
             ?>
-              <img class="rounded float-left" src="<?php echo $profile_pic_url_search; ?>" style="height: 80px;width: 80px;height: auto;">
-              <h2 style="margin-left: 90px;"><?php echo $username_search; ?></h2>
-              <p><?php echo $last_seen_search; ?></p>
-              <h4>Information</h4>
-              <p><i class="fa fa-briefcase"></i> <?php echo $company_txt_search; ?></p>
-              <p><i class="fas fa-calendar-check"></i> registriert seit <?php echo $created_date_search; ?></p>
-            <?php
-            } else {
-              echo "Error: User not found";
-              die();
-            }
-            ?>
+            <hr>
+            <h3><i class="fas fa-info-circle"></i> Informationen</h3>
+            <p>
+              <i class="fas fa-calendar-alt"></i> Gegründet am: <?php echo $founded_date; ?> <br>
+              <i class="fas fa-user"></i> Geschäftsführung: <?php foreach ($owners as $value) {
+                                                              $owners_string = $owners_string . $value . ", ";
+                                                            }
+                                                            $owners_string = substr($owners_string, 0, -2);
+                                                            echo $owners_string;
+                                                            ?><br>
+              <i class="fas fa-users"></i> Mitarbeiter: <?php echo $employees; ?> <br>
+              <i class="fas fa-truck-loading"></i> abgeschlossene Touren: <?php echo $tours_done; ?> <br>
+              <!--<i class="fas fa-road"></i> zurückgelegte Strecke: <?php echo $driven_km; ?> km<br>-->
+              <!--<i class="fas fa-trophy"></i> Rang(Strecke): <?php echo $rank_route; ?> <br>-->
+              <!--<i class="fas fa-trophy"></i> Rang(Kapital): <?php echo $rank_money; ?> <br>-->
+              <hr>
+              <h3>Kontakt</h3>
+              <?php if ($discord_url != "") { ?>
+                <button type="button" class="btn btn-info" onclick="window.location='<?php echo $discord_url; ?>';"><i class="fab fa-discord pr-2" aria-hidden="true"></i> Discord </button>
+              <?php }
+              if ($teamspeak_url != "") { ?>
+                <button type="button" class="btn btn-info" onclick="window.location='<?php echo $teamspeak_url; ?>';"><i class="fab fa-teamspeak pr-2" aria-hidden="true"></i> Teamspeak </button>
+              <?php }
+              if ($website_url != "") { ?>
+                <button type="button" class="btn btn-info" onclick="window.location='<?php echo $website_url; ?>';"><i class="fas fa-desktop pr-2" aria-hidden="true"></i> Webseite </button>
+              <?php } ?>
+            </p>
+
           </div>
         </div>
 

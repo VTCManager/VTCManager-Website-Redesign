@@ -1,5 +1,6 @@
 <?php
 include '../get_user_data.php'; 
+if($SeeBank == "1"){
 $day = date('w');
 $week_start = date('Y-m-d', strtotime('-'.$day.' days + 1 day'));
 $date = new DateTime();
@@ -14,4 +15,7 @@ if ($result->num_rows > 0) {
     }
     }else{
         }
+      }else{
+        echo "Du hast keine Berechtigung, die Transaktionen anzuschauen.";
+      }
         ?>
