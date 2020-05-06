@@ -60,9 +60,7 @@ $page_now = "management/map";
         <div class="card-body d-sm-flex elegant-color white-text justify-content-between">
 
           <h4 class="mb-2 mb-sm-0 pt-1">
-            <a href="/clientarea/management/">Spedition</a>
-            <span>/</span>
-            <span>Firmekarte</span>
+            <a href="/clientarea/management/">Livemap</a>
           </h4>
 
         </div>
@@ -105,10 +103,11 @@ $page_now = "management/map";
               <div class="card-header text-center unique-color white-text">
                 <?php include 'php/tmp-api.php'; //load Server Stats
                 ?>
-                Verkehr Sim 1 [<?php echo $sim1_players; ?>]
+                Verkehr Simulation 1 [<?php echo $sim1_players; ?>]
               </div>
               <!-- List group links -->
               <div class="list-group list-group-flush">
+                <p>Wir haben den Verkehrsservice aufgrund von Problemen von unserem Anbieter vorübergehend deaktiviert.</p>
                 <?php include 'php/truckyapi.php'; ?>
               </div>
               <!-- List group links -->

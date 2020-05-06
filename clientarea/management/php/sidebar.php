@@ -7,7 +7,7 @@ if ($page_now == "management/dashboard") { ?>
     </a>
 
     <div class="list-group list-group-flush">
-      <a href="dashboard" class="list-group-item active waves-effect">
+      <a  class="list-group-item active waves-effect">
         <i class="fas fa-chart-pie mr-3"></i>Dashboard</a>
       <a href="/clientarea/management/profile" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
         <i class="fas fa-users mr-3"></i>Firmenprofil</a>
@@ -27,6 +27,8 @@ if ($page_now == "management/dashboard") { ?>
         <a href="/clientarea/management/settings" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-cog mr-3"></i>Einstellungen</a>
       <?php } ?>
+      <a href="/clientarea" class="list-group-item waves-effect stylish-color-dark white-text">
+        <i class="fas fa-undo mr-3"></i>Zurück</a>
     </div>
 
   </div>
@@ -58,6 +60,8 @@ if ($page_now == "management/dashboard") { ?>
         <a href="/clientarea/management/settings" class="list-group-item active waves-effect">
           <i class="fas fa-cog mr-3"></i>Einstellungen</a>
       <?php } ?>
+      <a href="/clientarea" class="list-group-item waves-effect stylish-color-dark white-text">
+        <i class="fas fa-undo mr-3"></i>Zurück</a>
     </div>
 
   </div>
@@ -89,6 +93,8 @@ if ($page_now == "management/dashboard") { ?>
         <a href="/clientarea/management/settings" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-cog mr-3"></i>Einstellungen</a>
       <?php } ?>
+      <a href="/clientarea" class="list-group-item waves-effect stylish-color-dark white-text">
+        <i class="fas fa-undo mr-3"></i>Zurück</a>
     </div>
 
   </div>
@@ -120,6 +126,8 @@ if ($page_now == "management/dashboard") { ?>
         <a href="/clientarea/management/settings" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-cog mr-3"></i>Einstellungen</a>
       <?php } ?>
+      <a href="/clientarea" class="list-group-item waves-effect stylish-color-dark white-text">
+        <i class="fas fa-undo mr-3"></i>Zurück</a>
     </div>
 
   </div>
@@ -151,6 +159,8 @@ if ($page_now == "management/dashboard") { ?>
         <a href="/clientarea/management/settings" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-cog mr-3"></i>Einstellungen</a>
       <?php } ?>
+      <a href="/clientarea" class="list-group-item waves-effect stylish-color-dark white-text">
+        <i class="fas fa-undo mr-3"></i>Zurück</a>
     </div>
   </div>
 <?php } else if ($page_now == "management/applications") { ?>
@@ -181,6 +191,8 @@ if ($page_now == "management/dashboard") { ?>
         <a href="/clientarea/management/settings" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-cog mr-3"></i>Einstellungen</a>
       <?php } ?>
+      <a href="/clientarea" class="list-group-item waves-effect stylish-color-dark white-text">
+        <i class="fas fa-undo mr-3"></i>Zurück</a>
     </div>
   </div>
 <?php } else if ($page_now == "management/job_advertisements") { ?>
@@ -211,6 +223,8 @@ if ($page_now == "management/dashboard") { ?>
         <a href="/clientarea/management/settings" class="list-group-item list-group-item-action waves-effect stylish-color-dark white-text">
           <i class="fas fa-cog mr-3"></i>Einstellungen</a>
       <?php } ?>
+      <a href="/clientarea" class="list-group-item waves-effect stylish-color-dark white-text">
+        <i class="fas fa-undo mr-3"></i>Zurück</a>
     </div>
   </div>
 <?php } ?>

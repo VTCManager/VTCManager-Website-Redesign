@@ -1,10 +1,25 @@
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="webinterface" role="tabpanel" aria-labelledby="home-tab">
-    <p class="h2">aktuelle Version: 0.1.0<p>
+    <p class="h2">aktuelle Version: 0.1.2 Public Beta<p>
+        <p class="h2 lead">Changelog Version 0.1.2</p><br>
+        <ul>
+          <li>Firmen können nun problemlos gelöscht werden</li>
+          <li>Fehlerbehebung: Profilbearbeitung in der Firma</li>
+        </ul>
+        <hr>
+        <p class="h2 lead">Changelog Version 0.1.1</p><br>
+        <ul>
+          <li>Rollenanpassungen</li>
+          <li>Geschäftsführung kann sich nun nicht mehr selber "aus Versehen" kündigen</li>
+          <li>Navbar Fehler behoben</li>
+          <li>Fehler bei der Registrierung behoben</li>
+        </ul>
+        <hr>
         <p class="h2 lead">Changelog Version 0.1.0</p><br>
         <ul>
           <li>Rechtesystem angepasst</li>
           <li>Fehlerbehebungen</li>
+          <li>API und Updater kopiert</li>
           <li>Alles fertig zum Release gemacht. Warte auf Feedback von Beta-Benutzern...</li>
         </ul>
         <hr>

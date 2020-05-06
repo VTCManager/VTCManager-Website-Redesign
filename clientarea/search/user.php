@@ -79,10 +79,11 @@ include '../get_user_data.php';
           <div class="card-body elegant-color white-text" style="width:100%;">
             <?php
             date_default_timezone_set('Europe/Berlin');
-            $requested_user_name = $_POST['username'];
+            $requested_user_name = $_GET['name'];
             if (empty($requested_user_name)) {
               $requested_user_name = $username_cookie;
             }
+            $requested_user_name = $conn->real_escape_string($requested_user_name);
 
             $sql = "SELECT * FROM user_data WHERE username='$requested_user_name'";
             $result = $conn->query($sql);
@@ -98,6 +99,7 @@ include '../get_user_data.php';
                 $rank_search = $row["rank"];
                 $staff_role_search = $row["staff_role"];
                 $last_seen_search = $row["last_seen"];
+                $patreon_state_search = $row["patreon_state"];
                 $last_seen_search = date('d.m.Y H:i', strtotime($last_seen_search));
                 $last_seen_search = "zuletzt online am $last_seen_search";
                 $created_date_search = $row["created_date"];
@@ -131,7 +133,15 @@ include '../get_user_data.php';
               <img class="rounded float-left" src="<?php echo $profile_pic_url_search; ?>" style="height: 80px;width: 80px;height: auto;">
               <h2 style="margin-left: 90px;"><?php echo $username_search; ?><?php if ($staff_role_search != "") { ?> |<a style="color:red;">
                   <?php echo $staff_role_search; ?></a>
-              <?php } ?></h2>
+              <?php } ?>
+              <?php if ($patreon_state_search == "1") { ?>
+                <a href="#" data-toggle="tooltip" title="Patreon: Coffee Donator"><i class="fab fa-patreon" style="color: burlywood;"></i></a>
+              <?php } else if ($patreon_state_search == "2") { ?>
+                <a href="#" data-toggle="tooltip" title="Patreon: Fan"><i class="fab fa-patreon" style="color:silver;"></i></a>
+              <?php } else if ($patreon_state_search == "3") { ?>
+                <a href="#" data-toggle="tooltip" title="Patreon: Project Supporter"><i class="fab fa-patreon" style="color:gold;"></i></a>
+              <?php } ?>
+              </h2>
               <p><?php echo $last_seen_search; ?></p>
               <hr>
               <h4>Über mich:</h4>
@@ -178,6 +188,7 @@ include '../get_user_data.php';
                     // output data of each row
                     while ($row = $result->fetch_assoc()) {
                       $atCompanyID_search = $row["atCompanyID"];
+                      $atCompanyName_search = $row["atCompanyName"];
                       $career_job_search = $row["job"];
                       $start_date_search = $row["start_date"];
                       $end_date_search = $row["end_date"];
@@ -188,6 +199,8 @@ include '../get_user_data.php';
                         while ($row = $result2->fetch_assoc()) {
                           $atCompanyname_search_2 = $row["name"];
                         }
+                      } else {
+                        $atCompanyname_search_2 = $atCompanyName_search;
                       }
                       if ($career_job_search == "owner") {
                         $career_job_search = "selbstständig bei $atCompanyname_search_2";
@@ -241,6 +254,13 @@ include '../get_user_data.php';
   <script type="text/javascript">
     // Animations initialization
     new WOW().init();
+  </script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.10.1/umd/popper.min.js"></script>
+  <script>
+    // Tooltips Initialization
+    $(function() {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
   </script>
 
 </body>

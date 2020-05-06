@@ -1,7 +1,7 @@
 <?php
 $page_now = "management/job_advertisements";
 include '../get_user_data.php';
-if($EditEmployees != "1"){
+if ($EditEmployees != "1") {
 	die("Berechtigung fehlt");
 }
 ?>
@@ -27,6 +27,33 @@ if($EditEmployees != "1"){
 		}
 	</style>
 </head>
+<div class="modal fade" id="new_ad" tabindex="-1" role="dialog">
+	<div class="modal-dialog elegant-color white-text" role="document">
+		<div class="modal-content elegant-color white-text">
+			<form action="create" method="post" name="new_ad" id="new_ad">
+				<div class="modal-header">
+					<h4 class="modal-title" id="myModalLabel">Neue Stellenanzeige erstellen</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+
+				</div>
+				<div class="modal-body">
+					<div class="md-form">
+						<input type="text" class="form-control white-text" name="rank" id="rank" autocomplete="off">
+						<label for="receiver">Rolle (muss bereits existieren)</label>
+					</div>
+					<div class="md-form">
+						<input type="hidden" id="fire_employeeID" value="" name="employeeID" />
+						<textarea id="message" name="message" class="md-textarea form-control white-text" rows="3" maxlength="250" required></textarea>
+						<label for="message">Stellenbeschreibung</label>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-primary" name="submit" id="submit">Erstellen</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
 
 <body class="elegant-color-dark">
 
@@ -74,33 +101,6 @@ if($EditEmployees != "1"){
   <p><strong>&nbsp;Transaktion erfolgreich gesendet!</strong></p>
 </div></div>';
 						} ?>
-						<div class="modal fade" id="new_ad" tabindex="-1" role="dialog">
-							<div class="modal-dialog elegant-color white-text" role="document">
-								<div class="modal-content elegant-color white-text">
-									<form action="create" method="post" name="new_ad" id="new_ad">
-										<div class="modal-header">
-											<h4 class="modal-title" id="myModalLabel">Neue Stellenanzeige erstellen</h4>
-											<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-
-										</div>
-										<div class="modal-body">
-											<div class="md-form">
-												<input type="text" class="form-control white-text" name="rank" id="rank" autocomplete="off">
-												<label for="receiver">Rolle (muss bereits existieren)</label>
-											</div>
-											<div class="md-form">
-												<input type="hidden" id="fire_employeeID" value="" name="employeeID" />
-												<textarea id="message" name="message" class="md-textarea form-control white-text" rows="3" maxlength="250" required></textarea>
-												<label for="message">Stellenbeschreibung</label>
-											</div>
-										</div>
-										<div class="modal-footer">
-											<button type="submit" class="btn btn-primary" name="submit" id="submit">Erstellen</button>
-										</div>
-									</form>
-								</div>
-							</div>
-						</div>
 						<h1>Stellenanzeigen</h1>
 						<table class="table white-text" style="max-height: 150px !important; overflow: auto !important;">
 							<a href="#" class="btn btn-default float-right" data-toggle="modal" data-target="#new_ad">Erstellen</a>

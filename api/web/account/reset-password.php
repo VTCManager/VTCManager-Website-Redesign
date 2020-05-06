@@ -49,7 +49,7 @@ Username: '.$username_found.'
 ------------------------
  
 Please click this link to reset you password:
-http://www.vtc.northwestvideo.de/account/password_reset.php?email='.$email.'&hash='.$reset_hash.'
+https://vtc.northwestvideo.de/account/password_reset.php?email='.$email.'&hash='.$reset_hash.'
  
 '; // Our message above including the link
                      

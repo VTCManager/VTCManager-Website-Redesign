@@ -11,6 +11,8 @@ if ($result->num_rows > 0) {
         $employee_username = $row["username"];
 		$employee_avatar_url = $row["profile_pic_url"];
 		$employee_rank = $row["rank"];
+		if($employee_rank == "owner")
+			$employee_rank = "Geschäftsführung";
 		$employee_time_online_raw = $row["last_seen"];
 		$employee_last_client_update = $row["last_loc_update"];
 		$employee_pos_x = $row["coordinate_x"];

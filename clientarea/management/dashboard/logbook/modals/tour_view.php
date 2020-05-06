@@ -30,7 +30,7 @@
               <span id="truck2">LKW:</span><br>
               <span id="trailer_damage2">Aufliegerschaden:</span><br>
               <span id="departure_time2">Abfahrt:</span><br>
-              <span id="destination_time2">Ankunft:</span><br>
+              <!--<span id="destination_time2">Ankunft:</span><br>-->
             </div>
             <div class="tab-pane fade" id="invoice2" role="tabpanel" aria-labelledby="profile-tab">
               <span style="color: green;" id="freight_value2">Frachtwert:</span><br>
@@ -69,8 +69,8 @@
           user_count = myObj.length;
         }
         document.getElementById("TourCheckTitle2").innerHTML = "Fahrer: " + myObj[0]["username"] + "|Tour Nr." + myObj[0]["tour_id"];
-        document.getElementById("departure2").innerHTML = "Startort: " + myObj[0]["departure"] + "|" + myObj[0]["depature_company"];
-        document.getElementById("destination2").innerHTML = "Zielort: " + myObj[0]["destination"] + "|" + myObj[0]["destination_company"];
+        document.getElementById("departure2").innerHTML = "Startort: " + myObj[0]["departure"] + " | " + myObj[0]["depature_company"];
+        document.getElementById("destination2").innerHTML = "Zielort: " + myObj[0]["destination"] + " | " + myObj[0]["destination_company"];
         document.getElementById("cargo2").innerHTML = "Fracht: " + myObj[0]["cargo"];
         document.getElementById("weight2").innerHTML = "Frachtgewicht: " + myObj[0]["cargo_weight"] + "t";
         document.getElementById("truck2").innerHTML = "LKW: " + myObj[0]["truck_manufacturer"] + " " + myObj[0]["truck_model"];

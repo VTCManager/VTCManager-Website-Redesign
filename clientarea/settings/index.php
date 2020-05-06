@@ -1,5 +1,5 @@
 <?php
-$page_now_navbar = "clientarea/search";
+$page_now_navbar = "clientarea/settings";
 include '../get_user_data.php';
 $sql = "SELECT * FROM user_data WHERE username='$username_cookie'";
 $result = $conn->query($sql);
@@ -33,8 +33,8 @@ if ($result->num_rows > 0) {
                 // output data of each row
                 while ($row = $result->fetch_assoc()) {
                     $compname = $row["name"];
-                    if ($rank != "owner") {
-                        $rank_tr = "Fahrer";
+                    if ($rank_search != "owner") {
+                        $rank_tr = $rank_search;
                         $company_txt_search = "angestellt bei $compname als $rank_tr";
                     } else {
                         $company_txt_search = "selbstständig bei " . $compname;;
@@ -126,7 +126,16 @@ if ($result->num_rows > 0) {
                         <h2><img src="<?php echo $user_avatar_url; ?>" class="rounded float-left" style="height: 80px;width: 80px;height: auto;"></h2>
                         <h2 style="margin-left: 90px;"><?php echo $username_cookie; ?><?php if ($user_team_role != "") { ?> |<a style="color:red;">
                                 <?php echo $user_team_role; ?></a>
-                        <?php } ?></h2>
+                        <?php } ?>
+                        <?php if ($user_patreon_state == "1") { ?>
+                            <a href="#" data-toggle="tooltip" title="Patreon: Coffee Donator"><i class="fab fa-patreon" style="color: burlywood;"></i></a>
+                        <?php } else if ($user_patreon_state == "2") { ?>
+                            <a href="#" data-toggle="tooltip" title="Patreon: Fan"><i class="fab fa-patreon" style="color:silver;"></i></a>
+                        <?php } else if ($user_patreon_state == "3") { ?>
+                            <a href="#" data-toggle="tooltip" title="Patreon: Project Supporter"><i class="fab fa-patreon" style="color:gold;"></i></a>
+
+                        <?php } ?>
+                        </h2>
                         <p><?php echo $last_seen_search; ?></p>
                         <?php if ($_GET['idc'] == "sc") {
                             echo '<div class="container"><div class="success" style="background-color: #ddffdd;
@@ -162,12 +171,13 @@ if ($result->num_rows > 0) {
                             <div class="tab-pane active in" id="profil">
                                 <form action="save_data" method="post" enctype="multipart/form-data">
                                     <div class="md-form">
-                                        <textarea id="form7" name="exampleFormControlTextarea1" class="md-textarea form-control white-text" rows="10"><?php $breaks = array("<br />"); echo (str_ireplace($breaks, "", file_get_contents("../../../media.northwestvideo.de/media/articles/profil_about_me/" . $userID . '.txt'))); ?></textarea>
+                                        <textarea id="form7" name="exampleFormControlTextarea1" class="md-textarea form-control white-text" rows="10"><?php $breaks = array("<br />");
+                                                                                                                                                        echo (str_ireplace($breaks, "", file_get_contents("../../../media.northwestvideo.de/media/articles/profil_about_me/" . $userID . '.txt'))); ?></textarea>
                                         <label for="form7">Über mich</label>
-                    </div>
-                                        <label for="input-file-now-custom-1">Profilbild hochladen</label>
-                                        <input type="file" name="fileToUpload" id="fileToUpload"><br>
-                                        <button type="submit" class="btn btn-primary" onclick="window.location.href = '$url_on_click_redi';" style="background-color: #4CAF50;"><i class="fas fa-cogs"></i> Speichern</button>
+                                    </div>
+                                    <label for="input-file-now-custom-1">Profilbild hochladen</label>
+                                    <input type="file" name="fileToUpload" id="fileToUpload"><br>
+                                    <button type="submit" class="btn btn-primary" onclick="window.location.href = '$url_on_click_redi';" style="background-color: #4CAF50;"><i class="fas fa-cogs"></i> Speichern</button>
                                 </form>
                                 <hr>
                                 <h3>Informationen</h3>
@@ -207,6 +217,13 @@ if ($result->num_rows > 0) {
     <script type="text/javascript">
         // Animations initialization
         new WOW().init();
+    </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.10.1/umd/popper.min.js"></script>
+    <script>
+        // Tooltips Initialization
+        $(function() {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
     </script>
 
 </body>

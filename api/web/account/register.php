@@ -94,11 +94,11 @@ Username: '.$username.'
 ------------------------
  
 Please click this link to activate your account:
-http://www.vtc.northwestvideo.de/verify.php?email='.$email.'&hash='.$activate_hash.'
+https://vtc.northwestvideo.de/verify.php?email='.$email.'&hash='.$activate_hash.'
  
 '; // Our message above including the link
                      
-$headers = 'From:service@northwestvideo.de' . "\r\n"; // Set from headers
+$headers = 'From: NorthWestVideo.de <service@northwestvideo.de>';
 mail($to, $subject, $message, $headers); // Send our emai
 $host = 'localhost:3306';     
 $conn = mysqli_connect($host, "system_user_vtc", "8rh98w23nrfubsediofnm<pbi9ufuoipbgiwtFFF","vtcmanager");  

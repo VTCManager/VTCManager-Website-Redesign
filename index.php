@@ -1,15 +1,15 @@
-<?php 
+<?php
 //aktuelle Seite für Navbar setzen
 $current_page = "home";
 //Verbindung zu DB herstellen
-include 'home/connect_mysql.php'; 
+include 'home/connect_mysql.php';
 //Wenn Benutzer angemeldet, dann "öffnen" statt "registrieren"
-if(!isset($_COOKIE['authWebToken']) && !isset($_COOKIE['username'])) {
+if (!isset($_COOKIE['authWebToken']) && !isset($_COOKIE['username'])) {
   $register_bt_text = '<a href="/account/register" class="btn btn-outline-white btn-lg">Registrieren';
-}else{
+} else {
   $register_bt_text = '<a href="/account/login" class="btn btn-outline-white btn-lg">Öffnen';
 }
-  ?>
+?>
 <html lang="en">
 
 <head>
@@ -22,7 +22,7 @@ if(!isset($_COOKIE['authWebToken']) && !isset($_COOKIE['username'])) {
 <body>
 
   <!-- Navbar -->
-  <?php 
+  <?php
   //Navbar importieren
   include 'home/navbar.php'; ?>
   <!-- Navbar -->
@@ -55,10 +55,10 @@ if(!isset($_COOKIE['authWebToken']) && !isset($_COOKIE['username'])) {
               </h1>
 
               <p>
-                <strong>Funktionsreiches und modern gestalltes Verwaltungssystem.</strong>
+                <strong>Funktionsreiches und modern gestaltetes Verwaltungssystem.</strong>
               </p>
               <?php echo $register_bt_text; ?>
-                <i class="fas fa-sign-in-alt ml-2"></i>
+              <i class="fas fa-sign-in-alt ml-2"></i>
               </a>
             </div>
             <!-- Content -->
@@ -84,11 +84,11 @@ if(!isset($_COOKIE['authWebToken']) && !isset($_COOKIE['username'])) {
               </h1>
 
               <p>
-                <strong>Funktionsreiches und modern gestalltes Verwaltungssystem.</strong>
+                <strong>Funktionsreiches und modern gestaltetes Verwaltungssystem.</strong>
               </p>
 
               <?php echo $register_bt_text; ?>
-                <i class="fas fa-sign-in-alt ml-2"></i>
+              <i class="fas fa-sign-in-alt ml-2"></i>
               </a>
             </div>
             <!-- Content -->
@@ -114,11 +114,11 @@ if(!isset($_COOKIE['authWebToken']) && !isset($_COOKIE['username'])) {
               </h1>
 
               <p>
-                <strong>Funktionsreiches und modern gestalltes Verwaltungssystem.</strong>
+                <strong>Funktionsreiches und modern gestaltetes Verwaltungssystem.</strong>
               </p>
 
               <?php echo $register_bt_text; ?>
-                <i class="fas fa-sign-in-alt ml-2"></i>
+              <i class="fas fa-sign-in-alt ml-2"></i>
               </a>
             </div>
             <!-- Content -->
@@ -156,39 +156,38 @@ if(!isset($_COOKIE['authWebToken']) && !isset($_COOKIE['username'])) {
         <!--Stats-->
         <?php
         //Lade Statistiken
-        include 'home/stats.php';?>
-    <div class="row text-center d-flex justify-content-center my-5">
-      <div class="col-lg-3 col-md-6 mb-4">
-        <i class="fas fa-users fa-3x mb-4 grey-text"></i>
-        <h5 class="font-weight-normal mb-3"><?php echo $stats_total_user;?></h5>
-        <p class="text-muted mb-0">Benutzer</p>
-      </div>
-      <div class="col-lg-3 col-md-6 mb-4">
-        <i class="fas fa-user fa-3x mb-4 grey-text"></i>
-        <h5 class="font-weight-normal mb-3"><?php echo $stats_total_staff;?></h5>
-        <p class="text-muted mb-0">Team Mitglieder</p>
-      </div>
-      <div class="col-lg-3 col-md-6 mb-4">
-        <i class="fas fa-building fa-3x mb-4 grey-text"></i>
-        <h5 class="font-weight-normal mb-3"><?php echo $stats_total_company;?></h5>
-        <p class="text-muted mb-0">registrierte Firmen</p>
-      </div>
-      <div class="col-lg-3 col-md-6 mb-4">
-        <i class="fas fa-truck-loading fa-3x mb-4 grey-text"></i>
-        <h5 class="font-weight-normal mb-3"><?php echo $stats_total_tours_done;?></h5>
-        <p class="text-muted mb-0">abgeschlossene Touren</p>
-      </div>
-    </div>
-    <!--Stats-->
-    <hr class="mb-5">
+        include 'home/stats.php'; ?>
+        <div class="row text-center d-flex justify-content-center my-5">
+          <div class="col-lg-3 col-md-6 mb-4">
+            <i class="fas fa-users fa-3x mb-4 grey-text"></i>
+            <h5 class="font-weight-normal mb-3"><?php echo $stats_total_user; ?></h5>
+            <p class="text-muted mb-0">Benutzer</p>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <i class="fas fa-user fa-3x mb-4 grey-text"></i>
+            <h5 class="font-weight-normal mb-3"><?php echo $stats_total_staff; ?></h5>
+            <p class="text-muted mb-0">Team Mitglieder</p>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <i class="fas fa-building fa-3x mb-4 grey-text"></i>
+            <h5 class="font-weight-normal mb-3"><?php echo $stats_total_company; ?></h5>
+            <p class="text-muted mb-0">registrierte Firmen</p>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <i class="fas fa-truck-loading fa-3x mb-4 grey-text"></i>
+            <h5 class="font-weight-normal mb-3"><?php echo $stats_total_tours_done; ?></h5>
+            <p class="text-muted mb-0">abgeschlossene Touren</p>
+          </div>
+        </div>
+        <!--Stats-->
+        <hr class="mb-5">
         <!--Grid row-->
         <div class="row">
 
           <!--Grid column-->
           <div class="col-md-6 mb-4">
 
-            <img src="media/vtcminterface-screenshot.png" class="img-fluid z-depth-1-half"
-              alt="">
+            <img src="media/vtcminterface-screenshot.png" class="img-fluid z-depth-1-half" alt="">
 
           </div>
           <!--Grid column-->
@@ -203,21 +202,22 @@ if(!isset($_COOKIE['authWebToken']) && !isset($_COOKIE['username'])) {
 
             <hr>
             <!-- CTA -->
-            <?php 
-            if(!isset($_COOKIE['authWebToken']) && !isset($_COOKIE['username'])) {
+            <?php
+            if (!isset($_COOKIE['authWebToken']) && !isset($_COOKIE['username'])) {
               //User nicht angemeldet
-              ?>
-            <a href="/account/register" class="btn btn-grey btn-md">Registrieren
-              <i class="fas fa-sign-in-alt ml-1"></i>
-            </a>
-            <a href="/account/login" class="btn btn-grey btn-md">Anmelden
-              <i class="fas fa-sign-in-alt ml-1"></i>
-            </a>
-            <?php }else{ 
-              //User angemeldet?>
+            ?>
+              <a href="/account/register" class="btn btn-grey btn-md">Registrieren
+                <i class="fas fa-sign-in-alt ml-1"></i>
+              </a>
+              <a href="/account/login" class="btn btn-grey btn-md">Anmelden
+                <i class="fas fa-sign-in-alt ml-1"></i>
+              </a>
+            <?php } else {
+              //User angemeldet
+            ?>
               <a href="/account/login" class="btn btn-grey btn-md">Öffnen
-              <i class="fas fa-sign-in-alt ml-1"></i>
-            </a>
+                <i class="fas fa-sign-in-alt ml-1"></i>
+              </a>
             <?php } ?>
 
           </div>
@@ -229,7 +229,7 @@ if(!isset($_COOKIE['authWebToken']) && !isset($_COOKIE['username'])) {
       </section>
       <!--Section: Main info-->
 
-     <hr class="mb-5">
+      <hr class="mb-5">
 
       <!--Section: More-->
       <section>
@@ -444,8 +444,7 @@ if(!isset($_COOKIE['authWebToken']) && !isset($_COOKIE['username'])) {
           <div class="col-lg-6 col-md-12">
 
             <p class="h5 text-center mb-4">VTConnect - Automatische Tourenerkennung</p>
-              <img src="media/vtcmanager-beta-client.jpg" class="img-fluid z-depth-1-half"
-              alt="">
+            <img src="media/vtcmanager-beta-client.jpg" class="img-fluid z-depth-1-half" alt="">
           </div>
           <!--/Grid column-->
 
@@ -478,7 +477,6 @@ if(!isset($_COOKIE['authWebToken']) && !isset($_COOKIE['username'])) {
   <script type="text/javascript">
     // Animations initialization
     new WOW().init();
-
   </script>
 </body>
 

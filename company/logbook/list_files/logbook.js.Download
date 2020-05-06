@@ -1,0 +1,24 @@
+function updatePercentages() {
+    var company = $("table").data("company");
+
+    $.getJSON("/ajax?env=logbook&action=get_logbook_statuses&company="+company, function(percentages) {
+        if (percentages != null) {
+            for (var a in percentages) {
+                var id = percentages[a]["id"];
+                var percentage = percentages[a]["percentage"];
+
+                $("table > tbody").find("tr[data-id='"+id+"']").find("td:last-of-type").text(percentage+" %");
+            }
+        }
+    });
+}
+
+$( document ).ready(function() {
+    setInterval(function(){ updatePercentages(); }, 30000);
+});
+
+$('.table').on("click", "input[name='reject']", function(event) {
+    if(!confirm("Tour wirklich ablehnen?")) {
+        event.preventDefault();
+    }
+});

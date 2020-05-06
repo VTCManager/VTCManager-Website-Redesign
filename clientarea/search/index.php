@@ -88,15 +88,15 @@ include '../get_user_data.php';
             <div class="tab-content" id="myTabContent">
               <br>
               <div class="tab-pane fade show active" id="user" role="tabpanel" aria-labelledby="user">
-                <form action="user" method="post" name="createnewrankForm" id="createnewrankForm">
-                  <input class="form-control" type="text" name="username" id="user_search_field" placeholder="Nach Benutzer suchen..." aria-label="Search">
-                  <button type="submit" class="btn btn-primary" name="submit" id="submit">Öffnen</button>
+                <form action="user" name="createnewrankForm" id="createnewrankForm">
+                  <input class="form-control" type="text" name="name" id="user_search_field" placeholder="Nach Benutzer suchen..." aria-label="Search">
+                  <button type="submit" class="btn btn-primary">Öffnen</button>
                 </form>
               </div>
               <div class="tab-pane fade" id="company" role="tabpanel" aria-labelledby="company">
-                <form action="company" method="post" name="createnewrankForm" id="createnewrankForm">
-                  <input class="form-control" type="text" name="companyname" id="company_search_field" placeholder="Nach Firma suchen..." aria-label="Search">
-                  <button type="submit" class="btn btn-primary" name="submit" id="submit">Öffnen</button>
+                <form action="company" name="createnewrankForm" id="createnewrankForm">
+                  <input class="form-control" type="text" name="name" id="company_search_field" placeholder="Nach Firma suchen..." aria-label="Search">
+                  <button type="submit" class="btn btn-primary">Öffnen</button>
                 </form>
               </div>
             </div>

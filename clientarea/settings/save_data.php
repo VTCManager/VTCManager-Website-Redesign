@@ -94,7 +94,7 @@ if ($uploadOk == 0) {
     }
 }
 $username_cookie = str_replace(' ', '%20', $username_cookie);
-$sql = "UPDATE user_data SET profile_pic_url='/media/profile_pictures/$username_cookie.$ext' WHERE userID=$userid_edit_prof";
+$sql = "UPDATE user_data SET profile_pic_url='https://media.northwestvideo.de/media/profile_pictures/$username_cookie.$ext' WHERE userID=$userid_edit_prof";
 
 if ($conn->query($sql) === TRUE) {
     echo "Record updated successfully";

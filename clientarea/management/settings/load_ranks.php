@@ -64,11 +64,18 @@ if ($result->num_rows > 0) {
 		<td><form action="rank_edit" method="post">
 		<button class="btn btn-info" type="submit" name="rank" value="$rank_name" class="btn-link">Bearbeiten</button></td>
 		</form></td>
-		<td><form action="delete_rank" method="post">
+		EOT;
+		if($rank_name != "owner"){
+			echo <<<EOT
+			<td><form action="delete_rank" method="post">
 		<button class="btn btn-warning" type="submit" name="rank" value="$rank_name" class="btn-link"><i class="fa fa-trash"></i></button></td>
 		</form></td>
-		</tr>
 		EOT;
+		}else{
+			echo "<td></td>";
+		}
+		
+		echo "</tr>";
     }
 } else {
 }

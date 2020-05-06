@@ -96,10 +96,11 @@ $page_now = "management/map";
               <div class="card-header text-center unique-color white-text">
                 <?php include 'php/tmp-api.php'; //lade Onlinespieler
                 ?>
-                Verkehr Sim 1 [<?php echo $sim1_players; ?>]
+                Verkehr Simulation 1 [<?php echo $sim1_players; ?>]
               </div>
               <!-- List group links -->
               <div class="list-group list-group-flush">
+                <p>Wir haben den Verkehrsservice aufgrund von Problemen von unserem Anbieter vorübergehend deaktiviert.</p>
                 <?php include 'php/truckyapi.php'; //lade Verkehrsdaten
                 ?>
               </div>

@@ -1,0 +1,9 @@
+Wenn der VTCManager-Desktop-Client "Initialisierung..." anzeigt, dann hat VTCM erkannt, dass ETS2 geöffnet ist, kann aber keine Verbindung zur Telemetrie herstellen. Normalerweise wird dies nicht mehr angezeigt, wenn du dich in deinem Fahrzeug befinden solltest.<br />
+<br />
+Sollte dies aber weiterhin angezeigt werden, kann es daran liegen, dass...<br />
+<br />
+<strong> a)die Telemetry nicht installiert ist</strong><br />
+Prüfe, ob das Telemetry-Plugin ordnungsgemäß installiert wurde. Überprüfe dies im Pfad "C:/Program Files (x86)/Steam/steamapps/common/Euro Truck Simulator 2/bin/win_x64/plugins" bzw. "C:/Program Files (x86)/Steam/steamapps/common/Euro Truck Simulator 2/bin/win_x86/plugins". Das Plugin heißt ""ets2-telemetry.dll".  Falls diese nicht vorhanden sein sollte, dann download die Installations-Zip und füge das Plugin in den Plugins-Ordner ein. Sollte der Ordner "plugins" nicht existieren, dann erstelle diesen.<br />
+<br />
+<strong> b)VTCManager durch einen Virenscanner gestört wird</strong><br />
+Füge VTCManager und das Telemetry-Plugin zur Ausnahmeregelung hinzu.<br />

@@ -75,10 +75,6 @@ include 'get_user_data.php';
 
                     <!--Card content-->
                     <div class="card-body elegant-color white-text" style="width:100%;">
-                        <form action="/company/" method="post" name="createnewrankForm" id="createnewrankForm">
-                            <input class="form-control" type="text" name="companyname" id="skill_input" placeholder="Suche..." aria-label="Search">
-                            <button type="submit" class="btn btn-primary" name="submit" id="submit">Öffnen</button>
-                        </form>
                         <?php
                         $sql = "SELECT * FROM job_market WHERE status='open' ORDER BY RAND() LIMIT 20";
                         $result = $conn->query($sql);
@@ -139,17 +135,6 @@ include 'get_user_data.php';
         new WOW().init();
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
-    <script>
-        $(function() {
-            $("#skill_input").autocomplete({
-                source: "search_company_get.php",
-                select: function(event, ui) {
-                    event.preventDefault();
-                    $("#skill_input").val(ui.item.id);
-                }
-            });
-        });
-    </script>
 
 </body>
 

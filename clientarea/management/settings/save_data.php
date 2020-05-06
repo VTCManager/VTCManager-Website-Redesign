@@ -106,7 +106,7 @@ if ($uploadOk == 0) {
     echo "Sorry, your file was not uploaded.";
 // if everything is ok, try to upload file
 } else {
-    $files = glob("../../../media/company_profile_pictures/".$userCompanyID.".*");
+    $files = glob("../../../../media.northwestvideo.de/media/company_profile_pictures/".$userCompanyID.".*");
     foreach ($files as $file) {
 	unlink($file);
     }
@@ -118,7 +118,7 @@ if ($uploadOk == 0) {
 	exit();
     }
 }
-$sql = "UPDATE company_information_table SET company_pic_url='/media/company_profile_pictures/$userCompanyID.$ext' WHERE id=$userCompanyID";
+$sql = "UPDATE company_information_table SET company_pic_url='https://media.northwestvideo.de/media/company_profile_pictures/$userCompanyID.$ext' WHERE id=$userCompanyID";
 
 if ($conn->query($sql) === TRUE) {
     echo "Record updated successfully";

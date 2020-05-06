@@ -36,6 +36,19 @@ if(isset($_COOKIE['authWebToken']) && isset($_COOKIE['username'])) {
 		header("Refresh:0; url=/");
 		die("wrong owner detected");
 	}
+	//NWV
+	$conn2 = mysqli_connect($host, "nwv_api_user", "paswdmysqlllol29193093KK", "nwv_api");
+	$sql = "SELECT * FROM user_data WHERE username='$username_cookie'"; 
+	$result = $conn2->query($sql);
+
+	if ($result->num_rows > 0) {
+		// output data of each row
+		while ($row = $result->fetch_assoc()) {
+			$user_email_address = $row["email_address"];
+		}
+	} else {
+		echo "0 results";
+	}
 	//Lade Benutzerdaten aus der DB
 	$sql = "SELECT * FROM user_data WHERE username='$username_cookie'";
 	$result = $conn->query($sql);
@@ -43,9 +56,12 @@ if(isset($_COOKIE['authWebToken']) && isset($_COOKIE['username'])) {
 		while($row = $result->fetch_assoc()) {
 			$userID = $row["userID"];
 			$user_rank = $row["rank"];
+			$user_iban = $row["iban"];
 			$user_avatar_url = $row["profile_pic_url"];
 			$user_company_id = $row["userCompanyID"];
 			$user_team_role = $row["staff_role"];
+			$user_patreon_state = $row["patreon_state"];
+			$bank_balance_user = $row["bank_balance"];
 		}
 	} else {
 		//Der Benutzer konnte in der DB nicht gefunden werden

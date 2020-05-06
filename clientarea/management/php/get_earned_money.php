@@ -3,7 +3,7 @@
 include '../get_user_data.php'; 
 //Abfrage aktuelle Woche
 $day = date('w');
-$week_start = date('Y-m-d', strtotime('-'.$day.' days + 1 day'));
+$week_start = date('Y-m-d', strtotime('-'.$day.' days'));
 $date = new DateTime();
 $week = $date->format("W");
 //hole Umsätze aus dieser Woche

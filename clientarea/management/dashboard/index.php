@@ -27,7 +27,7 @@ include '../get_user_data.php';
     }
   </style>
   <script>
-    window.setInterval(function() {
+    /*window.setInterval(function() {
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -74,7 +74,7 @@ include '../get_user_data.php';
       };
       xhttp.open("GET", "https://api.truckersmp.com/v2/servers", true);
       xhttp.send();
-    }, 10000);
+    }, 10000);*/
   </script>
 </head>
 
@@ -177,7 +177,7 @@ include '../get_user_data.php';
               <div class="card-header text-center unique-color white-text" id="traffic_label">
                 <?php include '../php/tmp-api.php'; //load Server Stats
                 ?>
-                Verkehr Sim 1 [<?php echo $sim1_players; ?>]
+                Verkehr Simulation 1 [<?php echo $sim1_players; ?>]
               </div>
               <!-- List group links -->
               <div class="list-group list-group-flush" id="traffic_list">

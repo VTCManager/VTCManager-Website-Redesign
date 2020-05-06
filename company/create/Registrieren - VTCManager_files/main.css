@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700,900');
+@import "font-awesome.min.css";
+
+html, body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    background-size: cover;
+    background-position: center;
+    background-image: url('https://vtc.northwestvideo.de/media/highway.jpg');
+    background-blend-mode: multiply;
+	background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+	height: 100%;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+}
+
+
+.btn, .form-control, .input-group-addon {
+    border-radius: 0;
+    border-width: 2px;
+    transition: all .4s ease;
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+}
+
+.btn {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.btn.btn-text {
+    color: #3c09b2;
+}
+
+.btn.btn-transparent {
+    background-color: transparent;
+    border-color: #fff;
+    color: #fff;
+}
+
+.btn.btn-transparent:hover,
+.btn.btn-transparent:focus {
+    background-color: #00d5ff;
+    border-color: transparent;
+    color: #000;
+}
+
+.btn.btn-text:hover,
+.btn.btn-text:focus {
+    background: #eee;
+    border-color: transparent;
+}
+
+.btn.btn-default {
+    background-color: transparent;
+    border-color: #00d5ff;
+    color: #00d5ff;
+}
+
+.btn.btn-default:hover,
+.btn.btn-default:focus {
+    background-color: #eee;
+    border-color: #000;
+    color: #000;
+}
+
+.btn.btn-primary {
+    background-color: #3c09b2;
+    border-color: #3c09b2;
+    color: #fff;
+}
+
+.btn.btn-primary:hover,
+.btn.btn-primary:focus {
+    background-color: #2c0782;
+    border-color: transparent;
+}
+
+.btn.btn-primary[disabled],
+fieldset[disabled] .btn.btn-primary {
+    opacity: .35;
+}
+
+.btn .fa.fa-chevron-right {
+    margin-left: 5px;
+}
+
+.shorten-text-overflow {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.form-control {
+    box-shadow: none;
+}
+
+.form-control:focus {
+    border-color: #00d5ff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 213, 255,.5);
+}
+
+.form-control.form-control-lg {
+    padding: 20px 18px;
+    font-size: 15px;
+}
+
+.jumbotron p {
+    font-weight: normal;
+}
+
+.navbar {
+    font-size: 14px;
+}
+
+.alert {
+    border: 2px solid rgba(0,0,0,.3);
+    border-radius: 0;
+}
+
+.page-header {
+    margin: 20px 0;
+    position: relative;
+}
+
+.page-header h1, .page-header h3 {
+    color: #000;
+    font-weight: 900;
+}
+
+.page-header a:not(.btn):not(.show-more-link) {
+    color: #000;
+}
+
+.page-header .show-more-link {
+    position: absolute;
+    right: 0;
+    bottom: 13px;
+}
+
+.page-header h4, .page-header h4 {
+    font-weight: 900;
+    color: #999;
+    text-transform: uppercase;
+}
+
+.dropdown-menu {
+    margin-top: 4px !important;
+}
+
+/* Login */
+.account-login-page {
+    display: flex;
+    margin-top: 0;
+	align-items: center;
+    justify-content: center;
+}
+
+.loginFormWrapper {
+    width: 400px;
+    height: 500px;
+	background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	border-radius: 25px;
+}
+
+.loginFormWrapper.fullWidth {
+    width: 100%;
+}
+
+.loginForm {
+    width: 300px;
+	
+}
+
+.loginForm h1 {
+    margin-bottom: 20px;
+}
+
+.loginForm hr.underline {
+    background-color: #3C09B2;
+    margin-bottom: 50px;
+    margin-right: auto;
+    margin-left: 0;
+    text-align: left;
+    height: 5px;
+    width: 90px;
+}
+
+.loginForm img {
+    margin-bottom: 25px;
+}
+
+.loginForm input, 
+.loginForm p,
+.loginForm .g-recaptcha {
+    margin-top: 8px;
+}
+
+.loginForm .btn-default {
+    background-color: #00d5ff;
+    border-color: #00d5ff;
+    color: #000;
+}
+
+@media (max-width: 700px) {
+    .featuredImageWrapper {
+        display: none;
+    }
+    .loginFormWrapper {
+        width: 100%;
+    }
+}
+
+
+.field-icon {
+  float: right;
+  margin-left: -25px;
+  margin-top: -25px;
+  position: relative;
+  z-index: 2;
+}
+
+

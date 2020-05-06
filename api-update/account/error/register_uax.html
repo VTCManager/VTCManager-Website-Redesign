@@ -1,0 +1,65 @@
+<html lang="de" class="gr__vtcmanager_de"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta name="theme-color" content="#ff8000">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="format-detection" content="telephone=no">
+
+        <meta property="og:site_name" content="VTCManager">
+        <meta property="og:title" content="Registrieren - VTCManager">
+        <meta property="og:url" content="https://vtc.northwestvideo.de/account/register">
+        <meta property="og:type" content="website">
+
+        <link rel="icon" href="https://vtc.northwestvideo.de/assets/images/favicon.png" type="image/x-icon">
+        <link rel="apple-touch-icon" href="https://vtc.northwestvideo.de/assets/images/apple-touch-icon.png">
+        
+        <link rel="stylesheet" type="text/css" href="./Registrieren - VTCManager_files/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="./Registrieren - VTCManager_files/main.css">
+
+        <title>Registrieren - VTCManager</title>
+    </head>
+<body class="account-login-page" data-gr-c-s-loaded="true">
+<div class="loginFormWrapper">
+        <div class="loginForm">
+            <h1 style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">Registrieren</h1>
+            <hr class="underline" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+			<herror style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">Der Benutzer existiert bereits!</herror>
+			
+            
+            <form action="https://vtc.northwestvideo.de/api/web/account/register.php" method="post" name="registerform" id="account-register-form" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+                <input type="text" name="username" id="username" class="form-control" placeholder="Benutzername" maxlength="15" value="" required="" autofocus="">
+                <input type="email" name="email" id="email" class="form-control" placeholder="E-Mail" value="" required="">
+				<p><span id="emailinfo" style="color: black;"></span></p>
+                <input type="password" name="password" id="password" class="form-control" placeholder="Passwort" maxlength="150" required="">
+				<p><span id="pwstrength" style="color: black;"></span></p>
+				<p><input type="checkbox" onclick="showpass()">Zeige Passwort</p>
+				<script>function showpass() {
+  var x = document.getElementById("password");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}</script>
+                
+                <input type="checkbox" name="privacy_policy" required=""> Ich stimme den <a target="_blank" href="https://trucking-vs.de/terms">Nutzungsbedingungen</a> und der <a target="_blank" href="https://vtc.northwestvideo.de/datenschutz">Datenschutzerklärung</a> zu.
+                <input type="submit" name="submit" id="submitbtn" class="btn btn-default btn-block" value="Registrieren"disabled="true">
+                <hr style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+                <p>Du bist bereits ein VTC-Trucker? <a href="https://vtc.northwestvideo.de/account/login.html">Anmelden</a>.</p>
+            </form>
+        </div>
+	</div>
+	
+    <script type="text/javascript" async="" src="./Registrieren - VTCManager_files/analytics.js.Download"></script><script type="text/javascript" async="" defer="" src="./Registrieren - VTCManager_files/piwik.js.Download"></script><script type="text/javascript" src="./Registrieren - VTCManager_files/jquery.min.js.Download"></script>
+    <script type="text/javascript" src="./Registrieren - VTCManager_files/bootstrap.min.js.Download"></script>
+    <script type="text/javascript" src="./Registrieren - VTCManager_files/tweenmax.min.js.Download"></script>
+    <script type="text/javascript" src="./Registrieren - VTCManager_files/account.js"></script>
+    
+    <script async="" src="./Registrieren - VTCManager_files/js"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-59742590-4', { 'anonymize_ip': true });
+    </script>
+</body></html>

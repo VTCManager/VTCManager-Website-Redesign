@@ -56,7 +56,38 @@ if ($result->num_rows > 0) {
 
     </header>
     <!--Main Navigation-->
-
+    <div class="modal fade" id="transactioncompany" tabindex="-1" role="dialog">
+        <div class="modal-dialog elegant-color white-text" role="document">
+            <div class="modal-content elegant-color white-text">
+                <form action="transaction_company" method="post" name="transactForm" id="transact_form">
+                    <div class="modal-header unique-color">
+                        <h4 class="modal-title w-100 font-weight-bold" id="myModalLabel">Überweisung von <?php echo $user_company_name; ?> tätigen</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="md-form">
+                            <input type="text" class="form-control white-text" name="receiver" id="receiver" autocomplete="off">
+                            <label for="receiver">Überweisen an Nutzer/Firma...</label>
+                        </div>
+                        <div class="md-form input-group mb-0 white-text">
+                            <input type="number" class="form-control white-text" name="amount" id="amount" min="1" max="1000000" required="">
+                            <label for="amount">Betrag</label>
+                            <div class="input-group-append">
+                                <span class="input-group-text md-addon white-text">€</span>
+                            </div>
+                        </div>
+                        <div class="md-form">
+                            <input type="text" class="form-control white-text" name="message" id="message" maxlength="180" autocomplete="off">
+                            <label for="receiver">Nachricht</label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary" name="submit" id="submit">Überweisen</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     <!--Main layout-->
     <main class="pt-4 mx-lg-5">
         <div class="container-fluid">
@@ -90,40 +121,6 @@ if ($result->num_rows > 0) {
   <p><strong>&nbsp;Transaktion erfolgreich!</strong></p>
 </div>';
                         } ?>
-
-                        <div class="modal fade" id="transactioncompany" tabindex="-1" role="dialog">
-                            <div class="modal-dialog elegant-color white-text" role="document">
-                                <div class="modal-content elegant-color white-text">
-                                    <form action="transaction_company" method="post" name="transactForm" id="transact_form">
-                                        <div class="modal-header">
-                                            <h4 class="modal-title" id="myModalLabel">Überweisung von <?php echo $user_company_name; ?> tätigen</h4>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            Überweisen an
-                                            <div class="md-form">
-                                                <input type="text" class="form-control white-text" name="receiver" id="receiver" autocomplete="off">
-                                                <label for="receiver">Nutzer/Firma</label>
-                                            </div>
-                                                <div class="md-form input-group mb-0 white-text">
-                                                    <input type="number" class="form-control white-text" name="amount" id="amount" min="1" max="1000000" required="">
-                                                    <label for="amount">Betrag</label>
-                                                    <div class="input-group-append">
-                                                        <span class="input-group-text md-addon white-text">€</span>
-                                                    </div>
-                                                </div>
-                                            <div class="md-form">
-                                                <input type="text" class="form-control white-text" name="message" id="message" maxlength="180" autocomplete="off">
-                                                <label for="receiver">Nachricht</label>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="submit" class="btn btn-primary" name="submit" id="submit">Überweisen</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
                         <?php if ($SeeBank == "1") {
                         ?>
 
@@ -138,7 +135,7 @@ if ($result->num_rows > 0) {
                             <table class="table white-text" style="max-height: 150px !important; overflow: auto !important;">
 
                                 <thead>
-                                    <tr>
+                                    <tr class="unique-color">
                                         <td>Absender</td>
                                         <td>Empfänger</td>
                                         <td>Nachricht</td>
@@ -165,8 +162,24 @@ if ($result->num_rows > 0) {
                                             if ($status == "sent") {
                                                 $status = "zugestellt";
                                             }
+                                            $sql = "SELECT * FROM company_information_table WHERE name='$sender'";
+                                            $result2 = $conn->query($sql);
+
+                                            if ($result2->num_rows > 0) {
+                                                $sender_href = "/clientarea/search/company?name=" . urlencode($sender);
+                                            } else {
+                                                $sender_href = "/clientarea/search/user?name=" . urlencode($receiver);
+                                            }
+                                            $sql = "SELECT * FROM company_information_table WHERE name='$receiver'";
+                                            $result3 = $conn->query($sql);
+
+                                            if ($result3->num_rows > 0) {
+                                                $receiver_href = "/clientarea/search/company?name=" . urlencode($receiver);
+                                            } else {
+                                                $receiver_href = "/clientarea/search/user?name=" . urlencode($receiver);
+                                            }
                                             $date_sent = date('d.m.Y', strtotime($date_sent));
-                                            echo '<tr><td>' . $sender . '</td><td>' . $receiver . '</td><td>' . $message . '</td><td>' . $date_sent . '</td><td>' . $amount . '€</td><td>' . $status . '</td></tr>';
+                                            echo '<tr><td><a href="' . $sender_href . '" style="color:white;">' . $sender . '</a></td><td><a href="' . $receiver_href . '" style="color:white;">' . $receiver . '</a></td><td>' . $message . '</td><td>' . $date_sent . '</td><td>' . $amount . '€</td><td>' . $status . '</td></tr>';
                                         }
                                     } else {
                                     }
@@ -187,7 +200,7 @@ if ($result->num_rows > 0) {
                                 };
                                 ?>
                             </div>
-                        <?php }else{
+                        <?php } else {
                             echo "Keine Berechtigung";
                         } ?>
 

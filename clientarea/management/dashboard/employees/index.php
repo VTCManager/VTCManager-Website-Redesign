@@ -9,7 +9,7 @@ include '../../get_user_data.php';
 <html lang="en">
 
 <head>
-  <?php include'../../../head.php'; ?>
+  <?php include '../../../head.php'; ?>
   <script>
     function delete_entry(elmnt) {
       var save_val = $(elmnt).attr("data-id");
@@ -80,7 +80,7 @@ include '../../get_user_data.php';
                   <a class="nav-link" id="home-tab" data-toggle="tab" href="#edit" role="tab" aria-controls="Allgemein" aria-selected="true">Bearbeiten</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" id="home-tab" data-toggle="tab" href="#fire" role="tab" aria-controls="Allgemein" aria-selected="true">Kündigen</a>
+                  <a class="nav-link" id="fire-tab" data-toggle="tab" href="#fire" role="tab" aria-controls="Allgemein" aria-selected="true">Kündigen</a>
                 </li>
               </ul>
               <div class="tab-content" id="myTabContent">
@@ -137,9 +137,16 @@ include '../../get_user_data.php';
           if (myObj != "") {
             user_count = myObj.length;
           }
+
           document.getElementById("Employee_details_Title").innerHTML = myObj[0]["username"];
           document.getElementById("employee_name").innerHTML = "Name: " + myObj[0]["username"];
-          document.getElementById("employee_rank").innerHTML = "Posten: " + myObj[0]["rank"];
+          if (myObj[0]["rank"] == "owner") {
+            document.getElementById("fire-tab").style.display = "none";
+            document.getElementById("employee_rank").innerHTML = "Posten: Geschäftsführung";
+          } else {
+            document.getElementById("fire-tab").style.display = "block";
+            document.getElementById("employee_rank").innerHTML = "Posten: " + myObj[0]["rank"];
+          }
           document.getElementById("employee_total_tours").innerHTML = "erfolgreiche Touren: " + myObj[0]["total_tours"];
           document.getElementById("employee_income").innerHTML = "Einnahmen durch Fahrer: " + myObj[0]["income"] + "€";
           document.getElementById("fire_employeeID").value = myObj[0]["userID"];

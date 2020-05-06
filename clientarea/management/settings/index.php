@@ -3,7 +3,7 @@ include '../get_user_data.php';
 $page_now = "management/settings";
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
   <?php include '../../head.php'; ?>
@@ -133,7 +133,7 @@ $page_now = "management/settings";
               <form action="save_data" method="post" enctype="multipart/form-data">
                 <div class="md-form">
                   <textarea class="md-textarea form-control white-text" name="exampleFormControlTextarea1" rows="10"><?php $breaks = array("<br />");
-                                                                                                                      echo (str_ireplace($breaks, "", file_get_contents("https://vtc.northwestvideo.de/media/articles/company_about_us/" . $user_company_id . '.txt'))); ?></textarea>
+                                                                                                                      echo (str_ireplace($breaks, "", file_get_contents("https://media.northwestvideo.de/media/articles/company_about_us/" . $user_company_id . '.txt'))); ?></textarea>
                   <label for="exampleFormControlTextarea1">Über uns</label>
                 </div>
                 <div class="custom-file">
@@ -160,8 +160,7 @@ $page_now = "management/settings";
             </div>
             <div class="tab-pane" id="settings">
               <?php if ($user_rank == "owner") { ?>
-                <button type="button" class="btn btn-danger" onclick="window.location.href = '<?php echo "/company/delete"; ?>';">Firma
-                  auflösen</button>
+                <a href="delete_confirm" type="button" class="btn btn-danger">Firma auflösen</a>
               <?php } ?>
             </div>
             <div class="tab-pane" id="rank">

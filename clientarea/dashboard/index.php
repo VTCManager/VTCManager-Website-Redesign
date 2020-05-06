@@ -27,7 +27,7 @@ include '../get_user_data.php';
     }
   </style>
   <script>
-    window.setInterval(function() {
+    /*window.setInterval(function() {
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -74,7 +74,7 @@ include '../get_user_data.php';
       };
       xhttp.open("GET", "https://api.truckersmp.com/v2/servers", true);
       xhttp.send();
-    }, 10000);
+    }, 10000);*/
   </script>
 </head>
 
@@ -137,7 +137,10 @@ include '../get_user_data.php';
             <span>Dashboard</span>
           </h4>
           <div class="d-flex justify-content-end">
-            <button type="button" class="btn btn-primary" data-toggle="modal" style="margin:.0rem;" data-target="#viewchangelog">Changelog</button>
+            <?php if($user_patreon_state == "0"){ ?>
+            <a type="button" class="btn rounded" style="margin:.0rem;background-color: rgb(232, 91, 70);" href="https://www.patreon.com/bePatron?u=32057845" target="_blank"><i class="fab fa-patreon"></i> Become a Patron!</a>
+            <?php } ?>
+            <button type="button" class="btn btn-primary rounded" data-toggle="modal" style="margin:.0rem;margin-left:4px;" data-target="#viewchangelog">Changelog</button>
           </div>
         </div>
 
@@ -178,7 +181,7 @@ include '../get_user_data.php';
               <div class="card-header text-center unique-color white-text" id="traffic_label">
                 <?php include '../php/tmp-api.php'; //load Server Stats
                 ?>
-                Verkehr Sim 1 [<?php echo $sim1_players; ?>]
+                Verkehr Simulation 1 [<?php echo $sim1_players; ?>]
               </div>
               <!-- List group links -->
               <div class="list-group list-group-flush" id="traffic_list">
