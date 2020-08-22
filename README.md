@@ -2,6 +2,16 @@
 VTCManager is a powerful Euro Truck Simulator 2 tool. We are building something more than only a simple job logger. Together we can build something awesome! <br>
 IMPORTANT: This website was in production until 19th of July 2020. All passwords are invalid and the data in the databases has been deleted.
 
+
+##Installation
+The code is just basic php (version 7.4).
+You just have to change the db credentials in the php files and create 2 databases:
+* 1. DB name: vtcmanager - Stores almost everything
+* 2. DB name: nwv_api - User auth data
+##Credentials
+Credentials for admin account (included in the sql files)
+Username: admin
+Password: admin
 ## Community
 Join our official Discord server and chat with other devs. https://discord.gg/AJrapkG
 ## Development
